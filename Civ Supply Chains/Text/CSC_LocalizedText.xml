@@ -1,0 +1,31 @@
+<GameData>
+	<LocalizedText>
+
+		<!-- BAKERS' QUARTER -->
+
+		<Replace Tag="LOC_DISTRICT_BAKERS_QUARTER_NAME" Language="en_US">
+			<Text>Bakers' Quarter</Text>
+		</Replace>
+
+        <Replace Tag="LOC_DISTRICT_BAKERS_QUARTER_DESCRIPTION" Language="en_US">
+			<Text>A district for the Baking industry.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_QUARTER_CITY_CENTER_GOLD_DESCRIPTION" Language="en_US">
+			<Text>LOC_CSC_QUARTER_CITY_CENTER_GOLD_DESCRIPTION</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_QUARTER_COMMERCIAL_HUB_GOLD_DESCRIPTION" Language="en_US">
+			<Text>LOC_CSC_QUARTER_COMMERCIAL_HUB_GOLD_DESCRIPTION</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_QUARTER_HARBOR_GOLD_DESCRIPTION" Language="en_US">
+			<Text>LOC_CSC_QUARTER_HARBOR_GOLD_DESCRIPTION</Text>
+		</Replace>
+
+		<Replace Tag="CSC_BAKERS_TERRAIN" Language="en_US">
+			<Text>LOC_CSC_BAKERS_TERRAIN_DESCRIPTION</Text>
+		</Replace>
+
+	</LocalizedText>
+</GameData>
