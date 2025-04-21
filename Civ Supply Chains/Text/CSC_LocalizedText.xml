@@ -8,23 +8,27 @@
 		</Replace>
 
         <Replace Tag="LOC_DISTRICT_BAKERS_QUARTER_DESCRIPTION" Language="en_US">
-			<Text>A district for the Baking industry.</Text>
+			<Text>A district for the Baking industry. +{1_num} [ICON_Production] Production if built on Hills.</Text>
 		</Replace>
 
 		<Replace Tag="LOC_CSC_QUARTER_CITY_CENTER_GOLD_DESCRIPTION" Language="en_US">
-			<Text>LOC_CSC_QUARTER_CITY_CENTER_GOLD_DESCRIPTION</Text>
+			<Text>+{1_num} [ICON_Gold] Gold from an adjacent City Center tile.</Text>
 		</Replace>
 
 		<Replace Tag="LOC_CSC_QUARTER_COMMERCIAL_HUB_GOLD_DESCRIPTION" Language="en_US">
-			<Text>LOC_CSC_QUARTER_COMMERCIAL_HUB_GOLD_DESCRIPTION</Text>
+			<Text>+{1_num} [ICON_Gold] Gold from adjacent Commercial Hub tiles.</Text>
 		</Replace>
 
 		<Replace Tag="LOC_CSC_QUARTER_HARBOR_GOLD_DESCRIPTION" Language="en_US">
-			<Text>LOC_CSC_QUARTER_HARBOR_GOLD_DESCRIPTION</Text>
+			<Text>+{1_num} [ICON_Gold] Gold from adjacent Harbor tiles.</Text>
 		</Replace>
 
-		<Replace Tag="CSC_BAKERS_TERRAIN" Language="en_US">
-			<Text>LOC_CSC_BAKERS_TERRAIN_DESCRIPTION</Text>
+		<Replace Tag="LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from adjacent raw materials improvements.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] Gold from an adjacent Bakers' Quarter.</Text>
 		</Replace>
 
 	</LocalizedText>

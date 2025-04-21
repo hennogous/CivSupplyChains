@@ -18,7 +18,7 @@
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
     <AssemblyName>Civ Supply Chains</AssemblyName>
     <RootNamespace>Civ Supply Chains</RootNamespace>
-    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="CSC_Gameplay"><File>Data/CSC_Gameplay.sql</File></UpdateDatabase><UpdateText id="CSC_LocalizedText"><File>Text/CSC_LocalizedText.xml</File></UpdateText></InGameActions>]]></InGameActionData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="CSC_Quarters"><File>Data/CSC_Quarters.sql</File></UpdateDatabase><UpdateText id="CSC_LocalizedText"><File>Text/CSC_LocalizedText.xml</File></UpdateText><UpdateDatabase id="BuilderCostOverride"><File>Data/BuilderCostOverride.xml</File></UpdateDatabase></InGameActions>]]></InGameActionData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -32,7 +32,16 @@
     <Folder Include="Text" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\CSC_Gameplay.sql">
+    <Content Include="Data\BuilderCostOverride.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Data\CSC_Buildings.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Data\CSC_Quarters.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Data\CSC_SupplyChains.sql">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Text\CSC_LocalizedText.xml">
