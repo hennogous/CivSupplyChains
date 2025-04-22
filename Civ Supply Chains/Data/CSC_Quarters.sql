@@ -14,12 +14,6 @@ VALUES  ('DISTRICT_BAKERS_QUARTER',                                             
         ('CSC_COLLECTION_OWNER_EFFECT_DISTRICT_ADJACENCY',                      'KIND_MODIFIER'         ),
         ('CSC_COLLECTION_OWNER_EFFECT_IMPROVEMENT_ADJACENCY',                   'KIND_MODIFIER'         );
 
-INSERT INTO Types (Type, Kind)
-
-SELECT	'EFFECT_IMPROVEMENT_ADJACENCY',	'KIND_EFFECT'
-
-WHERE NOT EXISTS (SELECT 1 FROM Types WHERE Type = 'EFFECT_IMPROVEMENT_ADJACENCY');
-
 
 
 --===============================================================================================================================================================================--
@@ -42,13 +36,9 @@ VALUES  (       'DISTRICT_BAKERS_QUARTER',              'LOC_DISTRICT_BAKERS_QUA
 INSERT INTO Adjacency_YieldChanges
             
         (	ID,			                                Description,				                        YieldType,              YieldChange,    OtherDistrictAdjacent,  TilesRequired,  AdjacentNaturalWonder,  AdjacentSeaResource,    AdjacentImprovement,    AdjacentTerrain,        AdjacentFeature,        PrereqCivic,            PrereqTech,             AdjacentDistrict                )
-VALUES  (	'CSC_QUARTER_CITY_CENTER_GOLD',         'LOC_CSC_QUARTER_CITY_CENTER_GOLD_DESCRIPTION',         'YIELD_GOLD',         1,  0,  1,  0,  0,  NULL,  NULL,  NULL,  NULL,  NULL,  'DISTRICT_CITY_CENTER'         ),
-        (	'CSC_QUARTER_COMMERCIAL_HUB_GOLD',      'LOC_CSC_QUARTER_COMMERCIAL_HUB_GOLD_DESCRIPTION',      'YIELD_GOLD',         1,  0,  1,  0,  0,  NULL,  NULL,  NULL,  NULL,  NULL,  'DISTRICT_COMMERCIAL_HUB'      ),
-        (	'CSC_QUARTER_HARBOR_GOLD',             'LOC_CSC_QUARTER_HARBOR_GOLD_DESCRIPTION',             'YIELD_GOLD',         1,  0,  1,  0,  0,  NULL,  NULL,  NULL,  NULL,  NULL,  'DISTRICT_HARBOR'              );
-
---        (	'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJ_FARMS',     'LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',    'YIELD_PRODUCTION',	1,	        0,		        1,	        0,		        0,			'IMPROVEMENT_FARM',     NULL,                   NULL,		        NULL,	                NULL,			NULL                            );
---        (	'CSC_ALL_FARMS_GOLD_FROM_ADJACENT_BAKERS_QUARTER',      'LOC_CSC_ALL_FARMS_GOLD_FROM_ADJACENT_BAKERS_QUARTER',          'YIELD_GOLD',	        1,	        0,		        1,	        0,		        0,			NULL,                   NULL,                   NULL,		        NULL,	                NULL,			'DISTRICT_BAKERS_QUARTER'       );
-
+VALUES  (	'CSC_QUARTER_CITY_CENTER_GOLD',                         'LOC_CSC_QUARTER_CITY_CENTER_GOLD_DESCRIPTION',                 'YIELD_GOLD',           1,              0,                      1,              0,                      0,                      NULL,                   NULL,                   NULL,                   NULL,                   NULL,                   'DISTRICT_CITY_CENTER'          ),
+        (	'CSC_QUARTER_COMMERCIAL_HUB_GOLD',                      'LOC_CSC_QUARTER_COMMERCIAL_HUB_GOLD_DESCRIPTION',              'YIELD_GOLD',           1,              0,                      1,              0,                      0,                      NULL,                   NULL,                   NULL,                   NULL,                   NULL,                   'DISTRICT_COMMERCIAL_HUB'       ),
+        (	'CSC_QUARTER_HARBOR_GOLD',                              'LOC_CSC_QUARTER_HARBOR_GOLD_DESCRIPTION',                      'YIELD_GOLD',           1,              0,                      1,              0,                      0,                      NULL,                   NULL,                   NULL,                   NULL,                   NULL,                   'DISTRICT_HARBOR'               );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- District_Adjacencies
@@ -60,8 +50,6 @@ INSERT INTO District_Adjacencies
 VALUES  (	'DISTRICT_BAKERS_QUARTER',		'CSC_QUARTER_CITY_CENTER_GOLD'		                ),
         (	'DISTRICT_BAKERS_QUARTER',		'CSC_QUARTER_COMMERCIAL_HUB_GOLD'	                ),
         (	'DISTRICT_BAKERS_QUARTER',		'CSC_QUARTER_HARBOR_GOLD'	                        );
-
---        (       'DISTRICT_BAKERS_QUARTER',              'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJ_FARMS'      );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- District_CitizenYieldChanges
@@ -80,6 +68,7 @@ INSERT INTO DistrictModifiers
 
         (	DistrictType,		                ModifierId			                        )
 VALUES  (	'DISTRICT_BAKERS_QUARTER',              'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS'	                );
+--        (       'DISTRICT_BAKERS_QUARTER',              'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS'         );
 
 
 --===========================================================================================================================================================================--
@@ -99,10 +88,7 @@ VALUES  (       'IMPROVEMENT_FARM',             'YIELD_GOLD',           0       
 -- Improvement_Adjacencies
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---INSERT INTO Improvement_Adjacencies
-		
---        (       ImprovementType,                YieldChangeId			                        )
---VALUES  (	'IMPROVEMENT_FARM',             'CSC_ALL_FARMS_GOLD_FROM_ADJACENT_BAKERS_QUARTER'       );
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- ImprovementModifiers
@@ -111,8 +97,8 @@ VALUES  (       'IMPROVEMENT_FARM',             'YIELD_GOLD',           0       
 INSERT INTO ImprovementModifiers
 
         (	ImprovementType,		        ModifierId			                                )
-VALUES  (	'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'         ),
-        (       'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS'                 );
+VALUES  (	'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'         );
+--        (     'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS'                 );
 
 
 
@@ -138,8 +124,8 @@ INSERT INTO Modifiers
 		
         (	ModifierId,			                                ModifierType,			                                SubjectRequirementSetId,                        RunOnce,        Permanent,      OwnerRequirementSetId,  OwnerStackLimit,        SubjectStackLimit        )
 VALUES	(	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',            'REQSET_CSC_PLOT_IS_HILLS',                     0,              0,	        NULL,		        NULL,		        NULL	                 ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'CSC_COLLECTION_OWNER_EFFECT_DISTRICT_ADJACENCY',               'REQSET_CSC_PLOT_HAS_BAKERS_RAW_MATERIALS',     0,              0,              NULL,                   NULL,                   NULL                     ),
-        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'CSC_COLLECTION_OWNER_EFFECT_IMPROVEMENT_ADJACENCY',            NULL,                                           0,              0,              NULL,                   NULL,                   NULL                     );
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'CSC_COLLECTION_OWNER_EFFECT_DISTRICT_ADJACENCY',               'REQSET_CSC_PLOT_HAS_BAKERS_RAW_MATERIALS',     0,              0,              NULL,                   NULL,                   NULL                     );
+--        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'CSC_COLLECTION_OWNER_EFFECT_IMPROVEMENT_ADJACENCY',            NULL,                                           0,              0,              NULL,                   NULL,                   NULL                     );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- ModifierArguments
@@ -147,22 +133,22 @@ VALUES	(	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'MODIFI
 		
 INSERT INTO ModifierArguments
 		
-        (	ModifierId,			                                Name,                           Value		                )
-VALUES  (	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'YieldType',	                'YIELD_PRODUCTION'              ),
-        (	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'Amount',		        '1'		                ),
+        (	ModifierId,			                                Name,                           Value		                                                )
+VALUES  (	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'YieldType',	                'YIELD_PRODUCTION'                                              ),
+        (	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'Amount',		        '1'		                                                ),
 
-        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'ImprovementType',              'IMPROVEMENT_FARM'              ),
-        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'DistrictType',                 'DISTRICT_BAKERS_QUARTER'       ),
-        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'TilesRequired',                '1'                             ),
-        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'YieldType',                    'YIELD_GOLD'                    ),
-        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'Amount',                       '1'                             ),
-        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'Description',                  'LOC_CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS'                   ),
+--        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'ImprovementType',              'IMPROVEMENT_FARM'                                              ),
+--        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'DistrictType',                 'DISTRICT_BAKERS_QUARTER'                                       ),
+--        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'TilesRequired',                '1'                                                             ),
+--        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'YieldType',                    'YIELD_PRODUCTION'                                                    ),
+--        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'Amount',                       '1'                                                             ),
+--        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'Description',                  'LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'             );
 
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'DistrictType',                 'DISTRICT_BAKERS_QUARTER'       ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'TilesRequired',                '1'                             ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'YieldType',                    'YIELD_PRODUCTION'              ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'Amount',                       '1'                             ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'Description',                  'LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'                   );
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'DistrictType',                 'DISTRICT_BAKERS_QUARTER'                                       ),
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'TilesRequired',                '1'                                                             ),
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'YieldType',                    'YIELD_PRODUCTION'                                              ),
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'Amount',                       '1'                                                             ),
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'Description',                  'LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'     );
         
 
 
