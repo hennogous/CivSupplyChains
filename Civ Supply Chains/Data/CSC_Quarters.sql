@@ -1,23 +1,23 @@
 -- CSC_Quarters
--- Author: Shadow
+-- Author:
 -- DateCreated: 4/19/2025 10:54:43
 --------------------------------------------------------------
 
 --===============================================================================================================================================================================--
-/* SECTION 0: TYPES */
+/* SECTION 1: TYPES */
 --===============================================================================================================================================================================--
 
 INSERT INTO Types
 
-        (Type,                                                                  Kind)
-VALUES  ('DISTRICT_BAKERS_QUARTER',                                             'KIND_DISTRICT'         ),
-        ('CSC_COLLECTION_OWNER_EFFECT_DISTRICT_ADJACENCY',                      'KIND_MODIFIER'         ),
-        ('CSC_COLLECTION_OWNER_EFFECT_IMPROVEMENT_ADJACENCY',                   'KIND_MODIFIER'         );
+        (       Type,                                                                           Kind                    )
+VALUES  (       'DISTRICT_BAKERS_QUARTER',                                                      'KIND_DISTRICT'         ),
+        (       'MODIFIER_CSC_COLLECTION_PLAYER_DISTRICTS_ATTACH_MODIFIER',                     'KIND_MODIFIER'         ),
+        (       'MODIFIER_CSC_COLLECTION_PLAYER_CITIES_EFFECT_IMPROVEMENT_ADJACENCY',           'KIND_MODIFIER'         );
 
 
 
 --===============================================================================================================================================================================--
-/* SECTION 1: QUARTERS */
+/* SECTION 2: QUARTERS */
 --===============================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -27,7 +27,7 @@ VALUES  ('DISTRICT_BAKERS_QUARTER',                                             
 INSERT INTO Districts
 
         (       DistrictType,                           Name,                                           Description,                                           PrereqCivic,	                PlunderType,		PlunderAmount,	        AdvisorType,	        Cost,   CostProgressionModel,			        CostProgressionParam1,  OnePerCity,     RequiresPlacement,      RequiresPopulation,     NoAdjacentCity,	        CaptureRemovesBuildings,        CaptureRemovesCityDefenses,	MilitaryDomain,	        Aqueduct,       InternalOnly,   Appeal,         Housing,        Entertainment,  Maintenance,    CitizenSlots,   CityStrengthModifier,   CaptureRemovesDistrict,         MaxPerPlayer	)
-VALUES  (       'DISTRICT_BAKERS_QUARTER',              'LOC_DISTRICT_BAKERS_QUARTER_NAME',             'LOC_DISTRICT_BAKERS_QUARTER_DESCRIPTION',              NULL,               	        'PLUNDER_HEAL', 	'50',	                'ADVISOR_GENERIC',	'1',   'COST_PROGRESSION_GAME_PROGRESS',	        '1000',		        '1',	        '1',		        '0',		        '0',		        '0',			        '0',			        'NO_DOMAIN',	        '0',            '0',            '-1',	        '0',	        '0',            '1',	        '0',	        '2',		        '0',		                '-1'	        );
+VALUES  (       'DISTRICT_BAKERS_QUARTER',              'LOC_DISTRICT_BAKERS_QUARTER_NAME',             'LOC_DISTRICT_BAKERS_QUARTER_DESCRIPTION',              NULL,               	        'PLUNDER_HEAL', 	'50',	                'ADVISOR_GENERIC',	'10',   'COST_PROGRESSION_PREVIOUS_COPIES',	        '10',		        '1',	        '1',		        '0',		        '0',		        '0',			        '0',			        'NO_DOMAIN',	        '0',            '0',            '-1',	        '0',	        '0',            '1',	        '0',	        '2',		        '0',		                '-1'	        );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Adjacency_YieldChanges
@@ -68,11 +68,26 @@ INSERT INTO DistrictModifiers
 
         (	DistrictType,		                ModifierId			                        )
 VALUES  (	'DISTRICT_BAKERS_QUARTER',              'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS'	                );
---        (       'DISTRICT_BAKERS_QUARTER',              'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS'         );
+
+
+
+--===============================================================================================================================================================================--
+/* SECTION 3: TRAITS */
+--===============================================================================================================================================================================--
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- TraitModifiers
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+
+INSERT INTO TraitModifiers
+
+        (	TraitType,		                ModifierId			                        )
+VALUES  (	'TRAIT_LEADER_MAJOR_CIV',               'CSC_BAKERS_QUARTER_RAW_MATERIALS_CHECK'                );
+
 
 
 --===========================================================================================================================================================================--
-/* SECTION 2: IMPROVEMENTS */
+/* SECTION 4: IMPROVEMENTS */
 --===========================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -84,26 +99,10 @@ INSERT OR IGNORE INTO Improvement_YieldChanges
         (       ImprovementType,                YieldType,              YieldChange     )
 VALUES  (       'IMPROVEMENT_FARM',             'YIELD_GOLD',           0               );  
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- Improvement_Adjacencies
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- ImprovementModifiers
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
-
-INSERT INTO ImprovementModifiers
-
-        (	ImprovementType,		        ModifierId			                                )
-VALUES  (	'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'         );
---        (     'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS'                 );
-
 
 
 --===========================================================================================================================================================================--
-/* SECTION 3: MODIFIERS */
+/* SECTION 5: MODIFIERS */
 --===========================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -112,9 +111,9 @@ VALUES  (	'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_PRODUCTION
 
 INSERT INTO DynamicModifiers 
 
-        (       ModifierType,                                                           CollectionType,                 EffectType	                                )
-VALUES  (       'CSC_COLLECTION_OWNER_EFFECT_DISTRICT_ADJACENCY',                       'COLLECTION_OWNER',             'EFFECT_DISTRICT_ADJACENCY'                     ),
-        (       'CSC_COLLECTION_OWNER_EFFECT_IMPROVEMENT_ADJACENCY',                    'COLLECTION_OWNER',             'EFFECT_IMPROVEMENT_ADJACENCY'                  );
+        (       ModifierType,                                                           CollectionType,                         EffectType	                                )
+VALUES  (       'MODIFIER_CSC_COLLECTION_PLAYER_DISTRICTS_ATTACH_MODIFIER',             'COLLECTION_PLAYER_DISTRICTS',          'EFFECT_ATTACH_MODIFIER'                        ),
+        (       'MODIFIER_CSC_COLLECTION_PLAYER_CITIES_EFFECT_IMPROVEMENT_ADJACENCY',   'COLLECTION_PLAYER_CITIES',             'EFFECT_IMPROVEMENT_ADJACENCY'                  );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Modifiers
@@ -122,10 +121,10 @@ VALUES  (       'CSC_COLLECTION_OWNER_EFFECT_DISTRICT_ADJACENCY',               
 
 INSERT INTO Modifiers 
 		
-        (	ModifierId,			                                ModifierType,			                                SubjectRequirementSetId,                        RunOnce,        Permanent,      OwnerRequirementSetId,  OwnerStackLimit,        SubjectStackLimit        )
-VALUES	(	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',            'REQSET_CSC_PLOT_IS_HILLS',                     0,              0,	        NULL,		        NULL,		        NULL	                 ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'CSC_COLLECTION_OWNER_EFFECT_DISTRICT_ADJACENCY',               'REQSET_CSC_PLOT_HAS_BAKERS_RAW_MATERIALS',     0,              0,              NULL,                   NULL,                   NULL                     );
---        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'CSC_COLLECTION_OWNER_EFFECT_IMPROVEMENT_ADJACENCY',            NULL,                                           0,              0,              NULL,                   NULL,                   NULL                     );
+        (	ModifierId,			                                ModifierType,			                                        SubjectRequirementSetId,                        OwnerRequirementSetId,  RunOnce,        Permanent,      OwnerStackLimit,        SubjectStackLimit       )
+VALUES	(	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',                    'REQSET_CSC_PLOT_IS_HILLS',                     NULL,                   0,              0,	        NULL,		        NULL	                ),
+        (       'CSC_BAKERS_QUARTER_RAW_MATERIALS_CHECK',                       'MODIFIER_CSC_COLLECTION_PLAYER_DISTRICTS_ATTACH_MODIFIER',             'REQSET_CSC_PLOT_HAS_BAKERS_RAW_MATERIALS',     NULL,                   0,              0,              NULL,                   NULL                    ),       
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',    'MODIFIER_CSC_COLLECTION_PLAYER_CITIES_EFFECT_IMPROVEMENT_ADJACENCY',   NULL,                                           NULL,                   0,              0,              NULL,                   NULL                    );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- ModifierArguments
@@ -133,27 +132,23 @@ VALUES	(	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'MODIFI
 		
 INSERT INTO ModifierArguments
 		
-        (	ModifierId,			                                Name,                           Value		                                                )
-VALUES  (	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'YieldType',	                'YIELD_PRODUCTION'                                              ),
-        (	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'Amount',		        '1'		                                                ),
+        (	ModifierId,			                                        Name,                           Value		                                                )
+VALUES  (	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                                'YieldType',	                'YIELD_PRODUCTION'                                              ),
+        (	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                                'Amount',		        '1'		                                                ),
 
---        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'ImprovementType',              'IMPROVEMENT_FARM'                                              ),
---        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'DistrictType',                 'DISTRICT_BAKERS_QUARTER'                                       ),
---        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'TilesRequired',                '1'                                                             ),
---        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'YieldType',                    'YIELD_PRODUCTION'                                                    ),
---        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'Amount',                       '1'                                                             ),
---        (       'CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS',                'Description',                  'LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'             );
+        (       'CSC_BAKERS_QUARTER_RAW_MATERIALS_CHECK',                               'ModifierId',                   'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS'     ),
 
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'DistrictType',                 'DISTRICT_BAKERS_QUARTER'                                       ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'TilesRequired',                '1'                                                             ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'YieldType',                    'YIELD_PRODUCTION'                                              ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'Amount',                       '1'                                                             ),
-        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS',        'Description',                  'LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'     );
-        
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',            'ImprovementType',              'IMPROVEMENT_FARM'                                              ),
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',            'DistrictType',                 'DISTRICT_BAKERS_QUARTER'                                       ),
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',            'TilesRequired',                '1'                                                             ),
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',            'YieldType',                    'YIELD_PRODUCTION'                                              ),
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',            'Amount',                       '1'                                                             ),
+        (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',            'Description',                  'LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'     );
+       
 
 
 --===========================================================================================================================================================================--
-/* SECTION 4: REQUIREMENTS */
+/* SECTION 6: REQUIREMENTS */
 --===========================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -164,6 +159,7 @@ INSERT INTO Requirements
         
         (	RequirementId,		                RequirementType,	                        Inverse         )
 VALUES  (	'REQ_CSC_PLOT_IS_HILLS',                'REQUIREMENT_PLOT_IS_HILLS',                    0	        ),
+
         (       'REQ_CSC_PLOT_HAS_WHEAT',               'REQUIREMENT_PLOT_RESOURCE_TYPE_MATCHES',       0               ),
         (       'REQ_CSC_PLOT_HAS_RICE',                'REQUIREMENT_PLOT_RESOURCE_TYPE_MATCHES',       0               ),
         (       'REQ_CSC_PLOT_HAS_MAIZE',               'REQUIREMENT_PLOT_RESOURCE_TYPE_MATCHES',       0               ),
@@ -199,6 +195,7 @@ INSERT INTO RequirementSetRequirements
 		
         (	RequirementSetId,		                        RequirementId	                                )
 VALUES  (	'REQSET_CSC_PLOT_IS_HILLS',                             'REQ_CSC_PLOT_IS_HILLS'			        ),
+
         (       'REQSET_CSC_PLOT_HAS_BAKERS_RAW_MATERIALS',             'REQ_CSC_PLOT_HAS_WHEAT'                        ),
         (       'REQSET_CSC_PLOT_HAS_BAKERS_RAW_MATERIALS',             'REQ_CSC_PLOT_HAS_RICE'                         ),
         (       'REQSET_CSC_PLOT_HAS_BAKERS_RAW_MATERIALS',             'REQ_CSC_PLOT_HAS_MAIZE'                        ),
