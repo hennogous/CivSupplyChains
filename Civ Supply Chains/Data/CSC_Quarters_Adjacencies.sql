@@ -137,7 +137,6 @@ VALUES	(	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                        'MODIFI
         (       'CSC_BAKERS_QUARTER_RAW_MATERIALS_CHECK',                       'MODIFIER_CSC_COLLECTION_PLAYER_DISTRICTS_ATTACH_MODIFIER',             'REQSET_CSC_PLOT_HAS_BAKERS_RAW_MATERIALS',             NULL,                                           0,              0,              NULL,                   NULL                    ),       
         (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',    'MODIFIER_CSC_COLLECTION_PLAYER_CITIES_EFFECT_IMPROVEMENT_ADJACENCY',   NULL,                                                   NULL,                                           0,              0,              NULL,                   NULL                    ),
 
-        (       'CSC_BAKERS_QUARTER_IMPROVEMENT_MODIFIER_M1',                   'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',                              'REQSET_CSC_RAW_MATERIALS_ADJACENT_TO_BAKERS_QUARTER',  NULL,                                           0,              0,              NULL,                   NULL                    ),
         (       'CSC_BAKERS_QUARTER_IMPROVEMENT_MODIFIER_M2',                   'MODIFIER_CSC_COLLECTION_PLAYER_DISTRICTS_ATTACH_MODIFIER',             'REQSET_CSC_ADJACENT_BAKERS_QUARTER',                   'REQSET_CSC_PLOT_HAS_BAKERS_RAW_MATERIALS',     0,              0,              NULL,                   NULL                    ),
         (       'CSC_BAKERS_QUARTER_IMPROVEMENT_MODIFIER_M3',                   'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',                    NULL,                                                   NULL,                                           0,              0,              NULL,                   NULL                    );
 
@@ -159,9 +158,6 @@ VALUES  (	'CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                              
         (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',            'YieldType',                    'YIELD_PRODUCTION'                                              ),
         (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',            'Amount',                       1                                                               ),
         (       'CSC_BAKERS_QUARTER_PRODUCTION_FROM_ADJACENT_RAW_MATERIALS',            'Description',                  'LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS'     ),
-
-        (       'CSC_BAKERS_QUARTER_IMPROVEMENT_MODIFIER_M1',                           'YieldType',                    'YIELD_GOLD'                                                    ),
-        (       'CSC_BAKERS_QUARTER_IMPROVEMENT_MODIFIER_M1',                           'Amount',                       1                                                               ),       
 
         (       'CSC_BAKERS_QUARTER_IMPROVEMENT_MODIFIER_M2',                           'ModifierId',                   'CSC_BAKERS_QUARTER_IMPROVEMENT_MODIFIER_M3'                    ),
         

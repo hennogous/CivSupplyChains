@@ -6,28 +6,34 @@
 -- Tags
 --------------------------------------------------------------
 INSERT OR IGNORE INTO Tags
-		(Tag,								    Vocabulary)
-VALUES	('CLASS_CSC_BAKERS_RAW',	            'RESOURCE_CLASS');
+
+		(	Tag,								    Vocabulary			)
+VALUES	(	'CLASS_CSC_BAKERS_RAW',	            	'RESOURCE_CLASS'	);
 --------------------------------------------------------------
 
 -- TypeTags
 --------------------------------------------------------------
 INSERT OR IGNORE INTO TypeTags
-		(Type,			Tag)
-SELECT	ResourceType,	'CLASS_CSC_BAKERS_RAW'
-FROM	Resources
-WHERE	ResourceType IN
-		('RESOURCE_BANANAS', 'RESOURCE_MAIZE', 'RESOURCE_RICE', 'RESOURCE_WHEAT');
+
+		(	Type,				Tag							)
+SELECT		ResourceType,		'CLASS_CSC_BAKERS_RAW'
+FROM		Resources
+WHERE		ResourceType IN
+		(	'RESOURCE_BANANAS',
+			'RESOURCE_MAIZE',
+			'RESOURCE_RICE',
+			'RESOURCE_WHEAT'
+		);
 --------------------------------------------------------------
 
--- Requirements
+Requirements
 --------------------------------------------------------------
 INSERT OR IGNORE INTO Requirements
 		(RequirementId,								                RequirementType)
-VALUES	('REQ_CSC_PLOT_HAS_ADJACENT_BAKERS_RAW_RESOURCE',		    'REQUIREMENT_PLOT_ADJACENT_RESOURCE_CLASS_TYPE_MATCHES');
+VALUES	('REQ_CSC_PLOT_HAS_ADJACENT_BAKERS_RAW_RESOURCE',		    'REQUIREMENT_PLOT_RESOURCE_TAG_MATCHES');
 --------------------------------------------------------------
 
--- RequirementArguments
+RequirementArguments
 --------------------------------------------------------------
 INSERT OR IGNORE INTO RequirementArguments
 		(RequirementId,								                Name,				Value)

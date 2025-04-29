@@ -2,3 +2,64 @@
 -- Author: Henno
 -- DateCreated: 4/19/2025 10:53:23
 --------------------------------------------------------------
+
+--=============================
+-- Types
+--=============================
+INSERT INTO Types
+		(Type,							Kind)
+VALUES	('BUILDING_CSC_GRISTMILL',		'KIND_BUILDING');
+
+--=============================
+-- Buildings
+--=============================
+
+INSERT INTO Buildings
+		(BuildingType,
+		Name,
+		Description,
+		PrereqTech,
+		Cost,
+		PrereqDistrict,
+		PurchaseYield,
+		AdvisorType)
+VALUES	(
+		/*BuildingType,*/		'BUILDING_CSC_GRISTMILL',
+		/*Name,*/				'LOC_CSC_BAKERS_QUARTER_GRISTMILL_NAME',
+		/*Description,*/		'LOC_CSC_BAKERS_QUARTER_GRISTMILL_DESCRIPTION',
+		/*PrereqTech,*/			NULL,
+		/*Cost,*/				10,
+		/*PrereqDistrict,*/		'DISTRICT_CSC_BAKERS_QUARTER',
+		/*PurchaseYield,*/		'YIELD_GOLD',
+		/*AdvisorType*/			'ADVISOR_GENERIC'
+		);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- BuildingModifiers
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+
+INSERT INTO BuildingModifiers
+
+        (	BuildingType,		            ModifierId			                                )
+VALUES  (	'BUILDING_CSC_GRISTMILL',       'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS'      );
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Modifiers
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+
+INSERT INTO Modifiers
+
+		(   ModifierId,										    ModifierType,										OwnerRequirementSetId,				SubjectRequirementSetId                                 )
+VALUES	(   'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				NULL,								'REQSET_CSC_ADJACENT_BAKERS_QUARTER_RAW_MATERIALS'      );
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- ModifierArguments
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+INSERT INTO ModifierArguments
+		
+        (	ModifierId,			                                        Name,                       Value		                )
+VALUES  (	'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',             'YieldType',	            'YIELD_GOLD'                ),
+        (	'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',             'Amount',		            1		                    );
+
+

@@ -3,11 +3,11 @@
 
 		<!-- BAKERS' QUARTER -->
 
-		<Replace Tag="LOC_DISTRICT_BAKERS_QUARTER_NAME" Language="en_US">
+		<Replace Tag="LOC_DISTRICT_CSC_BAKERS_QUARTER_NAME" Language="en_US">
 			<Text>Bakers' Quarter</Text>
 		</Replace>
 
-        <Replace Tag="LOC_DISTRICT_BAKERS_QUARTER_DESCRIPTION" Language="en_US">
+        <Replace Tag="LOC_DISTRICT_CSC_BAKERS_QUARTER_DESCRIPTION" Language="en_US">
 			<Text>A district for the Baking industry. +1 [ICON_Production] Production from each adjacent raw materials improvement in its supply chain, and +1 [ICON_Production] if built on Hills.</Text>
 		</Replace>
 
@@ -30,6 +30,16 @@
 		<Replace Tag="LOC_CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS" Language="en_US">
 			<Text>+{1_num} [ICON_Gold] Gold from an adjacent Bakers' Quarter.</Text>
 		</Replace>
+
+		<Replace Tag="LOC_CSC_BAKERS_QUARTER_GRISTMILL_NAME" Language="en_US">
+			<Text>Gristmill</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_BAKERS_QUARTER_GRISTMILL_DESCRIPTION" Language="en_US">
+			<Text>+1 [ICON_Gold] to adjacent raw materials improvements.</Text>
+		</Replace>
+
+		
 
 	</LocalizedText>
 </GameData>

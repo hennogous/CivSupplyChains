@@ -18,7 +18,7 @@
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
     <AssemblyName>Civ Supply Chains</AssemblyName>
     <RootNamespace>Civ Supply Chains</RootNamespace>
-    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="CSC_Quarters"><File>Data/CSC_Quarters_Modifiers.sql</File></UpdateDatabase><UpdateText id="CSC_LocalizedText"><File>Text/CSC_LocalizedText.xml</File></UpdateText></InGameActions>]]></InGameActionData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="CSC_Quarters"><File>Data/CSC_Quarters_Modifiers.sql</File><File>Data/CSC_Buildings.sql</File></UpdateDatabase><UpdateText id="CSC_LocalizedText"><File>Text/CSC_LocalizedText.xml</File></UpdateText></InGameActions>]]></InGameActionData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
