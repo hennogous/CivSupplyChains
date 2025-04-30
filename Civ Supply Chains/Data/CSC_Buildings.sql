@@ -3,16 +3,19 @@
 -- DateCreated: 4/19/2025 10:53:23
 --------------------------------------------------------------
 
---=============================
--- Types
---=============================
-INSERT INTO Types
-		(Type,							Kind)
-VALUES	('BUILDING_CSC_GRISTMILL',		'KIND_BUILDING');
+--===========================================================================================================================================================================--
+/* TYPES */
+--===========================================================================================================================================================================--
 
---=============================
--- Buildings
---=============================
+INSERT INTO Types
+		(		Type,							Kind)
+VALUES	(		'BUILDING_CSC_GRISTMILL',		'KIND_BUILDING');
+
+
+
+--===========================================================================================================================================================================--
+/* BUILDINGS */
+--===========================================================================================================================================================================--
 
 INSERT INTO Buildings
 		(BuildingType,
@@ -40,8 +43,14 @@ VALUES	(
 
 INSERT INTO BuildingModifiers
 
-        (	BuildingType,		            ModifierId			                                )
-VALUES  (	'BUILDING_CSC_GRISTMILL',       'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS'      );
+        (		BuildingType,		            ModifierId			                                )
+VALUES  (		'BUILDING_CSC_GRISTMILL',       'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS'      );
+
+
+
+--===========================================================================================================================================================================--
+/* MODIFIERS */
+--===========================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Modifiers
@@ -49,8 +58,8 @@ VALUES  (	'BUILDING_CSC_GRISTMILL',       'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MA
 
 INSERT INTO Modifiers
 
-		(   ModifierId,										    ModifierType,										OwnerRequirementSetId,				SubjectRequirementSetId                                 )
-VALUES	(   'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				NULL,								'REQSET_CSC_ADJACENT_BAKERS_QUARTER_RAW_MATERIALS'      );
+		(		ModifierId,										    ModifierType,										OwnerRequirementSetId,				SubjectRequirementSetId                                 )
+VALUES	(		'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',				NULL,								'REQSET_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_ADJACENT'      );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- ModifierArguments
@@ -58,8 +67,8 @@ VALUES	(   'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',		'MODIFIER_PLAYER_ADJ
 		
 INSERT INTO ModifierArguments
 		
-        (	ModifierId,			                                        Name,                       Value		                )
-VALUES  (	'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',             'YieldType',	            'YIELD_GOLD'                ),
-        (	'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',             'Amount',		            1		                    );
+        (		ModifierId,			                                        Name,                       Value		                )
+VALUES  (		'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',             'YieldType',	            'YIELD_GOLD'                ),
+        (		'CSC_GRISTMILL_GOLD_TO_ADJACENT_RAW_MATERIALS',             'Amount',		            1		                    );
 
 
