@@ -11,8 +11,7 @@ INSERT INTO Types
 
         (       Type,                                                           Kind                    )
 VALUES  (       'DISTRICT_CSC_BAKERS_QUARTER',                                  'KIND_DISTRICT'         ),
-        (       'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',                'KIND_MODIFIER'         ),
-        (       'MODIFIER_CSC_CITY_PLOT_YIELDS_ATTACH_MODIFIER',                'KIND_MODIFIER'         );
+        (       'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',                'KIND_MODIFIER'         );
 
 
 
@@ -226,8 +225,7 @@ VALUES  (	'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_DISTRICT_A
 INSERT INTO DynamicModifiers 
 
         (       ModifierType,                                                   CollectionType,                         EffectType	                        )
-VALUES  (       'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',                'COLLECTION_PLAYER_DISTRICTS',          'EFFECT_ATTACH_MODIFIER'                ),
-        (       'MODIFIER_CSC_CITY_PLOT_YIELDS_ATTACH_MODIFIER',                'COLLECTION_CITY_PLOT_YIELDS',          'EFFECT_ATTACH_MODIFIER'                );
+VALUES  (       'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',                'COLLECTION_PLAYER_DISTRICTS',          'EFFECT_ATTACH_MODIFIER'                );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Modifiers
