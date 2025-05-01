@@ -31,11 +31,11 @@
 			<Text>+{1_num} [ICON_Gold] Gold from an adjacent Bakers' Quarter.</Text>
 		</Replace>
 
-		<Replace Tag="LOC_CSC_BAKERS_QUARTER_GRISTMILL_NAME" Language="en_US">
-			<Text>Gristmill</Text>
+		<Replace Tag="LOC_CSC_BAKERS_QUARTER_FLOUR_MILL_NAME" Language="en_US">
+			<Text>Flour Mill</Text>
 		</Replace>
 
-		<Replace Tag="LOC_CSC_BAKERS_QUARTER_GRISTMILL_DESCRIPTION" Language="en_US">
+		<Replace Tag="LOC_CSC_BAKERS_QUARTER_FLOUR_MILL_DESCRIPTION" Language="en_US">
 			<Text>+1 [ICON_Gold] to adjacent raw materials improvements.</Text>
 		</Replace>
 

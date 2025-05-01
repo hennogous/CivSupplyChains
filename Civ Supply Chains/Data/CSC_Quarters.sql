@@ -29,6 +29,7 @@ INSERT INTO Districts
 		Name,
 		Description,
 		PrereqTech,
+		PrereqCivic,
 		Cost,
 		CostProgressionModel,
 		CostProgressionParam1,
@@ -53,9 +54,10 @@ VALUES	(
 		/* Name, */									'LOC_DISTRICT_CSC_BAKERS_QUARTER_NAME',
 		/* Description, */							'LOC_DISTRICT_CSC_BAKERS_QUARTER_DESCRIPTION',
 		/* PrereqTech, */							NULL,
-		/* Cost, */									10,
-		/* CostProgressionModel, */    				'COST_PROGRESSION_GAME_PROGRESS',
-		/* CostProgressionParam1, */				1000,
+		/* PrereqCivic, */							'CIVIC_CRAFTSMANSHIP',
+		/* Cost, */									60,
+		/* CostProgressionModel, */    				'COST_PROGRESSION_PREVIOUS_COPIES',
+		/* CostProgressionParam1, */				100,
 		/* MilitaryDomain, */						'NO_DOMAIN',
 		/* RequiresPlacement, */					1,
 		/* Coast, */								0,
@@ -105,6 +107,15 @@ INSERT INTO District_CitizenYieldChanges
 VALUES  (	'DISTRICT_CSC_BAKERS_QUARTER',          'YIELD_FOOD',	        '2'		        	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- District_TradeRouteYields
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------									
+
+INSERT INTO District_TradeRouteYields
+		
+		(	DistrictType,					YieldType,			YieldChangeAsOrigin,	YieldChangeAsDomesticDestination,	YieldChangeAsInternationalDestination	)
+VALUES	(	'DISTRICT_CSC_BAKERS_QUARTER',	'YIELD_FOOD',		0,						2,									2										);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- DistrictModifiers
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
 
@@ -138,9 +149,9 @@ VALUES  (	'IMPROVEMENT_FARM',             		'YIELD_GOLD',           0           
 
 INSERT INTO ImprovementModifiers
 
-        (	ImprovementType,		        		ModifierId			                        			)
-VALUES  (	'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_IMPROVEMENT_ATTACH_QUARTER'                    ),
-        (	'IMPROVEMENT_PLANTATION',               'CSC_BAKERS_QUARTER_IMPROVEMENT_ATTACH_QUARTER'                    );
+        (	ImprovementType,		        		ModifierId			                        						)
+VALUES  (	'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_IMPROVEMENT_ATTACH_QUARTER'                    	),
+        (	'IMPROVEMENT_PLANTATION',               'CSC_BAKERS_QUARTER_IMPROVEMENT_ATTACH_QUARTER'                    	);
 
 
 
