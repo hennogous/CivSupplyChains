@@ -13,7 +13,7 @@
 
 INSERT INTO Tags
 
-	(	Tag,					Vocabulary		)
+	(       Tag,					Vocabulary		)
 VALUES	(	'CLASS_CSC_BAKERS_RAW',	            	'RESOURCE_CLASS'	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -60,8 +60,8 @@ VALUES  (       'REQSET_CSC_PLOT_HAS_BAKERS_RAW',                               
         (	'REQSET_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED',                      'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW'                   ),
         (       'REQSET_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED',                      'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT'                      ),
 
-        (       'REQSET_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_ADJACENT',             'REQ_CSC_PLOT_ADJACENT_TO_OWNER'                        ),
-        (       'REQSET_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_ADJACENT',             'REQ_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_SET'              );
+        (       'REQSET_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_ADJACENT',             'REQ_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_SET'              ),
+        (       'REQSET_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_ADJACENT',             'REQ_CSC_PLOT_ADJACENT_TO_OWNER'                        );
   
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Requirements
@@ -73,8 +73,9 @@ INSERT INTO Requirements
 VALUES  (	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',			'REQUIREMENT_PLOT_RESOURCE_TAG_MATCHES',		0		),
         (	'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT',            		'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT',           	0               ),
         
-        (       'REQ_CSC_PLOT_ADJACENT_TO_OWNER',                       'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',                   0               ),
-        (       'REQ_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_SET',             'REQUIREMENT_REQUIREMENTSET_IS_MET',                    0               );        
+        (       'REQ_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_SET',             'REQUIREMENT_REQUIREMENTSET_IS_MET',                    0               ),
+        (       'REQ_CSC_PLOT_ADJACENT_TO_OWNER',                       'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',                   0               );
+        
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- RequirementArguments
