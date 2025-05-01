@@ -38,9 +38,6 @@
     <Content Include="Data\CSC_Buildings.sql">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Data\CSC_Quarters_Adjacencies.sql">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Data\CSC_Quarters.sql">
       <SubType>Content</SubType>
     </Content>
