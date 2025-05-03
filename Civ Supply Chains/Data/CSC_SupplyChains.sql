@@ -73,9 +73,7 @@ INSERT INTO Requirements
 VALUES  (	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',			'REQUIREMENT_PLOT_RESOURCE_TAG_MATCHES',		0		),
         (	'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT',            		'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT',           	0               ),
         
-        (       'REQ_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_SET',             'REQUIREMENT_REQUIREMENTSET_IS_MET',                    0               ),
-        (       'REQ_CSC_PLOT_ADJACENT_TO_OWNER',                       'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',                   0               );
-        
+        (       'REQ_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_SET',             'REQUIREMENT_REQUIREMENTSET_IS_MET',                    0               );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- RequirementArguments

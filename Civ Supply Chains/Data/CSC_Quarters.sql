@@ -11,12 +11,13 @@ INSERT INTO Types
 
         ( 	Type,                                                           Kind                    )
 VALUES  ( 	'DISTRICT_CSC_BAKERS_QUARTER',                                  'KIND_DISTRICT'         ),
+
         ( 	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',                'KIND_MODIFIER'         );
 
 
 
 --===============================================================================================================================================================================--
-/* QUARTERS */
+/* DISTRICTS / QUARTERS */
 --===============================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -25,56 +26,56 @@ VALUES  ( 	'DISTRICT_CSC_BAKERS_QUARTER',                                  'KIND
 
 INSERT INTO Districts
 
-	(  	DistrictType,
-		Name,
-		Description,
-		PrereqTech,
-		PrereqCivic,
-		Cost,
-		CostProgressionModel,
-		CostProgressionParam1,
-		MilitaryDomain,
-		RequiresPlacement,
-		Coast,
-		RequiresPopulation,
-		Aqueduct,
-		InternalOnly,
-		NoAdjacentCity,
-		PlunderType,
-		PlunderAmount,
-		Appeal,
-		OnePerCity,
-		CaptureRemovesBuildings,
-		CaptureRemovesCityDefenses,
-		Maintenance,
-		CityStrengthModifier,
-		AdvisorType                     	)
+		(  	DistrictType,
+			Name,
+			Description,
+			PrereqTech,
+			PrereqCivic,
+			Cost,
+			CostProgressionModel,
+			CostProgressionParam1,
+			MilitaryDomain,
+			RequiresPlacement,
+			Coast,
+			RequiresPopulation,
+			Aqueduct,
+			InternalOnly,
+			NoAdjacentCity,
+			PlunderType,
+			PlunderAmount,
+			Appeal,
+			OnePerCity,
+			CaptureRemovesBuildings,
+			CaptureRemovesCityDefenses,
+			Maintenance,
+			CityStrengthModifier,
+			AdvisorType                     		)
 VALUES	(
-		/* DistrictType, */							'DISTRICT_CSC_BAKERS_QUARTER',
-		/* Name, */									'LOC_DISTRICT_CSC_BAKERS_QUARTER_NAME',
-		/* Description, */							'LOC_DISTRICT_CSC_BAKERS_QUARTER_DESCRIPTION',
-		/* PrereqTech, */							NULL,
-		/* PrereqCivic, */							'CIVIC_CRAFTSMANSHIP',
-		/* Cost, */									60,
-		/* CostProgressionModel, */    				'COST_PROGRESSION_PREVIOUS_COPIES',
-		/* CostProgressionParam1, */				100,
-		/* MilitaryDomain, */						'NO_DOMAIN',
-		/* RequiresPlacement, */					1,
-		/* Coast, */								0,
-		/* RequiresPopulation, */	    			0,
-		/* Aqueduct, */								0,
-		/* InternalOnly, */							0,
-		/* NoAdjacentCity, */						0,
-		/* PlunderType, */							'PLUNDER_HEAL',
-		/* PlunderAmount, */						50,
-		/* Appeal, */								1,
-		/* OnePerCity, */							1,
-		/* CaptureRemovesBuildings, */	   			0,
-		/* CaptureRemovesCityDefenses, */			0,
-		/* Maintenance, */							0,
-		/* CityStrengthModifier */					2,
-		/* AdvisorType */							'ADVISOR_GENERIC'
-		);
+		/*  DistrictType, */						'DISTRICT_CSC_BAKERS_QUARTER',
+		/*  Name, */								'LOC_DISTRICT_CSC_BAKERS_QUARTER_NAME',
+		/*  Description, */							'LOC_DISTRICT_CSC_BAKERS_QUARTER_DESCRIPTION',
+		/*  PrereqTech, */							NULL,
+		/*  PrereqCivic, */							'CIVIC_CRAFTSMANSHIP',
+		/*  Cost, */								60,
+		/*  CostProgressionModel, */    			'COST_PROGRESSION_PREVIOUS_COPIES',
+		/*  CostProgressionParam1, */				100,
+		/*  MilitaryDomain, */						'NO_DOMAIN',
+		/*  RequiresPlacement, */					1,
+		/*  Coast, */								0,
+		/*  RequiresPopulation, */	    			0,
+		/*  Aqueduct, */							0,
+		/*  InternalOnly, */						0,
+		/*  NoAdjacentCity, */						0,
+		/*  PlunderType, */							'PLUNDER_HEAL',
+		/*  PlunderAmount, */						50,
+		/*  Appeal, */								1,
+		/*  OnePerCity, */							1,
+		/*  CaptureRemovesBuildings, */	   			0,
+		/*  CaptureRemovesCityDefenses, */			0,
+		/*  Maintenance, */							0,
+		/*  CityStrengthModifier */					2,
+		/*  AdvisorType */							'ADVISOR_GENERIC'
+													);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Tags
@@ -95,16 +96,7 @@ INSERT OR IGNORE INTO TypeTags
 SELECT		DistrictType,							'CLASS_CSC_QUARTERS'
 FROM	  	Districts
 WHERE		DistrictType IN
-		(	'DISTRICT_CSC_BAKERS_QUARTER'                         	);
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- District_CitizenYieldChanges
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------									
-
-INSERT INTO District_CitizenYieldChanges
-
-        (	DistrictType,      		        		YieldType,       		YieldChange	        )
-VALUES  (	'DISTRICT_CSC_BAKERS_QUARTER',          'YIELD_FOOD',	        '2'		        	);
+		(	'DISTRICT_CSC_BAKERS_QUARTER'                         			);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- District_TradeRouteYields
@@ -156,6 +148,21 @@ VALUES  (	'IMPROVEMENT_FARM',                     'CSC_BAKERS_QUARTER_IMPROVEMEN
 
 
 --===========================================================================================================================================================================--
+/* TRAITS */
+--===========================================================================================================================================================================--
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- TraitModifiers
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+--INSERT INTO TraitModifiers
+
+--        (	TraitType,		               		ModifierId			                        			)
+--VALUES  (	'TRAIT_LEADER_MAJOR_CIV',			'CSC_QUARTER_CONSTRUCTION_BOOST_ATTACH'					);
+
+
+
+--===========================================================================================================================================================================--
 /* MODIFIERS */
 --===========================================================================================================================================================================--
 
@@ -167,6 +174,15 @@ INSERT INTO DynamicModifiers
 
         ( 	ModifierType,                                                   CollectionType,                         EffectType	                        	)
 VALUES  ( 	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',                'COLLECTION_PLAYER_DISTRICTS',          'EFFECT_ATTACH_MODIFIER'                );
+
+---
+
+--CITIES - EFFECT_ADJUST_ALL_DISTRICT_PRODUCTION_MODIFIER (Amount)
+--CITIES - EFFECT_ADJUST_ALL_DISTRICTS_PRODUCTION (Amount)
+--CITIES - EFFECT_ADJUST_CITY_PRODUCTION_DISTRICT (Amount)
+--CITIES - EFFECT_GRANT_PRODUCTION_IN_CITY (Amount, KeepOverflow)
+--DISTRICTS - EFFECT_ADJUST_DISTRICT_PRODUCTION (Amount, DistrictType)
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Modifiers
@@ -244,11 +260,11 @@ VALUES  (	'REQSET_CSC_PLOT_IS_HILLS',                    	'REQ_CSC_PLOT_IS_HILLS
 INSERT INTO Requirements
         
         (	RequirementId,		                          	RequirementType,	                                Inverse         )
-VALUES  (	'REQ_CSC_PLOT_IS_HILLS',                       	'REQUIREMENT_PLOT_IS_HILLS',                      	0	        	),
-        (   'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER',          	'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',          	0               ),
+VALUES	(	'REQ_CSC_PLOT_ADJACENT_TO_OWNER',               'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',              	0               ),
+		(  	'REQ_CSC_DISTRICT_IS_ANY_QUARTER',            	'REQUIREMENT_PLOT_DISTRICT_TAG_MATCHES',          	0               ),
 
-		(  	'REQ_CSC_DISTRICT_IS_ANY_QUARTER',            	'REQUIREMENT_PLOT_DISTRICT_TAG_MATCHES',          	0               );
-
+		(	'REQ_CSC_PLOT_IS_HILLS',                       	'REQUIREMENT_PLOT_IS_HILLS',                      	0	        	),
+        (   'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER',          	'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',          	0               );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- RequirementArguments
