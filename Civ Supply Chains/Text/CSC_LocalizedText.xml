@@ -11,35 +11,22 @@
 			<Text>A district for the Baking industry. +1 [ICON_Production] Production from each adjacent raw materials improvement in its supply chain, and +1 [ICON_Production] if built on Hills.</Text>
 		</Replace>
 
-		<Replace Tag="LOC_CSC_QUARTER_CITY_CENTER_GOLD_DESCRIPTION" Language="en_US">
-			<Text>+{1_num} [ICON_Gold] Gold from an adjacent City Center tile.</Text>
-		</Replace>
-
-		<Replace Tag="LOC_CSC_QUARTER_COMMERCIAL_HUB_GOLD_DESCRIPTION" Language="en_US">
-			<Text>+{1_num} [ICON_Gold] Gold from adjacent Commercial Hub tiles.</Text>
-		</Replace>
-
-		<Replace Tag="LOC_CSC_QUARTER_HARBOR_GOLD_DESCRIPTION" Language="en_US">
-			<Text>+{1_num} [ICON_Gold] Gold from adjacent Harbor tiles.</Text>
-		</Replace>
-
-		<Replace Tag="LOC_CSC_BAKERS_QUARTER_PRODUCTION_FROM_ALL_ADJACENT_FARMS" Language="en_US">
-			<Text>+{1_num} [ICON_Production] Production from adjacent raw materials improvements.</Text>
-		</Replace>
-
-		<Replace Tag="LOC_CSC_BAKERS_QUARTER_GOLD_TO_ALL_ADJACENT_FARMS" Language="en_US">
-			<Text>+{1_num} [ICON_Gold] Gold from an adjacent Bakers' Quarter.</Text>
-		</Replace>
-
-		<Replace Tag="LOC_CSC_BAKERS_QUARTER_FLOUR_MILL_NAME" Language="en_US">
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_NAME" Language="en_US">
 			<Text>Flour Mill</Text>
 		</Replace>
 
-		<Replace Tag="LOC_CSC_BAKERS_QUARTER_FLOUR_MILL_DESCRIPTION" Language="en_US">
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_DESCRIPTION" Language="en_US">
 			<Text>+1 [ICON_Gold] to adjacent raw materials improvements.</Text>
 		</Replace>
 
-		
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_BAKERY_NAME" Language="en_US">
+			<Text>Bakery</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_BAKERY_DESCRIPTION" Language="en_US">
+			<Text>Just smell that freshly baked bread!
+			</Text>
+		</Replace>
 
 	</LocalizedText>
 </GameData>

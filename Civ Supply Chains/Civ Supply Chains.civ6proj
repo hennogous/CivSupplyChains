@@ -18,7 +18,7 @@
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
     <AssemblyName>Civ Supply Chains</AssemblyName>
     <RootNamespace>Civ Supply Chains</RootNamespace>
-    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="CSC_Quarters"><Properties><LoadOrder>100</LoadOrder></Properties><File>Data/CSC_SupplyChains.sql</File><File>Data/CSC_Quarters.sql</File><File>Data/CSC_Buildings.sql</File></UpdateDatabase><UpdateText id="CSC_LocalizedText"><File>Text/CSC_LocalizedText.xml</File></UpdateText></InGameActions>]]></InGameActionData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="CSC_Quarters"><Properties><LoadOrder>100</LoadOrder></Properties><File>Data/CSC_BAKERS.sql</File></UpdateDatabase><UpdateText id="CSC_LocalizedText"><File>Text/CSC_LocalizedText.xml</File></UpdateText></InGameActions>]]></InGameActionData>
     <ModProperties>
       <CustomProperties />
     </ModProperties>
@@ -35,13 +35,7 @@
     <Folder Include="Text" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\CSC_Buildings.sql">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Data\CSC_Quarters.sql">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Data\CSC_SupplyChains.sql">
+    <Content Include="Data\CSC_BAKERS.sql">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Text\CSC_LocalizedText.xml">
