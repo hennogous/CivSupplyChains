@@ -9,15 +9,14 @@
 
 INSERT INTO Types
 
-		(	Type,														Kind)
-VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              'KIND_DISTRICT'         ),
+		(	Type,															Kind)
+VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              	'KIND_DISTRICT'         ),
 
-		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',							'KIND_BUILDING'			),
-		(	'BUILDING_CSC_BAKERS_BAKERY',								'KIND_BUILDING'			),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',							'KIND_BUILDING'			),
+		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',								'KIND_BUILDING'			),
+		(	'BUILDING_CSC_BAKERS_BAKERY',									'KIND_BUILDING'			),
+		(	'BUILDING_CSC_BAKERS_PATISSERIE',								'KIND_BUILDING'			),
 
-        ( 	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',          	'KIND_MODIFIER'			),
-		(	'MODIFIER_CSC_PLAYER_DISTRICTS_ADJUST_DISTRICT_AMENITY',	'KIND_MODIFIER'			);
+		(	'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',	'KIND_MODIFIER'			);
 
 
 
@@ -52,7 +51,7 @@ WHERE	ResourceType 			IN
 
 
 --===========================================================================================================================================================================--
-/* STAGE 1 - RAW MATERIALS IMPROVEMENTS */
+/* STAGE 1 - MATERIALS IMPROVEMENTS */
 --===========================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -62,7 +61,7 @@ WHERE	ResourceType 			IN
 INSERT OR IGNORE INTO Improvement_YieldChanges
 
         (	ImprovementType,                		YieldType,              YieldChange     )
-VALUES  (	'IMPROVEMENT_FARM',             		'YIELD_GOLD',           0               );  
+VALUES  (	'IMPROVEMENT_FARM',             		'YIELD_GOLD',           0               );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- ImprovementModifiers
@@ -72,14 +71,7 @@ INSERT INTO ImprovementModifiers
 
         (	ImprovementType,		        		ModifierId			                        								)
 VALUES  (	'IMPROVEMENT_FARM',                     'MOD_CSC_BAKERS_RAW_IMPROVEMENT_ATTACH_QUARTER'                 			),
-
---		(	'IMPROVEMENT_FARM',                     'MOD_CSC_BAKERS_FLOUR_MILL_IMPROVEMENT_FOOD_ATTACH_QUARTER'             	),
---		(	'IMPROVEMENT_FARM',                     'MOD_CSC_BAKERS_FLOUR_MILL_IMPROVEMENT_GOLD_ATTACH_QUARTER'             	),		
-
         (	'IMPROVEMENT_PLANTATION',               'MOD_CSC_BAKERS_RAW_IMPROVEMENT_ATTACH_QUARTER'                 			);
-
---        (	'IMPROVEMENT_PLANTATION',               'MOD_CSC_BAKERS_FLOUR_MILL_IMPROVEMENT_FOOD_ATTACH_QUARTER'                	),
---		(	'IMPROVEMENT_PLANTATION',               'MOD_CSC_BAKERS_FLOUR_MILL_IMPROVEMENT_GOLD_ATTACH_QUARTER'                	)
 
 
 
@@ -145,47 +137,15 @@ VALUES	(
 													);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- Tags
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-INSERT INTO Tags
-
-		(	Tag,									Vocabulary				)
-VALUES	( 	'CLASS_CSC_QUARTERS',        			'TAG_REQUIREMENT'       );
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- TypeTags
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-INSERT OR IGNORE INTO TypeTags
-
-		(	Type,									Tag			        	)
-SELECT		DistrictType,							'CLASS_CSC_QUARTERS'
-FROM	  	Districts
-WHERE		DistrictType IN
-		(	'DISTRICT_CSC_BAKERS_QUARTER'                         			);
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- District_TradeRouteYields
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------									
-
-INSERT INTO District_TradeRouteYields
-		
-		(	DistrictType,					YieldType,			YieldChangeAsOrigin,	YieldChangeAsDomesticDestination,	YieldChangeAsInternationalDestination	)
-VALUES	(	'DISTRICT_CSC_BAKERS_QUARTER',	'YIELD_FOOD',		0,						2,									2										);
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- DistrictModifiers
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
 
 INSERT INTO DistrictModifiers
 
-        (	DistrictType,		               		ModifierId			                        			)
-VALUES  (	'DISTRICT_CSC_BAKERS_QUARTER',     		'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS'	   			),
+        (	DistrictType,		               		ModifierId			                        			)	VALUES  
 
-		(	'DISTRICT_CITY_CENTER',          		'MOD_CSC_ALL_QUARTERS_LOCAL_SALES_ATTACH_QUARTER'       ),
-        (  	'DISTRICT_COMMERCIAL_HUB',     			'MOD_CSC_ALL_QUARTERS_LOCAL_SALES_ATTACH_QUARTER'       ),
-        (  	'DISTRICT_HARBOR',                		'MOD_CSC_ALL_QUARTERS_LOCAL_SALES_ATTACH_QUARTER'       );
+-- 	+1 Production if built on Hills terrain
+		(	'DISTRICT_CSC_BAKERS_QUARTER',     		'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS'	   			);
 
 
 
@@ -265,7 +225,9 @@ VALUES  (	'BUILDING_CSC_BAKERS_BAKERY',       		'GREAT_PERSON_CLASS_MERCHANT',	 
 INSERT INTO Building_YieldChanges
 
 		(	BuildingType,								YieldType,								YieldChange			)
-VALUES	(	'BUILDING_CSC_BAKERS_BAKERY',				'YIELD_PRODUCTION',						1					),
+VALUES	(	'BUILDING_CSC_BAKERS_FLOUR_MILL',			'YIELD_FOOD',							2					),
+
+		(	'BUILDING_CSC_BAKERS_BAKERY',				'YIELD_PRODUCTION',						1					),
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'YIELD_FOOD',							1					);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -274,27 +236,49 @@ VALUES	(	'BUILDING_CSC_BAKERS_BAKERY',				'YIELD_PRODUCTION',						1					),
 
 INSERT INTO BuildingModifiers
 
-        (	BuildingType,		            			ModifierId			                                		)
-VALUES  (	'BUILDING_CSC_BAKERS_FLOUR_MILL',       	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV'      ),
+        (	BuildingType,		            			ModifierId			                                		)	VALUES
+
+-- FLOUR MILL --------------------------------------------------------------------------
+
+--	+1 Gold to adjacent raw materials improvements
+		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',       	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV'   	),
+
+-- 	+1 Food at Feudalism
 		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',			'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE'					),
 
+-- 	+1 Food to an adjacent Granary, and +1 Gold in return
 		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',			'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_CITY_CENTER'				),
 		(	'BUILDING_GRANARY',							'MOD_CSC_BAKERS_GRANARY_ATTACH_BAKERS_QUARTER'				),
 
--- Stage x --------------------------------------------------------------------------
+-- 	+1 Food bonus to trade routes to the city
+		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',			'MOD_CSC_BAKERS_FOOD_TO_DOMESTIC_TRADE_ROUTES'				),
 
+-- 	BAKERY ------------------------------------------------------------------------------
+
+-- 	+1 Gold to the Flour Mill in the Quarter
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_GOLD_TO_FLOUR_MILL'					),
 
+-- 	+0.3 Food and +0.2 Gold per citizen in the city
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_FOOD'								),
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_GOLD'								),
 
-		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_ATTACH_NEIGHBORHOOD'					),
-		(	'BUILDING_FOOD_MARKET',						'MOD_CSC_BAKERS_FOOD_MARKET_ATTACH_BAKERS_QUARTER'			),
-
+-- 	+0.3 Food and +0.2 Gold per citizen in the city at Mercantilism
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_FOOD_UPGRADE'						),
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_GOLD_UPGRADE'						),
 
-		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_AMENITY'								);
+-- 	+1 Food to each adjacent Granary, Market, Lighthouse and Food Market, and +1 Gold in return
+
+		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_ATTACH_COMMERCIAL_HUB'				),
+		(	'BUILDING_MARKET',							'MOD_CSC_BAKERS_SALES_ATTACH_BAKERS_QUARTER'				),
+		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_ATTACH_HARBOR'						),
+		(	'BUILDING_LIGHTHOUSE',						'MOD_CSC_BAKERS_SALES_ATTACH_BAKERS_QUARTER'				),
+		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_ATTACH_NEIGHBORHOOD'					),
+		(	'BUILDING_FOOD_MARKET',						'MOD_CSC_BAKERS_SALES_ATTACH_BAKERS_QUARTER'				),
+
+-- 	+1 Amenity
+		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_AMENITY'								),
+
+		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_FOOD_TO_DOMESTIC_TRADE_ROUTES'				);
 	
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Building_YieldChangesBonusWithPower
@@ -329,8 +313,7 @@ VALUES  (	'BUILDING_CSC_BAKERS_FLOUR_MILL',       	'MOD_CSC_BAKERS_FLOUR_MILL_GO
 INSERT INTO DynamicModifiers 
 
         ( 	ModifierType,                                                   CollectionType,                         EffectType	                        	)
-VALUES  ( 	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',                'COLLECTION_PLAYER_DISTRICTS',          'EFFECT_ATTACH_MODIFIER'                ),
-		( 	'MODIFIER_CSC_PLAYER_DISTRICTS_ADJUST_DISTRICT_AMENITY',        'COLLECTION_PLAYER_DISTRICTS',          'EFFECT_ADJUST_DISTRICT_AMENITY'     	);
+VALUES  ( 	'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',   	'COLLECTION_OWNER',         			'EFFECT_ADJUST_BUILDING_YIELD_CHANGE'   );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Modifiers
@@ -338,44 +321,67 @@ VALUES  ( 	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',                'COLL
 
 INSERT INTO Modifiers
 
-		(	ModifierId,														ModifierType,												OwnerRequirementSetId,				SubjectRequirementSetId,								SubjectStackLimit	)
-VALUES	(	'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                    'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE', 		NULL,                            	'REQSET_CSC_PLOT_IS_HILLS',								NULL				),
+		(	ModifierId,															ModifierType,													OwnerRequirementSetId,				SubjectRequirementSetId,								SubjectStackLimit	)	VALUES	
 
-        ( 	'MOD_CSC_ALL_QUARTERS_LOCAL_SALES_ATTACH_QUARTER',              'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',    		NULL,                             	'REQSET_CSC_ANY_QUARTER_ADJACENT',						NULL				),
-        (  	'MOD_CSC_ALL_QUARTERS_GOLD_FROM_LOCAL_SALES',                   'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',   		NULL,                             	NULL,													NULL				),
+-- 	BAKERS QUARTER ----------------------------------------------------------------------
 
-		(  	'MOD_CSC_BAKERS_RAW_IMPROVEMENT_ATTACH_QUARTER',            	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',     		'REQSET_CSC_BAKERS_PLOT_HAS_RAW', 	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					NULL			    ),
-        (  	'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',    	'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		NULL,                           	NULL,							                        NULL	            ),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV',		'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',						NULL,								'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		NULL      			),
+-- 	+1 Production if built on Hills terrain
+		(	'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                    	'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE', 			NULL,                            	'REQSET_CSC_PLOT_IS_HILLS',								NULL				),
 
-        (  	'MOD_CSC_BAKERS_FLOUR_MILL_IMPROVEMENT_FOOD_ATTACH_QUARTER',	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',     		'REQSET_CSC_BAKERS_PLOT_HAS_RAW', 	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',    				NULL				),
-        (  	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_FROM_ADJACENT_RAW',    			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				1					),
-        (  	'MOD_CSC_BAKERS_FLOUR_MILL_IMPROVEMENT_GOLD_ATTACH_QUARTER',	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',     		'REQSET_CSC_BAKERS_PLOT_HAS_RAW', 	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',    				NULL				),
-		(  	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_FROM_ADJACENT_RAW',    			'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				1					),
+-- 	FLOUR MILL --------------------------------------------------------------------------
 
-        (  	'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_CITY_CENTER',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',     		NULL, 								'REQSET_CSC_ADJACENT_CITY_CENTER',    					NULL				),
-        (  	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_TO_ADJACENT_GRANARY',    		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
-        (  	'MOD_CSC_BAKERS_GRANARY_ATTACH_BAKERS_QUARTER',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',     		NULL,								'REQSET_CSC_ADJACENT_BAKERS_QUARTER',    				NULL				),
-		(  	'MOD_CSC_BAKERS_GRANARY_GOLD_TO_ADJACENT_FLOUR_MILL',    		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
+-- 	+1 Production from each adjacent raw materials improvement
+		(  	'MOD_CSC_BAKERS_RAW_IMPROVEMENT_ATTACH_QUARTER',            		'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					'REQSET_CSC_BAKERS_PLOT_HAS_RAW', 	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					NULL			    ),
+        (  	'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',    		'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',	NULL,                           	NULL,							                        NULL	            ),
 
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',						'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		NULL,								'REQSET_CSC_BAKERS_FLOUR_MILL_UPGRADE',					NULL				),
+-- 	+1 Gold to adjacent raw materials improvements
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							NULL,								'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		NULL      			),
 
-----------------------------------------------------------------------------
+-- 	+1 Food at Feudalism
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_BAKERS_FLOUR_MILL_UPGRADE',					NULL				),
 
-		(	'MOD_CSC_BAKERS_BAKERY_GOLD_TO_FLOUR_MILL',						'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',		NULL,								NULL,													NULL				),
+-- 	+1 Food to an adjacent Granary, and +1 Gold in return
+        (  	'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_CITY_CENTER',						'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					NULL, 								'REQSET_CSC_ADJACENT_CITY_CENTER',    					NULL				),
+        (  	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_TO_ADJACENT_GRANARY',    			'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
+        (  	'MOD_CSC_BAKERS_GRANARY_ATTACH_BAKERS_QUARTER',						'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					NULL,								'REQSET_CSC_ADJACENT_BAKERS_QUARTER',    				NULL				),
+		(  	'MOD_CSC_BAKERS_GRANARY_GOLD_TO_ADJACENT_FLOUR_MILL',    			'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
 
-		(	'MOD_CSC_BAKERS_BAKERY_FOOD',									'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	NULL,								NULL,													NULL				),
-		(	'MOD_CSC_BAKERS_BAKERY_GOLD',									'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	NULL,								NULL,													NULL				),
+-- 	BAKERY ------------------------------------------------------------------------------
 
-		(	'MOD_CSC_BAKERS_BAKERY_FOOD_UPGRADE',							'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	NULL,								'REQSET_CSC_BAKERS_BAKERY_UPGRADE',						NULL				),
-		(	'MOD_CSC_BAKERS_BAKERY_GOLD_UPGRADE',							'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	NULL,								'REQSET_CSC_BAKERS_BAKERY_UPGRADE',						NULL				),
+-- 	+1 Gold to the Flour Mill in the Quarter
+		(	'MOD_CSC_BAKERS_BAKERY_GOLD_TO_FLOUR_MILL',							'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',	NULL,								NULL,													NULL				),
 
-        (  	'MOD_CSC_BAKERS_BAKERY_ATTACH_NEIGHBORHOOD',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',     		NULL, 								'REQSET_CSC_ADJACENT_NEIGHBORHOOD',    					NULL				),
-        (  	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET',    		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
-        (  	'MOD_CSC_BAKERS_FOOD_MARKET_ATTACH_BAKERS_QUARTER',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',     		NULL,								'REQSET_CSC_ADJACENT_BAKERS_QUARTER',    				NULL				),
-		(  	'MOD_CSC_BAKERS_FOOD_MARKET_GOLD_TO_ADJACENT_BAKERY',    		'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
+-- 	+0.3 Food and +0.2 Gold per citizen in the city
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD',										'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',		NULL,								NULL,													NULL				),
+		(	'MOD_CSC_BAKERS_BAKERY_GOLD',										'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',		NULL,								NULL,													NULL				),
 
-		(	'MOD_CSC_BAKERS_BAKERY_AMENITY',								'MODIFIER_CSC_PLAYER_DISTRICTS_ADJUST_DISTRICT_AMENITY',	NULL,								'REQSET_CSC_DISTRICT_IS_BAKERS',						NULL				);
+-- 	+0.3 Food and +0.2 Gold per citizen in the city at Mercantilism
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_UPGRADE',								'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',		NULL,								'REQSET_CSC_BAKERS_BAKERY_UPGRADE',						NULL				),
+		(	'MOD_CSC_BAKERS_BAKERY_GOLD_UPGRADE',								'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',		NULL,								'REQSET_CSC_BAKERS_BAKERY_UPGRADE',						NULL				),
+
+-- 	+1 Food to each adjacent Granary, Market, Lighthouse and Food Market, and +1 Gold in return
+        (  	'MOD_CSC_BAKERS_BAKERY_ATTACH_CITY_CENTER',							'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					NULL, 								'REQSET_CSC_ADJACENT_CITY_CENTER',    					NULL				),
+        (  	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_GRANARY',    				'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				), 
+
+        (  	'MOD_CSC_BAKERS_BAKERY_ATTACH_COMMERCIAL_HUB',						'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					NULL, 								'REQSET_CSC_ADJACENT_COMMERCIAL_HUB',    				NULL				),
+        (  	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_MARKET',    				'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
+
+        (  	'MOD_CSC_BAKERS_BAKERY_ATTACH_HARBOR',								'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					NULL, 								'REQSET_CSC_ADJACENT_HARBOR',    						NULL				),
+        (  	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_LIGHTHOUSE',    			'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
+
+        (  	'MOD_CSC_BAKERS_BAKERY_ATTACH_NEIGHBORHOOD',						'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					NULL, 								'REQSET_CSC_ADJACENT_NEIGHBORHOOD',    					NULL				),
+        (  	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET',    			'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
+
+       	(  	'MOD_CSC_BAKERS_SALES_ATTACH_BAKERS_QUARTER',						'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					NULL,								'REQSET_CSC_ADJACENT_BAKERS_QUARTER',    				NULL				),
+		(  	'MOD_CSC_BAKERS_SALES_GOLD_TO_ADJACENT_BAKERY',    					'MODIFIER_CSC_SINGLE_DISTRICT_ADJUST_BUILDING_YIELD_CHANGE',  	NULL,                           	NULL,                                    				NULL				),
+
+-- 	+1 Amenity
+		(	'MOD_CSC_BAKERS_BAKERY_AMENITY',									'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_AMENITY',				NULL,								'REQSET_CSC_DISTRICT_IS_BAKERS',						NULL				),
+
+-- 	SHARED ------------------------------------------------------------------------------
+
+-- 	+1 Food bonus to trade routes to the city
+		(	'MOD_CSC_BAKERS_FOOD_TO_DOMESTIC_TRADE_ROUTES',						'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_TO_OTHERS',		NULL,								'REQSET_CSC_ADJACENT_COMMERCIAL_HUB_OR_HARBOR',			NULL				);
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -384,30 +390,32 @@ VALUES	(	'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                    'MODIFI
 		
 INSERT INTO ModifierArguments
 		
-        (	ModifierId,			                      							Name,                       Value		                									)
-VALUES  (	'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                    	'YieldType',	      		'YIELD_PRODUCTION'                                              ),
+        (	ModifierId,			                      							Name,                       Value		                									)	VALUES
+
+-- 	BAKERS QUARTER ----------------------------------------------------------------------
+
+-- 	+1 Production if built on Hills terrain
+		(	'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                    	'YieldType',	      		'YIELD_PRODUCTION'                                              ),
         (	'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                    	'Amount',		        	1		                                                		),
 
-		(   'MOD_CSC_ALL_QUARTERS_LOCAL_SALES_ATTACH_QUARTER',              	'ModifierId',          		'MOD_CSC_ALL_QUARTERS_GOLD_FROM_LOCAL_SALES'					),
-        (   'MOD_CSC_ALL_QUARTERS_GOLD_FROM_LOCAL_SALES',                   	'YieldType',          		'YIELD_GOLD'                                                    ),
-        (   'MOD_CSC_ALL_QUARTERS_GOLD_FROM_LOCAL_SALES',                   	'Amount',              		1                                                            	),
+-- 	FLOUR MILL --------------------------------------------------------------------------
 
+-- 	+1 Production from each adjacent raw materials improvement
 		(  	'MOD_CSC_BAKERS_RAW_IMPROVEMENT_ATTACH_QUARTER',            		'ModifierId',         		'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL'     	),    
         (  	'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',       		'BuildingType',           	'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
         (  	'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',       		'YieldType',           		'YIELD_PRODUCTION'                                              ),
         ( 	'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',       		'Amount',             		1                                                               ),
+
+-- 	+1 Gold to adjacent raw materials improvements
 		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV',    		'YieldType',	            'YIELD_GOLD'                									),
         (	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV',    		'Amount',		            1		                    									),
 
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_IMPROVEMENT_FOOD_ATTACH_QUARTER',		'ModifierId',				'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_FROM_ADJACENT_RAW'				),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_FROM_ADJACENT_RAW',					'BuildingType',				'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_FROM_ADJACENT_RAW',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_FROM_ADJACENT_RAW',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_IMPROVEMENT_GOLD_ATTACH_QUARTER',		'ModifierId',				'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_FROM_ADJACENT_RAW'				),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_FROM_ADJACENT_RAW',					'BuildingType',				'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_FROM_ADJACENT_RAW',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_FROM_ADJACENT_RAW',					'Amount',					1																),
+-- 	+1 Food at Feudalism
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',							'BuildingType',				'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',							'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',							'Amount',					1																),
 
+-- 	+1 Food to an adjacent Granary, and +1 Gold in return
 		(	'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_CITY_CENTER',						'ModifierId',				'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_TO_ADJACENT_GRANARY'			),
 		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_TO_ADJACENT_GRANARY',				'BuildingType',				'BUILDING_GRANARY'												),
 		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_TO_ADJACENT_GRANARY',				'YieldType',				'YIELD_FOOD'													),
@@ -417,36 +425,61 @@ VALUES  (	'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                    	'Yiel
 		(	'MOD_CSC_BAKERS_GRANARY_GOLD_TO_ADJACENT_FLOUR_MILL',				'YieldType',				'YIELD_GOLD'													),
 		(	'MOD_CSC_BAKERS_GRANARY_GOLD_TO_ADJACENT_FLOUR_MILL',				'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',							'BuildingType',				'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',							'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',							'Amount',					1																),
+-- 	BAKERY ------------------------------------------------------------------------------
 
-----------------------------------------------------------------------------
-
+-- 	+1 Gold to the Flour Mill in the Quarter
 		(	'MOD_CSC_BAKERS_BAKERY_GOLD_TO_FLOUR_MILL',							'BuildingType',				'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
 		(	'MOD_CSC_BAKERS_BAKERY_GOLD_TO_FLOUR_MILL',							'YieldType',				'YIELD_GOLD'													),
 		(	'MOD_CSC_BAKERS_BAKERY_GOLD_TO_FLOUR_MILL',							'Amount',					1																),
 
+-- 	+0.3 Food and +0.2 Gold per citizen in the city
 		(	'MOD_CSC_BAKERS_BAKERY_FOOD',										'YieldType',				'YIELD_FOOD'													),
 		(	'MOD_CSC_BAKERS_BAKERY_FOOD',										'Amount',					0.3																),
 		(	'MOD_CSC_BAKERS_BAKERY_GOLD',										'YieldType',				'YIELD_GOLD'													),
 		(	'MOD_CSC_BAKERS_BAKERY_GOLD',										'Amount',					0.2																),
 
-		(	'MOD_CSC_BAKERS_BAKERY_ATTACH_NEIGHBORHOOD',						'ModifierId',				'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET'			),
-		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET',				'BuildingType',				'BUILDING_FOOD_MARKET'											),
-		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET',				'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET',				'Amount',					1																),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_ATTACH_BAKERS_QUARTER',					'ModifierId',				'MOD_CSC_BAKERS_FOOD_MARKET_GOLD_TO_ADJACENT_BAKERY'			),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_GOLD_TO_ADJACENT_BAKERY',				'BuildingType',				'BUILDING_CSC_BAKERS_BAKERY'									),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_GOLD_TO_ADJACENT_BAKERY',				'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_GOLD_TO_ADJACENT_BAKERY',				'Amount',					1																),
-
+-- 	+0.3 Food and +0.2 Gold per citizen in the city at Mercantilism
 		(	'MOD_CSC_BAKERS_BAKERY_FOOD_UPGRADE',								'YieldType',				'YIELD_FOOD'													),
 		(	'MOD_CSC_BAKERS_BAKERY_FOOD_UPGRADE',								'Amount',					0.3																),
 		(	'MOD_CSC_BAKERS_BAKERY_GOLD_UPGRADE',								'YieldType',				'YIELD_GOLD'													),
 		(	'MOD_CSC_BAKERS_BAKERY_GOLD_UPGRADE',								'Amount',					0.2																),
 
-		(	'MOD_CSC_BAKERS_BAKERY_AMENITY',									'Amount',					1																);
+-- 	+1 Food to each adjacent Granary, Market, Lighthouse and Food Market, and +1 Gold in return
+		(	'MOD_CSC_BAKERS_BAKERY_ATTACH_CITY_CENTER',							'ModifierId',				'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_GRANARY'				),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_GRANARY',					'BuildingType',				'BUILDING_GRANARY'												),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_GRANARY',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_GRANARY',					'Amount',					1																),
+
+		(	'MOD_CSC_BAKERS_BAKERY_ATTACH_COMMERCIAL_HUB',						'ModifierId',				'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_MARKET'					),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_MARKET',					'BuildingType',				'BUILDING_MARKET'												),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_MARKET',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_MARKET',					'Amount',					1																),
+
+		(	'MOD_CSC_BAKERS_BAKERY_ATTACH_HARBOR',								'ModifierId',				'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_LIGHTHOUSE'				),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_LIGHTHOUSE',				'BuildingType',				'BUILDING_LIGHTHOUSE'											),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_LIGHTHOUSE',				'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_LIGHTHOUSE',				'Amount',					1																),
+
+		(	'MOD_CSC_BAKERS_BAKERY_ATTACH_NEIGHBORHOOD',						'ModifierId',				'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET'			),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET',				'BuildingType',				'BUILDING_FOOD_MARKET'											),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET',				'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_BAKERY_FOOD_TO_ADJACENT_FOOD_MARKET',				'Amount',					1																),
+
+		(	'MOD_CSC_BAKERS_SALES_ATTACH_BAKERS_QUARTER',						'ModifierId',				'MOD_CSC_BAKERS_SALES_GOLD_TO_ADJACENT_BAKERY'					),
+		(	'MOD_CSC_BAKERS_SALES_GOLD_TO_ADJACENT_BAKERY',						'BuildingType',				'BUILDING_CSC_BAKERS_BAKERY'									),
+		(	'MOD_CSC_BAKERS_SALES_GOLD_TO_ADJACENT_BAKERY',						'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_SALES_GOLD_TO_ADJACENT_BAKERY',						'Amount',					1																),
+
+-- 	+1 Amenity
+		(	'MOD_CSC_BAKERS_BAKERY_AMENITY',									'Amount',					1																),
+
+-- 	SHARED ------------------------------------------------------------------------------
+
+-- 	+1 Food bonus to trade routes to the city
+		(	'MOD_CSC_BAKERS_FOOD_TO_DOMESTIC_TRADE_ROUTES',						'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_FOOD_TO_DOMESTIC_TRADE_ROUTES',						'Amount',					1																),
+		(	'MOD_CSC_BAKERS_FOOD_TO_DOMESTIC_TRADE_ROUTES',						'Domestic',					1																);
+
 
 
 --===========================================================================================================================================================================--
@@ -459,23 +492,42 @@ VALUES  (	'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS',                    	'Yiel
 		
 INSERT INTO RequirementSets 
 		
-        (	RequirementSetId,                              			RequirementSetType              )
-VALUES  (	'REQSET_CSC_PLOT_IS_HILLS',	                  			'REQUIREMENTSET_TEST_ALL'       ),
-		(  	'REQSET_CSC_ANY_QUARTER',                     			'REQUIREMENTSET_TEST_ALL'       ),
-		(	'REQSET_CSC_ANY_QUARTER_ADJACENT',						'REQUIREMENTSET_TEST_ALL'		),
+        (	RequirementSetId,                              			RequirementSetType              )	VALUES
 
+-- 	BAKERS QUARTER ----------------------------------------------------------------------
+
+-- 	+1 Production if built on Hills terrain		
+		(	'REQSET_CSC_PLOT_IS_HILLS',	                  			'REQUIREMENTSET_TEST_ALL'       ),
+
+-- 	FLOUR MILL --------------------------------------------------------------------------
+
+-- 	+1 Production from each adjacent raw materials improvement
 		(	'REQSET_CSC_BAKERS_PLOT_HAS_RAW',						'REQUIREMENTSET_TEST_ALL'       ),
-        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV',				'REQUIREMENTSET_TEST_ALL'       ),
+
+-- 	+1 Gold to adjacent raw materials improvements
         (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		'REQUIREMENTSET_TEST_ALL'       ),
 
-		(	'REQSET_CSC_DISTRICT_IS_BAKERS',						'REQUIREMENTSET_TEST_ALL'		),
-        (  	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',          			'REQUIREMENTSET_TEST_ALL'       ),
-
+-- 	+1 Food at Feudalism
 		(	'REQSET_CSC_BAKERS_FLOUR_MILL_UPGRADE',					'REQUIREMENTSET_TEST_ALL'		),
+
+-- 	+1 Food to trade routes to the city, if adjacent to a Commercial Hub or Harbor
+		(	'REQSET_CSC_ADJACENT_COMMERCIAL_HUB',					'REQUIREMENTSET_TEST_ALL'		),
+		(	'REQSET_CSC_ADJACENT_HARBOR',							'REQUIREMENTSET_TEST_ALL'		),
+		(	'REQSET_CSC_ADJACENT_COMMERCIAL_HUB_OR_HARBOR',			'REQUIREMENTSET_TEST_ANY'		),
+
+-- 	BAKERY ------------------------------------------------------------------------------
+
+-- 	+0.3 Food and +0.2 Gold per citizen in the city at Mercantilism
 		(	'REQSET_CSC_BAKERS_BAKERY_UPGRADE',						'REQUIREMENTSET_TEST_ALL'		),
 
+-- 	+1 Food to each adjacent Granary, Market, Lighthouse and Food Market, and +1 Gold in return
 		(	'REQSET_CSC_ADJACENT_CITY_CENTER',						'REQUIREMENTSET_TEST_ALL'		),
-		(	'REQSET_CSC_ADJACENT_NEIGHBORHOOD',						'REQUIREMENTSET_TEST_ALL'		);
+
+		(	'REQSET_CSC_ADJACENT_NEIGHBORHOOD',						'REQUIREMENTSET_TEST_ALL'		),
+
+-- 	SHARED ------------------------------------------------------------------------------
+		(	'REQSET_CSC_DISTRICT_IS_BAKERS',						'REQUIREMENTSET_TEST_ALL'		),
+        (  	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',          			'REQUIREMENTSET_TEST_ALL'       );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- RequirementSetRequirements
@@ -483,31 +535,51 @@ VALUES  (	'REQSET_CSC_PLOT_IS_HILLS',	                  			'REQUIREMENTSET_TEST_
 				
 INSERT INTO RequirementSetRequirements
 		
-        (	RequirementSetId,		                      			RequirementId	                               	)
-VALUES  (	'REQSET_CSC_PLOT_IS_HILLS',								'REQ_CSC_PLOT_IS_HILLS'			                ),
+        (	RequirementSetId,		                      			RequirementId	                               	)	VALUES
 
-		(  	'REQSET_CSC_ANY_QUARTER',                   			'REQ_CSC_DISTRICT_IS_ANY_QUARTER'             	),
-		(	'REQSET_CSC_ANY_QUARTER_ADJACENT',						'REQ_CSC_DISTRICT_IS_ANY_QUARTER'				),
-		(	'REQSET_CSC_ANY_QUARTER_ADJACENT',						'REQ_CSC_PLOT_ADJACENT_TO_OWNER'				),
+-- 	BAKERS QUARTER ----------------------------------------------------------------------
 
+-- 	+1 Production if built on Hills terrain
+		(	'REQSET_CSC_PLOT_IS_HILLS',								'REQ_CSC_PLOT_IS_HILLS'			                ),
+
+-- 	FLOUR MILL --------------------------------------------------------------------------
+
+-- 	+1 Production from each adjacent raw materials improvement
 		(	'REQSET_CSC_BAKERS_PLOT_HAS_RAW',						'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW'			),
-        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV',				'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW'			),
-        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV',				'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT'				),
-        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		'REQ_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_SET'		),
+
+-- 	+1 Gold to adjacent raw materials improvements
+        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW'			),
+        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT'				),
         (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		'REQ_CSC_PLOT_ADJACENT_TO_OWNER'				),
 
+-- 	+1 Food to trade routes to the city, if adjacent to a Commercial Hub or Harbor
+		( 	'REQSET_CSC_ADJACENT_COMMERCIAL_HUB',					'REQ_CSC_PLOT_ADJACENT_TO_OWNER'              	),
+        (  	'REQSET_CSC_ADJACENT_COMMERCIAL_HUB',					'REQ_CSC_DISTRICT_IS_COMMERCIAL_HUB'           	),
+		( 	'REQSET_CSC_ADJACENT_HARBOR',							'REQ_CSC_PLOT_ADJACENT_TO_OWNER'              	),
+        (  	'REQSET_CSC_ADJACENT_HARBOR',							'REQ_CSC_DISTRICT_IS_HARBOR'           			),
+		(	'REQSET_CSC_ADJACENT_COMMERCIAL_HUB_OR_HARBOR',			'REQ_CSC_ADJACENT_COMMERCIAL_HUB'				),
+		(	'REQSET_CSC_ADJACENT_COMMERCIAL_HUB_OR_HARBOR',			'REQ_CSC_ADJACENT_HARBOR'						),
+
+-- 	+1 Food at Feudalism
+		(	'REQSET_CSC_BAKERS_FLOUR_MILL_UPGRADE',					'REQ_CSC_BAKERS_FLOUR_MILL_UPGRADE'				),
+
+-- 	BAKERY ------------------------------------------------------------------------------
+
+-- 	+0.3 Food and +0.2 Gold per citizen in the city at Mercantilism
+		(	'REQSET_CSC_BAKERS_BAKERY_UPGRADE',						'REQ_CSC_BAKERS_BAKERY_UPGRADE'					),
+
+-- 	+1 Food to each adjacent Granary, Market, Lighthouse and Food Market, and +1 Gold in return
+		( 	'REQSET_CSC_ADJACENT_CITY_CENTER',						'REQ_CSC_PLOT_ADJACENT_TO_OWNER'              	),
+        (  	'REQSET_CSC_ADJACENT_CITY_CENTER',						'REQ_CSC_DISTRICT_IS_CITY_CENTER'           	),
+
+		( 	'REQSET_CSC_ADJACENT_NEIGHBORHOOD',						'REQ_CSC_PLOT_ADJACENT_TO_OWNER'              	),
+        (  	'REQSET_CSC_ADJACENT_NEIGHBORHOOD',						'REQ_CSC_DISTRICT_IS_NEIGHBORHOOD'           	),
+
+-- 	SHARED ------------------------------------------------------------------------------
 		(	'REQSET_CSC_DISTRICT_IS_BAKERS',						'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER'			),
 
         ( 	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					'REQ_CSC_PLOT_ADJACENT_TO_OWNER'              	),
-        (  	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER'           	),
-
-		(	'REQSET_CSC_BAKERS_FLOUR_MILL_UPGRADE',					'REQ_CSC_BAKERS_FLOUR_MILL_UPGRADE'				),
-		(	'REQSET_CSC_BAKERS_BAKERY_UPGRADE',						'REQ_CSC_BAKERS_BAKERY_UPGRADE'					),
-
-		( 	'REQSET_CSC_ADJACENT_CITY_CENTER',						'REQ_CSC_PLOT_ADJACENT_TO_OWNER'              	),
-        (  	'REQSET_CSC_ADJACENT_CITY_CENTER',						'REQ_CSC_DISTRICT_IS_CITY_CENTER'           	),
-		( 	'REQSET_CSC_ADJACENT_NEIGHBORHOOD',						'REQ_CSC_PLOT_ADJACENT_TO_OWNER'              	),
-        (  	'REQSET_CSC_ADJACENT_NEIGHBORHOOD',						'REQ_CSC_DISTRICT_IS_NEIGHBORHOOD'           	);
+        (  	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER'           	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Requirements
@@ -515,23 +587,41 @@ VALUES  (	'REQSET_CSC_PLOT_IS_HILLS',								'REQ_CSC_PLOT_IS_HILLS'			         
 
 INSERT INTO Requirements
         
-        (	RequirementId,		                          			RequirementType,	                                Inverse         )
-VALUES  (  	'REQ_CSC_DISTRICT_IS_ANY_QUARTER',						'REQUIREMENT_PLOT_DISTRICT_TAG_MATCHES',          	0               ),
+        (	RequirementId,		                          			RequirementType,	                                Inverse         )	VALUES
+
+-- 	BAKERS QUARTER ----------------------------------------------------------------------
+
+-- 	+1 Production if built on Hills terrain
 		(	'REQ_CSC_PLOT_IS_HILLS',								'REQUIREMENT_PLOT_IS_HILLS',                      	0	        	),
 
-		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',					'REQUIREMENT_PLOT_RESOURCE_TAG_MATCHES',			0				),
-        (	'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT',            			'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT',           	0               ),
-        
-        (	'REQ_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_SET',             'REQUIREMENT_REQUIREMENTSET_IS_MET',				0               ),
+-- 	FLOUR MILL --------------------------------------------------------------------------
 
-		(	'REQ_CSC_PLOT_ADJACENT_TO_OWNER',						'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',              	0               ),
-        (   'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER',					'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',          	0               ),
+-- 	+1 Gold to adjacent raw materials improvements
+        (	'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT',            			'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT',           	0               ),
+
+-- 	+1 Food at Feudalism
 		(	'REQ_CSC_BAKERS_FLOUR_MILL_UPGRADE',					'REQUIREMENT_PLAYER_HAS_CIVIC',						0				),
+
+-- 	+1 Food to trade routes to the city, if adjacent to a Commercial Hub or Harbor
+		(	'REQ_CSC_DISTRICT_IS_COMMERCIAL_HUB',					'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',			0				),
+		(	'REQ_CSC_DISTRICT_IS_HARBOR',							'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',			0				),
+		(	'REQ_CSC_ADJACENT_COMMERCIAL_HUB',						'REQUIREMENTSET_IS_MET',							0				),
+		(	'REQ_CSC_ADJACENT_HARBOR',								'REQUIREMENTSET_IS_MET',							0				),
+
+-- 	BAKERY ------------------------------------------------------------------------------
+
+-- 	+0.3 Food and +0.2 Gold per citizen in the city at Mercantilism
 		(	'REQ_CSC_BAKERS_BAKERY_UPGRADE',						'REQUIREMENT_PLAYER_HAS_CIVIC',						0				),
 
+-- 	+1 Food to each adjacent Granary, Market, Lighthouse and Food Market, and +1 Gold in return
 		(	'REQ_CSC_DISTRICT_IS_CITY_CENTER',						'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',			0				),
-		(	'REQ_CSC_DISTRICT_IS_NEIGHBORHOOD',						'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',			0				);
+		(	'REQ_CSC_DISTRICT_IS_NEIGHBORHOOD',						'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',			0				),
 
+-- 	SHARED ------------------------------------------------------------------------------
+
+		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',					'REQUIREMENT_PLOT_RESOURCE_TAG_MATCHES',			0				),
+		(	'REQ_CSC_PLOT_ADJACENT_TO_OWNER',						'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',              	0               ),
+        (   'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER',					'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',          	0               );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- RequirementArguments
@@ -539,15 +629,30 @@ VALUES  (  	'REQ_CSC_DISTRICT_IS_ANY_QUARTER',						'REQUIREMENT_PLOT_DISTRICT_T
 
 INSERT INTO RequirementArguments 
 
-        (	RequirementId,				               				Name,                           Value		                    				)
-VALUES 	( 	'REQ_CSC_DISTRICT_IS_ANY_QUARTER',						'Tag',                          'CLASS_CSC_QUARTERS'              				),
-
-		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',					'Tag',							'CLASS_CSC_BAKERS_RAW'							),
-        (	'REQ_CSC_PLOT_HAS_BAKERS_RAW_IMPROVED_SET',             'RequirementSetId',     		'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV'       	),
-
+        (	RequirementId,				               				Name,                           Value		                    				)	VALUES
+		
+-- 	FLOUR MILL --------------------------------------------------------------------------
+		
+-- 	+1 Food at Feudalism
 		( 	'REQ_CSC_BAKERS_FLOUR_MILL_UPGRADE',					'CivicType',					'CIVIC_FEUDALISM'								),
+
+-- 	+1 Food to trade routes to the city, if adjacent to a Commercial Hub or Harbor
+		(	'REQ_CSC_DISTRICT_IS_COMMERCIAL_HUB',					'DistrictType',					'DISTRICT_COMMERCIAL_HUB'						),
+		(	'REQ_CSC_DISTRICT_IS_HARBOR',							'DistrictType',					'DISTRICT_HARBOR'								),
+		(	'REQ_CSC_ADJACENT_COMMERCIAL_HUB',						'RequirementSetId',				'REQSET_CSC_ADJACENT_COMMERCIAL_HUB'			),
+		(	'REQ_CSC_ADJACENT_HARBOR',								'RequirementSetId',				'REQSET_CSC_ADJACENT_HARBOR'					),
+	
+
+-- 	BAKERY ------------------------------------------------------------------------------
+
+-- 	+0.3 Food and +0.2 Gold per citizen in the city at Mercantilism
 		( 	'REQ_CSC_BAKERS_BAKERY_UPGRADE',						'CivicType',					'CIVIC_MERCANTILISM'							),
 
-		( 	'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER',					'DistrictType',                 'DISTRICT_CSC_BAKERS_QUARTER'     				),
+-- 	+1 Food to each adjacent Granary, Market, Lighthouse and Food Market, and +1 Gold in return
 		(	'REQ_CSC_DISTRICT_IS_CITY_CENTER',						'DistrictType',					'DISTRICT_CITY_CENTER'							),
-		(	'REQ_CSC_DISTRICT_IS_NEIGHBORHOOD',						'DistrictType',					'DISTRICT_NEIGHBORHOOD'							);
+		(	'REQ_CSC_DISTRICT_IS_NEIGHBORHOOD',						'DistrictType',					'DISTRICT_NEIGHBORHOOD'							),
+
+-- 	SHARED ------------------------------------------------------------------------------
+
+		( 	'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER',					'DistrictType',                 'DISTRICT_CSC_BAKERS_QUARTER'     				),
+		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',					'Tag',							'CLASS_CSC_BAKERS_RAW'							);
