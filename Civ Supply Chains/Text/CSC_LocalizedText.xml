@@ -16,7 +16,7 @@
 		</Replace>
 
 		<Replace Tag="LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_DESCRIPTION" Language="en_US">
-			<Text>+1 [ICON_Gold] to adjacent raw materials improvements.</Text>
+			<Text>* +1 [ICON_Production] from each adjacent raw materials improvement, and grants +1 [ICON_Gold] in return[NEWLINE]* +2 [ICON_Food] and +1 [ICON_Food] at Feudalism.[NEWLINE]* +1 [ICON_Food] to an adjacent Granary, and +1 [ICON_Gold] in return[NEWLINE]* +1 [ICON_Food] bonus to trade routes to the city, and +1 [ICON_Gold] in return</Text>
 		</Replace>
 
 		<Replace Tag="LOC_BUILDING_CSC_BAKERS_BAKERY_NAME" Language="en_US">
@@ -24,8 +24,19 @@
 		</Replace>
 
 		<Replace Tag="LOC_BUILDING_CSC_BAKERS_BAKERY_DESCRIPTION" Language="en_US">
-			<Text>Just smell that freshly baked bread!
-			</Text>
+			<Text>Just smell that freshly baked bread!</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_PATISSERIE_NAME" Language="en_US">
+			<Text>Patisserie</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_PATISSERIE_DESCRIPTION" Language="en_US">
+			<Text>Hmmmmmm, continental!</Text>
+		</Replace>
+
+		<Replace Tag="LOC_RESOURCE_WINE" Language="en_US">
+			<Text>Grapes</Text>
 		</Replace>
 
 	</LocalizedText>
