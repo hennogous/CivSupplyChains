@@ -16,7 +16,7 @@
 		</Replace>
 
 		<Replace Tag="LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_DESCRIPTION" Language="en_US">
-			<Text>* +1 [ICON_Production] from each adjacent raw materials improvement, and grants +1 [ICON_Gold] in return[NEWLINE]* +2 [ICON_Food] and +1 [ICON_Food] at Feudalism.[NEWLINE]* +1 [ICON_Food] to an adjacent Granary, and +1 [ICON_Gold] in return[NEWLINE]* +1 [ICON_Food] bonus to trade routes to the city, and +1 [ICON_Gold] in return</Text>
+			<Text>+1 [ICON_Production] from each adjacent raw materials improvement, and grants +1 [ICON_Gold] in return[NEWLINE]+2 [ICON_Food] and +1 [ICON_Food] at Feudalism.[NEWLINE]+1 [ICON_Food] to an adjacent Granary, and +1 [ICON_Gold] in return[NEWLINE]+1 [ICON_Food] bonus to trade routes to the city, and +1 [ICON_Gold] in return</Text>
 		</Replace>
 
 		<Replace Tag="LOC_BUILDING_CSC_BAKERS_BAKERY_NAME" Language="en_US">
@@ -37,6 +37,48 @@
 
 		<Replace Tag="LOC_RESOURCE_WINE" Language="en_US">
 			<Text>Grapes</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_CITY_CENTER_GOLD_TO_BAKERS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent City Center</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_BAKERS_FOOD_TO_CITY_CENTER" Language="en_US">
+			<Text>+{1_num} [ICON_Food] from an adjacent Bakers' Quarter</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_BAKERS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_BAKERS_FOOD_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Food] from an adjacent Bakers' Quarter</Text>
+		</Replace>
+
+<!-- BAKERS' SPECIALTY -->
+
+		<Replace Tag="LOC_RESOURCE_CSC_BAKERS_SPECIALTY_NAME" Language="en_US">
+			<Text>Fine Pastries Resource Name</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CSC_BAKERS_X_NAME" Language="en_US">
+			<Text>Fine Pastries GreatWork Name</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PROJECT_CREATE_CSC_BAKERS_SPECIALTY_NAME" Language="en_US">
+			<Text>Fine Pastries Project Name</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PROJECT_CREATE_CSC_BAKERS_SPECIALTY_SHORT_NAME" Language="en_US">
+			<Text>Fine Pastries Project Short Name</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PROJECT_CREATE_CSC_BAKERS_SPECIALTY_DESCRIPTION" Language="en_US">
+			<Text>Fine Pastries Project Description</Text>
+		</Replace>
+
+		<Replace Tag="LOC_MOD_CSC_BAKERS_SPECIALTY_HOUSING_DESCRIPTION" Language="en_US">
+			<Text>Housing bonus from Bakers' Quarter specialty goods</Text>
 		</Replace>
 
 	</LocalizedText>

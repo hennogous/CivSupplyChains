@@ -9,7 +9,7 @@
 
 INSERT INTO Types
 
-		(	Type,																Kind)
+		(	Type,																Kind					)
 VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              		'KIND_DISTRICT'         ),
 
 		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',									'KIND_BUILDING'			),
@@ -18,7 +18,6 @@ VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              		'KIND_DI
 
 		(	'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',					'KIND_MODIFIER'			),
 		(	'MODIFIER_CSC_OWNER_EFFECT_ADJUST_DISTRICT_HOUSING',				'KIND_MODIFIER'			);
-
 
 
 --===========================================================================================================================================================================--
@@ -178,6 +177,32 @@ INSERT INTO DistrictModifiers
 
 -- +1 Housing to each adjacent Neighbourhood with minimum Charming appeal, and +1 Gold in return
 		(	'DISTRICT_NEIGHBORHOOD',				'MOD_CSC_BAKERS_PATISSERIE_NBH_SALES_ATTACH_BAKERS_QUARTER'		);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	Adjacency_YieldChanges
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+
+INSERT INTO Adjacency_YieldChanges
+
+		(	ID,											Description,									YieldType,				YieldChange,	AdjacentFeature,	AdjacentImprovement,	AdjacentDistrict,						AdjacentResourceClass,		PrereqTech			)
+VALUES	(	'CSC_CITY_CENTER_GOLD_TO_BAKERS',			'LOC_CSC_CITY_CENTER_GOLD_TO_BAKERS',			'YIELD_GOLD',			1,				NULL,				NULL,					'DISTRICT_CITY_CENTER',					'NO_RESOURCECLASS',			NULL				),
+		(	'CSC_BAKERS_FOOD_TO_CITY_CENTER',			'LOC_CSC_BAKERS_FOOD_TO_CITY_CENTER',			'YIELD_FOOD',			1,				NULL,				NULL,					'DISTRICT_CSC_BAKERS_QUARTER',			'NO_RESOURCECLASS',			NULL				),
+
+		(	'CSC_COMMERCIAL_HUB_GOLD_TO_BAKERS',		'LOC_CSC_COMMERCIAL_HUB_GOLD_TO_BAKERS',		'YIELD_GOLD',			1,				NULL,				NULL,					'DISTRICT_COMMERCIAL_HUB',				'NO_RESOURCECLASS',			NULL				),
+		(	'CSC_BAKERS_FOOD_TO_COMMERCIAL_HUB',		'LOC_CSC_BAKERS_FOOD_TO_COMMERCIAL_HUB',		'YIELD_FOOD',			1,				NULL,				NULL,					'DISTRICT_CSC_BAKERS_QUARTER',			'NO_RESOURCECLASS',			NULL				);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	District_Adjacencies
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+
+INSERT INTO District_Adjacencies
+
+		(	DistrictType,						YieldChangeId		)
+VALUES	(	'DISTRICT_CSC_BAKERS_QUARTER',		'CSC_CITY_CENTER_GOLD_TO_BAKERS'		),
+		(	'DISTRICT_CITY_CENTER',				'CSC_BAKERS_FOOD_TO_CITY_CENTER'		),
+
+		(	'DISTRICT_CSC_BAKERS_QUARTER',		'CSC_COMMERCIAL_HUB_GOLD_TO_BAKERS'		),
+		(	'DISTRICT_COMMERCIAL_HUB',			'CSC_BAKERS_FOOD_TO_COMMERCIAL_HUB'		);
 
 
 
@@ -421,8 +446,8 @@ INSERT INTO TraitModifiers
 
 INSERT INTO DynamicModifiers 
 
-        ( 	ModifierType,                                                   	CollectionType,                         EffectType	                        			)
-VALUES  ( 	'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',   				'COLLECTION_OWNER',         			'EFFECT_ADJUST_BUILDING_YIELD_CHANGE'   		),
+        ( 	ModifierType,                                                   	CollectionType,                         EffectType	                        			)	VALUES
+		( 	'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',   				'COLLECTION_OWNER',         			'EFFECT_ADJUST_BUILDING_YIELD_CHANGE'   		),
 		(	'MODIFIER_CSC_OWNER_EFFECT_ADJUST_DISTRICT_HOUSING',				'COLLECTION_OWNER',						'EFFECT_ADJUST_DISTRICT_HOUSING'				);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
