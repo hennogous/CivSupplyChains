@@ -23,7 +23,7 @@
         </Replace>       
 
         <Replace Tag="LOC_CSC_MC_REMOVE_PROJECTS_NAME" Language="en_US">
-            <Text>Remove M&amp;C Projects and Products</Text>
+            <Text>Remove M&amp;C Projects</Text>
         </Replace>
 
         <Replace Tag="LOC_CSC_MC_REMOVE_PROJECTS_DESCRIPTION" Language="en_US">

@@ -1,0 +1,15 @@
+-- ModSupport
+-- Author: Henno
+-- DateCreated: 2025-06-16 20:13:30
+--------------------------------------------------------------
+
+INSERT OR IGNORE INTO TypeTags
+    (Type, Tag)
+SELECT
+    ResourceType,
+    'CLASS_CSC_BAKERS_RAW'
+FROM Resources
+WHERE ResourceType IN
+    (
+    'RESOURCE_LEU_P0K_QUINOA'
+    );

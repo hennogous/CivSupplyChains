@@ -1,4 +1,4 @@
--- CSC_MC_REMOVE_PROJECTS_AND_PRODUCTS
+-- CSC_MC_REMOVE_PROJECTS
 -- Author: Henno
 -- DateCreated: 2025-06-15 20:20:17
 --------------------------------------------------------------
