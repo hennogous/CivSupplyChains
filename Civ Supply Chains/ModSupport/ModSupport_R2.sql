@@ -8,7 +8,7 @@
 --===========================================================================================================================================================================--
 
 --	Bakers' Quarter raw materials
-INSERT OR IGNORE INTO TypeTags
+INSERT INTO TypeTags
 
 	(	Type,					Tag			        )
 SELECT	ResourceType,			'CLASS_CSC_BAKERS_RAW'
@@ -18,7 +18,7 @@ WHERE	ResourceType 			IN
         'RESOURCE_SORGHUM'       );
 
 --	Bakers' Quarter luxury materials
-INSERT OR IGNORE INTO TypeTags
+INSERT INTO TypeTags
 
 	(	Type,					Tag			        )
 SELECT	ResourceType,			'CLASS_CSC_BAKERS_LUX'
