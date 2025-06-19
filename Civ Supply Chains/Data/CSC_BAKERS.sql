@@ -28,7 +28,7 @@ VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              		'KIND_DI
 --	Tags
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO Tags
+INSERT OR IGNORE INTO Tags
 
 		(   Tag,							Vocabulary			)
 VALUES	(	'CLASS_CSC_BAKERS_RAW',	    	'RESOURCE_CLASS'	),
@@ -204,6 +204,34 @@ VALUES	(	'DISTRICT_CSC_BAKERS_QUARTER',		'CSC_CITY_CENTER_GOLD_TO_BAKERS'		),
 		(	'DISTRICT_CSC_BAKERS_QUARTER',		'CSC_COMMERCIAL_HUB_GOLD_TO_BAKERS'		),
 		(	'DISTRICT_COMMERCIAL_HUB',			'CSC_BAKERS_FOOD_TO_COMMERCIAL_HUB'		);
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	Ruivo_New_Adjacency
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+		
+INSERT INTO Ruivo_New_Adjacency
+
+    	(	ID,
+			DistrictType,
+    		ProvideType,
+			YieldType,
+			YieldChange,
+    		AdjacencyType,
+			CustomAdjacentObject,
+			Rings,
+    		DistrictModifiers			)
+SELECT
+			'CSC_BAKERS_PRODUCTION_FROM_' || Type,
+			'DISTRICT_CSC_BAKERS_QUARTER',
+			'SelfBonus',
+			'YIELD_PRODUCTION',
+			1,
+			'FROM_RINGS_CAO_RESOURCE',
+			Type,
+			1,
+			1
+FROM	TypeTags
+WHERE 	Tag='CLASS_CSC_BAKERS_RAW';
+
 
 
 --===========================================================================================================================================================================--
@@ -232,7 +260,7 @@ VALUES	(
 		/*  PrereqDistrict, */		'DISTRICT_CSC_BAKERS_QUARTER',
 		/*  PurchaseYield, */		'YIELD_GOLD',
 		/*	CitizenSlots */			0,
-		/*  AdvisorType, */			'ADVISOR_GENERIC'
+		/*  AdvisorType */			'ADVISOR_GENERIC'
 									),
 		(
 		/*  BuildingType, */		'BUILDING_CSC_BAKERS_BAKERY',
@@ -244,7 +272,7 @@ VALUES	(
 		/*  PrereqDistrict, */		'DISTRICT_CSC_BAKERS_QUARTER',
 		/*  PurchaseYield, */		'YIELD_GOLD',
 		/*	CitizenSlots */			1,
-		/*  AdvisorType, */			'ADVISOR_GENERIC'
+		/*  AdvisorType */			'ADVISOR_GENERIC'
 									),
 		(
 		/*  BuildingType, */		'BUILDING_CSC_BAKERS_PATISSERIE',
@@ -256,7 +284,7 @@ VALUES	(
 		/*  PrereqDistrict, */		'DISTRICT_CSC_BAKERS_QUARTER',
 		/*  PurchaseYield, */		'YIELD_GOLD',
 		/*	CitizenSlots */			1,
-		/*  AdvisorType, */			'ADVISOR_GENERIC'
+		/*  AdvisorType */			'ADVISOR_GENERIC'
 									);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
