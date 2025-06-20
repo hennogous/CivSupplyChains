@@ -1,0 +1,4 @@
+-- ModSupport_LAR_ANIMALS_REMOVE_UNUSED
+-- Author: Shadow
+-- DateCreated: 2025-06-20 07:57:30
+--------------------------------------------------------------

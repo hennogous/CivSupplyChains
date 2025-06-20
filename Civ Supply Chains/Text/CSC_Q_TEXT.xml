@@ -35,7 +35,7 @@
 			<Text>Hmmmmmm, continental!</Text>
 		</Replace>
 
-		<Replace Tag="LOC_RESOURCE_WINE" Language="en_US">
+		<Replace Tag="LOC_RESOURCE_WINE_NAME" Language="en_US">
 			<Text>Grapes</Text>
 		</Replace>
 

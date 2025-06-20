@@ -1,6 +1,6 @@
--- ModSupport_SR
+-- CSC_ANIMALS
 -- Author: Henno
--- DateCreated: 2025-06-17 09:25:40
+-- DateCreated: 2025-06-20 07:58:11
 --------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -26,3 +26,16 @@ VALUES	(	'CLASS_CSC_BAKERS_BASE',	        'RESOURCE_CLASS'	),
         (	'CLASS_CSC_GOLDSMITHS_SPEC',	    'RESOURCE_CLASS'	),
         (	'CLASS_CSC_BREWERS_BASE',           'RESOURCE_CLASS'	),
         (	'CLASS_CSC_BREWERS_SPEC',           'RESOURCE_CLASS'	);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	TypeTags
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--	Bakers' Quarter raw materials
+INSERT OR IGNORE INTO TypeTags
+
+	(	Type,					Tag			        )
+SELECT	ResourceType,			'CLASS_CSC_BAKERS_BASE'
+FROM	Resources
+WHERE	ResourceType 			IN
+	(	'RESOURCE_CATTLE'       );

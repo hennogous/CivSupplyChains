@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CSC_A_RESOURCES_TEXT -->
+<!-- Author: Shadow -->
+<!-- DateCreated: 2025-06-20 12:09:14 -->
+<GameData>
+	<LocalizedText>
+
+		<Replace Tag="LOC_RESOURCE_CATTLE" Language="en_US">
+			<Text>Dairy</Text>
+		</Replace>
+
+		<Replace Tag="LOC_RESOURCE_SHEEP" Language="en_US">
+			<Text>Wool</Text>
+		</Replace>
+
+	</LocalizedText>
+</GameData>

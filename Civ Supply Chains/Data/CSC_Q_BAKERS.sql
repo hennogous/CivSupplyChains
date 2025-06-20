@@ -30,9 +30,9 @@ VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              		'KIND_DI
 
 INSERT OR IGNORE INTO Tags
 
-		(   Tag,							Vocabulary			)
-VALUES	(	'CLASS_CSC_BAKERS_RAW',	    	'RESOURCE_CLASS'	),
-		(	'CLASS_CSC_BAKERS_LUX',			'RESOURCE_CLASS'	);
+		(   Tag,							    Vocabulary			)
+VALUES	(	'CLASS_CSC_BAKERS_BASE',	        'RESOURCE_CLASS'	),
+        (	'CLASS_CSC_BAKERS_SPEC',	        'RESOURCE_CLASS'	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	TypeTags
@@ -42,7 +42,7 @@ VALUES	(	'CLASS_CSC_BAKERS_RAW',	    	'RESOURCE_CLASS'	),
 INSERT OR IGNORE INTO TypeTags
 
 	(	Type,					Tag			        )
-SELECT	ResourceType,			'CLASS_CSC_BAKERS_RAW'
+SELECT	ResourceType,			'CLASS_CSC_BAKERS_BASE'
 FROM	Resources
 WHERE	ResourceType 			IN
 	(	'RESOURCE_BANANAS',
@@ -54,7 +54,7 @@ WHERE	ResourceType 			IN
 INSERT OR IGNORE INTO TypeTags
 
 	(	Type,					Tag			        )
-SELECT	ResourceType,			'CLASS_CSC_BAKERS_LUX'
+SELECT	ResourceType,			'CLASS_CSC_BAKERS_SPEC'
 FROM	Resources
 WHERE	ResourceType 			IN
 	(	'RESOURCE_COCOA',
@@ -67,7 +67,7 @@ WHERE	ResourceType 			IN
 		'RESOURCE_SPICES'        );
 
 --	Rename Wine to Grapes
-UPDATE Resources SET	Name='LOC_RESOURCE_WINE'		WHERE ResourceType='RESOURCE_WINE';
+--UPDATE Resources SET	Name='LOC_RESOURCE_WINE'		WHERE ResourceType='RESOURCE_WINE';
 
 
 
@@ -230,7 +230,7 @@ SELECT
 			1,
 			1
 FROM	TypeTags
-WHERE 	Tag='CLASS_CSC_BAKERS_RAW';
+WHERE 	Tag='CLASS_CSC_BAKERS_BASE';
 
 
 
@@ -1036,6 +1036,6 @@ INSERT INTO RequirementArguments
 -- 	SHARED ------------------------------------------------------------------------------
 
 		( 	'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER',					'DistrictType',                 'DISTRICT_CSC_BAKERS_QUARTER'     				),
-		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',					'Tag',							'CLASS_CSC_BAKERS_RAW'							),
-		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_LUX',					'Tag',							'CLASS_CSC_BAKERS_LUX'							),
+		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',					'Tag',							'CLASS_CSC_BAKERS_BASE'							),
+		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_LUX',					'Tag',							'CLASS_CSC_BAKERS_SPEC'							),
 		(	'REQ_CSC_PLOT_NEARBY_OWNER',							'MaxDistance',					2												);	
