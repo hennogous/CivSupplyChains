@@ -1,5 +1,5 @@
 -- CSC_REMOVE_MC_BONUSES
--- Author: Shadow
+-- Author: Henno
 -- DateCreated: 2025-06-15 15:12:38
 --------------------------------------------------------------
 

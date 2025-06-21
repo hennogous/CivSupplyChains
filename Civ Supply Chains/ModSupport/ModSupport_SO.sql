@@ -1,6 +1,6 @@
--- ModSupport_R2_ANIMALS
+-- ModSupport_SO
 -- Author: Henno
--- DateCreated: 2025-06-20 07:58:37
+-- DateCreated: 2025-06-20 14:26:38
 --------------------------------------------------------------
 
 --===========================================================================================================================================================================--
@@ -14,42 +14,18 @@
 INSERT OR IGNORE INTO Tags
 
 		(   Tag,							    Vocabulary			)
-VALUES	(	'CLASS_CSC_WEAVERS_SPEC',	        'RESOURCE_CLASS'	),
-        (   'CLASS_CSC_APOTHECARIES_BASE',      'RESOURCE_CLASS'    ),
-        (   'CLASS_CSC_GOLDSMITHS_BASE',        'RESOURCE_CLASS'    );
+VALUES	(	'CLASS_CSC_APOTHECARIES_BASE',      'RESOURCE_CLASS'	),
+		(	'CLASS_CSC_GOLDSMITHS_BASE',        'RESOURCE_CLASS'	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	TypeTags
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---	Weavers' Quarter specialty materials
+--	Apothecaries' Quarter base materials
 INSERT OR IGNORE INTO TypeTags
 
 	(	Type,							Tag			        )
-SELECT	ResourceType,					'CLASS_CSC_WEAVERS_SPEC'
-FROM	Resources
-WHERE	ResourceType 					IN
-	(	'RESOURCE_CASHMERE'		        );
-
--------------------------------------------------------------------------------------
-
--- Apothecaries' Quarter base materials
-INSERT OR IGNORE INTO TypeTags
-
-    (	Type,                       Tag     )
-SELECT	ResourceType,               'CLASS_CSC_APOTHECARIES_BASE'
-FROM	Resources
-WHERE	ResourceType                IN
-    (	'RESOURCE_CORAL',
-        'RESOURCE_SPONGE'           );
-
--------------------------------------------------------------------------------------
-
--- Apothecaries' Quarter base materials
-INSERT OR IGNORE INTO TypeTags
-
-    (	Type,                       Tag     )
-SELECT	ResourceType,               'CLASS_CSC_GOLDSMITHS_BASE'
-FROM	Resources
-WHERE	ResourceType                IN
-    (	'RESOURCE_CORAL'            );
+SELECT	FeatureType,					'CLASS_CSC_APOTHECARIES_BASE'
+FROM	Features
+WHERE	FeatureType 					IN
+	(	'FEATURE_SUK_KELP'	        	);

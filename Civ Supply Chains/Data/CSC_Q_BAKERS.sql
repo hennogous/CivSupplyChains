@@ -38,7 +38,7 @@ VALUES	(	'CLASS_CSC_BAKERS_BASE',	        'RESOURCE_CLASS'	),
 --	TypeTags
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---	Bakers' Quarter raw materials
+--	Bakers' Quarter base materials
 INSERT OR IGNORE INTO TypeTags
 
 	(	Type,					Tag			        )
@@ -50,7 +50,7 @@ WHERE	ResourceType 			IN
 		'RESOURCE_RICE',
 		'RESOURCE_WHEAT'        );
 
---	Bakers' Quarter luxury materials
+--	Bakers' Quarter specialty materials
 INSERT OR IGNORE INTO TypeTags
 
 	(	Type,					Tag			        )
@@ -60,11 +60,10 @@ WHERE	ResourceType 			IN
 	(	'RESOURCE_COCOA',
 		'RESOURCE_COFFEE',
 		'RESOURCE_WINE',
-		'RESOURCE_HONEY',
 		'RESOURCE_OLIVES',
 		'RESOURCE_SALT',
-		'RESOURCE_SUGAR',
-		'RESOURCE_SPICES'        );
+		'RESOURCE_SPICES',
+		'RESOURCE_SUGAR'        );
 
 --	Rename Wine to Grapes
 --UPDATE Resources SET	Name='LOC_RESOURCE_WINE'		WHERE ResourceType='RESOURCE_WINE';
@@ -104,7 +103,7 @@ INSERT INTO ImprovementModifiers
 
 
 --===============================================================================================================================================================================--
-/*	QUARTERS */
+/*	BAKERS' QUARTER */
 --===============================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -220,7 +219,7 @@ INSERT INTO Ruivo_New_Adjacency
 			Rings,
     		DistrictModifiers			)
 SELECT
-			'CSC_BAKERS_PRODUCTION_FROM_' || Type,
+			'CSC_BAKERS_PRODUCTION_FROM_BASE_' || Type,
 			'DISTRICT_CSC_BAKERS_QUARTER',
 			'SelfBonus',
 			'YIELD_PRODUCTION',
@@ -231,6 +230,30 @@ SELECT
 			1
 FROM	TypeTags
 WHERE 	Tag='CLASS_CSC_BAKERS_BASE';
+
+INSERT INTO Ruivo_New_Adjacency
+
+    	(	ID,
+			DistrictType,
+    		ProvideType,
+			YieldType,
+			YieldChange,
+    		AdjacencyType,
+			CustomAdjacentObject,
+			Rings,
+    		DistrictModifiers			)
+SELECT
+			'CSC_BAKERS_PRODUCTION_FROM_SPEC_' || Type,
+			'DISTRICT_CSC_BAKERS_QUARTER',
+			'SelfBonus',
+			'YIELD_PRODUCTION',
+			1,
+			'FROM_RINGS_CAO_RESOURCE',
+			Type,
+			1,
+			1
+FROM	TypeTags
+WHERE 	Tag='CLASS_CSC_BAKERS_SPEC';
 
 
 

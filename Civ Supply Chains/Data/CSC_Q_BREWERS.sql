@@ -1,6 +1,6 @@
--- CSC_GOLDSMITHS
+-- CSC_BREWERSsql
 -- Author: Henno
--- DateCreated: 2025-06-20 13:19:37
+-- DateCreated: 2025-06-20 13:20:04
 --------------------------------------------------------------
 
 --===========================================================================================================================================================================--
@@ -10,7 +10,7 @@
 INSERT INTO Types
 
 		(	Type,																Kind					)
-VALUES	( 	'DISTRICT_CSC_GOLDSMITHS_QUARTER',                                  'KIND_DISTRICT'         );
+VALUES	( 	'DISTRICT_CSC_BREWERS_QUARTER',                                     'KIND_DISTRICT'         );
 
 
 
@@ -24,38 +24,44 @@ VALUES	( 	'DISTRICT_CSC_GOLDSMITHS_QUARTER',                                  'K
 
 INSERT OR IGNORE INTO Tags
 
-	(       Tag,                                    Vocabulary              )
-VALUES	(	'CLASS_CSC_GOLDSMITHS_BASE',            'RESOURCE_CLASS'	        ),
-        (	'CLASS_CSC_GOLDSMITHS_SPEC',            'RESOURCE_CLASS'	        );
+	    (   Tag,                                    Vocabulary                  )
+VALUES	(	'CLASS_CSC_BREWERS_BASE',               'RESOURCE_CLASS'	        ),
+        (	'CLASS_CSC_BREWERS_SPEC',               'RESOURCE_CLASS'	        );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	TypeTags
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--- Goldsmiths' Quarter base materials
+-- Brewers' Quarter base materials
 INSERT OR IGNORE INTO TypeTags
 
     (	Type,                           Tag			        )
-SELECT	ResourceType,			        'CLASS_CSC_GOLDSMITHS_BASE'
+SELECT	ResourceType,			        'CLASS_CSC_BREWERS_BASE'
 FROM	Resources
 WHERE	ResourceType 			        IN
-    (	'RESOURCE_AMBER',
-        'RESOURCE_SILVER'               );
+    (	'RESOURCE_BANANAS',
+        'RESOURCE_WINE',
+        'RESOURCE_MAIZE',
+        'RESOURCE_RICE',
+        'RESOURCE_WHEAT'                );
 
--- Goldsmiths' Quarter specialty materials
+-- Brewers' Quarter specialty materials
 INSERT OR IGNORE INTO TypeTags
 
     (	Type,                           Tag			        )
-SELECT	ResourceType,			        'CLASS_CSC_GOLDSMITHS_SPEC'
+SELECT	ResourceType,			        'CLASS_CSC_BREWERS_SPEC'
 FROM    Resources
 WHERE	ResourceType 			        IN
-    (	'RESOURCE_DIAMONDS',
-        'RESOURCE_JADE'                 );
+    (	'RESOURCE_CITRUS',
+        'RESOURCE_COCOA',
+        'RESOURCE_COFFEE',
+        'RESOURCE_SPICES',
+        'RESOURCE_SUGAR'                );
 
 
 
 --===============================================================================================================================================================================--
-/*	GOLDSMITHS' QUARTER */
+/*	BREWERS' QUARTER */
 --===============================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -89,9 +95,9 @@ INSERT INTO Districts
 			CityStrengthModifier,
 			AdvisorType                     		)
 VALUES	(
-		/*  DistrictType, */						'DISTRICT_CSC_GOLDSMITHS_QUARTER',
-		/*  Name, */								'LOC_DISTRICT_CSC_GOLDSMITHS_QUARTER_NAME',
-		/*  Description, */							'LOC_DISTRICT_CSC_GOLDSMITHS_QUARTER_DESCRIPTION',
+		/*  DistrictType, */						'DISTRICT_CSC_BREWERS_QUARTER',
+		/*  Name, */								'LOC_DISTRICT_CSC_BREWERS_QUARTER_NAME',
+		/*  Description, */							'LOC_DISTRICT_CSC_BREWERS_QUARTER_DESCRIPTION',
 		/*  PrereqTech, */							NULL,
 		/*  PrereqCivic, */							'CIVIC_CRAFTSMANSHIP',
 		/*  Cost, */								60,
@@ -122,8 +128,8 @@ VALUES	(
 INSERT INTO Adjacency_YieldChanges
 
 		(	ID,											    Description,									    YieldType,				YieldChange,	AdjacentFeature,	AdjacentImprovement,	AdjacentDistrict,						AdjacentResourceClass,		PrereqTech			)
-VALUES	(	'CSC_COMMERCIAL_HUB_GOLD_TO_GOLDSMITHS',		'LOC_CSC_COMMERCIAL_HUB_GOLD_TO_GOLDSMITHS',		'YIELD_GOLD',			1,				NULL,				NULL,					'DISTRICT_COMMERCIAL_HUB',				'NO_RESOURCECLASS',			NULL				),
-		(	'CSC_GOLDSMITHS_GOLD_TO_COMMERCIAL_HUB',	    'LOC_CSC_GOLDSMITHS_GOLD_TO_COMMERCIAL_HUB',	    'YIELD_GOLD',		    1,				NULL,				NULL,					'DISTRICT_CSC_GOLDSMITHS_QUARTER',    'NO_RESOURCECLASS',			NULL				);
+VALUES	(	'CSC_COMMERCIAL_HUB_GOLD_TO_BREWERS',		    'LOC_CSC_COMMERCIAL_HUB_GOLD_TO_BREWERS',		    'YIELD_GOLD',			1,				NULL,				NULL,					'DISTRICT_COMMERCIAL_HUB',				'NO_RESOURCECLASS',			NULL				),
+		(	'CSC_BREWERS_CULTURE_TO_COMMERCIAL_HUB',	    'LOC_CSC_BREWERS_CULTURE_TO_COMMERCIAL_HUB',	    'YIELD_CULTURE',		1,				NULL,				NULL,					'DISTRICT_CSC_BREWERS_QUARTER',         'NO_RESOURCECLASS',			NULL				);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	District_Adjacencies
@@ -132,8 +138,8 @@ VALUES	(	'CSC_COMMERCIAL_HUB_GOLD_TO_GOLDSMITHS',		'LOC_CSC_COMMERCIAL_HUB_GOLD_
 INSERT INTO District_Adjacencies
 
 		(	DistrictType,						        YieldChangeId		)
-VALUES	(	'DISTRICT_CSC_GOLDSMITHS_QUARTER',		    'CSC_COMMERCIAL_HUB_GOLD_TO_GOLDSMITHS'		    ),
-		(	'DISTRICT_COMMERCIAL_HUB',			        'CSC_GOLDSMITHS_GOLD_TO_COMMERCIAL_HUB'		    );
+VALUES	(	'DISTRICT_CSC_BREWERS_QUARTER',		        'CSC_COMMERCIAL_HUB_GOLD_TO_BREWERS'		    ),
+		(	'DISTRICT_COMMERCIAL_HUB',			        'CSC_BREWERS_CULTURE_TO_COMMERCIAL_HUB'		    );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Ruivo_New_Adjacency
@@ -151,8 +157,8 @@ INSERT INTO Ruivo_New_Adjacency
 			Rings,
     		DistrictModifiers			)
 SELECT
-			'CSC_GOLDSMITHS_PRODUCTION_FROM_BASE_' || Type,
-			'DISTRICT_CSC_GOLDSMITHS_QUARTER',
+			'CSC_BREWERS_PRODUCTION_FROM_BASE_' || Type,
+			'DISTRICT_CSC_BREWERS_QUARTER',
 			'SelfBonus',
 			'YIELD_PRODUCTION',
 			1,
@@ -161,7 +167,7 @@ SELECT
 			1,
 			1
 FROM	TypeTags
-WHERE 	Tag='CLASS_CSC_GOLDSMITHS_BASE';
+WHERE 	Tag='CLASS_CSC_BREWERS_BASE';
 
 INSERT INTO Ruivo_New_Adjacency
 
@@ -175,8 +181,8 @@ INSERT INTO Ruivo_New_Adjacency
 			Rings,
     		DistrictModifiers			)
 SELECT
-			'CSC_GOLDSMITHS_PRODUCTION_FROM_SPEC_' || Type,
-			'DISTRICT_CSC_GOLDSMITHS_QUARTER',
+			'CSC_BREWERS_PRODUCTION_FROM_SPEC_' || Type,
+			'DISTRICT_CSC_BREWERS_QUARTER',
 			'SelfBonus',
 			'YIELD_PRODUCTION',
 			1,
@@ -185,4 +191,4 @@ SELECT
 			1,
 			1
 FROM	TypeTags
-WHERE 	Tag='CLASS_CSC_GOLDSMITHS_SPEC';
+WHERE 	Tag='CLASS_CSC_BREWERS_SPEC';

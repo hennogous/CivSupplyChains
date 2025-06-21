@@ -1,6 +1,6 @@
--- ModSupport_REMOVE_ALL_UNUSED
+-- ModSupport_LAR_ANIMALS_REMOVE_UNUSED
 -- Author: Henno
--- DateCreated: 2025-06-20 07:54:05
+-- DateCreated: 2025-06-20 07:57:30
 --------------------------------------------------------------
 
 CREATE TABLE ResourcesToRemove (
@@ -14,12 +14,9 @@ VALUES  (   'RESOURCE_P0K_PENGUINS'         ),      -- CR
         (   'RESOURCE_P0K_PAPYRUS'          ),
 
         (   'RESOURCE_LEU_P0K_CAPYBARAS'    ),      -- LAR
-        (   'RESOURCE_LEU_P0K_LLAMAS'       ),
 
         (   'RESOURCE_SALMON'               ),      -- R2
-        (   'RESOURCE_CASHMERE'             ),
         (   'RESOURCE_CAVIAR'               ),
-        (   'RESOURCE_CORAL'                ),
         (   'RESOURCE_OXEN'                 ),
         (   'RESOURCE_HAM'                  ),
         (   'RESOURCE_COD'                  ),
@@ -31,7 +28,6 @@ VALUES  (   'RESOURCE_P0K_PENGUINS'         ),      -- CR
         (   'RESOURCE_TIGER'                ),
         (   'RESOURCE_LION'                 ),
         (   'RESOURCE_TOXINS'               ),
-        (   'RESOURCE_SPONGE'               ),
 
         (   'RESOURCE_SUK_SQUID'            ),      -- SO
         (   'RESOURCE_SUK_SEALS'            ),
@@ -39,7 +35,6 @@ VALUES  (   'RESOURCE_P0K_PENGUINS'         ),      -- CR
         (   'RESOURCE_SUK_RAYS'             ),
         (   'RESOURCE_SUK_ABALONE'          ),
         (   'RESOURCE_SUK_CAVIAR'           ),
-        (   'RESOURCE_SUK_CORAL'            ),
 
         (   'RESOURCE_SUK_CHEESE'           ),      -- SR
         (   'RESOURCE_SUK_CAMEL'            ),

@@ -1,6 +1,6 @@
--- ModSupport_R2_ANIMALS
+-- ModSupport_SR_ANIMALS
 -- Author: Henno
--- DateCreated: 2025-06-20 07:58:37
+-- DateCreated: 2025-06-20 07:59:20
 --------------------------------------------------------------
 
 --===========================================================================================================================================================================--
@@ -14,24 +14,12 @@
 INSERT OR IGNORE INTO Tags
 
 		(   Tag,							    Vocabulary			)
-VALUES	(	'CLASS_CSC_WEAVERS_SPEC',	        'RESOURCE_CLASS'	),
-        (   'CLASS_CSC_APOTHECARIES_BASE',      'RESOURCE_CLASS'    ),
+VALUES	(   'CLASS_CSC_APOTHECARIES_BASE',      'RESOURCE_CLASS'    ),
         (   'CLASS_CSC_GOLDSMITHS_BASE',        'RESOURCE_CLASS'    );
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	TypeTags
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
---	Weavers' Quarter specialty materials
-INSERT OR IGNORE INTO TypeTags
-
-	(	Type,							Tag			        )
-SELECT	ResourceType,					'CLASS_CSC_WEAVERS_SPEC'
-FROM	Resources
-WHERE	ResourceType 					IN
-	(	'RESOURCE_CASHMERE'		        );
-
--------------------------------------------------------------------------------------
 
 -- Apothecaries' Quarter base materials
 INSERT OR IGNORE INTO TypeTags
@@ -40,8 +28,7 @@ INSERT OR IGNORE INTO TypeTags
 SELECT	ResourceType,               'CLASS_CSC_APOTHECARIES_BASE'
 FROM	Resources
 WHERE	ResourceType                IN
-    (	'RESOURCE_CORAL',
-        'RESOURCE_SPONGE'           );
+    (	'RESOURCE_SUK_CORAL'        );
 
 -------------------------------------------------------------------------------------
 
@@ -52,4 +39,4 @@ INSERT OR IGNORE INTO TypeTags
 SELECT	ResourceType,               'CLASS_CSC_GOLDSMITHS_BASE'
 FROM	Resources
 WHERE	ResourceType                IN
-    (	'RESOURCE_CORAL'            );
+    (	'RESOURCE_SUK_CORAL'        );

@@ -1,4 +1,0 @@
--- ModSupport_SR_ANIMALS_REMOVE_UNUSED
--- Author: Shadow
--- DateCreated: 2025-06-20 07:59:34
---------------------------------------------------------------

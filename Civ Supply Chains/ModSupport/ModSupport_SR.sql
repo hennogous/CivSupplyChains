@@ -3,26 +3,80 @@
 -- DateCreated: 2025-06-17 09:25:40
 --------------------------------------------------------------
 
+--===========================================================================================================================================================================--
+/*	RESOURCES */
+--===========================================================================================================================================================================--
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Tags
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 INSERT OR IGNORE INTO Tags
 
-		(   Tag,							    Vocabulary			)
-VALUES	(	'CLASS_CSC_BAKERS_BASE',	        'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_BAKERS_SPEC',	        'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_WEAVERS_BASE',	        'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_WEAVERS_SPEC',	        'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_APOTHECARIES_BASE',      'RESOURCE_CLASS'	),
+	    (   Tag,                                Vocabulary          )
+VALUES	(	'CLASS_CSC_WEAVERS_SPEC',	        'RESOURCE_CLASS'	),
         (	'CLASS_CSC_APOTHECARIES_SPEC',      'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_STONEMASONS_BASE',       'RESOURCE_CLASS'	),
         (	'CLASS_CSC_STONEMASONS_SPEC',       'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_CARPENTERS_BASE',        'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_CARPENTERS_SPEC',	    'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_BLACKSMITHS_BASE',	    'RESOURCE_CLASS'	),
         (	'CLASS_CSC_BLACKSMITHS_SPEC',	    'RESOURCE_CLASS'	),
         (	'CLASS_CSC_GOLDSMITHS_BASE',	    'RESOURCE_CLASS'	),
+
         (	'CLASS_CSC_GOLDSMITHS_SPEC',	    'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_BREWERS_BASE',           'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_BREWERS_SPEC',           'RESOURCE_CLASS'	);
+        (	'CLASS_CSC_BREWERS_BASE',           'RESOURCE_CLASS'	);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	TypeTags
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Weavers' Quarter specialty materials
+INSERT OR IGNORE INTO TypeTags
+
+    (	Type,				        Tag     )
+SELECT	ResourceType,			    'CLASS_CSC_WEAVERS_SPEC'
+FROM	Resources
+WHERE	ResourceType 			    IN
+    (	'RESOURCE_GOLD'             );
+
+-------------------------------------------------------------------------------------
+
+-- Apothecaries' Quarter specialty materials
+INSERT OR IGNORE INTO TypeTags
+
+    (	Type,                       Tag     )
+SELECT	ResourceType,			    'CLASS_CSC_APOTHECARIES_SPEC'
+FROM	Resources
+WHERE	ResourceType 			    IN
+    (	'RESOURCE_GOLD'             );
+
+-------------------------------------------------------------------------------------
+
+-- Stonemasons' Quarter specialty materials
+INSERT OR IGNORE INTO TypeTags
+
+    (	Type,                       Tag     )
+SELECT	ResourceType,			    'CLASS_CSC_STONEMASONS_SPEC'
+FROM	Resources
+WHERE	ResourceType 			    IN
+    (	'RESOURCE_SUK_OBSIDIAN'     );
+
+-------------------------------------------------------------------------------------
+
+-- Blacksmiths' Quarter specialty materials
+INSERT OR IGNORE INTO TypeTags
+
+    (	Type,                       Tag     )
+SELECT	ResourceType,			    'CLASS_CSC_BLACKSMITHS_SPEC'
+FROM	Resources
+WHERE	ResourceType 			    IN
+    (	'RESOURCE_GOLD'             );
+
+-------------------------------------------------------------------------------------
+
+-- Goldsmiths' Quarter base materials
+INSERT OR IGNORE INTO TypeTags
+
+    (	Type,                       Tag     )
+SELECT	ResourceType,			    'CLASS_CSC_GOLDSMITHS_BASE'
+FROM	Resources
+WHERE	ResourceType 			    IN
+    (	'RESOURCE_GOLD',
+        'RESOURCE_SUK_OBSIDIAN'     );

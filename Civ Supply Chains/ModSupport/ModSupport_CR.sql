@@ -1,6 +1,6 @@
--- ModSupport_R2_ANIMALS
+-- ModSupport_CR
 -- Author: Henno
--- DateCreated: 2025-06-20 07:58:37
+-- DateCreated: 2025-06-20 14:26:28
 --------------------------------------------------------------
 
 --===========================================================================================================================================================================--
@@ -13,43 +13,31 @@
 
 INSERT OR IGNORE INTO Tags
 
-		(   Tag,							    Vocabulary			)
-VALUES	(	'CLASS_CSC_WEAVERS_SPEC',	        'RESOURCE_CLASS'	),
-        (   'CLASS_CSC_APOTHECARIES_BASE',      'RESOURCE_CLASS'    ),
-        (   'CLASS_CSC_GOLDSMITHS_BASE',        'RESOURCE_CLASS'    );
+	    (   Tag,                                    Vocabulary          )
+VALUES  (	'CLASS_CSC_GOLDSMITHS_SPEC',	        'RESOURCE_CLASS'	),
+        (	'CLASS_CSC_BREWERS_SPEC',               'RESOURCE_CLASS'	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	TypeTags
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---	Weavers' Quarter specialty materials
+-- Goldsmiths' Quarter specialty materials
 INSERT OR IGNORE INTO TypeTags
 
-	(	Type,							Tag			        )
-SELECT	ResourceType,					'CLASS_CSC_WEAVERS_SPEC'
+    (	Type,                           Tag			        )
+SELECT	ResourceType,			        'CLASS_CSC_GOLDSMITHS_SPEC'
 FROM	Resources
-WHERE	ResourceType 					IN
-	(	'RESOURCE_CASHMERE'		        );
+WHERE	ResourceType 			        IN
+    (	'RESOURCE_P0K_OPAL'             );
 
 -------------------------------------------------------------------------------------
 
--- Apothecaries' Quarter base materials
+-- Brewers' Quarter specialty materials
 INSERT OR IGNORE INTO TypeTags
 
-    (	Type,                       Tag     )
-SELECT	ResourceType,               'CLASS_CSC_APOTHECARIES_BASE'
+    (	Type,                           Tag     )
+SELECT	ResourceType,                   'CLASS_CSC_BREWERS_SPEC'
 FROM	Resources
-WHERE	ResourceType                IN
-    (	'RESOURCE_CORAL',
-        'RESOURCE_SPONGE'           );
-
--------------------------------------------------------------------------------------
-
--- Apothecaries' Quarter base materials
-INSERT OR IGNORE INTO TypeTags
-
-    (	Type,                       Tag     )
-SELECT	ResourceType,               'CLASS_CSC_GOLDSMITHS_BASE'
-FROM	Resources
-WHERE	ResourceType                IN
-    (	'RESOURCE_CORAL'            );
+WHERE	ResourceType                    IN
+    (	'RESOURCE_P0K_PLUMS',
+        'RESOURCE_CVS_POMEGRANATES'     );
