@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CSC_ICONS -->
+<!-- Author: Shadow -->
+<!-- DateCreated: 2025-06-29 20:44:21 -->
+<GameData>
+
+	<IconTextureAtlases>
+		<Row Name="ICON_ATLAS_CSC_QUARTERS" IconSize="32" IconsPerRow="4" IconsPerColumn="4" Filename="CSC_Quarters_32"/>
+		<Row Name="ICON_ATLAS_CSC_QUARTERS" IconSize="38" IconsPerRow="4" IconsPerColumn="4" Filename="CSC_Quarters_38"/>
+		<Row Name="ICON_ATLAS_CSC_QUARTERS" IconSize="50" IconsPerRow="4" IconsPerColumn="4" Filename="CSC_Quarters_50"/>
+		<Row Name="ICON_ATLAS_CSC_QUARTERS" IconSize="80" IconsPerRow="4" IconsPerColumn="4" Filename="CSC_Quarters_80"/>
+		<Row Name="ICON_ATLAS_CSC_QUARTERS" IconSize="128" IconsPerRow="4" IconsPerColumn="4" Filename="CSC_Quarters_128"/>
+		<Row Name="ICON_ATLAS_CSC_QUARTERS" IconSize="256" IconsPerRow="4" IconsPerColumn="4" Filename="CSC_Quarters_256"/>
+		<Row Name="ICON_ATLAS_CSC_QUARTERS_FOW" IconSize="256" IconsPerRow="4" IconsPerColumn="4" Filename="CSC_Quarters_256_FOW"/>	
+	</IconTextureAtlases>
+
+	<IconDefinitions>
+		<Row Name="ICON_DISTRICT_CSC_BAKERS_QUARTER" Atlas="ICON_ATLAS_CSC_QUARTERS" Index="0"/>
+		<Row Name="ICON_DISTRICT_CSC_BAKERS_QUARTER_FOW" Atlas="ICON_ATLAS_CSC_QUARTERS_FOW" Index="0"/>
+	</IconDefinitions>
+
+    <IconDefinitions>
+		<Row Name="ICON_DISTRICT_CSC_WEAVERS_QUARTER" Atlas="ICON_ATLAS_CSC_QUARTERS" Index="1"/>
+		<Row Name="ICON_DISTRICT_CSC_WEAVERS_QUARTER_FOW" Atlas="ICON_ATLAS_CSC_QUARTERS_FOW" Index="1"/>
+	</IconDefinitions>
+
+    <IconDefinitions>
+		<Row Name="ICON_DISTRICT_CSC_APOTHECARIES_QUARTER" Atlas="ICON_ATLAS_CSC_QUARTERS" Index="2"/>
+		<Row Name="ICON_DISTRICT_CSC_APOTHECARIES_QUARTER_FOW" Atlas="ICON_ATLAS_CSC_QUARTERS_FOW" Index="2"/>
+	</IconDefinitions>
+
+    <IconDefinitions>
+		<Row Name="ICON_DISTRICT_CSC_STONEMASONS_QUARTER" Atlas="ICON_ATLAS_CSC_QUARTERS" Index="3"/>
+		<Row Name="ICON_DISTRICT_CSC_STONEMASONS_QUARTER_FOW" Atlas="ICON_ATLAS_CSC_QUARTERS_FOW" Index="3"/>
+	</IconDefinitions>
+
+    <IconDefinitions>
+		<Row Name="ICON_DISTRICT_CSC_CARPENTERS_QUARTER" Atlas="ICON_ATLAS_CSC_QUARTERS" Index="4"/>
+		<Row Name="ICON_DISTRICT_CSC_CARPENTERS_QUARTER_FOW" Atlas="ICON_ATLAS_CSC_QUARTERS_FOW" Index="4"/>
+	</IconDefinitions>
+
+    <IconDefinitions>
+		<Row Name="ICON_DISTRICT_CSC_BLACKSMITHS_QUARTER" Atlas="ICON_ATLAS_CSC_QUARTERS" Index="5"/>
+		<Row Name="ICON_DISTRICT_CSC_BLACKSMITHS_QUARTER_FOW" Atlas="ICON_ATLAS_CSC_QUARTERS_FOW" Index="5"/>
+	</IconDefinitions>
+
+    <IconDefinitions>
+		<Row Name="ICON_DISTRICT_CSC_GOLDSMITHS_QUARTER" Atlas="ICON_ATLAS_CSC_QUARTERS" Index="6"/>
+		<Row Name="ICON_DISTRICT_CSC_GOLDSMITHS_QUARTER_FOW" Atlas="ICON_ATLAS_CSC_QUARTERS_FOW" Index="6"/>
+	</IconDefinitions>
+
+    <IconDefinitions>
+		<Row Name="ICON_DISTRICT_CSC_BREWERS_QUARTER" Atlas="ICON_ATLAS_CSC_QUARTERS" Index="7"/>
+		<Row Name="ICON_DISTRICT_CSC_BREWERS_QUARTER_FOW" Atlas="ICON_ATLAS_CSC_QUARTERS_FOW" Index="7"/>
+	</IconDefinitions>
+
+</GameData>

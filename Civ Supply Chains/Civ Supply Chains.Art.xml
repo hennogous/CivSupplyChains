@@ -545,6 +545,7 @@
     <Element>
       <libraryName text="UITexture"/>
       <relativePackagePaths>
+		  <Element text="UI/Icons"/>
       </relativePackagePaths>
     </Element>
     <Element>
