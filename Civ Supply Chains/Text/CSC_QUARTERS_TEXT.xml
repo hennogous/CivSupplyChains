@@ -1,0 +1,211 @@
+<GameData>
+	<LocalizedText>
+
+		<!-- BAKERS' QUARTER -->
+
+		<Replace Tag="LOC_DISTRICT_CSC_BAKERS_QUARTER_NAME" Language="en_US">
+			<Text>Bakers' Quarter</Text>
+		</Replace>
+
+        <Replace Tag="LOC_DISTRICT_CSC_BAKERS_QUARTER_DESCRIPTION" Language="en_US">
+			<Text>A district for the Baking industry. +1 [ICON_Production] Production from each adjacent base and specialty material in its supply chain, and +1 [ICON_Production] if built on Hills.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_NAME" Language="en_US">
+			<Text>Flour Mill</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_DESCRIPTION" Language="en_US">
+			<Text>+1 [ICON_Production] from each adjacent base and specialty material, and grants +1 [ICON_Gold] in return[NEWLINE]+2 [ICON_Food] and +1 [ICON_Food] at Feudalism.[NEWLINE]+1 [ICON_Food] to an adjacent Granary, and +1 [ICON_Gold] in return[NEWLINE]+1 [ICON_Food] bonus to trade routes to the city, and +1 [ICON_Gold] in return</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_BAKERY_NAME" Language="en_US">
+			<Text>Bakery</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_BAKERY_DESCRIPTION" Language="en_US">
+			<Text>Just smell that freshly baked bread!</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_PATISSERIE_NAME" Language="en_US">
+			<Text>Patisserie</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BUILDING_CSC_BAKERS_PATISSERIE_DESCRIPTION" Language="en_US">
+			<Text>Hmmmmmm, continental!</Text>
+		</Replace>
+
+		<Replace Tag="LOC_RESOURCE_WINE_NAME" Language="en_US">
+			<Text>Grapes</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_CITY_CENTER_GOLD_TO_BAKERS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent City Center</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_BAKERS_FOOD_TO_CITY_CENTER" Language="en_US">
+			<Text>+{1_num} [ICON_Food] from an adjacent Bakers' Quarter</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_BAKERS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_BAKERS_FOOD_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Food] from an adjacent Bakers' Quarter</Text>
+		</Replace>
+
+		<!-- BAKERS' SPECIALTY -->
+
+		<Replace Tag="LOC_RESOURCE_CSC_BAKERS_SPECIALTY_NAME" Language="en_US">
+			<Text>Fine Pastries Resource Name</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CSC_BAKERS_X_NAME" Language="en_US">
+			<Text>Fine Pastries GreatWork Name</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PROJECT_CREATE_CSC_BAKERS_SPECIALTY_NAME" Language="en_US">
+			<Text>Fine Pastries Project Name</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PROJECT_CREATE_CSC_BAKERS_SPECIALTY_SHORT_NAME" Language="en_US">
+			<Text>Fine Pastries Project Short Name</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PROJECT_CREATE_CSC_BAKERS_SPECIALTY_DESCRIPTION" Language="en_US">
+			<Text>Fine Pastries Project Description</Text>
+		</Replace>
+
+		<Replace Tag="LOC_MOD_CSC_BAKERS_SPECIALTY_HOUSING_DESCRIPTION" Language="en_US">
+			<Text>Housing bonus from Bakers' Quarter specialty goods</Text>
+		</Replace>
+
+		<!-- WEAVERS' QUARTER -->
+
+		<Replace Tag="LOC_DISTRICT_CSC_WEAVERS_QUARTER_NAME" Language="en_US">
+			<Text>Weavers' Quarter</Text>
+		</Replace>
+
+        <Replace Tag="LOC_DISTRICT_CSC_WEAVERS_QUARTER_DESCRIPTION" Language="en_US">
+			<Text>A district for the Textiles industry. +1 [ICON_Production] Production from each adjacent base and specialty material in its supply chain.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_WEAVERS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_WEAVERS_CULTURE_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Culture] from an adjacent Weavers' Quarter</Text>
+		</Replace>
+
+		<!-- APOTHECARIES' QUARTER -->
+
+		<Replace Tag="LOC_DISTRICT_CSC_APOTHECARIES_QUARTER_NAME" Language="en_US">
+			<Text>Apothecaries' Quarter</Text>
+		</Replace>
+
+        <Replace Tag="LOC_DISTRICT_CSC_APOTHECARIES_QUARTER_DESCRIPTION" Language="en_US">
+			<Text>A district for the Medicine industry. +1 [ICON_Production] Production from each adjacent base and specialty material in its supply chain.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_APOTHECARIES" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_APOTHECARIES_SCIENCE_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Science] from an adjacent Apothecaries' Quarter</Text>
+		</Replace>
+
+		<!-- STONEMASONS' QUARTER -->
+
+		<Replace Tag="LOC_DISTRICT_CSC_STONEMASONS_QUARTER_NAME" Language="en_US">
+			<Text>Stonemasons' Quarter</Text>
+		</Replace>
+
+        <Replace Tag="LOC_DISTRICT_CSC_STONEMASONS_QUARTER_DESCRIPTION" Language="en_US">
+			<Text>A district for the Masonry industry. +1 [ICON_Production] Production from each adjacent base and specialty material in its supply chain.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_STONEMASONS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_STONEMASONS_PRODUCTION_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Production] from an adjacent Stonemasons' Quarter</Text>
+		</Replace>
+
+		<!-- CARPENTERS' QUARTER -->
+
+		<Replace Tag="LOC_DISTRICT_CSC_CARPENTERS_QUARTER_NAME" Language="en_US">
+			<Text>Carpenters' Quarter</Text>
+		</Replace>
+
+        <Replace Tag="LOC_DISTRICT_CSC_CARPENTERS_QUARTER_DESCRIPTION" Language="en_US">
+			<Text>A district for the Woodworking industry. +1 [ICON_Production] Production from each adjacent base and specialty material in its supply chain.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_CARPENTERS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_CARPENTERS_PRODUCTION_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Production] from an adjacent Carpenters' Quarter</Text>
+		</Replace>
+
+		<!-- BLACKSMITHS' QUARTER -->
+
+		<Replace Tag="LOC_DISTRICT_CSC_BLACKSMITHS_QUARTER_NAME" Language="en_US">
+			<Text>Blacksmiths' Quarter</Text>
+		</Replace>
+
+        <Replace Tag="LOC_DISTRICT_CSC_BLACKSMITHS_QUARTER_DESCRIPTION" Language="en_US">
+			<Text>A district for the Metalworking industry. +1 [ICON_Production] Production from each adjacent base and specialty material in its supply chain.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_BLACKSMITHS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_BLACKSMITHS_PRODUCTION_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Production] from an adjacent Blacksmiths' Quarter</Text>
+		</Replace>
+
+		<!-- GOLDSMITHS' QUARTER -->
+
+		<Replace Tag="LOC_DISTRICT_CSC_GOLDSMITHS_QUARTER_NAME" Language="en_US">
+			<Text>Goldsmiths' Quarter</Text>
+		</Replace>
+
+        <Replace Tag="LOC_DISTRICT_CSC_GOLDSMITHS_QUARTER_DESCRIPTION" Language="en_US">
+			<Text>A district for the Jewelry industry. +1 [ICON_Production] Production from each adjacent base and specialty material in its supply chain.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_GOLDSMITHS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_GOLDSMITHS_GOLD_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Goldsmiths' Quarter</Text>
+		</Replace>
+
+		<!-- BREWERS' QUARTER -->
+
+		<Replace Tag="LOC_DISTRICT_CSC_BREWERS_QUARTER_NAME" Language="en_US">
+			<Text>Brewers' Quarter</Text>
+		</Replace>
+
+        <Replace Tag="LOC_DISTRICT_CSC_BREWERS_QUARTER_DESCRIPTION" Language="en_US">
+			<Text>A district for the Brewing industry. +1 [ICON_Production] Production from each adjacent base and specialty material in its supply chain.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_BREWERS" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CSC_BREWERS_CULTURE_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Culture] from an adjacent Brewers' Quarter</Text>
+		</Replace>
+
+	</LocalizedText>
+</GameData>
