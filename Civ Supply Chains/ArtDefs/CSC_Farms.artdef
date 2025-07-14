@@ -25,8 +25,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Angled_01"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -46,8 +46,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Angled_02"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -109,8 +109,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Square_01"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -130,8 +130,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Square_02"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -151,8 +151,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Square_03"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -172,8 +172,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Square_04"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -193,8 +193,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Square_05"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -277,8 +277,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Transition_01"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -298,8 +298,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Transition_02"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -319,8 +319,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Transition_03"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -340,8 +340,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Transition_04"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -361,8 +361,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Transition_05"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -382,8 +382,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Transition_06"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -403,8 +403,8 @@
 									<Element class="AssetObjects..BLPEntryValue">
 										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Transition_07"/>
 										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
 										<m_LibraryName text="TileBase"/>
 										<m_ParamName text="Asset"/>
 									</Element>
@@ -416,48 +416,6 @@
 							</m_Fields>
 							<m_ChildCollections/>
 							<m_Name text="Plot_T7"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-						<Element>
-							<m_Fields>
-								<m_Values>
-									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Transition_08"/>
-										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="csc_tilebases.xlp"/>
-										<m_BLPPackage text="CSC_Tilebases"/>
-										<m_LibraryName text="TileBase"/>
-										<m_ParamName text="Asset"/>
-									</Element>
-									<Element class="AssetObjects..StringValue">
-										<m_Value text="T8"/>
-										<m_ParamName text="Shape"/>
-									</Element>
-								</m_Values>
-							</m_Fields>
-							<m_ChildCollections/>
-							<m_Name text="Plot_T8"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-						<Element>
-							<m_Fields>
-								<m_Values>
-									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="IMP_Farm_Decal_Transition_09"/>
-										<m_XLPClass text="TileBase"/>
-										<m_XLPPath text="tilebases.xlp"/>
-										<m_BLPPackage text="landmarks/tilebases"/>
-										<m_LibraryName text="TileBase"/>
-										<m_ParamName text="Asset"/>
-									</Element>
-									<Element class="AssetObjects..StringValue">
-										<m_Value text="T9"/>
-										<m_ParamName text="Shape"/>
-									</Element>
-								</m_Values>
-							</m_Fields>
-							<m_ChildCollections/>
-							<m_Name text="Plot_T9"/>
 							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 						</Element>
 						<Element>
@@ -521,6 +479,48 @@
 							</m_Fields>
 							<m_ChildCollections/>
 							<m_Name text="Plot_T12"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="IMP_Farm_Decal_Transition_09"/>
+										<m_XLPClass text="TileBase"/>
+										<m_XLPPath text="tilebases.xlp"/>
+										<m_BLPPackage text="landmarks/tilebases"/>
+										<m_LibraryName text="TileBase"/>
+										<m_ParamName text="Asset"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text="T9"/>
+										<m_ParamName text="Shape"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="Plot_T9"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="IMP_Farm_CSC_Flax_Decal_Transition_08"/>
+										<m_XLPClass text="TileBase"/>
+										<m_XLPPath text="CSC_Tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
+										<m_LibraryName text="TileBase"/>
+										<m_ParamName text="Asset"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text="T8"/>
+										<m_ParamName text="Shape"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="Plot_T8"/>
 							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 						</Element>
 					</Element>
@@ -788,4 +788,3 @@
 		</Element>
 	</m_RootCollections>
 </AssetObjects..ArtDefSet>
-

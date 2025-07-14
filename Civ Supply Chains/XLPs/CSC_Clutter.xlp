@@ -7,7 +7,7 @@
 		<revision>0</revision>
 	</m_Version>
 	<m_ClassName text="Landmark"/>
-	<m_PackageName text="CSC_Clutter"/>
+	<m_PackageName text="Environment/CSC_Clutter"/>
 	<m_Entries>
 		<Element>
 			<m_EntryID text="RES_CSC_Flax_Tuft01"/>

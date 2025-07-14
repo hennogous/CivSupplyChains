@@ -29,7 +29,7 @@
 									<Element class="AssetObjects..ArtDefReferenceValue">
 										<m_ElementName text=""/>
 										<m_RootCollectionName text=""/>
-										<m_ArtDefPath text="Clutter.artdef"/>
+										<m_ArtDefPath text="CSC_Clutter.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
 										<m_TemplateName text=""/>
 										<m_ParamName text="Xref"/>

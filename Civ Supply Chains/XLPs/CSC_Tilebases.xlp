@@ -7,7 +7,7 @@
 		<revision>0</revision>
 	</m_Version>
 	<m_ClassName text="TileBase"/>
-	<m_PackageName text="CSC_Tilebases"/>
+	<m_PackageName text="Landmarks/CSC_Tilebases"/>
 	<m_Entries>
 		<Element>
 			<m_EntryID text="IMP_Farm_CSC_Flax_Decal_Angled_01"/>
@@ -86,10 +86,6 @@
 			<m_ObjectName text="IMP_Farm_CSC_Flax_Decal_Transition_07"/>
 		</Element>
 		<Element>
-			<m_EntryID text="IMP_Farm_CSC_Flax_Decal_Transition_08"/>
-			<m_ObjectName text="IMP_Farm_CSC_Flax_Decal_Transition_08"/>
-		</Element>
-		<Element>
 			<m_EntryID text="IMP_Farm_CSC_Flax_Decal_Transition_09"/>
 			<m_ObjectName text="IMP_Farm_CSC_Flax_Decal_Transition_09"/>
 		</Element>
@@ -104,6 +100,14 @@
 		<Element>
 			<m_EntryID text="IMP_Farm_CSC_Flax_Decal_Transition_12"/>
 			<m_ObjectName text="IMP_Farm_CSC_Flax_Decal_Transition_12"/>
+		</Element>
+		<Element>
+			<m_EntryID text="IMP_Farm_CSC_Flax_Decal_Transition_08"/>
+			<m_ObjectName text="IMP_Farm_CSC_Flax_Decal_Transition_08"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_01"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_01"/>
 		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
