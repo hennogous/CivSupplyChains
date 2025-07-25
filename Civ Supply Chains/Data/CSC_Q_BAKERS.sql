@@ -10,7 +10,11 @@
 INSERT INTO Types
 
 		(	Type,																Kind					)
-VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              		'KIND_DISTRICT'         );
+VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              		'KIND_DISTRICT'         ),
+
+		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',									'KIND_BUILDING'			),
+		(	'BUILDING_CSC_BAKERS_BAKERY',										'KIND_BUILDING'			),
+		(	'BUILDING_CSC_BAKERS_PATISSERIE',									'KIND_BUILDING'			);
 
 
 
@@ -222,6 +226,84 @@ VALUES	(	'DISTRICT_CSC_BAKERS_QUARTER',		'CSC_CITY_CENTER_GOLD_TO_BAKERS'		),
 
 
 --===========================================================================================================================================================================--
+/*	STAGES 2-4 - BUILDINGS */
+--===========================================================================================================================================================================--
+
+INSERT INTO Buildings
+
+		(	BuildingType,
+			Name,
+			Description,
+			PrereqTech,
+			PrereqCivic,
+			Cost,
+			PrereqDistrict,
+			PurchaseYield,
+			Maintenance,
+			CitizenSlots,
+			AdvisorType				)
+VALUES	(
+		/*  BuildingType, */		'BUILDING_CSC_BAKERS_FLOUR_MILL',
+		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_NAME',
+		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_DESCRIPTION',
+		/*  PrereqTech, */			'TECH_THE_WHEEL',
+		/*  PrereqCivic, */			NULL,
+		/*  Cost, */				80,
+		/*  PrereqDistrict, */		'DISTRICT_CSC_BAKERS_QUARTER',
+		/*  PurchaseYield, */		'YIELD_GOLD',
+		/*  Maintenance, */			1,
+		/*	CitizenSlots */			0,
+		/*  AdvisorType */			'ADVISOR_GENERIC'
+									),
+		(
+		/*  BuildingType, */		'BUILDING_CSC_BAKERS_BAKERY',
+		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_BAKERY_NAME',
+		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_BAKERY_DESCRIPTION',
+		/*  PrereqTech, */			NULL,
+		/*  PrereqCivic, */			'CIVIC_GUILDS',
+		/*  Cost, */				160,
+		/*  PrereqDistrict, */		'DISTRICT_CSC_BAKERS_QUARTER',
+		/*  PurchaseYield, */		'YIELD_GOLD',
+		/*  Maintenance, */			2,
+		/*	CitizenSlots */			1,
+		/*  AdvisorType */			'ADVISOR_GENERIC'
+									),
+		(
+		/*  BuildingType, */		'BUILDING_CSC_BAKERS_PATISSERIE',
+		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_PATISSERIE_NAME',
+		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_PATISSERIE_DESCRIPTION',
+		/*  PrereqTech, */			NULL,
+		/*  PrereqCivic, */			'CIVIC_HUMANISM',
+		/*  Cost, */				250,
+		/*  PrereqDistrict, */		'DISTRICT_CSC_BAKERS_QUARTER',
+		/*  PurchaseYield, */		'YIELD_GOLD',
+		/*  Maintenance, */			3,
+		/*	CitizenSlots */			1,
+		/*  AdvisorType */			'ADVISOR_GENERIC'
+									);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	BuildingPrereqs
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+INSERT INTO BuildingPrereqs
+
+        (	Building,      		        				PrereqBuilding												)
+VALUES  (	'BUILDING_CSC_BAKERS_BAKERY',				'BUILDING_CSC_BAKERS_FLOUR_MILL'							),
+		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'BUILDING_CSC_BAKERS_FLOUR_MILL'							);		
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	Building_YieldChanges
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+
+INSERT INTO Building_YieldChanges
+
+		(	BuildingType,								YieldType,								YieldChange			)
+VALUES	(	'BUILDING_CSC_BAKERS_FLOUR_MILL',			'YIELD_FOOD',							1					),
+		(	'BUILDING_CSC_BAKERS_BAKERY',				'YIELD_FOOD',							2					),
+		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'YIELD_FOOD',							3					);
+
+--===========================================================================================================================================================================--
 /*	MODIFIERS */
 --===========================================================================================================================================================================--
 
@@ -256,7 +338,6 @@ INSERT INTO ModifierArguments
 
 		(	'MOD_CSC_BAKERS_GOLD_TO_ADJACENT_BASE_MATERIAL',					'YieldType',				'YIELD_GOLD'													),
 		(	'MOD_CSC_BAKERS_GOLD_TO_ADJACENT_BASE_MATERIAL',					'Amount',					1																);
-
 
 --===========================================================================================================================================================================--
 /*	REQUIREMENTS */

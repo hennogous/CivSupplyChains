@@ -172,7 +172,11 @@ INSERT INTO DistrictModifiers
 		(	'DISTRICT_CSC_BAKERS_QUARTER',     		'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS'	   					),
 
 -- +1 Housing to each adjacent Neighbourhood with minimum Charming appeal, and +1 Gold in return
-		(	'DISTRICT_NEIGHBORHOOD',				'MOD_CSC_BAKERS_PATISSERIE_NBH_SALES_ATTACH_BAKERS_QUARTER'		);
+		(	'DISTRICT_NEIGHBORHOOD',				'MOD_CSC_BAKERS_PATISSERIE_NBH_SALES_ATTACH_BAKERS_QUARTER'		),
+
+-- 	TESTS -------------------------------------------------------------------------------
+
+		(	'DISTRICT_CSC_BAKERS_QUARTER',			'MOD_CSC_BAKERS_COUNT_TEST'										);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Adjacency_YieldChanges
@@ -482,6 +486,8 @@ INSERT INTO TraitModifiers
 		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_50'		),
 		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_50'		),
 
+-- 	TESTS -------------------------------------------------------------------------------
+
 		(	'TRAIT_LEADER_MAJOR_CIV',				'MOD_CSC_HIGH_ADJACENCY_TEST'							);
 
 
@@ -614,7 +620,11 @@ INSERT INTO Modifiers
 		(	'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD',									'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS',	NULL,								NULL,													NULL				),
 		(	'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD_EXTRA',							'MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FROM_OTHERS',	NULL,								NULL,													NULL				),
 
-		(	'MOD_CSC_HIGH_ADJACENCY_TEST',										'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_HIGH_ADJACENCY_QUARTER',					NULL				);
+-- 	TESTS -------------------------------------------------------------------------------
+
+		(	'MOD_CSC_HIGH_ADJACENCY_TEST',										'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_HIGH_ADJACENCY_QUARTER',					NULL				),
+		(	'MOD_CSC_BAKERS_COUNT_TEST',										'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE',			'REQSET_CSC_COUNT_TEST',			NULL,													NULL				);
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	ModifierArguments
@@ -806,10 +816,14 @@ INSERT INTO ModifierArguments
 		(	'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD_EXTRA',							'Amount',					2																),
 		(	'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD_EXTRA',							'Domestic',					1																),
 
+-- 	TESTS -------------------------------------------------------------------------------
+
 		(	'MOD_CSC_HIGH_ADJACENCY_TEST',										'BuildingType',				'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
 		(	'MOD_CSC_HIGH_ADJACENCY_TEST',										'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_HIGH_ADJACENCY_TEST',										'Amount',					100																);
+		(	'MOD_CSC_HIGH_ADJACENCY_TEST',										'Amount',					100																),
 
+		(	'MOD_CSC_BAKERS_COUNT_TEST',										'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_COUNT_TEST',										'Amount',					100																);
 
 --===========================================================================================================================================================================--
 /*	REQUIREMENTS */
@@ -881,7 +895,12 @@ INSERT INTO RequirementSets
 		(	'REQSET_CSC_DISTRICT_IS_BAKERS',						'REQUIREMENTSET_TEST_ALL'		),
         (  	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',          			'REQUIREMENTSET_TEST_ALL'       ),
 
-		(	'REQSET_CSC_HIGH_ADJACENCY_QUARTER',					'REQUIREMENTSET_TEST_ALL'		);
+-- 	TESTS -------------------------------------------------------------------------------
+
+		(	'REQSET_CSC_HIGH_ADJACENCY_QUARTER',					'REQUIREMENTSET_TEST_ALL'		),
+
+		(	'REQSET_CSC_COUNT_TEST',								'REQUIREMENTSET_TEST_ALL'		),
+		(	'REQSET_CSC_COUNT_TEST_INTERNAL_REQSET',				'REQUIREMENTSET_TEST_ALL'		);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	RequirementSetRequirements
@@ -963,7 +982,13 @@ INSERT INTO RequirementSetRequirements
         ( 	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					'REQ_CSC_PLOT_ADJACENT_TO_OWNER'              	),
         (  	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER'           	),
 
-		(	'REQSET_CSC_HIGH_ADJACENCY_QUARTER',					'REQ_CSC_HIGH_ADJACENCY_QUARTER'				);
+-- 	TESTS -------------------------------------------------------------------------------
+
+		(	'REQSET_CSC_HIGH_ADJACENCY_QUARTER',					'REQ_CSC_HIGH_ADJACENCY_QUARTER'				),
+
+		(	'REQSET_CSC_COUNT_TEST',								'REQ_CSC_COUNT_TEST'							),
+		(	'REQSET_CSC_COUNT_TEST_INTERNAL_REQSET',				'REQ_CSC_PLOT_ADJACENT_TO_OWNER'				),
+		(	'REQSET_CSC_COUNT_TEST_INTERNAL_REQSET',				'REQ_CSC_BAKERS_PLOT_HAS_MATERIAL_BASE'			);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Requirements
@@ -1023,7 +1048,12 @@ INSERT INTO Requirements
         (	'REQ_CSC_PLOT_NEARBY_OWNER',							'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',				0				),
 		(   'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER',					'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',          	0               ),
 
-		(	'REQ_CSC_HIGH_ADJACENCY_QUARTER',						'REQUIREMENT_CITY_HAS_HIGH_ADJACENCY_DISTRICT',		0				);
+-- 	TESTS -------------------------------------------------------------------------------
+
+		(	'REQ_CSC_HIGH_ADJACENCY_QUARTER',						'REQUIREMENT_CITY_HAS_HIGH_ADJACENCY_DISTRICT',		0				),
+
+		(	'REQ_CSC_COUNT_TEST',									'REQUIREMENT_COLLECTION_COUNT_ATLEAST',				0				);
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	RequirementArguments
@@ -1074,6 +1104,12 @@ INSERT INTO RequirementArguments
 		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_SPEC',					'Tag',							'CLASS_CSC_BAKERS_SPEC'							),
 		(	'REQ_CSC_PLOT_NEARBY_OWNER',							'MaxDistance',					2												),
 
+-- 	TESTS -------------------------------------------------------------------------------
+
 		(	'REQ_CSC_HIGH_ADJACENCY_QUARTER',						'DistrictType',					'DISTRICT_CSC_BAKERS_QUARTER'					),
 		(	'REQ_CSC_HIGH_ADJACENCY_QUARTER',						'YieldType',					'YIELD_PRODUCTION'								),
-		(	'REQ_CSC_HIGH_ADJACENCY_QUARTER',						'Amount',						1												);
+		(	'REQ_CSC_HIGH_ADJACENCY_QUARTER',						'Amount',						1												),
+
+		(	'REQ_CSC_COUNT_TEST',									'CollectionType',				'COLLECTION_ALL_PLOT_YIELDS'					),
+		(	'REQ_CSC_COUNT_TEST',									'Count',						3												),
+		(	'REQ_CSC_COUNT_TEST',									'RequirementSetId',				'REQSET_CSC_BAKERS_ADJACENT_PLOT_HAS_MATERIAL_ANY'			);

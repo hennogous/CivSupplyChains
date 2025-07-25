@@ -6,6 +6,37 @@ Opened output file: C:\Users\Shadow\Documents\My Games\Sid Meier's Civilization 
 Could not load digest key: ''.  Using mod key to sign BLP.
 Starting 'Landmarks/CSC_Tilebases'
 
+****** Log from Geometry: 'DIS_PRD_Workshop' ********
+--------------
+Geo DIS_PRD_Workshop Mesh Classical_Workshop : 22 vertices removed by tangent merger.
+Geo DIS_PRD_Workshop mesh Classical_Workshop flagged for possible vertex duplication. Vertex Count: 980, Index Count: 1557, Tri Count 519, Reused Vertices: 505, Duplicate Vertices: 0, Duplicate Positions: 384, Vertex:Tri Ratio: 1.89
+
+****** Log from Geometry: 'DIS_PRD_Workshop_CON' ********
+--------------
+Geo DIS_PRD_Workshop_CON Mesh Classical_Workshop_CON : 24 vertices removed by tangent merger.
+Geo DIS_PRD_Workshop_CON mesh Classical_Workshop_CON flagged for possible vertex duplication. Vertex Count: 1170, Index Count: 1845, Tri Count 615, Reused Vertices: 598, Duplicate Vertices: 0, Duplicate Positions: 427, Vertex:Tri Ratio: 1.90
+Geo DIS_PRD_Workshop_CON mesh Object20366 flagged for possible vertex duplication. Vertex Count: 409, Index Count: 567, Tri Count 189, Reused Vertices: 158, Duplicate Vertices: 0, Duplicate Positions: 135, Vertex:Tri Ratio: 2.16
+
+****** Log from Geometry: 'DIS_PRD_Workshop_PIL' ********
+--------------
+Geo DIS_PRD_Workshop_PIL Mesh Classical_Workshop_PIL : 24 vertices removed by tangent merger.
+Geo DIS_PRD_Workshop_PIL mesh Classical_Workshop_PIL flagged for possible vertex duplication. Vertex Count: 1170, Index Count: 1845, Tri Count 615, Reused Vertices: 598, Duplicate Vertices: 0, Duplicate Positions: 427, Vertex:Tri Ratio: 1.90
+
+****** Log from Geometry: 'IMP_Polder_TLP_Windmill_Unworked_A' ********
+--------------
+Geo IMP_Polder_TLP_Windmill_Unworked_A Mesh IMP_Polder_TLP_Windmill_Unworked_A : 4 vertices removed by tangent merger.
+Geo IMP_Polder_TLP_Windmill_Unworked_A mesh IMP_Polder_TLP_Windmill_Unworked_A flagged for possible vertex duplication. Vertex Count: 1122, Index Count: 1728, Tri Count 576, Reused Vertices: 564, Duplicate Vertices: 0, Duplicate Positions: 465, Vertex:Tri Ratio: 1.95
+
+****** Log from Geometry: 'IMP_Polder_TLP_Windmill_A_PIL' ********
+--------------
+Geo IMP_Polder_TLP_Windmill_A_PIL Mesh IMP_Polder_TLP_Windmill_A_PIL : 4 vertices removed by tangent merger.
+Geo IMP_Polder_TLP_Windmill_A_PIL mesh IMP_Polder_TLP_Windmill_A_PIL flagged for possible vertex duplication. Vertex Count: 1596, Index Count: 2583, Tri Count 861, Reused Vertices: 772, Duplicate Vertices: 0, Duplicate Positions: 560, Vertex:Tri Ratio: 1.85
+
+****** Log from Geometry: 'IMP_Polder_TLP_Windmill_A' ********
+--------------
+Geo IMP_Polder_TLP_Windmill_A Mesh IMP_Polder_TLP_Windmill_A_Mesh : 4 vertices removed by tangent merger.
+Geo IMP_Polder_TLP_Windmill_A mesh IMP_Polder_TLP_Windmill_A_Mesh flagged for possible vertex duplication. Vertex Count: 1187, Index Count: 1878, Tri Count 626, Reused Vertices: 615, Duplicate Vertices: 0, Duplicate Positions: 465, Vertex:Tri Ratio: 1.90
+
 ****** Log from Geometry: 'DIS_PRD_Classical_Base_01_Decals' ********
 --------------
 Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow001 : 2 vertices removed by tangent merger.
@@ -17,17 +48,44 @@ Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow009 : 2 vertices remove
 Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow010 : 2 vertices removed by tangent merger.
 Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow011 : 2 vertices removed by tangent merger.
 
+****** Log from Geometry: 'DIS_NBH_Market_A' ********
+--------------
+Geo DIS_NBH_Market_A Mesh marketA : 18 vertices removed by tangent merger.
+Geo DIS_NBH_Market_A mesh marketA flagged for possible vertex duplication. Vertex Count: 818, Index Count: 1410, Tri Count 470, Reused Vertices: 448, Duplicate Vertices: 0, Duplicate Positions: 295, Vertex:Tri Ratio: 1.74
+
+****** Log from Geometry: 'DIS_NBH_Market_A_PIL' ********
+--------------
+Geo DIS_NBH_Market_A_PIL Mesh marketA_PIL : 3 vertices removed by tangent merger.
+Geo DIS_NBH_Market_A_PIL Mesh beams001 : 4 vertices removed by tangent merger.
+Geo DIS_NBH_Market_A_PIL mesh marketA_PIL flagged for possible vertex duplication. Vertex Count: 867, Index Count: 1416, Tri Count 472, Reused Vertices: 422, Duplicate Vertices: 0, Duplicate Positions: 287, Vertex:Tri Ratio: 1.84
+Geo DIS_NBH_Market_A_PIL mesh beams001 flagged for possible vertex duplication. Vertex Count: 356, Index Count: 540, Tri Count 180, Reused Vertices: 180, Duplicate Vertices: 0, Duplicate Positions: 116, Vertex:Tri Ratio: 1.98
+Geo DIS_NBH_Market_A_PIL mesh scaffolding005 flagged for possible vertex duplication. Vertex Count: 818, Index Count: 1170, Tri Count 390, Reused Vertices: 352, Duplicate Vertices: 0, Duplicate Positions: 270, Vertex:Tri Ratio: 2.10
+
+****** Log from Geometry: 'DIS_NBH_Market_Tent_B' ********
+--------------
+Geo DIS_NBH_Market_Tent_B Mesh marketTentB : 1 vertices removed by tangent merger.
+Geo DIS_NBH_Market_Tent_B mesh marketTentB flagged for possible vertex duplication. Vertex Count: 225, Index Count: 312, Tri Count 104, Reused Vertices: 57, Duplicate Vertices: 0, Duplicate Positions: 81, Vertex:Tri Ratio: 2.16
+
+****** Log from Geometry: 'DIS_NBH_Market_Tent_B_PIL' ********
+--------------
+Geo DIS_NBH_Market_Tent_B_PIL Mesh marketTentB_PIL : 1 vertices removed by tangent merger.
+Geo DIS_NBH_Market_Tent_B_PIL mesh marketTentB_PIL flagged for possible vertex duplication. Vertex Count: 335, Index Count: 360, Tri Count 120, Reused Vertices: 25, Duplicate Vertices: 0, Duplicate Positions: 112, Vertex:Tri Ratio: 2.79
+
 ****** Log from Geometry: 'DIS_PRD_Construction_Base_01_Decal' ********
 --------------
 Geo DIS_PRD_Construction_Base_01_Decal Mesh Decal_CLA_Elbow300 : 2 vertices removed by tangent merger.
 Geo DIS_PRD_Construction_Base_01_Decal Mesh Decal_CLA_Elbow301 : 2 vertices removed by tangent merger.
 Geo DIS_PRD_Construction_Base_01_Decal Mesh Decal_CLA_Elbow302 : 2 vertices removed by tangent merger.
-Load finished for: 'Landmarks/CSC_Tilebases' in 0.645 seconds
+Load finished for: 'Landmarks/CSC_Tilebases' in 1.170 seconds
+Geometry is required to autogenerate an OB for asset "CSC_BAKERS_Classical_Base_05".
+			An empty OB will be used for this asset.
+Geometry is required to autogenerate an OB for asset "CSC_QUARTERS_Classical_Base_Storage".
+			An empty OB will be used for this asset.
 Profile AABB exceeds hex AABB in geo "IMP_Farm_Decal_Transition_08_OB"
 			Make sure model is correctly transformed, then reset and collapse the transform.
 			If everything is working as intended, ignore this message.
-Cook finished for: 'Landmarks/CSC_Tilebases' in 0.003 seconds
-Disk write finished for: 'Landmarks/CSC_Tilebases' in 0.083 seconds
-Cleanup finished for: 'Landmarks/CSC_Tilebases' in 0.007 seconds
+Cook finished for: 'Landmarks/CSC_Tilebases' in 0.020 seconds
+Disk write finished for: 'Landmarks/CSC_Tilebases' in 0.177 seconds
+Cleanup finished for: 'Landmarks/CSC_Tilebases' in 0.020 seconds
 XLP cook completed with success.
-Cook completed in 0.749 seconds
+Cook completed in 1.399 seconds

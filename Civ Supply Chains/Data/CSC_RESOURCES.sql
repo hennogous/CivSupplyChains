@@ -159,7 +159,7 @@ VALUES	(   'REQ_CSC_PLOT_HAS_FLAX',			    'REQUIREMENT_PLOT_RESOURCE_TYPE_MATCHE
 INSERT OR IGNORE INTO RequirementArguments
 
 		(   RequirementId,                          Name,					Value               ) 
-VALUES	(   'REQ_CSC_PLOT_HAS_FLAX',                'ResourceType',			'RESOURCE_FLAX'     );
+VALUES	(   'REQ_CSC_PLOT_HAS_FLAX',                'ResourceType',			'RESOURCE_CSC_FLAX'	);
 
 
 

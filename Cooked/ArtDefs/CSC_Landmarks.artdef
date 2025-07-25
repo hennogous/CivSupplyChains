@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AssetObjects..ArtDefSet>
+	<m_Version>
+		<major>1</major>
+		<minor>0</minor>
+		<build>0</build>
+		<revision>0</revision>
+	</m_Version>
+	<m_TemplateName text="Landmarks"/>
+	<m_RootCollections>
+		<Element>
+			<m_CollectionName text="Districts"/>
+			<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+			<Element>
+				<m_Fields>
+					<m_Values>
+						<Element class="AssetObjects..ArtDefReferenceValue">
+							<m_ElementName text=""/>
+							<m_RootCollectionName text=""/>
+							<m_ArtDefPath text=""/>
+							<m_CollectionIsLocked>true</m_CollectionIsLocked>
+							<m_TemplateName text=""/>
+							<m_ParamName text="DistrictGenerator"/>
+						</Element>
+						<Element class="AssetObjects..RGBValue">
+							<m_r>120.000000</m_r>
+							<m_g>170.000000</m_g>
+							<m_b>60.000000</m_b>
+							<m_ParamName text="TintColor"/>
+						</Element>
+						<Element class="AssetObjects..BoolValue">
+							<m_bValue>false</m_bValue>
+							<m_ParamName text="IsAlignedToCoast"/>
+						</Element>
+						<Element class="AssetObjects..BoolValue">
+							<m_bValue>true</m_bValue>
+							<m_ParamName text="FlattenTerrain"/>
+						</Element>
+						<Element class="AssetObjects..BoolValue">
+							<m_bValue>false</m_bValue>
+							<m_ParamName text="bUseCityScale"/>
+						</Element>
+						<Element class="AssetObjects..BoolValue">
+							<m_bValue>false</m_bValue>
+							<m_ParamName text="DistrictDamagePillagesBuildings"/>
+						</Element>
+						<Element class="AssetObjects..StringValue">
+							<m_Value text="NONE"/>
+							<m_ParamName text="ProceduralPlacementMode"/>
+						</Element>
+					</m_Values>
+				</m_Fields>
+				<m_ChildCollections>
+					<Element>
+						<m_CollectionName text="BaseVariants"/>
+						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="EMPTY"/>
+										<m_RootCollectionName text="BuildingSets"/>
+										<m_ArtDefPath text="Landmarks.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Landmarks"/>
+										<m_ParamName text="Set_HeroBuildings"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="ArtEra"/>
+										<m_ArtDefPath text="Eras.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Eras"/>
+										<m_ParamName text="Tag_Era"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="Culture"/>
+										<m_ArtDefPath text="Cultures.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Cultures"/>
+										<m_ParamName text="Tag_Culture"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="ANY"/>
+										<m_RootCollectionName text="AppealTags"/>
+										<m_ArtDefPath text="Appeal.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Appeal"/>
+										<m_ParamName text="Tag_Appeal"/>
+									</Element>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="TB_ERROR"/>
+										<m_XLPClass text="TileBase"/>
+										<m_XLPPath text="tilebases.xlp"/>
+										<m_BLPPackage text="landmarks/tilebases"/>
+										<m_LibraryName text="TileBase"/>
+										<m_ParamName text="Asset"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text=""/>
+										<m_ParamName text="SelectionRule"/>
+									</Element>
+									<Element class="AssetObjects..IntValue">
+										<m_nValue>0</m_nValue>
+										<m_ParamName text="Priority"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text="INHERIT"/>
+										<m_ParamName text="Placement"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="01 Ancient: Empty"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="FLOUR MILL"/>
+										<m_RootCollectionName text="BuildingSets"/>
+										<m_ArtDefPath text=""/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Landmarks"/>
+										<m_ParamName text="Set_HeroBuildings"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="ArtEra"/>
+										<m_ArtDefPath text="Eras.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Eras"/>
+										<m_ParamName text="Tag_Era"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="Culture"/>
+										<m_ArtDefPath text="Cultures.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Cultures"/>
+										<m_ParamName text="Tag_Culture"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="ANY"/>
+										<m_RootCollectionName text="AppealTags"/>
+										<m_ArtDefPath text="Appeal.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Appeal"/>
+										<m_ParamName text="Tag_Appeal"/>
+									</Element>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="TB_ERROR"/>
+										<m_XLPClass text="TileBase"/>
+										<m_XLPPath text="tilebases.xlp"/>
+										<m_BLPPackage text="landmarks/tilebases"/>
+										<m_LibraryName text="TileBase"/>
+										<m_ParamName text="Asset"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text=""/>
+										<m_ParamName text="SelectionRule"/>
+									</Element>
+									<Element class="AssetObjects..IntValue">
+										<m_nValue>0</m_nValue>
+										<m_ParamName text="Priority"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text="INHERIT"/>
+										<m_ParamName text="Placement"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="02 Ancient: B1"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="FLOUR MILL, BAKERY"/>
+										<m_RootCollectionName text="BuildingSets"/>
+										<m_ArtDefPath text="CSC_Landmarks.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Landmarks"/>
+										<m_ParamName text="Set_HeroBuildings"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="ArtEra"/>
+										<m_ArtDefPath text="Eras.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Eras"/>
+										<m_ParamName text="Tag_Era"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="Culture"/>
+										<m_ArtDefPath text="Cultures.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Cultures"/>
+										<m_ParamName text="Tag_Culture"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="ANY"/>
+										<m_RootCollectionName text="AppealTags"/>
+										<m_ArtDefPath text="Appeal.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Appeal"/>
+										<m_ParamName text="Tag_Appeal"/>
+									</Element>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="TB_ERROR"/>
+										<m_XLPClass text="TileBase"/>
+										<m_XLPPath text="tilebases.xlp"/>
+										<m_BLPPackage text="landmarks/tilebases"/>
+										<m_LibraryName text="TileBase"/>
+										<m_ParamName text="Asset"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text=""/>
+										<m_ParamName text="SelectionRule"/>
+									</Element>
+									<Element class="AssetObjects..IntValue">
+										<m_nValue>0</m_nValue>
+										<m_ParamName text="Priority"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text="INHERIT"/>
+										<m_ParamName text="Placement"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="03 Ancient: B1, B2"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="FLOUR MILL, BAKERY, PATISSERIE"/>
+										<m_RootCollectionName text="BuildingSets"/>
+										<m_ArtDefPath text="CSC_Landmarks.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Landmarks"/>
+										<m_ParamName text="Set_HeroBuildings"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="ArtEra"/>
+										<m_ArtDefPath text="Eras.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Eras"/>
+										<m_ParamName text="Tag_Era"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="Culture"/>
+										<m_ArtDefPath text="Cultures.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Cultures"/>
+										<m_ParamName text="Tag_Culture"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="ANY"/>
+										<m_RootCollectionName text="AppealTags"/>
+										<m_ArtDefPath text="Appeal.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Appeal"/>
+										<m_ParamName text="Tag_Appeal"/>
+									</Element>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="TB_ERROR"/>
+										<m_XLPClass text="TileBase"/>
+										<m_XLPPath text="tilebases.xlp"/>
+										<m_BLPPackage text="landmarks/tilebases"/>
+										<m_LibraryName text="TileBase"/>
+										<m_ParamName text="Asset"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text=""/>
+										<m_ParamName text="SelectionRule"/>
+									</Element>
+									<Element class="AssetObjects..IntValue">
+										<m_nValue>0</m_nValue>
+										<m_ParamName text="Priority"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text="INHERIT"/>
+										<m_ParamName text="Placement"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="04 Ancient: B1, B2, B3"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+					</Element>
+					<Element>
+						<m_CollectionName text="BuildingVariants"/>
+						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="BUILDING_CSC_BAKERS_FLOUR_MILL"/>
+										<m_RootCollectionName text="Building"/>
+										<m_ArtDefPath text="CSC_Buildings.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Buildings"/>
+										<m_ParamName text="Tag_HeroBuilding"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="ArtEra"/>
+										<m_ArtDefPath text="Eras.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Eras"/>
+										<m_ParamName text="Tag_Era"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="Culture"/>
+										<m_ArtDefPath text="Cultures.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Cultures"/>
+										<m_ParamName text="Tag_Culture"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="ANY"/>
+										<m_RootCollectionName text="AppealTags"/>
+										<m_ArtDefPath text="Appeal.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Appeal"/>
+										<m_ParamName text="Tag_Appeal"/>
+									</Element>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="CSC_BAKERS_Flour_Mill"/>
+										<m_XLPClass text="TileBase"/>
+										<m_XLPPath text="csc_tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
+										<m_LibraryName text="TileBase"/>
+										<m_ParamName text="Asset"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text=""/>
+										<m_ParamName text="SelectionRule"/>
+									</Element>
+									<Element class="AssetObjects..IntValue">
+										<m_nValue>0</m_nValue>
+										<m_ParamName text="Priority"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="01 Ancient: Flour Mill"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="BUILDING_CSC_BAKERS_BAKERY"/>
+										<m_RootCollectionName text="Building"/>
+										<m_ArtDefPath text="CSC_Buildings.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Buildings"/>
+										<m_ParamName text="Tag_HeroBuilding"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="ArtEra"/>
+										<m_ArtDefPath text="Eras.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Eras"/>
+										<m_ParamName text="Tag_Era"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="Culture"/>
+										<m_ArtDefPath text="Cultures.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Cultures"/>
+										<m_ParamName text="Tag_Culture"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="ANY"/>
+										<m_RootCollectionName text="AppealTags"/>
+										<m_ArtDefPath text="Appeal.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Appeal"/>
+										<m_ParamName text="Tag_Appeal"/>
+									</Element>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="CSC_BAKERS_Bakery"/>
+										<m_XLPClass text="TileBase"/>
+										<m_XLPPath text="csc_tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
+										<m_LibraryName text="TileBase"/>
+										<m_ParamName text="Asset"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text=""/>
+										<m_ParamName text="SelectionRule"/>
+									</Element>
+									<Element class="AssetObjects..IntValue">
+										<m_nValue>0</m_nValue>
+										<m_ParamName text="Priority"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="02 Ancient: Bakery"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="BUILDING_CSC_BAKERS_PATISSERIE"/>
+										<m_RootCollectionName text="Building"/>
+										<m_ArtDefPath text="CSC_Buildings.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Buildings"/>
+										<m_ParamName text="Tag_HeroBuilding"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="ArtEra"/>
+										<m_ArtDefPath text="Eras.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Eras"/>
+										<m_ParamName text="Tag_Era"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="DEFAULT"/>
+										<m_RootCollectionName text="Culture"/>
+										<m_ArtDefPath text="Cultures.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Cultures"/>
+										<m_ParamName text="Tag_Culture"/>
+									</Element>
+									<Element class="AssetObjects..ArtDefReferenceValue">
+										<m_ElementName text="ANY"/>
+										<m_RootCollectionName text="AppealTags"/>
+										<m_ArtDefPath text="Appeal.artdef"/>
+										<m_CollectionIsLocked>true</m_CollectionIsLocked>
+										<m_TemplateName text="Appeal"/>
+										<m_ParamName text="Tag_Appeal"/>
+									</Element>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="CSC_BAKERS_Patisserie"/>
+										<m_XLPClass text="TileBase"/>
+										<m_XLPPath text="csc_tilebases.xlp"/>
+										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
+										<m_LibraryName text="TileBase"/>
+										<m_ParamName text="Asset"/>
+									</Element>
+									<Element class="AssetObjects..StringValue">
+										<m_Value text=""/>
+										<m_ParamName text="SelectionRule"/>
+									</Element>
+									<Element class="AssetObjects..IntValue">
+										<m_nValue>0</m_nValue>
+										<m_ParamName text="Priority"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="03 Ancient: Patisserie"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+					</Element>
+					<Element>
+						<m_CollectionName text="BuildingSets"/>
+						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..CollectionValue">
+										<m_eObjectType>INVALID</m_eObjectType>
+										<m_eValueType>ARTDEF_REF</m_eValueType>
+										<m_Values/>
+										<m_ParamName text="Set"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="EMPTY"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..CollectionValue">
+										<m_eObjectType>INVALID</m_eObjectType>
+										<m_eValueType>ARTDEF_REF</m_eValueType>
+										<m_Values>
+											<Element class="AssetObjects..ArtDefReferenceValue">
+												<m_ElementName text="BUILDING_CSC_BAKERS_FLOUR_MILL"/>
+												<m_RootCollectionName text="Building"/>
+												<m_ArtDefPath text="CSC_Buildings.artdef"/>
+												<m_CollectionIsLocked>true</m_CollectionIsLocked>
+												<m_TemplateName text="Buildings"/>
+												<m_ParamName text="Set001"/>
+											</Element>
+										</m_Values>
+										<m_ParamName text="Set"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="FLOUR MILL"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..CollectionValue">
+										<m_eObjectType>INVALID</m_eObjectType>
+										<m_eValueType>ARTDEF_REF</m_eValueType>
+										<m_Values>
+											<Element class="AssetObjects..ArtDefReferenceValue">
+												<m_ElementName text="BUILDING_CSC_BAKERS_FLOUR_MILL"/>
+												<m_RootCollectionName text="Building"/>
+												<m_ArtDefPath text="CSC_Buildings.artdef"/>
+												<m_CollectionIsLocked>true</m_CollectionIsLocked>
+												<m_TemplateName text="Buildings"/>
+												<m_ParamName text="Set001"/>
+											</Element>
+											<Element class="AssetObjects..ArtDefReferenceValue">
+												<m_ElementName text="BUILDING_CSC_BAKERS_BAKERY"/>
+												<m_RootCollectionName text="Building"/>
+												<m_ArtDefPath text="CSC_Buildings.artdef"/>
+												<m_CollectionIsLocked>true</m_CollectionIsLocked>
+												<m_TemplateName text="Buildings"/>
+												<m_ParamName text="Set002"/>
+											</Element>
+										</m_Values>
+										<m_ParamName text="Set"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="FLOUR MILL, BAKERY"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..CollectionValue">
+										<m_eObjectType>INVALID</m_eObjectType>
+										<m_eValueType>ARTDEF_REF</m_eValueType>
+										<m_Values>
+											<Element class="AssetObjects..ArtDefReferenceValue">
+												<m_ElementName text="BUILDING_CSC_BAKERS_FLOUR_MILL"/>
+												<m_RootCollectionName text="Building"/>
+												<m_ArtDefPath text="CSC_Buildings.artdef"/>
+												<m_CollectionIsLocked>true</m_CollectionIsLocked>
+												<m_TemplateName text="Buildings"/>
+												<m_ParamName text="Set001"/>
+											</Element>
+											<Element class="AssetObjects..ArtDefReferenceValue">
+												<m_ElementName text="BUILDING_CSC_BAKERS_PATISSERIE"/>
+												<m_RootCollectionName text="Building"/>
+												<m_ArtDefPath text="CSC_Buildings.artdef"/>
+												<m_CollectionIsLocked>true</m_CollectionIsLocked>
+												<m_TemplateName text="Buildings"/>
+												<m_ParamName text="Set002"/>
+											</Element>
+										</m_Values>
+										<m_ParamName text="Set"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="FLOUR MILL, PATISSERIE"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..CollectionValue">
+										<m_eObjectType>INVALID</m_eObjectType>
+										<m_eValueType>ARTDEF_REF</m_eValueType>
+										<m_Values>
+											<Element class="AssetObjects..ArtDefReferenceValue">
+												<m_ElementName text="BUILDING_CSC_BAKERS_FLOUR_MILL"/>
+												<m_RootCollectionName text="Building"/>
+												<m_ArtDefPath text="CSC_Buildings.artdef"/>
+												<m_CollectionIsLocked>true</m_CollectionIsLocked>
+												<m_TemplateName text="Buildings"/>
+												<m_ParamName text="Set001"/>
+											</Element>
+											<Element class="AssetObjects..ArtDefReferenceValue">
+												<m_ElementName text="BUILDING_CSC_BAKERS_BAKERY"/>
+												<m_RootCollectionName text="Building"/>
+												<m_ArtDefPath text="CSC_Buildings.artdef"/>
+												<m_CollectionIsLocked>true</m_CollectionIsLocked>
+												<m_TemplateName text="Buildings"/>
+												<m_ParamName text="Set002"/>
+											</Element>
+											<Element class="AssetObjects..ArtDefReferenceValue">
+												<m_ElementName text="BUILDING_CSC_BAKERS_PATISSERIE"/>
+												<m_RootCollectionName text="Building"/>
+												<m_ArtDefPath text="CSC_Buildings.artdef"/>
+												<m_CollectionIsLocked>true</m_CollectionIsLocked>
+												<m_TemplateName text="Buildings"/>
+												<m_ParamName text="Set003"/>
+											</Element>
+										</m_Values>
+										<m_ParamName text="Set"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="FLOUR MILL, BAKERY, PATISSERIE"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+					</Element>
+				</m_ChildCollections>
+				<m_Name text="DISTRICT_CSC_BAKERS_QUARTER"/>
+				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+			</Element>
+		</Element>
+		<Element>
+			<m_CollectionName text="Landmarks"/>
+			<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+		</Element>
+		<Element>
+			<m_CollectionName text="ResourceTags"/>
+			<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+		</Element>
+		<Element>
+			<m_CollectionName text="Globals"/>
+			<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+		</Element>
+		<Element>
+			<m_CollectionName text="TerrainTags"/>
+			<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+		</Element>
+	</m_RootCollections>
+</AssetObjects..ArtDefSet>
+

@@ -44,6 +44,8 @@
 			<ArtDefDependencyPaths>
 				<Element text="CSC_Landmarks.artdef"/>
 				<Element text="CSC_Resources.artdef"/>
+				<Element text="CSC_Buildings.artdef"/>
+				<Element text="CSC_Clutter.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="CityBuildings"/>
@@ -57,6 +59,7 @@
 			<ArtDefDependencyPaths>
 				<Element text="CSC_Farms.artdef"/>
 				<Element text="CSC_Resources.artdef"/>
+				<Element text="CSC_Clutter.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="TileBase"/>
@@ -84,6 +87,7 @@
 			<ArtDefDependencyPaths>
 				<Element text="CSC_Buildings.artdef"/>
 				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_Landmarks.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="StrategicView_Sprite"/>
@@ -263,6 +267,7 @@
 			<ConsumerName text="Resources"/>
 			<ArtDefDependencyPaths>
 				<Element text="CSC_Resources.artdef"/>
+				<Element text="CSC_Clutter.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -279,6 +284,8 @@
 				<Element text="CSC_Buildings.artdef"/>
 				<Element text="CSC_Districts.artdef"/>
 				<Element text="CSC_Resources.artdef"/>
+				<Element text="CSC_Landmarks.artdef"/>
+				<Element text="CSC_Clutter.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -288,6 +295,7 @@
 			<ArtDefDependencyPaths>
 				<Element text="CSC_Buildings.artdef"/>
 				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_Landmarks.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -297,6 +305,9 @@
 			<ArtDefDependencyPaths>
 				<Element text="CSC_Districts.artdef"/>
 				<Element text="CSC_Resources.artdef"/>
+				<Element text="CSC_Landmarks.artdef"/>
+				<Element text="CSC_Clutter.artdef"/>
+				<Element text="CSC_Buildings.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
@@ -415,11 +426,16 @@
 		</Element>
 		<Element>
 			<ArtDefPath text="CSC_Landmarks.artdef"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_Landmarks.artdef"/>
+				<Element text="CSC_Buildings.artdef"/>
+			</ArtDefDependencyPaths>
 		</Element>
 		<Element>
 			<ArtDefPath text="CSC_Resources.artdef"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_Clutter.artdef"/>
+			</ArtDefDependencyPaths>
 		</Element>
 		<Element>
 			<ArtDefPath text="CSC_Farms.artdef"/>
@@ -433,7 +449,9 @@
 		</Element>
 		<Element>
 			<ArtDefPath text="CSC_Districts.artdef"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
 		</Element>
 		<Element>
 			<ArtDefPath text="CSC_Icons.artdef"/>
@@ -468,7 +486,7 @@
 		<Element>
 			<LibraryName text="Landmark"/>
 			<PackageDependencies>
-				<Element text="CSC_Clutter.blp"/>
+				<Element text="Environment/CSC_Clutter.blp"/>
 			</PackageDependencies>
 		</Element>
 		<Element>
@@ -542,7 +560,7 @@
 		<Element>
 			<LibraryName text="TileBase"/>
 			<PackageDependencies>
-				<Element text="CSC_Tilebases.blp"/>
+				<Element text="Landmarks/CSC_Tilebases.blp"/>
 			</PackageDependencies>
 		</Element>
 		<Element>
@@ -552,7 +570,7 @@
 		<Element>
 			<LibraryName text="UITexture"/>
 			<PackageDependencies>
-				<Element text="UI/Icons.blp"/>
+				<Element text="UI/CSC_Icons.blp"/>
 			</PackageDependencies>
 		</Element>
 		<Element>
