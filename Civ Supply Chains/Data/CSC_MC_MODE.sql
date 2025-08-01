@@ -4,6 +4,194 @@
 --------------------------------------------------------------
 
 --===========================================================================================================================================================================--
+/*	INDUSTRIES & CORPORATIONS */
+--===========================================================================================================================================================================--
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	ImprovementModifiers
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+INSERT INTO ImprovementModifiers
+
+        (	ImprovementType,				ModifierId												)	VALUES
+
+-- 	FLOUR MILL --------------------------------------------------------------------------
+
+-- +2 Production to the Water Mill from a base materials Industry
+		(	'IMPROVEMENT_INDUSTRY',			'MOD_CSC_BAKERS_BASE_INDUSTRY_ATTACH_QUARTER_WATER'		),
+
+-- +2 Production to the Wind Mill from a base materials Industry
+		(	'IMPROVEMENT_INDUSTRY',			'MOD_CSC_BAKERS_BASE_INDUSTRY_ATTACH_QUARTER_WIND'		),
+
+-- +3 Production to the Water Mill from a base materials Corporation
+		(	'IMPROVEMENT_CORPORATION',		'MOD_CSC_BAKERS_BASE_CORPORATION_ATTACH_QUARTER_WATER'	),
+
+-- +3 Production to the Wind Mill from a base materials Corporation
+		(	'IMPROVEMENT_CORPORATION',		'MOD_CSC_BAKERS_BASE_CORPORATION_ATTACH_QUARTER_WIND'	);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	BuildingModifiers
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+
+INSERT INTO BuildingModifiers
+
+        (	BuildingType,		            			ModifierId											)	VALUES
+
+--	WIND / WATER MILL --------------------------------------------------------------------------
+
+--	+2 Gold to adjacent base materials Industries
+		(	'BUILDING_CSC_BAKERS_WIND_MILL',       		'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_ADJ_IND_BASE'		),
+		(	'BUILDING_CSC_BAKERS_WATER_MILL',			'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_ADJ_IND_BASE'		),
+
+--	+3 Gold to adjacent base materials Corporations
+		(	'BUILDING_CSC_BAKERS_WIND_MILL',       		'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_ADJ_CORP_BASE'	),
+		(	'BUILDING_CSC_BAKERS_WATER_MILL',			'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_ADJ_CORP_BASE'	);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	Modifiers
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+
+INSERT OR IGNORE INTO Modifiers
+
+		(	ModifierId,														ModifierType,										OwnerRequirementSetId,				SubjectRequirementSetId,					SubjectStackLimit	)	VALUES	
+
+--	FLOUR MILL --------------------------------------------------------------------------
+
+-- +2 Production to the Water Mill from a base materials Industry
+		(	'MOD_CSC_BAKERS_BASE_INDUSTRY_ATTACH_QUARTER_WATER',			'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',			'REQSET_CSC_BAKERS_PLOT_HAS_BASE',	'REQSET_CSC_ADJ_BAKERS_QUARTER',			NULL				),
+		(	'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WATER_MILL',			'MODIFIER_BUILDING_YIELD_CHANGE',					NULL,								NULL,										NULL				),
+
+-- +2 Production to the Wind Mill from a base materials Industry
+		(	'MOD_CSC_BAKERS_BASE_INDUSTRY_ATTACH_QUARTER_WIND',				'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',			'REQSET_CSC_BAKERS_PLOT_HAS_BASE',	'REQSET_CSC_ADJ_BAKERS_QUARTER',			NULL				),
+		(	'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WIND_MILL',			'MODIFIER_BUILDING_YIELD_CHANGE',					NULL,								NULL,										NULL				),
+
+-- +3 Production to the Water Mill from a base materials Industry
+		(	'MOD_CSC_BAKERS_BASE_CORPORATION_ATTACH_QUARTER_WATER',			'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',			'REQSET_CSC_BAKERS_PLOT_HAS_BASE',	'REQSET_CSC_ADJ_BAKERS_QUARTER',			NULL				),
+		(	'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WATER_MILL',		'MODIFIER_BUILDING_YIELD_CHANGE',					NULL,								NULL,										NULL				),
+
+-- +3 Production to the Wind Mill from a base materials Industry
+		(	'MOD_CSC_BAKERS_BASE_CORPORATION_ATTACH_QUARTER_WIND',			'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',			'REQSET_CSC_BAKERS_PLOT_HAS_BASE',	'REQSET_CSC_ADJ_BAKERS_QUARTER',			NULL				),
+		(	'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WIND_MILL',		'MODIFIER_BUILDING_YIELD_CHANGE',					NULL,								NULL,										NULL				),
+
+-- 	+2 Gold to adjacent base materials Industries
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_ADJ_IND_BASE',				'MODIFIER_CSC_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',	NULL,								'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_IND_BASE',	NULL				),
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_IND_BASE',				'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',			NULL,								NULL,										NULL      			),
+
+-- 	+3 Gold to adjacent base materials Corporations
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_ADJ_CORP_BASE',				'MODIFIER_CSC_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',	NULL,								'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_CORP_BASE',	NULL				),
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_CORP_BASE',				'MODIFIER_SINGLE_PLOT_ADJUST_PLOT_YIELDS',			NULL,								NULL,										NULL      			);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	ModifierArguments
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+INSERT OR IGNORE INTO ModifierArguments
+		
+        (	ModifierId,			                      							Name,                       Value		                									)	VALUES
+
+-- 	FLOUR MILL --------------------------------------------------------------------------
+
+-- +2 Production to the Water Mill from a base materials Industry
+		(  	'MOD_CSC_BAKERS_BASE_INDUSTRY_ATTACH_QUARTER_WATER',				'ModifierId',         		'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WATER_MILL'     	),    
+        (  	'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WATER_MILL',				'BuildingType',           	'BUILDING_CSC_BAKERS_WATER_MILL'								),
+        (  	'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WATER_MILL',				'YieldType',           		'YIELD_PRODUCTION'                                              ),
+        ( 	'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WATER_MILL',				'Amount',             		2                                                               ),
+
+-- +2 Production to the Wind Mill from a base materials Industry
+		(  	'MOD_CSC_BAKERS_BASE_INDUSTRY_ATTACH_QUARTER_WIND',					'ModifierId',         		'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WIND_MILL'     	),    
+        (  	'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WIND_MILL',				'BuildingType',           	'BUILDING_CSC_BAKERS_WIND_MILL'									),
+        (  	'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WIND_MILL',				'YieldType',           		'YIELD_PRODUCTION'                                              ),
+        ( 	'MOD_CSC_BAKERS_BASE_INDUSTRY_PROD_TO_ADJ_WIND_MILL',				'Amount',             		2                                                               ),
+
+-- 	+2 Gold to adjacent base materials Industries (already at +1)
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_ADJ_IND_BASE',					'ModifierId',				'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_IND_BASE'				),
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_IND_BASE',    				'YieldType',	            'YIELD_GOLD'                									),
+        (	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_IND_BASE',    				'Amount',		            1		                    									),
+
+-- +3 Production to the Water Mill from a base materials Industry
+		(  	'MOD_CSC_BAKERS_BASE_CORPORATION_ATTACH_QUARTER_WATER',				'ModifierId',         		'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WATER_MILL'	),    
+        (  	'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WATER_MILL',			'BuildingType',           	'BUILDING_CSC_BAKERS_WATER_MILL'								),
+        (  	'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WATER_MILL',			'YieldType',           		'YIELD_PRODUCTION'                                              ),
+        ( 	'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WATER_MILL',			'Amount',             		3                                                               ),
+
+-- +3 Production to the Wind Mill from a base materials Industry
+		(  	'MOD_CSC_BAKERS_BASE_CORPORATION_ATTACH_QUARTER_WIND',				'ModifierId',         		'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WIND_MILL'	),    
+        (  	'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WIND_MILL',			'BuildingType',           	'BUILDING_CSC_BAKERS_WIND_MILL'									),
+        (  	'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WIND_MILL',			'YieldType',           		'YIELD_PRODUCTION'                                              ),
+        ( 	'MOD_CSC_BAKERS_BASE_CORPORATION_PROD_TO_ADJ_WIND_MILL',			'Amount',             		3                                                               ),
+
+-- 	+3 Gold to adjacent base materials Corporations (already at +1)
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_ATTACH_ADJ_CORP_BASE',					'ModifierId',				'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_CORP_BASE'				),
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_CORP_BASE',					'YieldType',	            'YIELD_GOLD'                									),
+        (	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_CORP_BASE',					'Amount',		            2		                    									);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	RequirementSets
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+INSERT OR IGNORE INTO RequirementSets 
+		
+        (	RequirementSetId,								RequirementSetType              )	VALUES
+
+-- 	FLOUR MILL --------------------------------------------------------------------------
+
+-- 	+2 Gold to adjacent base materials Industries
+        (	'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_IND_BASE',		'REQUIREMENTSET_TEST_ALL'       ),
+
+-- 	+3 Gold to adjacent base materials Corporations
+        (	'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_CORP_BASE',		'REQUIREMENTSET_TEST_ALL'       );
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	RequirementSetRequirements
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+				
+INSERT OR IGNORE INTO RequirementSetRequirements
+		
+        (	RequirementSetId,								RequirementId	                               	)	VALUES
+
+-- 	FLOUR MILL --------------------------------------------------------------------------
+
+-- 	+2 Gold to adjacent base materials Industries
+        (	'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_IND_BASE',		'REQ_CSC_PLOT_ADJ_TO_OWNER'						),
+        (	'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_IND_BASE',		'REQ_CSC_BAKERS_PLOT_HAS_MATERIAL_BASE'			),
+        (	'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_IND_BASE',		'REQ_CSC_PLOT_HAS_INDUSTRY'						),
+
+-- 	+3 Gold to adjacent base materials Corporations
+        (	'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_CORP_BASE',		'REQ_CSC_PLOT_ADJ_TO_OWNER'						),
+        (	'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_CORP_BASE',		'REQ_CSC_BAKERS_PLOT_HAS_MATERIAL_BASE'			),
+        (	'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_CORP_BASE',		'REQ_CSC_PLOT_HAS_CORPORATION'					);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	Requirements
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT OR IGNORE INTO Requirements
+        
+        (	RequirementId,							RequirementType,	                                Inverse         )	VALUES
+
+-- 	FLOUR MILL --------------------------------------------------------------------------
+
+-- 	+2 Gold to adjacent base materials Industries
+        (	'REQ_CSC_PLOT_HAS_INDUSTRY',			'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES',		0               ),
+		(	'REQ_CSC_PLOT_HAS_CORPORATION',			'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES',		0               );
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	RequirementArguments
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT OR IGNORE INTO RequirementArguments 
+
+        (	RequirementId,							Name,					Value						)	VALUES
+
+-- 	FLOUR MILL --------------------------------------------------------------------------
+
+-- 	+2 Gold to adjacent base materials Industries
+		(	'REQ_CSC_PLOT_HAS_INDUSTRY',			'ImprovementType',		'IMPROVEMENT_INDUSTRY'		),
+		(	'REQ_CSC_PLOT_HAS_CORPORATION',			'ImprovementType',		'IMPROVEMENT_CORPORATION'	);
+
+
+
+--===========================================================================================================================================================================--
 /*	SPECIALTY PRODUCTS */
 --===========================================================================================================================================================================--
 
@@ -190,7 +378,7 @@ INSERT INTO ModifierStrings
 VALUES	(	'MOD_CSC_BAKERS_SPECIALTY_HOUSING',				'Suk_MCUIS',			'LOC_MOD_CSC_BAKERS_SPECIALTY_HOUSING_DESCRIPTION'		),
 		(	'MOD_CSC_BAKERS_SPECIALTY_HOUSING',				'Suk_MCUIS_Icon',		'ICON_CIVILIZATION_MAYA'								),
 		(	'MOD_CSC_BAKERS_SPECIALTY_HOUSING',				'Suk_MCUIS_SortOrder',	0														),
-		(	'MOD_CSC_BAKERS_SPECIALTY_HOUSING',				'Suk_MCUIS_Advanced',	0														);
+		(	'MOD_CSC_BAKERS_SPECIALTY_HOUSING',				'Suk_MCUIS_Advanced',	0														),
 
 		(	'MOD_CSC_BAKERS_SPECIALTY_SLOT_GRANT',			'Suk_MCUIS',			'LOC_MOD_CSC_BAKERS_SPECIALTY_SLOT_GRANT_DESCRIPTION'	),
 		(	'MOD_CSC_BAKERS_SPECIALTY_SLOT_GRANT',			'Suk_MCUIS_Icon',		'ICON_CIVILIZATION_AZTEC'								),
@@ -202,35 +390,3 @@ VALUES	(	'MOD_CSC_BAKERS_SPECIALTY_HOUSING',				'Suk_MCUIS',			'LOC_MOD_CSC_BAKE
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 DROP TABLE CSC_ProductReference;
-
-
-/*
-INSERT INTO Types(Type, Kind) VALUES
-('SLTH_BUILDING_DUMMY_HALL_OF_KINGS_CAMPUS', 'KIND_BUILDING');
-
-INSERT OR IGNORE INTO CivilopediaPageExcludes(SectionId, PageId) VALUES
-('BUILDINGS', 'SLTH_BUILDING_DUMMY_HALL_OF_KINGS_CAMPUS');
-
-INSERT OR IGNORE INTO Buildings_XP2(BuildingType, Pillage)VALUES
-('SLTH_BUILDING_DUMMY_HALL_OF_KINGS_CAMPUS', '0');
-
-INSERT INTO Buildings(BuildingType, Name,  Cost, PrereqDistrict, Description,  AdvisorType, PurchaseYield, MustPurchase) VALUES
-('SLTH_BUILDING_DUMMY_HALL_OF_KINGS_CAMPUS', 'LOC_SLTH_BUILDING_DUMMY_NAME', '500', 'DISTRICT_CAMPUS', 'LOC_SLTH_BUILDING_DUMMY_DESCRIPTION', 'ADVISOR_RELIGIOUS', NULL, '1');
-
--- mine was for +2 culture on specialists on campus, but you could do extra specialists I think
-
-INSERT INTO Building_CitizenYieldChanges(BuildingType, YieldType, YieldChange) VALUES
-('SLTH_BUILDING_DUMMY_HALL_OF_KINGS_CAMPUS', 'YIELD_CULTURE', '2');
-
-INSERT INTO BuildingModifiers (BuildingType, ModifierId) VALUES
-('BUILDING_ST_BASILS_CATHEDRAL','GRANT_DUMMY_FOR_SPECIALISTS_HALL_OF_KINGS_CAMPUS_ATTACH');
-
-INSERT INTO Modifiers(ModifierId, ModifierType, RunOnce, Permanent, SubjectRequirementSetId) VALUES
-('GRANT_DUMMY_FOR_SPECIALISTS_HALL_OF_KINGS_CAMPUS_ATTACH', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', '0', '0', NULL),
-('GRANT_DUMMY_FOR_SPECIALISTS_HALL_OF_KINGS_CAMPUS', 'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE', '0', '0', 'CITY_HAS_CAMPUS_MACEDON');
-
-INSERT INTO ModifierArguments(ModifierId, Name, Type, Value) VALUES
-('GRANT_DUMMY_FOR_SPECIALISTS_HALL_OF_KINGS_CAMPUS_ATTACH', 'ModifierId', 'ARGTYPE_IDENTITY', 'GRANT_DUMMY_FOR_SPECIALISTS_HALL_OF_KINGS_CAMPUS'),
-('GRANT_DUMMY_FOR_SPECIALISTS_HALL_OF_KINGS_CAMPUS', 'BuildingType', 'ARGTYPE_IDENTITY', 'SLTH_BUILDING_DUMMY_HALL_OF_KINGS_CAMPUS');
-
-*/

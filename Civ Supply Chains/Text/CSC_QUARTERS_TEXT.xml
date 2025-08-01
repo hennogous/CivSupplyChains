@@ -93,22 +93,22 @@
 			<Text>+1 Citizen slot in the Commercial Hub because Product</Text>
 		</Replace>
 
-		<!-- WEAVERS' QUARTER -->
+		<!-- TAILORS' QUARTER -->
 
-		<Replace Tag="LOC_DISTRICT_CSC_WEAVERS_QUARTER_NAME" Language="en_US">
-			<Text>Weavers' Quarter</Text>
+		<Replace Tag="LOC_DISTRICT_CSC_TAILORS_QUARTER_NAME" Language="en_US">
+			<Text>TAILORS' Quarter</Text>
 		</Replace>
 
-        <Replace Tag="LOC_DISTRICT_CSC_WEAVERS_QUARTER_DESCRIPTION" Language="en_US">
+        <Replace Tag="LOC_DISTRICT_CSC_TAILORS_QUARTER_DESCRIPTION" Language="en_US">
 			<Text>A district for the Textiles industry. +1 [ICON_Production] Production from each adjacent base and specialty material in its supply chain.</Text>
 		</Replace>
 
-		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_WEAVERS" Language="en_US">
+		<Replace Tag="LOC_CSC_COMMERCIAL_HUB_GOLD_TO_TAILORS" Language="en_US">
 			<Text>+{1_num} [ICON_Gold] from an adjacent Commercial Hub</Text>
 		</Replace>
 
-		<Replace Tag="LOC_CSC_WEAVERS_CULTURE_TO_COMMERCIAL_HUB" Language="en_US">
-			<Text>+{1_num} [ICON_Culture] from an adjacent Weavers' Quarter</Text>
+		<Replace Tag="LOC_CSC_TAILORS_CULTURE_TO_COMMERCIAL_HUB" Language="en_US">
+			<Text>+{1_num} [ICON_Culture] from an adjacent TAILORS' Quarter</Text>
 		</Replace>
 
 		<!-- APOTHECARIES' QUARTER -->

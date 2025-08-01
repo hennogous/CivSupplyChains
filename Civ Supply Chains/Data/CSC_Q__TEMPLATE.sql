@@ -88,9 +88,9 @@ INSERT INTO ImprovementModifiers
 
         (	ImprovementType,		        		ModifierId			                        								)	VALUES
 
---	Raw materials improvements		
-		(	'IMPROVEMENT_FARM',                     'MOD_CSC_BAKERS_RAW_IMPROVEMENT_ATTACH_QUARTER'                 			),
-        (	'IMPROVEMENT_PLANTATION',               'MOD_CSC_BAKERS_RAW_IMPROVEMENT_ATTACH_QUARTER'                 			),
+--	BASE materials improvements		
+		(	'IMPROVEMENT_FARM',                     'MOD_CSC_BAKERS_BASE_IMPROVEMENT_ATTACH_QUARTER'                 			),
+        (	'IMPROVEMENT_PLANTATION',               'MOD_CSC_BAKERS_BASE_IMPROVEMENT_ATTACH_QUARTER'                 			),
 
 --	Specialty materials improvements		
         (	'IMPROVEMENT_CAMP',               		'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER'                 			),
@@ -368,8 +368,8 @@ INSERT INTO BuildingModifiers
 
 --	FLOUR MILL --------------------------------------------------------------------------
 
---	+1 Gold to adjacent raw materials improvements
-		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',       	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV'   	),
+--	+1 Gold to adjacent BASE materials improvements
+		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',       	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_BASE_IMPROV'   	),
 
 -- 	+1 Food at Feudalism
 		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',			'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE'					),
@@ -521,12 +521,12 @@ INSERT INTO Modifiers
 
 -- 	FLOUR MILL --------------------------------------------------------------------------
 
--- 	+1 Production from each adjacent raw materials improvement
-		(  	'MOD_CSC_BAKERS_RAW_IMPROVEMENT_ATTACH_QUARTER',            		'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					'REQSET_CSC_BAKERS_PLOT_HAS_RAW', 	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					NULL			    ),
-        (  	'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',    		'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',				NULL,                           	NULL,							                        NULL	            ),
+-- 	+1 Production from each adjacent BASE materials improvement
+		(  	'MOD_CSC_BAKERS_BASE_IMPROVEMENT_ATTACH_QUARTER',            		'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					'REQSET_CSC_BAKERS_PLOT_HAS_BASE', 	'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					NULL			    ),
+        (  	'MOD_CSC_BAKERS_BASE_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',    		'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',				NULL,                           	NULL,							                        NULL	            ),
 
--- 	+1 Gold to adjacent raw materials improvements
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							NULL,								'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		NULL      			),
+-- 	+1 Gold to adjacent BASE materials improvements
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_BASE_IMPROV',			'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							NULL,								'REQSET_CSC_BAKERS_PLOT_HAS_BASE_IMPROV_ADJACENT',		NULL      			),
 
 -- 	+1 Food at Feudalism
 		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_BAKERS_FLOUR_MILL_UPGRADE',					NULL				),
@@ -642,15 +642,15 @@ INSERT INTO ModifierArguments
 
 -- 	FLOUR MILL --------------------------------------------------------------------------
 
--- 	+1 Production from each adjacent raw materials improvement
-		(  	'MOD_CSC_BAKERS_RAW_IMPROVEMENT_ATTACH_QUARTER',            		'ModifierId',         		'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL'     	),    
-        (  	'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',       		'BuildingType',           	'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
-        (  	'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',       		'YieldType',           		'YIELD_PRODUCTION'                                              ),
-        ( 	'MOD_CSC_BAKERS_RAW_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',       		'Amount',             		1                                                               ),
+-- 	+1 Production from each adjacent BASE materials improvement
+		(  	'MOD_CSC_BAKERS_BASE_IMPROVEMENT_ATTACH_QUARTER',            		'ModifierId',         		'MOD_CSC_BAKERS_BASE_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL'     	),    
+        (  	'MOD_CSC_BAKERS_BASE_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',			'BuildingType',           	'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
+        (  	'MOD_CSC_BAKERS_BASE_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',			'YieldType',           		'YIELD_PRODUCTION'                                              ),
+        ( 	'MOD_CSC_BAKERS_BASE_IMPROV_PROD_TO_ADJACENT_FLOUR_MILL',			'Amount',             		1                                                               ),
 
--- 	+1 Gold to adjacent raw materials improvements
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV',    		'YieldType',	            'YIELD_GOLD'                									),
-        (	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_RAW_IMPROV',    		'Amount',		            1		                    									),
+-- 	+1 Gold to adjacent BASE materials improvements
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_BASE_IMPROV',    		'YieldType',	            'YIELD_GOLD'                									),
+        (	'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJACENT_BASE_IMPROV',    		'Amount',		            1		                    									),
 
 -- 	+1 Food at Feudalism
 		(	'MOD_CSC_BAKERS_FLOUR_MILL_FOOD_UPGRADE',							'BuildingType',				'BUILDING_CSC_BAKERS_FLOUR_MILL'								),
@@ -707,13 +707,13 @@ INSERT INTO ModifierArguments
 
 -- 	PATISSERIE --------------------------------------------------------------------------
 
--- 	+1 Production from each adjacent raw materials improvement
+-- 	+1 Production from each adjacent BASE materials improvement
 		(  	'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER',            		'ModifierId',         		'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_PATISSERIE'     		),    
         (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_PATISSERIE',       		'BuildingType',           	'BUILDING_CSC_BAKERS_PATISSERIE'								),
         (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_PATISSERIE',       		'YieldType',           		'YIELD_PRODUCTION'                                              ),
         ( 	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_PATISSERIE',       		'Amount',             		1                                                               ),
 
--- 	+1 Gold to adjacent raw materials improvements
+-- 	+1 Gold to adjacent BASE materials improvements
 		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_TO_NEARBY_SPEC_IMPROV',    			'YieldType',	            'YIELD_GOLD'                									),
         (	'MOD_CSC_BAKERS_PATISSERIE_GOLD_TO_NEARBY_SPEC_IMPROV',    			'Amount',		            1		                    									),
 
@@ -844,11 +844,11 @@ INSERT INTO RequirementSets
 
 -- 	FLOUR MILL --------------------------------------------------------------------------
 
--- 	+1 Production from each adjacent raw materials improvement
-		(	'REQSET_CSC_BAKERS_PLOT_HAS_RAW',						'REQUIREMENTSET_TEST_ALL'       ),
+-- 	+1 Production from each adjacent BASE materials improvement
+		(	'REQSET_CSC_BAKERS_PLOT_HAS_BASE',						'REQUIREMENTSET_TEST_ALL'       ),
 
--- 	+1 Gold to adjacent raw materials improvements
-        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		'REQUIREMENTSET_TEST_ALL'       ),
+-- 	+1 Gold to adjacent BASE materials improvements
+        (	'REQSET_CSC_BAKERS_PLOT_HAS_BASE_IMPROV_ADJACENT',		'REQUIREMENTSET_TEST_ALL'       ),
 
 -- 	+1 Food at Feudalism
 		(	'REQSET_CSC_BAKERS_FLOUR_MILL_UPGRADE',					'REQUIREMENTSET_TEST_ALL'		),
@@ -872,7 +872,7 @@ INSERT INTO RequirementSets
 		(	'REQSET_CSC_NEARBY_BAKERS_QUARTER',						'REQUIREMENTSET_TEST_ALL'		),
 
 -- 	+1 Gold to nearby specialty materials improvements
-        (	'REQSET_CSC_BAKERS_PLOT_HAS_SPEC_IMPROV_NEARBY',			'REQUIREMENTSET_TEST_ALL'       ),
+        (	'REQSET_CSC_BAKERS_PLOT_HAS_SPEC_IMPROV_NEARBY',		'REQUIREMENTSET_TEST_ALL'       ),
 
 --	+1 Food and +1 Gold for every 5 citizens in the city
 		(	'REQSET_CSC_CITY_HAS_POPULATION_5',						'REQUIREMENTSET_TEST_ALL'		),
@@ -917,13 +917,13 @@ INSERT INTO RequirementSetRequirements
 
 -- 	FLOUR MILL --------------------------------------------------------------------------
 
--- 	+1 Production from each adjacent raw materials improvement
-		(	'REQSET_CSC_BAKERS_PLOT_HAS_RAW',						'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW'			),
+-- 	+1 Production from each adjacent BASE materials improvement
+		(	'REQSET_CSC_BAKERS_PLOT_HAS_BASE',						'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_BASE'			),
 
--- 	+1 Gold to adjacent raw materials improvements
-        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW'			),
-        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT'				),
-        (	'REQSET_CSC_BAKERS_PLOT_HAS_RAW_IMPROV_ADJACENT',		'REQ_CSC_PLOT_ADJACENT_TO_OWNER'				),
+-- 	+1 Gold to adjacent BASE materials improvements
+        (	'REQSET_CSC_BAKERS_PLOT_HAS_BASE_IMPROV_ADJACENT',		'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_BASE'			),
+        (	'REQSET_CSC_BAKERS_PLOT_HAS_BASE_IMPROV_ADJACENT',		'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT'				),
+        (	'REQSET_CSC_BAKERS_PLOT_HAS_BASE_IMPROV_ADJACENT',		'REQ_CSC_PLOT_ADJACENT_TO_OWNER'				),
 
 -- 	+1 Food at Feudalism
 		(	'REQSET_CSC_BAKERS_FLOUR_MILL_UPGRADE',					'REQ_CSC_BAKERS_FLOUR_MILL_UPGRADE'				),
@@ -1005,7 +1005,7 @@ INSERT INTO Requirements
 
 -- 	FLOUR MILL --------------------------------------------------------------------------
 
--- 	+1 Gold to adjacent raw materials improvements
+-- 	+1 Gold to adjacent BASE materials improvements
         (	'REQ_CSC_PLOT_HAS_ANY_IMPROVEMENT',            			'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT',           	0               ),
 
 -- 	+1 Food at Feudalism
@@ -1042,7 +1042,7 @@ INSERT INTO Requirements
 
 -- 	SHARED ------------------------------------------------------------------------------
 
-		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',					'REQUIREMENT_PLOT_RESOURCE_TAG_MATCHES',			0				),
+		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_BASE',					'REQUIREMENT_PLOT_RESOURCE_TAG_MATCHES',			0				),
 		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_SPEC',					'REQUIREMENT_PLOT_RESOURCE_TAG_MATCHES',			0				),
 		(	'REQ_CSC_PLOT_ADJACENT_TO_OWNER',						'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',              	0               ),
         (	'REQ_CSC_PLOT_NEARBY_OWNER',							'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',				0				),
@@ -1100,7 +1100,7 @@ INSERT INTO RequirementArguments
 -- 	SHARED ------------------------------------------------------------------------------
 
 		( 	'REQ_CSC_DISTRICT_IS_BAKERS_QUARTER',					'DistrictType',                 'DISTRICT_CSC_BAKERS_QUARTER'     				),
-		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_RAW',					'Tag',							'CLASS_CSC_BAKERS_BASE'							),
+		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_BASE',					'Tag',							'CLASS_CSC_BAKERS_BASE'							),
 		(	'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_SPEC',					'Tag',							'CLASS_CSC_BAKERS_SPEC'							),
 		(	'REQ_CSC_PLOT_NEARBY_OWNER',							'MaxDistance',					2												),
 

@@ -6,10 +6,6 @@
 	</ID>
 	<RequiredGameArtIDs>
 		<Element>
-			<name text="Civ6"/>
-			<id text="cb2f71b7-843e-4af3-9ca7-992acda9c195"/>
-		</Element>
-		<Element>
 			<name text="Expansion1"/>
 			<id text="7446c8fe-29eb-44f8-801f-098f681cc5c5"/>
 		</Element>

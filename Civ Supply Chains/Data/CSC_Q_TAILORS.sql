@@ -1,4 +1,4 @@
--- CSC_WEAVERS
+-- CSC_TAILORS
 -- Author: Henno
 -- DateCreated: 2025-06-20 13:17:53
 --------------------------------------------------------------
@@ -10,7 +10,7 @@
 INSERT INTO Types
 
 		(	Type,																Kind					)
-VALUES	( 	'DISTRICT_CSC_WEAVERS_QUARTER',                              		'KIND_DISTRICT'         );
+VALUES	( 	'DISTRICT_CSC_TAILORS_QUARTER',                              		'KIND_DISTRICT'         );
 
 
 
@@ -25,27 +25,27 @@ VALUES	( 	'DISTRICT_CSC_WEAVERS_QUARTER',                              		'KIND_D
 INSERT OR IGNORE INTO Tags
 
 		(   Tag,							    Vocabulary			)
-VALUES	(	'CLASS_CSC_WEAVERS_BASE',	        'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_WEAVERS_SPEC',	        'RESOURCE_CLASS'	);
+VALUES	(	'CLASS_CSC_TAILORS_BASE',	        'RESOURCE_CLASS'	),
+        (	'CLASS_CSC_TAILORS_SPEC',	        'RESOURCE_CLASS'	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	TypeTags
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---	Weavers' Quarter base materials
+--	TAILORS' Quarter base materials
 INSERT OR IGNORE INTO TypeTags
 
 	(	Type,						Tag			        )
-SELECT	ResourceType,				'CLASS_CSC_WEAVERS_BASE'
+SELECT	ResourceType,				'CLASS_CSC_TAILORS_BASE'
 FROM	Resources
 WHERE	ResourceType 				IN
 	(	'RESOURCE_COTTON'       	);
 
---	Weavers' Quarter specialty materials
+--	TAILORS' Quarter specialty materials
 INSERT OR IGNORE INTO TypeTags
 
 	(	Type,						Tag			        )
-SELECT	ResourceType,				'CLASS_CSC_WEAVERS_SPEC'
+SELECT	ResourceType,				'CLASS_CSC_TAILORS_SPEC'
 FROM	Resources
 WHERE	ResourceType 				IN
 	(	'RESOURCE_DYES',
@@ -54,7 +54,7 @@ WHERE	ResourceType 				IN
 
 
 --===============================================================================================================================================================================--
-/*	WEAVERS' QUARTER */
+/*	TAILORS' QUARTER */
 --===============================================================================================================================================================================--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -88,9 +88,9 @@ INSERT INTO Districts
 			CityStrengthModifier,
 			AdvisorType                     		)
 VALUES	(
-		/*  DistrictType, */						'DISTRICT_CSC_WEAVERS_QUARTER',
-		/*  Name, */								'LOC_DISTRICT_CSC_WEAVERS_QUARTER_NAME',
-		/*  Description, */							'LOC_DISTRICT_CSC_WEAVERS_QUARTER_DESCRIPTION',
+		/*  DistrictType, */						'DISTRICT_CSC_TAILORS_QUARTER',
+		/*  Name, */								'LOC_DISTRICT_CSC_TAILORS_QUARTER_NAME',
+		/*  Description, */							'LOC_DISTRICT_CSC_TAILORS_QUARTER_DESCRIPTION',
 		/*  PrereqTech, */							NULL,
 		/*  PrereqCivic, */							'CIVIC_CRAFTSMANSHIP',
 		/*  Cost, */								60,
@@ -121,8 +121,8 @@ VALUES	(
 INSERT INTO Adjacency_YieldChanges
 
 		(	ID,											Description,									YieldType,				YieldChange,	AdjacentFeature,	AdjacentImprovement,	AdjacentDistrict,						AdjacentResourceClass,		PrereqTech			)
-VALUES	(	'CSC_COMMERCIAL_HUB_GOLD_TO_WEAVERS',		'LOC_CSC_COMMERCIAL_HUB_GOLD_TO_WEAVERS',		'YIELD_GOLD',			1,				NULL,				NULL,					'DISTRICT_COMMERCIAL_HUB',				'NO_RESOURCECLASS',			NULL				),
-		(	'CSC_WEAVERS_CULTURE_TO_COMMERCIAL_HUB',	'LOC_CSC_WEAVERS_CULTURE_TO_COMMERCIAL_HUB',	'YIELD_CULTURE',		1,				NULL,				NULL,					'DISTRICT_CSC_WEAVERS_QUARTER',			'NO_RESOURCECLASS',			NULL				);
+VALUES	(	'CSC_COMMERCIAL_HUB_GOLD_TO_TAILORS',		'LOC_CSC_COMMERCIAL_HUB_GOLD_TO_TAILORS',		'YIELD_GOLD',			1,				NULL,				NULL,					'DISTRICT_COMMERCIAL_HUB',				'NO_RESOURCECLASS',			NULL				),
+		(	'CSC_TAILORS_CULTURE_TO_COMMERCIAL_HUB',	'LOC_CSC_TAILORS_CULTURE_TO_COMMERCIAL_HUB',	'YIELD_CULTURE',		1,				NULL,				NULL,					'DISTRICT_CSC_TAILORS_QUARTER',			'NO_RESOURCECLASS',			NULL				);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	District_Adjacencies
@@ -131,8 +131,8 @@ VALUES	(	'CSC_COMMERCIAL_HUB_GOLD_TO_WEAVERS',		'LOC_CSC_COMMERCIAL_HUB_GOLD_TO_
 INSERT INTO District_Adjacencies
 
 		(	DistrictType,						YieldChangeId		)
-VALUES	(	'DISTRICT_CSC_WEAVERS_QUARTER',		'CSC_COMMERCIAL_HUB_GOLD_TO_WEAVERS'		),
-		(	'DISTRICT_COMMERCIAL_HUB',			'CSC_WEAVERS_CULTURE_TO_COMMERCIAL_HUB'		);
+VALUES	(	'DISTRICT_CSC_TAILORS_QUARTER',		'CSC_COMMERCIAL_HUB_GOLD_TO_TAILORS'		),
+		(	'DISTRICT_COMMERCIAL_HUB',			'CSC_TAILORS_CULTURE_TO_COMMERCIAL_HUB'		);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Ruivo_New_Adjacency
@@ -150,8 +150,8 @@ INSERT INTO Ruivo_New_Adjacency
 			Rings,
     		DistrictModifiers			)
 SELECT
-			'CSC_WEAVERS_PRODUCTION_FROM_BASE_' || Type,
-			'DISTRICT_CSC_WEAVERS_QUARTER',
+			'CSC_TAILORS_PRODUCTION_FROM_BASE_' || Type,
+			'DISTRICT_CSC_TAILORS_QUARTER',
 			'SelfBonus',
 			'YIELD_PRODUCTION',
 			1,
@@ -160,7 +160,7 @@ SELECT
 			1,
 			1
 FROM	TypeTags
-WHERE 	Tag='CLASS_CSC_WEAVERS_BASE';
+WHERE 	Tag='CLASS_CSC_TAILORS_BASE';
 
 INSERT INTO Ruivo_New_Adjacency
 
@@ -174,8 +174,8 @@ INSERT INTO Ruivo_New_Adjacency
 			Rings,
     		DistrictModifiers			)
 SELECT
-			'CSC_WEAVERS_PRODUCTION_FROM_SPEC_' || Type,
-			'DISTRICT_CSC_WEAVERS_QUARTER',
+			'CSC_TAILORS_PRODUCTION_FROM_SPEC_' || Type,
+			'DISTRICT_CSC_TAILORS_QUARTER',
 			'SelfBonus',
 			'YIELD_PRODUCTION',
 			1,
@@ -184,4 +184,4 @@ SELECT
 			1,
 			1
 FROM	TypeTags
-WHERE 	Tag='CLASS_CSC_WEAVERS_SPEC';
+WHERE 	Tag='CLASS_CSC_TAILORS_SPEC';

@@ -10,7 +10,9 @@
 INSERT INTO Types
 
 		(	Type,																Kind					)
-VALUES	( 	'DISTRICT_CSC_CARPENTERS_QUARTER',                                  'KIND_DISTRICT'         );
+VALUES	( 	'DISTRICT_CSC_CARPENTERS_QUARTER',                                  'KIND_DISTRICT'         ),
+
+		(	'BUILDING_CSC_CARPENTERS_JOINERY',									'KIND_BUILDING'			);
 
 
 
@@ -210,3 +212,42 @@ SELECT
 			1
 FROM	TypeTags
 WHERE 	Tag='CLASS_CSC_CARPENTERS_SPEC';
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	Boosts
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
+
+UPDATE Boosts SET TriggerDescription='LOC_BOOST_TRIGGER_CONSTRUCTION_CSC',	TriggerLongDescription='LOC_BOOST_TRIGGER_LONGDESC_CONSTRUCTION_CSC', BuildingType='BUILDING_CSC_CARPENTERS_JOINERY'	WHERE TechnologyType='TECH_CONSTRUCTION';
+
+
+
+--===========================================================================================================================================================================--
+/*	STAGES 2-4 - BUILDINGS */
+--===========================================================================================================================================================================--
+
+INSERT INTO Buildings
+
+		(	BuildingType,
+			Name,
+			Description,
+			PrereqTech,
+			PrereqCivic,
+			Cost,
+			PrereqDistrict,
+			PurchaseYield,
+			Maintenance,
+			CitizenSlots,
+			AdvisorType				)
+VALUES	(
+		/*  BuildingType, */		'BUILDING_CSC_CARPENTERS_JOINERY',
+		/*  Name, */				'LOC_BUILDING_CSC_CARPENTERS_JOINERY_NAME',
+		/*  Description, */			'LOC_BUILDING_CSC_CARPENTERS_JOINERY_DESCRIPTION',
+		/*  PrereqTech, */			'TECH_BRONZE_WORKING',
+		/*  PrereqCivic, */			NULL,
+		/*  Cost, */				80,
+		/*  PrereqDistrict, */		'DISTRICT_CSC_CARPENTERS_QUARTER',
+		/*  PurchaseYield, */		'YIELD_GOLD',
+		/*  Maintenance, */			1,
+		/*	CitizenSlots */			0,
+		/*  AdvisorType */			'ADVISOR_GENERIC'
+									);

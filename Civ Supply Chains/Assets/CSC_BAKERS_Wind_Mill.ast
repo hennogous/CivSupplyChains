@@ -17,7 +17,7 @@
 						<m_CookParams>
 							<m_Values>
 								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="CSC_BAKERS_Flour_Mill_MODEL"/>
+									<m_EntryName text="CSC_BAKERS_Wind_Mill_MODEL"/>
 									<m_XLPClass text="TileBase"/>
 									<m_XLPPath text="csc_tilebases.xlp"/>
 									<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
@@ -41,7 +41,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -93,7 +93,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -145,7 +145,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -288,7 +288,7 @@
 	<m_Materials/>
 	<m_ClassName text="TileBase"/>
 	<m_DataFiles/>
-	<m_Name text="CSC_BAKERS_Flour_Mill"/>
+	<m_Name text="CSC_BAKERS_Wind_Mill"/>
 	<m_Description text=""/>
 	<m_Tags>
 		<Element text="TileBase"/>

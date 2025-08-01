@@ -14,17 +14,17 @@
 INSERT OR IGNORE INTO Tags
 
 		(   Tag,							    Vocabulary			)
-VALUES	(	'CLASS_CSC_WEAVERS_BASE',	        'RESOURCE_CLASS'	);
+VALUES	(	'CLASS_CSC_TAILORS_BASE',	        'RESOURCE_CLASS'	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	TypeTags
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---	Weavers' Quarter base materials
+--	TAILORS' Quarter base materials
 INSERT OR IGNORE INTO TypeTags
 
 	(	Type,							Tag			        )
-SELECT	ResourceType,					'CLASS_CSC_WEAVERS_BASE'
+SELECT	ResourceType,					'CLASS_CSC_TAILORS_BASE'
 FROM	Resources
 WHERE	ResourceType 					IN
 	(	'RESOURCE_LEU_P0K_LLAMAS'		);
