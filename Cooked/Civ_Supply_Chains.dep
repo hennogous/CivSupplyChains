@@ -499,7 +499,9 @@
 		</Element>
 		<Element>
 			<LibraryName text="Light"/>
-			<PackageDependencies/>
+			<PackageDependencies>
+				<Element text="CSC_Lights.blp"/>
+			</PackageDependencies>
 		</Element>
 		<Element>
 			<LibraryName text="OverlayTexture"/>

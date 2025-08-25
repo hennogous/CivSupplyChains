@@ -500,6 +500,7 @@
 		<Element>
 			<libraryName text="Light"/>
 			<relativePackagePaths>
+				<Element text="CSC_Lights"/>
 			</relativePackagePaths>
 		</Element>
 		<Element>
@@ -611,10 +612,6 @@
 		</Element>
 	</gameLibraries>
 	<requiredGameArtIDs>
-		<Element>
-			<name text="Shared"/>
-			<id text="725760e3-7fc0-4be7-abf1-17bc756d5436"/>
-		</Element>
 		<Element>
 			<name text="Expansion1"/>
 			<id text="7446c8fe-29eb-44f8-801f-098f681cc5c5"/>

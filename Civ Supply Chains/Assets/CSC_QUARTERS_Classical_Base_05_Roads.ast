@@ -641,58 +641,6 @@
 						<m_CookParams>
 							<m_Values>
 								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="CSC_ROAD_CLA_Straight"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="csc_tilebases.xlp"/>
-									<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>7.928464</x>
-							<y>-8.624026</y>
-							<z>0.000000</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>-0.410183</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_8"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>0.700000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
 									<m_EntryName text="CSC_ROAD_CLA_Curve_M"/>
 									<m_XLPClass text="TileBase"/>
 									<m_XLPPath text="csc_tilebases.xlp"/>
@@ -779,14 +727,14 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-19.424076</x>
-							<y>-7.158937</y>
+							<x>-12.619607</x>
+							<y>-10.106436</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
 							<x>0.000000</x>
 							<y>0.000000</y>
-							<z>-1.315657</z>
+							<z>-2.059424</z>
 						</m_orientation>
 						<m_Name text="newAttachmentPoint_10"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
@@ -883,14 +831,14 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>16.298670</x>
-							<y>-37.079025</y>
+							<x>9.799046</x>
+							<y>-41.714687</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
 							<x>0.000000</x>
 							<y>0.000000</y>
-							<z>2.754165</z>
+							<z>2.982623</z>
 						</m_orientation>
 						<m_Name text="newAttachmentPoint_13"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
@@ -987,14 +935,14 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-4.592633</x>
-							<y>-8.178535</y>
+							<x>-5.160613</x>
+							<y>-8.936109</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
 							<x>0.000000</x>
 							<y>0.000000</y>
-							<z>-0.415267</z>
+							<z>-0.247832</z>
 						</m_orientation>
 						<m_Name text="newAttachmentPoint_15"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
@@ -1039,14 +987,14 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-12.617573</x>
-							<y>-7.625682</y>
+							<x>-12.235643</x>
+							<y>-7.495321</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
 							<x>0.000000</x>
 							<y>0.000000</y>
-							<z>-0.415267</z>
+							<z>-0.328923</z>
 						</m_orientation>
 						<m_Name text="newAttachmentPoint_16"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
@@ -1091,14 +1039,14 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>18.710419</x>
-							<y>-10.203467</y>
+							<x>19.330379</x>
+							<y>-14.034350</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
 							<x>0.000000</x>
 							<y>0.000000</y>
-							<z>-1.171476</z>
+							<z>-1.232037</z>
 						</m_orientation>
 						<m_Name text="newAttachmentPoint_17"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
@@ -1195,14 +1143,14 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>3.478532</x>
-							<y>-3.192393</y>
+							<x>-3.422999</x>
+							<y>-4.474091</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
 							<x>0.000000</x>
 							<y>0.000000</y>
-							<z>-0.406444</z>
+							<z>-0.286382</z>
 						</m_orientation>
 						<m_Name text="newAttachmentPoint_19"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
@@ -1247,8 +1195,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>18.549606</x>
-							<y>-3.869272</y>
+							<x>18.986752</x>
+							<y>-7.982012</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -1677,6 +1625,58 @@
 						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="CSC_ROAD_CLA_Straight"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="csc_tilebases.xlp"/>
+									<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>-19.424076</x>
+							<y>-7.158937</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>-1.315657</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_11"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>0.700000</m_scale>
+					</Element>
 				</m_Points>
 			</m_attachmentPoints>
 			<m_stateSet/>
@@ -1700,7 +1700,7 @@
 	<m_CookParams>
 		<m_Values>
 			<Element class="AssetObjects..ObjectValue">
-				<m_ObjectName text="DIS_PRD_Classical_OB"/>
+				<m_ObjectName text=""/>
 				<m_eObjectType>GEOMETRY</m_eObjectType>
 				<m_ParamName text="Obstruction Profile"/>
 			</Element>
@@ -1722,7 +1722,7 @@
 				<m_ParamName text="BurnEdgeBlend"/>
 			</Element>
 			<Element class="AssetObjects..BoolValue">
-				<m_bValue>true</m_bValue>
+				<m_bValue>false</m_bValue>
 				<m_ParamName text="Obstruction Profile AutoGenerate"/>
 			</Element>
 			<Element class="AssetObjects..BoolValue">

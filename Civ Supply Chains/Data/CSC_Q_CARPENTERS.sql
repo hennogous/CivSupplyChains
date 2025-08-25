@@ -125,7 +125,7 @@ INSERT INTO Adjacency_YieldChanges
 
 		(	ID,											    Description,									    YieldType,				YieldChange,	AdjacentFeature,	AdjacentImprovement,	AdjacentDistrict,						AdjacentResourceClass,		PrereqTech			)
 VALUES	(	'CSC_COMMERCIAL_HUB_GOLD_TO_CARPENTERS',		'LOC_CSC_COMMERCIAL_HUB_GOLD_TO_CARPENTERS',		'YIELD_GOLD',			1,				NULL,				NULL,					'DISTRICT_COMMERCIAL_HUB',				'NO_RESOURCECLASS',			NULL				),
-		(	'CSC_CARPENTERS_PRODUCTION_TO_COMMERCIAL_HUB',	'LOC_CSC_CARPENTERS_PRODUCTION_TO_COMMERCIAL_HUB',	'YIELD_PRODUCTION',		1,				NULL,				NULL,					'DISTRICT_CSC_CARPENTERS_QUARTER',    'NO_RESOURCECLASS',			NULL				);
+		(	'CSC_CARPENTERS_PRODUCTION_TO_COMMERCIAL_HUB',	'LOC_CSC_CARPENTERS_PRODUCTION_TO_COMMERCIAL_HUB',	'YIELD_PRODUCTION',		1,				NULL,				NULL,					'DISTRICT_CSC_CARPENTERS_QUARTER',    	'NO_RESOURCECLASS',			NULL				);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	District_Adjacencies

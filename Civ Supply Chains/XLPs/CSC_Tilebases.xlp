@@ -110,10 +110,6 @@
 			<m_ObjectName text="CSC_BAKERS_Bakery"/>
 		</Element>
 		<Element>
-			<m_EntryID text="CSC_BAKERS_Bakery_MODEL"/>
-			<m_ObjectName text="CSC_BAKERS_Bakery_MODEL"/>
-		</Element>
-		<Element>
 			<m_EntryID text="CSC_ROAD_CLA_Elbow"/>
 			<m_ObjectName text="CSC_ROAD_CLA_Elbow"/>
 		</Element>
@@ -188,10 +184,6 @@
 		<Element>
 			<m_EntryID text="CSC_BAKERS_Patisserie"/>
 			<m_ObjectName text="CSC_BAKERS_Patisserie"/>
-		</Element>
-		<Element>
-			<m_EntryID text="CSC_BAKERS_Patisserie_MODEL"/>
-			<m_ObjectName text="CSC_BAKERS_Patisserie_MODEL"/>
 		</Element>
 		<Element>
 			<m_EntryID text="CSC_BAKERS_Storage_Tent"/>
@@ -304,6 +296,130 @@
 		<Element>
 			<m_EntryID text="CSC_BAKERS_Wind_Mill_MODEL"/>
 			<m_ObjectName text="CSC_BAKERS_Wind_Mill_MODEL"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Storage_01"/>
+			<m_ObjectName text="CSC_BAKERS_Storage_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Storage_02"/>
+			<m_ObjectName text="CSC_BAKERS_Storage_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Gallery"/>
+			<m_ObjectName text="CSC_QUARTERS_Gallery"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_01"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_02"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_03"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_03"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_04"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_04"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_05"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_05"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_06"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_06"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_07"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_07"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_08"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_08"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_09"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_09"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_10"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_10"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_11"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_11"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_12"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_12"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_13"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_13"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_14"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_14"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_15"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_15"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_16"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_16"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_17"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_17"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_18"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_18"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_19"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_19"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Prop_20"/>
+			<m_ObjectName text="CSC_QUARTERS_Prop_20"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Bakery_Bakehouse"/>
+			<m_ObjectName text="CSC_BAKERS_Bakery_Bakehouse"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Bakery_Oven"/>
+			<m_ObjectName text="CSC_BAKERS_Bakery_Oven"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Bakery_Main"/>
+			<m_ObjectName text="CSC_BAKERS_Bakery_Main"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Bakery_Chimney"/>
+			<m_ObjectName text="CSC_BAKERS_Bakery_Chimney"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Patisserie_Bakehouse"/>
+			<m_ObjectName text="CSC_BAKERS_Patisserie_Bakehouse"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Patisserie_Main"/>
+			<m_ObjectName text="CSC_BAKERS_Patisserie_Main"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Patisserie_Side"/>
+			<m_ObjectName text="CSC_BAKERS_Patisserie_Side"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Bakery_Stand"/>
+			<m_ObjectName text="CSC_BAKERS_Bakery_Stand"/>
 		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>

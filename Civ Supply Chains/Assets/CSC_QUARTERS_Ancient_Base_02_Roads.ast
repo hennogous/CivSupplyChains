@@ -1700,7 +1700,7 @@
 	<m_CookParams>
 		<m_Values>
 			<Element class="AssetObjects..ObjectValue">
-				<m_ObjectName text="DIS_PRD_Classical_OB"/>
+				<m_ObjectName text=""/>
 				<m_eObjectType>GEOMETRY</m_eObjectType>
 				<m_ParamName text="Obstruction Profile"/>
 			</Element>
@@ -1722,7 +1722,7 @@
 				<m_ParamName text="BurnEdgeBlend"/>
 			</Element>
 			<Element class="AssetObjects..BoolValue">
-				<m_bValue>true</m_bValue>
+				<m_bValue>false</m_bValue>
 				<m_ParamName text="Obstruction Profile AutoGenerate"/>
 			</Element>
 			<Element class="AssetObjects..BoolValue">
