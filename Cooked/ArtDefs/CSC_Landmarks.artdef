@@ -23,9 +23,9 @@
 							<m_ParamName text="DistrictGenerator"/>
 						</Element>
 						<Element class="AssetObjects..RGBValue">
-							<m_r>89.000000</m_r>
-							<m_g>177.000000</m_g>
-							<m_b>0.000000</m_b>
+							<m_r>62.000000</m_r>
+							<m_g>123.000000</m_g>
+							<m_b>1.000000</m_b>
 							<m_ParamName text="TintColor"/>
 						</Element>
 						<Element class="AssetObjects..BoolValue">
@@ -639,7 +639,7 @@
 										<m_ParamName text="Tag_Appeal"/>
 									</Element>
 									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="CSC_BAKERS_Classical_Base_03"/>
+										<m_EntryName text="CSC_BAKERS_Classical_Base_06"/>
 										<m_XLPClass text="TileBase"/>
 										<m_XLPPath text="csc_tilebases.xlp"/>
 										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
@@ -700,7 +700,7 @@
 										<m_ParamName text="Tag_Appeal"/>
 									</Element>
 									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="CSC_BAKERS_Classical_Base_04"/>
+										<m_EntryName text="CSC_BAKERS_Classical_Base_07"/>
 										<m_XLPClass text="TileBase"/>
 										<m_XLPPath text="csc_tilebases.xlp"/>
 										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
@@ -761,7 +761,7 @@
 										<m_ParamName text="Tag_Appeal"/>
 									</Element>
 									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="CSC_BAKERS_Classical_Base_05"/>
+										<m_EntryName text="CSC_BAKERS_Classical_Base_08"/>
 										<m_XLPClass text="TileBase"/>
 										<m_XLPPath text="csc_tilebases.xlp"/>
 										<m_BLPPackage text="Landmarks/CSC_Tilebases"/>

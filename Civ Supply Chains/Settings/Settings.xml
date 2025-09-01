@@ -17,4 +17,14 @@
         <Row ConfigurationGroup="Game" ConfigurationId="CSC_FOOTER_INTERNAL" DefaultValue="1" Description="LOC_CSC_FOOTER_INTERNAL_DESCRIPTION" Domain="bool" GroupId="AdvancedOptions" Hash="0" Name="LOC_CSC_FOOTER_INTERNAL_NAME" ParameterId="CSCFooter" ReadOnly="1" SortIndex="309"/>
     </Parameters>
 
+    <ParameterDependencies>
+            <Row ParameterId="CSC_MC_Remove_Bonuses" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_MONOPOLIES" Operator="Equals" ConfigurationValue="1"/>
+            <Row ParameterId="CSC_MC_Remove_Projects" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_MONOPOLIES" Operator="Equals" ConfigurationValue="1"/>
+    </ParameterDependencies>
+    
+    <ParameterCriteria>
+            <Row ParameterId="CSC_MC_Remove_Bonuses" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_MONOPOLIES" Operator="Equals" ConfigurationValue="1"/>
+            <Row ParameterId="CSC_MC_Remove_Projects" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_MONOPOLIES" Operator="Equals" ConfigurationValue="1"/>
+    </ParameterCriteria>
+
 </GameData>

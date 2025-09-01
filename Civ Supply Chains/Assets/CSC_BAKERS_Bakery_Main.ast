@@ -40,23 +40,12 @@
 								<m_eType>ASSET_FX</m_eType>
 								<m_Name text="3"/>
 								<m_Description text=""/>
-								<m_FXName text="FireFX_Chimney_Smoke"/>
+								<m_FXName text="FXm_Chimney_Smoke_Sml_01"/>
 								<m_CollectionName text=""/>
 								<m_AttachmentPointName text="newAttachmentPoint_1"/>
 								<m_fStartTime>0.000000</m_fStartTime>
 								<m_fDuration>-1.000000</m_fDuration>
 								<m_nTrackIndex>1</m_nTrackIndex>
-							</Element>
-							<Element>
-								<m_eType>LIGHT</m_eType>
-								<m_Name text="4"/>
-								<m_Description text=""/>
-								<m_FXName text="CSC_BAKERS_Stand_Light"/>
-								<m_CollectionName text=""/>
-								<m_AttachmentPointName text="newAttachmentPoint_4"/>
-								<m_fStartTime>0.000000</m_fStartTime>
-								<m_fDuration>-1.000000</m_fDuration>
-								<m_nTrackIndex>0</m_nTrackIndex>
 							</Element>
 						</m_Triggers>
 						<m_Tracks>
@@ -167,7 +156,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -219,7 +208,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -271,7 +260,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -323,7 +312,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -355,7 +344,7 @@
 									<m_XLPClass text="TileBase"/>
 									<m_XLPPath text=""/>
 									<m_BLPPackage text=""/>
-									<m_LibraryName text=""/>
+									<m_LibraryName text="TileBase"/>
 									<m_ParamName text="Asset"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
@@ -375,7 +364,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -427,7 +416,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -479,7 +468,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">

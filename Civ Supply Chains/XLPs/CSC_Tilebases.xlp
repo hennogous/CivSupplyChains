@@ -198,10 +198,6 @@
 			<m_ObjectName text="CSC_QUARTERS_Classical_Base_99"/>
 		</Element>
 		<Element>
-			<m_EntryID text="CSC_BAKERS_Classical_Base_05"/>
-			<m_ObjectName text="CSC_BAKERS_Classical_Base_05"/>
-		</Element>
-		<Element>
 			<m_EntryID text="CSC_QUARTERS_Classical_Base_05_Roads"/>
 			<m_ObjectName text="CSC_QUARTERS_Classical_Base_05_Roads"/>
 		</Element>
@@ -210,32 +206,8 @@
 			<m_ObjectName text="CSC_QUARTERS_Classical_Base_05_Shared"/>
 		</Element>
 		<Element>
-			<m_EntryID text="CSC_BAKERS_Classical_Base_04"/>
-			<m_ObjectName text="CSC_BAKERS_Classical_Base_04"/>
-		</Element>
-		<Element>
-			<m_EntryID text="CSC_BAKERS_Classical_Base_03"/>
-			<m_ObjectName text="CSC_BAKERS_Classical_Base_03"/>
-		</Element>
-		<Element>
-			<m_EntryID text="CSC_BAKERS_Classical_Base_02"/>
-			<m_ObjectName text="CSC_BAKERS_Classical_Base_02"/>
-		</Element>
-		<Element>
-			<m_EntryID text="CSC_BAKERS_Classical_Base_01"/>
-			<m_ObjectName text="CSC_BAKERS_Classical_Base_01"/>
-		</Element>
-		<Element>
-			<m_EntryID text="CSC_QUARTERS_Ancient_Base_02_Roads"/>
-			<m_ObjectName text="CSC_QUARTERS_Ancient_Base_02_Roads"/>
-		</Element>
-		<Element>
 			<m_EntryID text="CSC_BAKERS_Ancient_Base_01"/>
 			<m_ObjectName text="CSC_BAKERS_Ancient_Base_01"/>
-		</Element>
-		<Element>
-			<m_EntryID text="CSC_BAKERS_Ancient_Base_02"/>
-			<m_ObjectName text="CSC_BAKERS_Ancient_Base_02"/>
 		</Element>
 		<Element>
 			<m_EntryID text="CSC_QUARTERS_Classical_Base_04_Roads"/>
@@ -420,6 +392,94 @@
 		<Element>
 			<m_EntryID text="CSC_BAKERS_Bakery_Stand"/>
 			<m_ObjectName text="CSC_BAKERS_Bakery_Stand"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Patisserie_Side_Large"/>
+			<m_ObjectName text="CSC_BAKERS_Patisserie_Side_Large"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Storage_Large"/>
+			<m_ObjectName text="CSC_BAKERS_Storage_Large"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_00"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_00"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_ROAD_ANC_Curve_L"/>
+			<m_ObjectName text="CSC_ROAD_ANC_Curve_L"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Classical_Base_01_Roads"/>
+			<m_ObjectName text="CSC_QUARTERS_Classical_Base_01_Roads"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Ancient_Base_Roads"/>
+			<m_ObjectName text="CSC_QUARTERS_Ancient_Base_Roads"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Ancient_Base_Storage"/>
+			<m_ObjectName text="CSC_QUARTERS_Ancient_Base_Storage"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Storage_Barn"/>
+			<m_ObjectName text="CSC_BAKERS_Storage_Barn"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Storage_Canopy"/>
+			<m_ObjectName text="CSC_BAKERS_Storage_Canopy"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Flour"/>
+			<m_ObjectName text="CSC_BAKERS_Flour"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Ancient_Base_02"/>
+			<m_ObjectName text="CSC_BAKERS_Ancient_Base_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_01"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_02"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_03"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_03"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_04"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_04"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_05"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_05"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_06"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_06"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_07"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_07"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Classical_Base_08"/>
+			<m_ObjectName text="CSC_BAKERS_Classical_Base_08"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Plaza_Inner"/>
+			<m_ObjectName text="CSC_QUARTERS_Plaza_Inner"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_QUARTERS_Plaza_Outer"/>
+			<m_ObjectName text="CSC_QUARTERS_Plaza_Outer"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Well"/>
+			<m_ObjectName text="CSC_BAKERS_Well"/>
 		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>

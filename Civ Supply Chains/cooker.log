@@ -240,30 +240,47 @@ Geo DIS_COM_Fruit_Stand_CON mesh DIS_COM_Fruit_Stand_CON flagged for possible ve
 ****** Log from Geometry: 'DIS_COM_Fruit_Stand_PIL' ********
 --------------
 Geo DIS_COM_Fruit_Stand_PIL mesh DIS_COM_Fruit_Stand_PIL flagged for possible vertex duplication. Vertex Count: 448, Index Count: 612, Tri Count 204, Reused Vertices: 144, Duplicate Vertices: 0, Duplicate Positions: 147, Vertex:Tri Ratio: 2.20
-Load finished for: 'Landmarks/CSC_Tilebases' in 2.492 seconds
-Geometry is required to autogenerate an OB for asset "CSC_BAKERS_Ancient_Base_01".
-			An empty OB will be used for this asset.
-Geometry is required to autogenerate an OB for asset "CSC_BAKERS_Ancient_Base_02".
-			An empty OB will be used for this asset.
-Geometry is required to autogenerate an OB for asset "CSC_BAKERS_Classical_Base_01".
-			An empty OB will be used for this asset.
-Geometry is required to autogenerate an OB for asset "CSC_BAKERS_Classical_Base_02".
-			An empty OB will be used for this asset.
-Geometry is required to autogenerate an OB for asset "CSC_BAKERS_Classical_Base_03".
-			An empty OB will be used for this asset.
-Geometry is required to autogenerate an OB for asset "CSC_BAKERS_Classical_Base_04".
-			An empty OB will be used for this asset.
-Geometry is required to autogenerate an OB for asset "CSC_BAKERS_Classical_Base_05".
-			An empty OB will be used for this asset.
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_MD_B_02' ********
+--------------
+Geo DIS_CTY_RE_Bld_MD_B_02 Mesh DIS_CTY_RE_Bld_MD_B_02 : 54 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_MD_B_02 mesh DIS_CTY_RE_Bld_MD_B_02 flagged for possible vertex duplication. Vertex Count: 498, Index Count: 894, Tri Count 298, Reused Vertices: 297, Duplicate Vertices: 0, Duplicate Positions: 174, Vertex:Tri Ratio: 1.67
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_MD_B_02_decal' ********
+--------------
+Geo DIS_CTY_RE_Bld_MD_B_02_decal Mesh Decal_CLA_Rect_Sq_Patch163 : 6 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_MD_B_02_decal Mesh Decal_CLA_Rect_Sq_Patch074 : 6 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_PRD_Bld_C' ********
+--------------
+Geo DIS_PRD_Bld_C Mesh DIS_PRD_Bld_C : 5 vertices removed by tangent merger.
+Geo DIS_PRD_Bld_C mesh DIS_PRD_Bld_C flagged for possible vertex duplication. Vertex Count: 203, Index Count: 336, Tri Count 112, Reused Vertices: 101, Duplicate Vertices: 0, Duplicate Positions: 82, Vertex:Tri Ratio: 1.81
+
+****** Log from Geometry: 'DIS_PRD_Bld_C_PIL' ********
+--------------
+Geo DIS_PRD_Bld_C_PIL Mesh DIS_PRD_Bld_C_PIL : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Bld_C_PIL mesh DIS_PRD_Bld_C_PIL flagged for possible vertex duplication. Vertex Count: 252, Index Count: 408, Tri Count 136, Reused Vertices: 126, Duplicate Vertices: 0, Duplicate Positions: 91, Vertex:Tri Ratio: 1.85
+
+****** Log from Geometry: 'DIS_CTY_Foundation_WR_LgGrayBlock' ********
+--------------
+Geo DIS_CTY_Foundation_WR_LgGrayBlock Mesh WR_Base : 1 vertices removed by tangent merger.
+
+****** Log from Geometry: 'IMP_Farm_IND_Bld_Well_PIL' ********
+--------------
+Geo IMP_Farm_IND_Bld_Well_PIL Mesh IMP_Farm_IND_Bld_Well_PIL : 6 vertices removed by tangent merger.
+Geo IMP_Farm_IND_Bld_Well_PIL mesh IMP_Farm_IND_Bld_Well_PIL flagged for possible vertex duplication. Vertex Count: 270, Index Count: 450, Tri Count 150, Reused Vertices: 147, Duplicate Vertices: 0, Duplicate Positions: 94, Vertex:Tri Ratio: 1.80
+Load finished for: 'Landmarks/CSC_Tilebases' in 2.420 seconds
 Geometry is required to autogenerate an OB for asset "CSC_QUARTERS_Classical_Base_Storage".
 			An empty OB will be used for this asset.
 Geometry is required to autogenerate an OB for asset "CSC_QUARTERS_Gallery".
 			An empty OB will be used for this asset.
+Geometry is required to autogenerate an OB for asset "CSC_QUARTERS_Plaza_Inner".
+			An empty OB will be used for this asset.
 Profile AABB exceeds hex AABB in geo "IMP_Farm_Decal_Transition_08_OB"
 			Make sure model is correctly transformed, then reset and collapse the transform.
 			If everything is working as intended, ignore this message.
-Cook finished for: 'Landmarks/CSC_Tilebases' in 0.038 seconds
-Disk write finished for: 'Landmarks/CSC_Tilebases' in 0.359 seconds
-Cleanup finished for: 'Landmarks/CSC_Tilebases' in 0.040 seconds
+Cook finished for: 'Landmarks/CSC_Tilebases' in 0.039 seconds
+Disk write finished for: 'Landmarks/CSC_Tilebases' in 0.371 seconds
+Cleanup finished for: 'Landmarks/CSC_Tilebases' in 0.041 seconds
 XLP cook completed with success.
-Cook completed in 2.941 seconds
+Cook completed in 2.881 seconds

@@ -20,8 +20,7 @@ VALUES	(	'CLASS_CSC_TAILORS_SPEC',	        'RESOURCE_CLASS'	),
         (	'CLASS_CSC_BLACKSMITHS_SPEC',	    'RESOURCE_CLASS'	),
         (	'CLASS_CSC_GOLDSMITHS_BASE',	    'RESOURCE_CLASS'	),
 
-        (	'CLASS_CSC_GOLDSMITHS_SPEC',	    'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_BREWERS_BASE',           'RESOURCE_CLASS'	);
+        (	'CLASS_CSC_GOLDSMITHS_SPEC',	    'RESOURCE_CLASS'	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	TypeTags

@@ -41,7 +41,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -51,8 +51,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-22.749187</x>
-							<y>-19.162045</y>
+							<x>-27.885572</x>
+							<y>-12.008556</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -93,7 +93,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -103,8 +103,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>2.387625</x>
-							<y>-5.071824</y>
+							<x>-1.614544</x>
+							<y>-7.699791</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -145,7 +145,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -155,8 +155,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-22.429779</x>
-							<y>-24.471062</y>
+							<x>-28.811726</x>
+							<y>-17.791164</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -197,7 +197,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -207,8 +207,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-10.238964</x>
-							<y>-11.851616</y>
+							<x>-15.237183</x>
+							<y>-4.381414</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -219,7 +219,7 @@
 						<m_Name text="newAttachmentPoint_2"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
 						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>1.200000</m_scale>
+						<m_scale>1.300000</m_scale>
 					</Element>
 					<Element>
 						<m_CookParams>
@@ -249,7 +249,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -259,8 +259,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-8.316740</x>
-							<y>-13.683577</y>
+							<x>-13.314959</x>
+							<y>-6.213375</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -301,7 +301,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -311,8 +311,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-18.457207</x>
-							<y>-15.151731</y>
+							<x>-23.720650</x>
+							<y>-7.954629</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -353,7 +353,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -363,8 +363,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-17.097109</x>
-							<y>-16.445042</y>
+							<x>-22.360552</x>
+							<y>-9.247940</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -405,7 +405,7 @@
 									<m_ParamName text="TerrainFollowMode"/>
 								</Element>
 								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
+									<m_Value text="PERMANENT"/>
 									<m_ParamName text="Cull Mode"/>
 								</Element>
 								<Element class="AssetObjects..BoolValue">
@@ -415,8 +415,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-17.726223</x>
-							<y>-15.748755</y>
+							<x>-22.989666</x>
+							<y>-8.551653</y>
 							<z>0.924011</z>
 						</m_position>
 						<m_orientation>

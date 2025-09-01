@@ -61,8 +61,8 @@
 							<z>-1.047198</z>
 						</m_orientation>
 						<m_Name text="DIS_Roped_Flags025"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -113,8 +113,8 @@
 							<z>-1.047198</z>
 						</m_orientation>
 						<m_Name text="DIS_Roped_Flags024"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -165,8 +165,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Barrel_Classical001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -217,8 +217,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Barrel_Classical002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -269,8 +269,8 @@
 							<z>2.617994</z>
 						</m_orientation>
 						<m_Name text="DIS_Ancient_Wood0012"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -321,8 +321,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -373,8 +373,8 @@
 							<z>0.015327</z>
 						</m_orientation>
 						<m_Name text="DIS_Ancient_Sm_Banner001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -425,8 +425,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot_Orange002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -477,8 +477,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -529,8 +529,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot_Orange003"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -581,8 +581,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -633,8 +633,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -685,8 +685,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -737,8 +737,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -789,8 +789,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm003"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -841,8 +841,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg003"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -893,8 +893,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm004"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -945,8 +945,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg005"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -997,8 +997,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg006"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -1049,8 +1049,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm006"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -1101,8 +1101,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm007"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -1153,8 +1153,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg007"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -1205,8 +1205,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm009"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -1257,8 +1257,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg008"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -1309,8 +1309,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm010"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -1361,8 +1361,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg009"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -1413,8 +1413,8 @@
 							<z>1.119718</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm011"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -1465,8 +1465,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg010"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -1517,8 +1517,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm012"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -1569,8 +1569,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg011"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -1621,8 +1621,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm013"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -1673,8 +1673,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg012"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -1725,8 +1725,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg013"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -1777,8 +1777,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm014"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -1829,8 +1829,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg014"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -1881,8 +1881,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm016"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -1933,8 +1933,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot010"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -1985,8 +1985,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot_Orange018"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2037,8 +2037,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot011"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2089,8 +2089,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot035"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2141,8 +2141,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot036"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2193,8 +2193,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot037"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2245,8 +2245,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot038"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2297,8 +2297,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="DIS_Pot_Orange045"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2349,8 +2349,8 @@
 							<z>1.483530</z>
 						</m_orientation>
 						<m_Name text="DIS_Ancient_Sm_Filler095"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2401,8 +2401,8 @@
 							<z>-2.094395</z>
 						</m_orientation>
 						<m_Name text="DIS_Ancient_Lg_Filler034"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2453,8 +2453,8 @@
 							<z>-0.422369</z>
 						</m_orientation>
 						<m_Name text="DIS_Ancient_Sm_Filler096"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2505,8 +2505,8 @@
 							<z>0.838677</z>
 						</m_orientation>
 						<m_Name text="DIS_Ancient_Sm_Filler093"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2557,8 +2557,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Boulder_B02"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2609,8 +2609,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Boulder_A02"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2661,8 +2661,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Boulder_A03"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2713,8 +2713,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Boulder_B01"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2765,8 +2765,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Boulder_B00"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2817,8 +2817,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Boulder_C_Decal002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2869,8 +2869,8 @@
 							<z>2.186499</z>
 						</m_orientation>
 						<m_Name text="DIS_Hanging_flags0023"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2921,8 +2921,8 @@
 							<z>2.987167</z>
 						</m_orientation>
 						<m_Name text="RoadCP001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -2973,8 +2973,8 @@
 							<z>-2.893018</z>
 						</m_orientation>
 						<m_Name text="RoadCP002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3025,8 +3025,8 @@
 							<z>-2.093880</z>
 						</m_orientation>
 						<m_Name text="RoadCP003"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3077,8 +3077,8 @@
 							<z>-1.749091</z>
 						</m_orientation>
 						<m_Name text="RoadCP004"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3129,8 +3129,8 @@
 							<z>-0.882108</z>
 						</m_orientation>
 						<m_Name text="RoadCP005"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3181,8 +3181,8 @@
 							<z>-0.693842</z>
 						</m_orientation>
 						<m_Name text="RoadCP006"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3233,8 +3233,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Boulder_A214"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3285,8 +3285,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Lumber_B001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3337,8 +3337,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Lumber_B002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3389,8 +3389,8 @@
 							<z>-0.523599</z>
 						</m_orientation>
 						<m_Name text="PROP_Lumber_C001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3441,8 +3441,8 @@
 							<z>0.523599</z>
 						</m_orientation>
 						<m_Name text="PROP_Lumber_C002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3493,8 +3493,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Lumber_E001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3545,8 +3545,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Scaffold_A001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3597,8 +3597,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Stone_A001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3649,8 +3649,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Stone_C001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3701,8 +3701,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Stone_D001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3753,8 +3753,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Stone_E001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3805,8 +3805,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Stone_F001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3857,8 +3857,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Support001"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3909,8 +3909,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="RoadCP106"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -3961,8 +3961,8 @@
 							<z>0.489986</z>
 						</m_orientation>
 						<m_Name text="RoadCP107"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4013,8 +4013,8 @@
 							<z>0.902089</z>
 						</m_orientation>
 						<m_Name text="RoadCP108"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4065,8 +4065,8 @@
 							<z>1.058084</z>
 						</m_orientation>
 						<m_Name text="RoadCP109"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4117,8 +4117,8 @@
 							<z>2.238763</z>
 						</m_orientation>
 						<m_Name text="RoadCP110"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4169,8 +4169,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Stone_E002"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4221,8 +4221,8 @@
 							<z>1.658063</z>
 						</m_orientation>
 						<m_Name text="DIS_Ancient_Sm_Filler094_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4273,8 +4273,8 @@
 							<z>0.137574</z>
 						</m_orientation>
 						<m_Name text="DIS_Ancient_Sm_Filler095_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4325,8 +4325,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg003_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4377,8 +4377,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm011_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -4429,8 +4429,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg007_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -4481,8 +4481,8 @@
 							<z>1.396263</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg003_3"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -4533,8 +4533,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm004_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -4585,8 +4585,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Boulder_A00_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4637,8 +4637,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg003_4"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.210000</m_scale>
 					</Element>
 					<Element>
@@ -4689,8 +4689,8 @@
 							<z>-0.052674</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg003_5"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4741,8 +4741,8 @@
 							<z>-1.024701</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm009_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.535000</m_scale>
 					</Element>
 					<Element>
@@ -4793,8 +4793,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="CL_RURCOMA_AttachmentPoint_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4845,8 +4845,8 @@
 							<z>1.570796</z>
 						</m_orientation>
 						<m_Name text="CL_RURCOMA_AttachmentPoint_2"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4897,8 +4897,8 @@
 							<z>1.047198</z>
 						</m_orientation>
 						<m_Name text="CL_RURCOMA_AttachmentPoint_4"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -4949,8 +4949,8 @@
 							<z>-0.523599</z>
 						</m_orientation>
 						<m_Name text="CL_RURCOMA_AttachmentPoint_5"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5001,8 +5001,8 @@
 							<z>0.159923</z>
 						</m_orientation>
 						<m_Name text="DIS_Hanging_flags0023_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5053,8 +5053,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="PROP_Boulder_A03_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5105,8 +5105,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg007_2"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -5157,8 +5157,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Sm007_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
 					</Element>
 					<Element>
@@ -5209,8 +5209,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg005_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -5261,8 +5261,8 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg005_2"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.750000</m_scale>
 					</Element>
 					<Element>
@@ -5313,8 +5313,8 @@
 							<z>-1.570796</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg009_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5365,8 +5365,8 @@
 							<z>1.047198</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg009_2"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5417,8 +5417,8 @@
 							<z>1.047198</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg009_3"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5469,8 +5469,8 @@
 							<z>-0.523599</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg009_4"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5521,8 +5521,8 @@
 							<z>-0.523599</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg009_7"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5573,8 +5573,8 @@
 							<z>-1.570796</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg009_8"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5625,8 +5625,8 @@
 							<z>2.617994</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg009_9"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5677,8 +5677,8 @@
 							<z>-0.523599</z>
 						</m_orientation>
 						<m_Name text="Tree_B_Lg009_10"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5729,8 +5729,8 @@
 							<z>0.523599</z>
 						</m_orientation>
 						<m_Name text="PROP_Scaffold_A001_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5781,8 +5781,8 @@
 							<z>-0.523599</z>
 						</m_orientation>
 						<m_Name text="PROP_Scaffold_A001_2"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
@@ -5833,8 +5833,8 @@
 							<z>-1.442011</z>
 						</m_orientation>
 						<m_Name text="DIS_Ancient_flag0010_1"/>
-						<m_BoneName text="DIS_RURCOMA_Base"/>
-						<m_ModelInstanceName text="DIS_RURCOMA_Base"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
 					</Element>
 				</m_Points>
@@ -5848,8 +5848,8 @@
 	<m_GeometrySet>
 		<m_ModelInstances>
 			<Element>
-				<m_Name text="DIS_RURCOMA_Ancient_Base_01_Decal"/>
-				<m_GeoName text="DIS_RURCOMA_Ancient_Base_01_Decal"/>
+				<m_Name text="DIS_PRD_Classical_Base_01_Decals"/>
+				<m_GeoName text="DIS_PRD_Classical_Base_01_Decals"/>
 				<m_GroupStates>
 					<Element>
 						<m_Values>
@@ -7834,8 +7834,8 @@
 				</m_GroupStates>
 			</Element>
 			<Element>
-				<m_Name text="DIS_RURCOMA_Base"/>
-				<m_GeoName text="DIS_RURCOMA_Base"/>
+				<m_Name text="DIS_PRD_Classical_Base_01"/>
+				<m_GeoName text="DIS_PRD_Classical_Base_01"/>
 				<m_GroupStates/>
 			</Element>
 		</m_ModelInstances>
