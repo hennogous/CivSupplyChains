@@ -16,8 +16,8 @@ INSERT OR IGNORE INTO Tags
 	(       Tag,                                    Vocabulary          )
 VALUES	(	'CLASS_CSC_BAKERS_BASE',                'RESOURCE_CLASS'	),
         (	'CLASS_CSC_BAKERS_SPEC',	            'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_WEAVERS_BASE',	            'RESOURCE_CLASS'	),
-        (	'CLASS_CSC_WEAVERS_SPEC',	            'RESOURCE_CLASS'	),
+        (	'CLASS_CSC_TAILORS_BASE',	            'RESOURCE_CLASS'	),
+        (	'CLASS_CSC_TAILORS_SPEC',	            'RESOURCE_CLASS'	),
         (	'CLASS_CSC_APOTHECARIES_BASE',          'RESOURCE_CLASS'	),
         (	'CLASS_CSC_APOTHECARIES_SPEC',          'RESOURCE_CLASS'	),        
         (	'CLASS_CSC_STONEMASONS_BASE',           'RESOURCE_CLASS'	),
@@ -61,20 +61,20 @@ WHERE	ResourceType 			IN
 
 -------------------------------------------------------------------------------------
 
--- Weavers' Quarter base materials
+-- TAILORS' Quarter base materials
 INSERT OR IGNORE INTO TypeTags
 
     (	Type,                       Tag     )
-SELECT	ResourceType,			    'CLASS_CSC_WEAVERS_BASE'
+SELECT	ResourceType,			    'CLASS_CSC_TAILORS_BASE'
 FROM	Resources
 WHERE	ResourceType 			    IN
     (	'RESOURCE_BAMBOO'           );
 
--- Weavers' Quarter specialty materials
+-- TAILORS' Quarter specialty materials
 INSERT OR IGNORE INTO TypeTags
 
     (	Type,                       Tag     )
-SELECT	ResourceType,			    'CLASS_CSC_WEAVERS_SPEC'
+SELECT	ResourceType,			    'CLASS_CSC_TAILORS_SPEC'
 FROM	Resources
 WHERE	ResourceType 			    IN
     (	'RESOURCE_GOLD2'            );

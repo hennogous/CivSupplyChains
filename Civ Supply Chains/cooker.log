@@ -1,13 +1,286 @@
 Starting AssetCooker...
 Argument '--shaders' has been deprecated and is no longer used.
 XLP cook starting...
-C:\Users\Shadow\Documents\Firaxis ModBuddy\Civilization VI\CivSupplyChains\Civ Supply Chains\XLPs\CSC_Icons.xlp
-Opened output file: C:\Users\Shadow\Documents\My Games\Sid Meier's Civilization VI\Mods\Civ Supply Chains\Platforms\MacOS\BLPs/UI/Icons.blp    For XLP: 'C:\Users\Shadow\Documents\Firaxis ModBuddy\Civilization VI\CivSupplyChains\Civ Supply Chains\XLPs\CSC_Icons.xlp'
+C:\Users\Shadow\Documents\Firaxis ModBuddy\Civilization VI\CivSupplyChains\Civ Supply Chains\XLPs\CSC_Tilebases.xlp
+Opened output file: C:\Users\Shadow\Documents\My Games\Sid Meier's Civilization VI\Mods\Civ Supply Chains\Platforms\MacOS\BLPs/Landmarks/CSC_Tilebases.blp    For XLP: 'C:\Users\Shadow\Documents\Firaxis ModBuddy\Civilization VI\CivSupplyChains\Civ Supply Chains\XLPs\CSC_Tilebases.xlp'
 Could not load digest key: ''.  Using mod key to sign BLP.
-Starting 'UI/Icons'
-Load finished for: 'UI/Icons' in 0.029 seconds
-Cook finished for: 'UI/Icons' in 0.233 seconds
-Disk write finished for: 'UI/Icons' in 0.083 seconds
-Cleanup finished for: 'UI/Icons' in 0.003 seconds
+Starting 'Landmarks/CSC_Tilebases'
+
+****** Log from Geometry: 'DIS_PRD_Classical_Base_01_Decals' ********
+--------------
+Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow001 : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow003 : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow004 : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow006 : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow008 : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow009 : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow010 : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Classical_Base_01_Decals Mesh Decal_CLA_Elbow011 : 2 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_NBH_Market_Tent_B' ********
+--------------
+Geo DIS_NBH_Market_Tent_B Mesh marketTentB : 1 vertices removed by tangent merger.
+Geo DIS_NBH_Market_Tent_B mesh marketTentB flagged for possible vertex duplication. Vertex Count: 225, Index Count: 312, Tri Count 104, Reused Vertices: 57, Duplicate Vertices: 0, Duplicate Positions: 81, Vertex:Tri Ratio: 2.16
+
+****** Log from Geometry: 'DIS_NBH_Market_Tent_B_PIL' ********
+--------------
+Geo DIS_NBH_Market_Tent_B_PIL Mesh marketTentB_PIL : 1 vertices removed by tangent merger.
+Geo DIS_NBH_Market_Tent_B_PIL mesh marketTentB_PIL flagged for possible vertex duplication. Vertex Count: 335, Index Count: 360, Tri Count 120, Reused Vertices: 25, Duplicate Vertices: 0, Duplicate Positions: 112, Vertex:Tri Ratio: 2.79
+
+****** Log from Geometry: 'DIS_PRD_Construction_Base_01_Decal' ********
+--------------
+Geo DIS_PRD_Construction_Base_01_Decal Mesh Decal_CLA_Elbow300 : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Construction_Base_01_Decal Mesh Decal_CLA_Elbow301 : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Construction_Base_01_Decal Mesh Decal_CLA_Elbow302 : 2 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_Watermill_AN' ********
+--------------
+Geo DIS_CTY_Watermill_AN Mesh DIS_CTY_Watermill_AN_Bldg : 11 vertices removed by tangent merger.
+Geo DIS_CTY_Watermill_AN Mesh Grass : 2 vertices removed by tangent merger.
+Geo DIS_CTY_Watermill_AN Mesh DIS_CTY_Watermill_AN_Bldg_PIL : 23 vertices removed by tangent merger.
+Geo DIS_CTY_Watermill_AN mesh DIS_CTY_Watermill_AN_Bldg flagged for possible vertex duplication. Vertex Count: 1271, Index Count: 2187, Tri Count 729, Reused Vertices: 722, Duplicate Vertices: 0, Duplicate Positions: 488, Vertex:Tri Ratio: 1.74
+Geo DIS_CTY_Watermill_AN mesh DIS_CTY_Watermill_AN_Bldg_PIL flagged for possible vertex duplication. Vertex Count: 2603, Index Count: 4548, Tri Count 1516, Reused Vertices: 1414, Duplicate Vertices: 0, Duplicate Positions: 926, Vertex:Tri Ratio: 1.72
+Geo DIS_CTY_Watermill_AN mesh Wheel flagged for possible vertex duplication. Vertex Count: 920, Index Count: 1839, Tri Count 613, Reused Vertices: 611, Duplicate Vertices: 0, Duplicate Positions: 366, Vertex:Tri Ratio: 1.50
+
+****** Log from Geometry: 'IMP_Polder_TLP_Windmill_Unworked_A' ********
+--------------
+Geo IMP_Polder_TLP_Windmill_Unworked_A Mesh IMP_Polder_TLP_Windmill_Unworked_A : 4 vertices removed by tangent merger.
+Geo IMP_Polder_TLP_Windmill_Unworked_A mesh IMP_Polder_TLP_Windmill_Unworked_A flagged for possible vertex duplication. Vertex Count: 1122, Index Count: 1728, Tri Count 576, Reused Vertices: 564, Duplicate Vertices: 0, Duplicate Positions: 465, Vertex:Tri Ratio: 1.95
+
+****** Log from Geometry: 'IMP_Polder_TLP_Windmill_A_PIL' ********
+--------------
+Geo IMP_Polder_TLP_Windmill_A_PIL Mesh IMP_Polder_TLP_Windmill_A_PIL : 4 vertices removed by tangent merger.
+Geo IMP_Polder_TLP_Windmill_A_PIL mesh IMP_Polder_TLP_Windmill_A_PIL flagged for possible vertex duplication. Vertex Count: 1596, Index Count: 2583, Tri Count 861, Reused Vertices: 772, Duplicate Vertices: 0, Duplicate Positions: 560, Vertex:Tri Ratio: 1.85
+
+****** Log from Geometry: 'IMP_Polder_TLP_Windmill_A' ********
+--------------
+Geo IMP_Polder_TLP_Windmill_A Mesh IMP_Polder_TLP_Windmill_A_Mesh : 4 vertices removed by tangent merger.
+Geo IMP_Polder_TLP_Windmill_A mesh IMP_Polder_TLP_Windmill_A_Mesh flagged for possible vertex duplication. Vertex Count: 1187, Index Count: 1878, Tri Count 626, Reused Vertices: 615, Duplicate Vertices: 0, Duplicate Positions: 465, Vertex:Tri Ratio: 1.90
+
+****** Log from Geometry: 'IMP_QuarryREDO_ANC_BuildingA' ********
+--------------
+Geo IMP_QuarryREDO_ANC_BuildingA Mesh IMP_QuarryREDO_ANC_BuildingA : 4 vertices removed by tangent merger.
+Geo IMP_QuarryREDO_ANC_BuildingA mesh IMP_QuarryREDO_ANC_BuildingA flagged for possible vertex duplication. Vertex Count: 586, Index Count: 960, Tri Count 320, Reused Vertices: 314, Duplicate Vertices: 0, Duplicate Positions: 223, Vertex:Tri Ratio: 1.83
+
+****** Log from Geometry: 'IMP_QuarryREDO_ANC_BuildingA_PIL' ********
+--------------
+Geo IMP_QuarryREDO_ANC_BuildingA_PIL Mesh IMP_QuarryREDO_ANC_BuildingA_PIL : 4 vertices removed by tangent merger.
+Geo IMP_QuarryREDO_ANC_BuildingA_PIL mesh IMP_QuarryREDO_ANC_BuildingA_PIL flagged for possible vertex duplication. Vertex Count: 656, Index Count: 1044, Tri Count 348, Reused Vertices: 331, Duplicate Vertices: 0, Duplicate Positions: 235, Vertex:Tri Ratio: 1.89
+
+****** Log from Geometry: 'IMP_QuarryREDO_ANC_BuildingB' ********
+--------------
+Geo IMP_QuarryREDO_ANC_BuildingB Mesh IMP_QuarryREDO_ANC_BuildingB : 4 vertices removed by tangent merger.
+Geo IMP_QuarryREDO_ANC_BuildingB mesh IMP_QuarryREDO_ANC_BuildingB flagged for possible vertex duplication. Vertex Count: 442, Index Count: 684, Tri Count 228, Reused Vertices: 217, Duplicate Vertices: 0, Duplicate Positions: 168, Vertex:Tri Ratio: 1.94
+
+****** Log from Geometry: 'IMP_QuarryREDO_ANC_BuildingB_PIL' ********
+--------------
+Geo IMP_QuarryREDO_ANC_BuildingB_PIL mesh IMP_QuarryREDO_ANC_BuildingB_PIL flagged for possible vertex duplication. Vertex Count: 513, Index Count: 801, Tri Count 267, Reused Vertices: 251, Duplicate Vertices: 0, Duplicate Positions: 189, Vertex:Tri Ratio: 1.92
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_11_Decal' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_11_Decal Mesh Decal_CLA_Rect_Sq_Patch122 : 2 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_11' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_11 mesh DIS_CTY_AW_Bld_B_11 flagged for possible vertex duplication. Vertex Count: 662, Index Count: 1104, Tri Count 368, Reused Vertices: 340, Duplicate Vertices: 0, Duplicate Positions: 240, Vertex:Tri Ratio: 1.80
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_09_Decal' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_09_Decal Mesh Decal_CLA_Rect_Sq_Patch145 : 4 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_09' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_09 mesh DIS_CTY_AW_Bld_B_09 flagged for possible vertex duplication. Vertex Count: 904, Index Count: 1338, Tri Count 446, Reused Vertices: 398, Duplicate Vertices: 0, Duplicate Positions: 308, Vertex:Tri Ratio: 2.03
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_08_Decal' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_08_Decal Mesh Decal_CLA_Rect_Sq_Patch126 : 2 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_08' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_08 Mesh DIS_CTY_AW_Bld_B_08 : 4 vertices removed by tangent merger.
+Geo DIS_CTY_AW_Bld_B_08 mesh DIS_CTY_AW_Bld_B_08 flagged for possible vertex duplication. Vertex Count: 576, Index Count: 936, Tri Count 312, Reused Vertices: 296, Duplicate Vertices: 0, Duplicate Positions: 200, Vertex:Tri Ratio: 1.85
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_03_Decal' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_03_Decal Mesh Decal_CLA_Rect_Sq_Patch134 : 4 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_03' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_03 mesh DIS_CTY_AW_Bld_B_03 flagged for possible vertex duplication. Vertex Count: 910, Index Count: 1506, Tri Count 502, Reused Vertices: 474, Duplicate Vertices: 0, Duplicate Positions: 311, Vertex:Tri Ratio: 1.81
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_01_Decal' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_01_Decal Mesh Decal_CLA_Rect_Sq_Patch136 : 4 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_01' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_01 Mesh DIS_CTY_AW_Bld_B_01 : 2 vertices removed by tangent merger.
+Geo DIS_CTY_AW_Bld_B_01 mesh DIS_CTY_AW_Bld_B_01 flagged for possible vertex duplication. Vertex Count: 626, Index Count: 1062, Tri Count 354, Reused Vertices: 340, Duplicate Vertices: 0, Duplicate Positions: 224, Vertex:Tri Ratio: 1.77
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_07_Decal' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_07_Decal Mesh Decal_CLA_Rect_Sq_Patch123 : 2 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_AW_Bld_B_07' ********
+--------------
+Geo DIS_CTY_AW_Bld_B_07 mesh DIS_CTY_AW_Bld_B_07 flagged for possible vertex duplication. Vertex Count: 613, Index Count: 945, Tri Count 315, Reused Vertices: 284, Duplicate Vertices: 0, Duplicate Positions: 208, Vertex:Tri Ratio: 1.95
+
+****** Log from Geometry: 'DIS_CTY_CREE_Bld_M' ********
+--------------
+Geo DIS_CTY_CREE_Bld_M mesh DIS_CTY_CREE_Bld_M flagged for possible vertex duplication. Vertex Count: 314, Index Count: 522, Tri Count 174, Reused Vertices: 172, Duplicate Vertices: 0, Duplicate Positions: 94, Vertex:Tri Ratio: 1.80
+
+****** Log from Geometry: 'DIS_CTY_CREE_Bld_B' ********
+--------------
+Geo DIS_CTY_CREE_Bld_B mesh DIS_CTY_CREE_Bld_B flagged for possible vertex duplication. Vertex Count: 308, Index Count: 534, Tri Count 178, Reused Vertices: 174, Duplicate Vertices: 0, Duplicate Positions: 96, Vertex:Tri Ratio: 1.73
+
+****** Log from Geometry: 'DIS_CTY_RBAL_Bld_D' ********
+--------------
+Geo DIS_CTY_RBAL_Bld_D Mesh DIS_CTY_RBAL_Bld_D : 8 vertices removed by tangent merger.
+Geo DIS_CTY_RBAL_Bld_D mesh DIS_CTY_RBAL_Bld_D flagged for possible vertex duplication. Vertex Count: 449, Index Count: 609, Tri Count 203, Reused Vertices: 157, Duplicate Vertices: 0, Duplicate Positions: 153, Vertex:Tri Ratio: 2.21
+
+****** Log from Geometry: 'DIS_CTY_RBAL_Bld_C' ********
+--------------
+Geo DIS_CTY_RBAL_Bld_C mesh DIS_CTY_RBAL_Bld_C flagged for possible vertex duplication. Vertex Count: 436, Index Count: 582, Tri Count 194, Reused Vertices: 136, Duplicate Vertices: 0, Duplicate Positions: 133, Vertex:Tri Ratio: 2.25
+
+****** Log from Geometry: 'DIS_CTY_RBAL_Bld_A' ********
+--------------
+Geo DIS_CTY_RBAL_Bld_A Mesh DIS_CTY_RBAL_Bld_A : 2 vertices removed by tangent merger.
+Geo DIS_CTY_RBAL_Bld_A mesh DIS_CTY_RBAL_Bld_A flagged for possible vertex duplication. Vertex Count: 366, Index Count: 522, Tri Count 174, Reused Vertices: 154, Duplicate Vertices: 0, Duplicate Positions: 139, Vertex:Tri Ratio: 2.10
+
+****** Log from Geometry: 'DIS_CTY_RBAL_Bld_E' ********
+--------------
+Geo DIS_CTY_RBAL_Bld_E Mesh DIS_CTY_RBAL_Bld_E : 4 vertices removed by tangent merger.
+Geo DIS_CTY_RBAL_Bld_E mesh DIS_CTY_RBAL_Bld_E flagged for possible vertex duplication. Vertex Count: 540, Index Count: 894, Tri Count 298, Reused Vertices: 277, Duplicate Vertices: 0, Duplicate Positions: 202, Vertex:Tri Ratio: 1.81
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_SM_B_02' ********
+--------------
+Geo DIS_CTY_RE_Bld_SM_B_02 Mesh DIS_CTY_RE_Bld_SM_B_02 : 40 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_SM_B_02 mesh DIS_CTY_RE_Bld_SM_B_02 flagged for possible vertex duplication. Vertex Count: 352, Index Count: 642, Tri Count 214, Reused Vertices: 212, Duplicate Vertices: 0, Duplicate Positions: 149, Vertex:Tri Ratio: 1.64
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_SM_B_02_decal' ********
+--------------
+Geo DIS_CTY_RE_Bld_SM_B_02_decal Mesh Decal_CLA_Rect_Sq_Patch174 : 2 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_SM_B_02_decal Mesh Decal_CLA_Rect_Sq_Patch092 : 2 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_SM_B_01' ********
+--------------
+Geo DIS_CTY_RE_Bld_SM_B_01 Mesh DIS_CTY_RE_Bld_SM_B_01 : 40 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_SM_B_01 mesh DIS_CTY_RE_Bld_SM_B_01 flagged for possible vertex duplication. Vertex Count: 352, Index Count: 642, Tri Count 214, Reused Vertices: 212, Duplicate Vertices: 0, Duplicate Positions: 149, Vertex:Tri Ratio: 1.64
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_SM_B_01_decal' ********
+--------------
+Geo DIS_CTY_RE_Bld_SM_B_01_decal Mesh Decal_CLA_Rect_Sq_Patch056 : 2 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_SM_B_01_decal Mesh Decal_CLA_Rect_Sq_Patch161 : 2 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_SM_A_02' ********
+--------------
+Geo DIS_CTY_RE_Bld_SM_A_02 Mesh DIS_CTY_RE_Bld_SM_A_02 : 44 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_SM_A_02 mesh DIS_CTY_RE_Bld_SM_A_02 flagged for possible vertex duplication. Vertex Count: 514, Index Count: 912, Tri Count 304, Reused Vertices: 300, Duplicate Vertices: 0, Duplicate Positions: 191, Vertex:Tri Ratio: 1.69
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_SM_A_02_decal' ********
+--------------
+Geo DIS_CTY_RE_Bld_SM_A_02_decal Mesh Decal_CLA_Rect_Sq_Patch129 : 2 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_SM_A_02_decal Mesh Decal_CLA_Rect_Sq_Patch051 : 2 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_SM_A_01' ********
+--------------
+Geo DIS_CTY_RE_Bld_SM_A_01 Mesh DIS_CTY_RE_Bld_SM_A_01 : 40 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_SM_A_01 mesh DIS_CTY_RE_Bld_SM_A_01 flagged for possible vertex duplication. Vertex Count: 356, Index Count: 642, Tri Count 214, Reused Vertices: 210, Duplicate Vertices: 0, Duplicate Positions: 149, Vertex:Tri Ratio: 1.66
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_SM_A_01_decal' ********
+--------------
+Geo DIS_CTY_RE_Bld_SM_A_01_decal Mesh Decal_CLA_Rect_Sq_Patch130 : 2 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_SM_A_01_decal Mesh Decal_CLA_Rect_Sq_Patch052 : 2 vertices removed by tangent merger.
+
+****** Log from Geometry: 'IMP_PLNT_ANC_Bld_B' ********
+--------------
+Geo IMP_PLNT_ANC_Bld_B Mesh IMP_PLNT_ANC_Bld_B : 6 vertices removed by tangent merger.
+
+****** Log from Geometry: 'IMP_PLNT_ANC_Bld_B_PIL' ********
+--------------
+Geo IMP_PLNT_ANC_Bld_B_PIL Mesh IMP_PLNT_ANC_Bld_B_PIL : 3 vertices removed by tangent merger.
+Geo IMP_PLNT_ANC_Bld_B_PIL mesh IMP_PLNT_ANC_Bld_B_PIL flagged for possible vertex duplication. Vertex Count: 936, Index Count: 1581, Tri Count 527, Reused Vertices: 478, Duplicate Vertices: 0, Duplicate Positions: 320, Vertex:Tri Ratio: 1.78
+
+****** Log from Geometry: 'IMP_Cree_Mekewap_BldgA_PIL' ********
+--------------
+Geo IMP_Cree_Mekewap_BldgA_PIL mesh ScaffoldingB flagged for possible vertex duplication. Vertex Count: 500, Index Count: 696, Tri Count 232, Reused Vertices: 196, Duplicate Vertices: 0, Duplicate Positions: 164, Vertex:Tri Ratio: 2.16
+
+****** Log from Geometry: 'IMP_Cree_Mekewap_BldgA' ********
+--------------
+Geo IMP_Cree_Mekewap_BldgA mesh IMP_Cree_Mekewap_BldgA flagged for possible vertex duplication. Vertex Count: 246, Index Count: 468, Tri Count 156, Reused Vertices: 125, Duplicate Vertices: 0, Duplicate Positions: 79, Vertex:Tri Ratio: 1.58
+
+****** Log from Geometry: 'IMP_PLNT_IND_Bld_C' ********
+--------------
+Geo IMP_PLNT_IND_Bld_C Mesh IMP_PLNT_IND_Bld_C : 12 vertices removed by tangent merger.
+Geo IMP_PLNT_IND_Bld_C mesh IMP_PLNT_IND_Bld_C flagged for possible vertex duplication. Vertex Count: 280, Index Count: 540, Tri Count 180, Reused Vertices: 177, Duplicate Vertices: 0, Duplicate Positions: 125, Vertex:Tri Ratio: 1.56
+
+****** Log from Geometry: 'IMP_PLNT_IND_Bld_C_PIL' ********
+--------------
+Geo IMP_PLNT_IND_Bld_C_PIL mesh IMP_PLNT_IND_Bld_C_PIL flagged for possible vertex duplication. Vertex Count: 697, Index Count: 1221, Tri Count 407, Reused Vertices: 387, Duplicate Vertices: 0, Duplicate Positions: 251, Vertex:Tri Ratio: 1.71
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_XSM_B_02' ********
+--------------
+Geo DIS_CTY_RE_Bld_XSM_B_02 Mesh DIS_CTY_RE_Bld_XSM_B_02 : 16 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_XSM_B_02 mesh DIS_CTY_RE_Bld_XSM_B_02 flagged for possible vertex duplication. Vertex Count: 184, Index Count: 312, Tri Count 104, Reused Vertices: 104, Duplicate Vertices: 0, Duplicate Positions: 73, Vertex:Tri Ratio: 1.77
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_XSM_B_02_decal' ********
+--------------
+Geo DIS_CTY_RE_Bld_XSM_B_02_decal Mesh Decal_CLA_Rect_Sq_Patch156 : 4 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_XSM_B_02_decal Mesh Decal_CLA_Rect_Sq_Patch069 : 4 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_COM_Fruit_Stand' ********
+--------------
+Geo DIS_COM_Fruit_Stand mesh DIS_COM_Fruit_Stand flagged for possible vertex duplication. Vertex Count: 381, Index Count: 528, Tri Count 176, Reused Vertices: 115, Duplicate Vertices: 0, Duplicate Positions: 115, Vertex:Tri Ratio: 2.16
+
+****** Log from Geometry: 'DIS_COM_Fruit_Stand_CON' ********
+--------------
+Geo DIS_COM_Fruit_Stand_CON mesh DIS_COM_Fruit_Stand_CON flagged for possible vertex duplication. Vertex Count: 448, Index Count: 612, Tri Count 204, Reused Vertices: 144, Duplicate Vertices: 0, Duplicate Positions: 147, Vertex:Tri Ratio: 2.20
+
+****** Log from Geometry: 'DIS_COM_Fruit_Stand_PIL' ********
+--------------
+Geo DIS_COM_Fruit_Stand_PIL mesh DIS_COM_Fruit_Stand_PIL flagged for possible vertex duplication. Vertex Count: 448, Index Count: 612, Tri Count 204, Reused Vertices: 144, Duplicate Vertices: 0, Duplicate Positions: 147, Vertex:Tri Ratio: 2.20
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_MD_B_02' ********
+--------------
+Geo DIS_CTY_RE_Bld_MD_B_02 Mesh DIS_CTY_RE_Bld_MD_B_02 : 54 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_MD_B_02 mesh DIS_CTY_RE_Bld_MD_B_02 flagged for possible vertex duplication. Vertex Count: 498, Index Count: 894, Tri Count 298, Reused Vertices: 297, Duplicate Vertices: 0, Duplicate Positions: 174, Vertex:Tri Ratio: 1.67
+
+****** Log from Geometry: 'DIS_CTY_RE_Bld_MD_B_02_decal' ********
+--------------
+Geo DIS_CTY_RE_Bld_MD_B_02_decal Mesh Decal_CLA_Rect_Sq_Patch163 : 6 vertices removed by tangent merger.
+Geo DIS_CTY_RE_Bld_MD_B_02_decal Mesh Decal_CLA_Rect_Sq_Patch074 : 6 vertices removed by tangent merger.
+
+****** Log from Geometry: 'DIS_PRD_Bld_C' ********
+--------------
+Geo DIS_PRD_Bld_C Mesh DIS_PRD_Bld_C : 5 vertices removed by tangent merger.
+Geo DIS_PRD_Bld_C mesh DIS_PRD_Bld_C flagged for possible vertex duplication. Vertex Count: 203, Index Count: 336, Tri Count 112, Reused Vertices: 101, Duplicate Vertices: 0, Duplicate Positions: 82, Vertex:Tri Ratio: 1.81
+
+****** Log from Geometry: 'DIS_PRD_Bld_C_PIL' ********
+--------------
+Geo DIS_PRD_Bld_C_PIL Mesh DIS_PRD_Bld_C_PIL : 2 vertices removed by tangent merger.
+Geo DIS_PRD_Bld_C_PIL mesh DIS_PRD_Bld_C_PIL flagged for possible vertex duplication. Vertex Count: 252, Index Count: 408, Tri Count 136, Reused Vertices: 126, Duplicate Vertices: 0, Duplicate Positions: 91, Vertex:Tri Ratio: 1.85
+
+****** Log from Geometry: 'DIS_CTY_Foundation_WR_LgGrayBlock' ********
+--------------
+Geo DIS_CTY_Foundation_WR_LgGrayBlock Mesh WR_Base : 1 vertices removed by tangent merger.
+
+****** Log from Geometry: 'IMP_Farm_IND_Bld_Well_PIL' ********
+--------------
+Geo IMP_Farm_IND_Bld_Well_PIL Mesh IMP_Farm_IND_Bld_Well_PIL : 6 vertices removed by tangent merger.
+Geo IMP_Farm_IND_Bld_Well_PIL mesh IMP_Farm_IND_Bld_Well_PIL flagged for possible vertex duplication. Vertex Count: 270, Index Count: 450, Tri Count 150, Reused Vertices: 147, Duplicate Vertices: 0, Duplicate Positions: 94, Vertex:Tri Ratio: 1.80
+Load finished for: 'Landmarks/CSC_Tilebases' in 2.420 seconds
+Geometry is required to autogenerate an OB for asset "CSC_QUARTERS_Classical_Base_Storage".
+			An empty OB will be used for this asset.
+Geometry is required to autogenerate an OB for asset "CSC_QUARTERS_Gallery".
+			An empty OB will be used for this asset.
+Geometry is required to autogenerate an OB for asset "CSC_QUARTERS_Plaza_Inner".
+			An empty OB will be used for this asset.
+Profile AABB exceeds hex AABB in geo "IMP_Farm_Decal_Transition_08_OB"
+			Make sure model is correctly transformed, then reset and collapse the transform.
+			If everything is working as intended, ignore this message.
+Cook finished for: 'Landmarks/CSC_Tilebases' in 0.039 seconds
+Disk write finished for: 'Landmarks/CSC_Tilebases' in 0.371 seconds
+Cleanup finished for: 'Landmarks/CSC_Tilebases' in 0.041 seconds
 XLP cook completed with success.
-Cook completed in 0.376 seconds
+Cook completed in 2.881 seconds
