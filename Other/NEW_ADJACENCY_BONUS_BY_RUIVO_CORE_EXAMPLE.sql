@@ -1,13 +1,12 @@
---模块化相邻加成示例
+--Modular Adjacency Bonus Example
     INSERT INTO Ruivo_New_Adjacency 
-    (ID, DistrictType,                              -->ID和区域（注意，一定要以区域为主体，ID是主键，不要重复）
-    ProvideType, YieldType, YieldChange,            -->提供的产出分类、产出类型、产出量（产出类型一定要严格对应产出分类，比如商路对应商路大类）
-    AdjacencyType, CustomAdjacentObject, Rings,     -->相邻类型、自定义指定相邻目标（指定相邻目标依赖于相邻类型）
+    (ID, DistrictType,                              -->ID and District (Note: Always use the district as the main subject, ID is the primary key, do not duplicate)
+    ProvideType, YieldType, YieldChange,            -->Type of yield provided, yield type, yield amount (Yield type must strictly correspond to the yield category, e.g., trade route corresponds to trade route category)
+    AdjacencyType, CustomAdjacentObject, Rings,     -->Adjacency type, custom specified adjacent object (specified adjacent object depends on adjacency type)
     DistrictModifiers)                                    
     VALUES 
 
-
---堤坝：每相邻一段河流+1粮+1锤
+--Dam: +1 Food +1 Production for each adjacent river segment
     ('RUIVO_DISTRICT_DAM_YIELD_FOOD_FROM_RIVER_CROSSING', 'DISTRICT_DAM', 
     'SelfBonus', 'YIELD_FOOD', 1.0, 
     'FROM_RIVER_CROSSING', 'NONE', 1,
@@ -18,14 +17,14 @@
     1),
     
 
---运河：每个相邻在岗公民+2金币
+--Canal: +2 Gold for each adjacent working citizen
     ('RUIVO_DISTRICT_CANAL_YIELD_GOLD_FROM_ADJACENT_WORKER', 'DISTRICT_CANAL', 
     'SelfBonus', 'YIELD_GOLD', 2, 
     'FROM_ADJACENT_WORKER', 'NONE', 1,
     1),
 
 
---水渠：每个相邻湖泊+1粮，根据所在单元格的淡水等级获得生产力，获得相邻单元格淡水等级总和10%的住房（无水0，咸水1，淡水3）
+--Aqueduct: +1 Food for each adjacent lake, gain production based on the freshwater level of the tile, gain 10% of the total adjacent tiles' freshwater level as housing (no water 0, saltwater 1, freshwater 3)
     ('RUIVO_DISTRICT_AQUEDUCT_YIELD_FOOD_FROM_ADJACENT_LAKE', 'DISTRICT_AQUEDUCT', 
     'SelfBonus', 'YIELD_FOOD', 1, 
     'FROM_ADJACENT_LAKE', 'NONE', 1,
@@ -40,7 +39,7 @@
     1),
 
 
---工业区：获得相邻道路等级之和34%的生产力（6条铁路+10生产力），所在单元格每个等级的道路+10%生产力系数（有铁路时+50%生产力系数）
+--Industrial Zone: Gain 34% of the sum of adjacent road levels as production (6 railroads +10 production), each road level on the tile +10% production modifier (with railroad +50% production modifier)
     ('RUIVO_DISTRICT_INDUSTRIAL_ZONE_YIELD_PRODUCTION_FROM_ADJACENT_ROUTE', 'DISTRICT_INDUSTRIAL_ZONE', 
     'SelfBonus', 'YIELD_PRODUCTION', 0.34, 
     'FROM_ADJACENT_ROUTE', 'NONE', 1,
@@ -51,7 +50,7 @@
     1),
 
     
---军营：获得城市防御10%的生产力，相邻单位+1忠诚度
+--Encampment: Gain 10% of city defense as production, +1 loyalty for each adjacent unit
     ('RUIVO_DISTRICT_ENCAMPMENT_YIELD_PRODUCTION_FROM_CITY_DEFENSE_STRENGTH', 'DISTRICT_ENCAMPMENT', 
     'SelfBonus', 'YIELD_PRODUCTION', 0.1, 
     'FROM_CITY_DEFENSE_STRENGTH', 'NONE', 1,
@@ -62,29 +61,29 @@
     1);
 
 
---社区：
+--Neighborhood:
     INSERT INTO Ruivo_New_Adjacency 
     (ID,                                                                         DistrictType,                   YieldType,               AdjacencyType,                YieldChange,        DistrictModifiers,  TraitType,  FreeCompose) VALUES 
---本城每个人口为社区+0.5生产力
+--Each population in this city gives Neighborhood +0.5 production
     ('RUIVO_DISTRICT_NEIGHBORHOOD_YIELD_PRODUCTION_FROM_CITY_POPULATION',       'DISTRICT_NEIGHBORHOOD',        'YIELD_PRODUCTION',      'FROM_CITY_POPULATION',        0.5,                1,                  NULL,       0),
---本城每个住房为社区+0.25粮食
+--Each housing in this city gives Neighborhood +0.25 food
     ('RUIVO_DISTRICT_NEIGHBORHOOD_YIELD_FOOD_FROM_CITY_TOTAL_HOUSING',          'DISTRICT_NEIGHBORHOOD',        'YIELD_FOOD',            'FROM_CITY_TOTAL_HOUSING',     0.25,               1,                  NULL,       0),
---本城剩余住房为社区+1金币
+--Each surplus housing in this city gives Neighborhood +1 gold
     ('RUIVO_DISTRICT_NEIGHBORHOOD_YIELD_GOLD_FROM_CITY_SURPLUS_HOUSING',        'DISTRICT_NEIGHBORHOOD',        'YIELD_GOLD',            'FROM_CITY_SURPLUS_HOUSING',   1,                  1,                  NULL,       0);
 
 
---商业中心、娱乐中心、水上乐园
+--Commercial Hub, Entertainment Complex, Water Park
     INSERT INTO Ruivo_New_Adjacency
     (ID,                                                                                   DistrictType,                           YieldType,   YieldChange, AdjacencyType,                DistrictModifiers, ProvideType)  VALUES 
---商业中心：每经营一条贸易路线，+2金币
+--Commercial Hub: +2 gold for each outgoing trade route
     ('RUIVO_DISTRICT_COMMERCIAL_HUB_YIELD_GOLD_FROM_OUTGOING_ROUTES',                     'DISTRICT_COMMERCIAL_HUB',              'YIELD_GOLD', 2,          'FROM_OUTGOING_ROUTES',        1,                 'SelfBonus'),
---娱乐中心：本城每点溢出宜居度，+2金币
+--Entertainment Complex: +2 gold for each surplus amenity in this city
     ('RUIVO_DISTRICT_ENTERTAINMENT_COMPLEX_YIELD_GOLD_FROM_CITY_SURPLUS_AMENITIES',       'DISTRICT_ENTERTAINMENT_COMPLEX',       'YIELD_GOLD', 2,          'FROM_CITY_SURPLUS_AMENITIES', 1,                 'SelfBonus'),
---水上乐园：本城每点溢出宜居度，+4金币
+--Water Park: +4 gold for each surplus amenity in this city
     ('RUIVO_DISTRICT_WATER_ENTERTAINMENT_COMPLEX_YIELD_GOLD_FROM_CITY_SURPLUS_AMENITIES', 'DISTRICT_WATER_ENTERTAINMENT_COMPLEX', 'YIELD_GOLD', 4,          'FROM_CITY_SURPLUS_AMENITIES', 1,                 'SelfBonus');
 
 
---剧院广场/学院：本区域内每有一个在岗公民，相邻加成提高25%
+--Theater Square/Campus: For each working citizen in this district, adjacency bonus increases by 25%
     INSERT INTO Ruivo_New_Adjacency
     (ID,                                                          DistrictType,       YieldType,      YieldChange,  AdjacencyType,     DistrictModifiers, ProvideType) 
     VALUES 
@@ -92,8 +91,8 @@
     ('RUIVO_DISTRICT_CAMPUS_YIELD_SCIENCE_FROM_SELF_WORKER',     'DISTRICT_CAMPUS',  'YIELD_SCIENCE', 25,          'FROM_SELF_WORKER', 1,                'SelfMultiplier');
 
 
---外交区每相邻一个区域+1影响力+1外交支持
---航空港每相邻一个区域+1旅游业绩+1贸易路线
+--Diplomatic Quarter: +1 influence and +1 diplomatic favor for each adjacent district
+--Aerodrome: +1 tourism and +1 trade route for each adjacent district
     INSERT INTO Ruivo_New_Adjacency   (ID, DistrictType, YieldType, YieldChange, AdjacencyType, DistrictModifiers, TraitType,  ProvideType) VALUES 
     ('RUIVO_DISTRICT_DIPLOMATIC_QUARTER_YIELD_INFLUENCE_FROM_ADJACENT_DISTRICT', 'DISTRICT_DIPLOMATIC_QUARTER', 'YIELD_INFLUENCE', 1.0, 'FROM_ADJACENT_DISTRICT', 1,NULL, 'SelfInfluence'),
     ('RUIVO_DISTRICT_DIPLOMATIC_QUARTER_YIELD_FAVOR_FROM_ADJACENT_DISTRICT', 'DISTRICT_DIPLOMATIC_QUARTER', 'YIELD_FAVOR', 1.0, 'FROM_ADJACENT_DISTRICT', 1,NULL, 'SelfFavor'),
@@ -102,23 +101,23 @@
 
 
 --============================================================================================================================
---运河在岗人数为6时金币相邻加成翻倍
---我还提供了统计总数和乘了系数后的总数的property
---相邻某个对象数量：ID || '_TOTAL'
---得到的相邻加成总数：ID || '_ACTUAL_AMOUNT'
-        --插入部分
+--When the number of working citizens in the canal is 6, the gold adjacency bonus is doubled
+--I also provide properties for counting the total and the total after applying the multiplier
+--Number of adjacent objects: ID || '_TOTAL'
+--Total adjacency bonus obtained: ID || '_ACTUAL_AMOUNT'
+        --Insert part
         INSERT INTO DistrictModifiers (DistrictType, ModifierId)
         SELECT "DISTRICT_CANAL", "DISTRICT_CANAL_ADJUST_YIELD_MODIFIER_FROM_ADJACENT_WORKER_6"
         WHERE EXISTS (SELECT 1 FROM Districts WHERE DistrictType = "DISTRICT_CANAL");
 
-        --modifier组装部分
+        --Modifier assembly part
         INSERT INTO Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId) VALUES 
         ("DISTRICT_CANAL_ADJUST_YIELD_MODIFIER_FROM_ADJACENT_WORKER_6", "RUIVO_MODIFIER_PLAYER_DISTRICT_ADJUST_YIELD_MODIFIER", 'REQUIREMENT_RUIVO_DISTRICT_CANAL_YIELD_GOLD_FROM_ADJACENT_WORKER', NULL);
         INSERT INTO ModifierArguments (ModifierId, Name, Value) VALUES 
         ("DISTRICT_CANAL_ADJUST_YIELD_MODIFIER_FROM_ADJACENT_WORKER_6", "Amount", 100), 
         ("DISTRICT_CANAL_ADJUST_YIELD_MODIFIER_FROM_ADJACENT_WORKER_6", "YieldType", "YIELD_GOLD");
 
-        --req组装部分：6相邻在岗公民
+        --Req assembly part: 6 adjacent working citizens
         INSERT INTO RequirementSets (RequirementSetId, RequirementSetType) VALUES
         ('REQUIREMENT_RUIVO_DISTRICT_CANAL_YIELD_GOLD_FROM_ADJACENT_WORKER', 'REQUIREMENTSET_TEST_ALL');
         INSERT INTO RequirementSetRequirements (RequirementSetId, RequirementId) VALUES
@@ -132,21 +131,21 @@
 
 
 --============================================================================================================================
---港口：本城每有一个区域，捕捞范围+1环，捕捞范围内的浅海和深海单元格+1金币，随着环数递增（比如1环+1金，3环+3金）
-    -- 最高10环
+--Harbor: For each district in this city, fishing range +1 ring, each coastal and ocean tile within the range +1 gold, increases with the number of rings (e.g., 1 ring +1 gold, 3 rings +3 gold)
+    -- Maximum 10 rings
     CREATE TABLE Ruivo_RingList (Num INTEGER PRIMARY KEY);
     INSERT INTO Ruivo_RingList (Num) VALUES (1), (2), (3), (4), (5), (6), (7), (8), (9), (10);
 
-    --自由组装模式
+    --Free assembly mode
     INSERT INTO Ruivo_New_Adjacency
     (ID,                                                          DistrictType,      YieldType,   YieldChange, AdjacencyType,            DistrictModifiers, FreeCompose)  VALUES 
     ('RUIVO_DISTRICT_HARBOR_YIELD_GOLD_FROM_CITY_DISTRICTS_NUM', 'DISTRICT_HARBOR', 'YIELD_GOLD', 1,          'FROM_CITY_DISTRICTS_NUM', 1,                 1);
 
-    -- 区域贴给玩家单元格
+    -- District applies to player tiles
     INSERT INTO DistrictModifiers (DistrictType, ModifierId) 
     SELECT "DISTRICT_HARBOR", 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num FROM Ruivo_RingList ListB;
 
-        -- 区域满足本城区域总数，单元格满足相邻区域
+        -- District meets total number of city districts, tile meets adjacent district
             INSERT INTO Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId) 
             SELECT 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num, 
                 "MODIFIER_PLAYER_ADJUST_PLOT_YIELD", 
@@ -165,28 +164,28 @@
                 "YIELD_GOLD"
             FROM Ruivo_RingList ListB;
 
-        --REQ部分：本城区域总数--只能用十进制
+        --REQ part: total number of city districts -- can only use decimal
             INSERT INTO RequirementSets (RequirementSetId,                      RequirementSetType)
-            SELECT          'REQUIREMENT_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num,    'REQUIREMENTSET_TEST_ALL'                         	FROM Ruivo_RingList ListB;
+            SELECT          'REQUIREMENT_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num,    'REQUIREMENTSET_TEST_ALL'                          FROM Ruivo_RingList ListB;
 
             INSERT INTO RequirementSetRequirements (RequirementSetId,           RequirementId)
-            SELECT          'REQUIREMENT_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num,    'REQUIRES_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num     		FROM Ruivo_RingList ListB;
+            SELECT          'REQUIREMENT_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num,    'REQUIRES_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num           FROM Ruivo_RingList ListB;
 
             INSERT INTO Requirements (RequirementId,                            RequirementType)
             SELECT          'REQUIRES_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num,       'REQUIREMENT_PLOT_PROPERTY_MATCHES'                  FROM Ruivo_RingList ListB;
 
             INSERT INTO RequirementArguments (RequirementId,                    Name,                 Value)
             SELECT          'REQUIRES_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num,       'PropertyName',       'RUIVO_DISTRICT_HARBOR_YIELD_GOLD_FROM_CITY_DISTRICTS_NUM'||'_TOTAL'   FROM Ruivo_RingList ListB
-            UNION SELECT    'REQUIRES_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num,       'PropertyMinimum',    ListB.Num                          	FROM Ruivo_RingList ListB;
+            UNION SELECT    'REQUIRES_' || 'LONG_RANGE_FISHING_DISTRICT_HARBOR' || '_' || ListB.Num,       'PropertyMinimum',    ListB.Num                           FROM Ruivo_RingList ListB;
 
-        --通用的req：
-        --REQ部分：对应环数
+        --General req:
+        --REQ part: corresponding ring number
             INSERT INTO RequirementSets (RequirementSetId,                      RequirementSetType)
-            SELECT          'REQUIREMENT_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num,    'REQUIREMENTSET_TEST_ALL'                         	FROM Ruivo_RingList ListB;
+            SELECT          'REQUIREMENT_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num,    'REQUIREMENTSET_TEST_ALL'                          FROM Ruivo_RingList ListB;
 
             INSERT INTO RequirementSetRequirements (RequirementSetId,           RequirementId)
-            SELECT          'REQUIREMENT_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num,    'REQUIRES_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num     		FROM Ruivo_RingList ListB
-            UNION SELECT    'REQUIREMENT_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num,    'REQUIRES_PLOT_IS_COAST_OR_OCEAN_RUIVO'                          	    FROM Ruivo_RingList ListB;
+            SELECT          'REQUIREMENT_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num,    'REQUIRES_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num           FROM Ruivo_RingList ListB
+            UNION SELECT    'REQUIREMENT_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num,    'REQUIRES_PLOT_IS_COAST_OR_OCEAN_RUIVO'                               FROM Ruivo_RingList ListB;
 
             INSERT INTO Requirements (RequirementId,                            RequirementType)
             SELECT          'REQUIRES_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num,       'REQUIREMENT_PLOT_ADJACENT_TO_OWNER'                  FROM Ruivo_RingList ListB;
@@ -194,39 +193,39 @@
             INSERT INTO RequirementArguments (RequirementId,                    Name,                 Value)
             SELECT          'REQUIRES_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num,       'MaxDistance',      ListB.Num   FROM Ruivo_RingList ListB
             UNION SELECT    'REQUIRES_' || 'RUIVO_ADJACENT_TO_OWNER' || '_' || ListB.Num,       'MinDistance',      ListB.Num   FROM Ruivo_RingList ListB;
-        --REQ部分：湖泊海岸或者海洋单元格
-            insert or ignore into RequirementSets (RequirementSetId,		RequirementSetType) values
-                ('REQUIREMENTS_PLOT_IS_COAST_OR_OCEAN_RUIVO',				'REQUIREMENTSET_TEST_ANY');
+        --REQ part: lake, coast, or ocean tile
+            insert or ignore into RequirementSets (RequirementSetId,        RequirementSetType) values
+                ('REQUIREMENTS_PLOT_IS_COAST_OR_OCEAN_RUIVO',                'REQUIREMENTSET_TEST_ANY');
 
             insert or ignore into RequirementSetRequirements
-                (RequirementSetId,											RequirementId)
+                (RequirementSetId,                                            RequirementId)
             values
-                ('REQUIREMENTS_PLOT_IS_COAST_OR_OCEAN_RUIVO',				'REQUIRES_TERRAIN_COAST'),
-                ('REQUIREMENTS_PLOT_IS_COAST_OR_OCEAN_RUIVO',				'REQUIRES_TERRAIN_OCEAN');
+                ('REQUIREMENTS_PLOT_IS_COAST_OR_OCEAN_RUIVO',                'REQUIRES_TERRAIN_COAST'),
+                ('REQUIREMENTS_PLOT_IS_COAST_OR_OCEAN_RUIVO',                'REQUIRES_TERRAIN_OCEAN');
 
-            insert or ignore into Requirements (RequirementId,		        RequirementType) values
-                ('REQUIRES_PLOT_IS_COAST_OR_OCEAN_RUIVO',			        'REQUIREMENT_REQUIREMENTSET_IS_MET');
+            insert or ignore into Requirements (RequirementId,                RequirementType) values
+                ('REQUIRES_PLOT_IS_COAST_OR_OCEAN_RUIVO',                    'REQUIREMENT_REQUIREMENTSET_IS_MET');
 
-            insert or ignore into RequirementArguments (RequirementId,		Name,		Value) values
-                ('REQUIRES_PLOT_IS_COAST_OR_OCEAN_RUIVO',			        'RequirementSetId',	'REQUIREMENTS_PLOT_IS_COAST_OR_OCEAN_RUIVO');
+            insert or ignore into RequirementArguments (RequirementId,        Name,      Value) values
+                ('REQUIRES_PLOT_IS_COAST_OR_OCEAN_RUIVO',                    'RequirementSetId',    'REQUIREMENTS_PLOT_IS_COAST_OR_OCEAN_RUIVO');
 --============================================================================================================================
 
 
 --============================================================================================================================
---宇航中心：以地图南北纬度-50°和+50°为宇航标准线，根据接近赤道程度获得等量的科技值加成
---获得赤道接近程度等量的宇航项目生产力加成，获得两极接近程度等量的宇航项目生产力减益，在宇航标准线上的宇航中心获得0加成和0减益
+--Spaceport: Use latitude -50° and +50° as the standard lines for space projects, gain science bonus based on proximity to the equator
+--Gain equivalent space project production bonus based on proximity to the equator, gain equivalent space project production penalty based on proximity to the poles, spaceports on the standard lines get 0 bonus and 0 penalty
     INSERT INTO Ruivo_New_Adjacency 
     (ID,                                                         DistrictType,             YieldType,           YieldChange,    AdjacencyType,      DistrictModifiers,  TraitType,  FreeCompose) VALUES 
     ('RUIVO_DISTRICT_SPACEPORT_YIELD_SCIENCE_FROM_LATITUDE',    'DISTRICT_SPACEPORT',     'YIELD_SCIENCE',      1,             'FROM_LATITUDE',     1,                  NULL,       0),
     ('RUIVO_DISTRICT_SPACEPORT_YIELD_PRODUCTION_FROM_POLE',     'DISTRICT_SPACEPORT',     'YIELD_PRODUCTION',   1,             'FROM_POLE',         1,                  NULL,       1);
 --============================================================================================================================
---modifier绑给区域部分
+--Modifier binding to district part
     INSERT INTO DistrictModifiers (DistrictType,                        ModifierId)
     SELECT 'DISTRICT_SPACEPORT', 'RUIVO_DISTRICT_SPACEPORT_SPACE_RACE_FROM_LATITUDE' || '_' || ListB.Num    FROM Ruivo_BinaryList ListB;
     INSERT INTO DistrictModifiers (DistrictType,                        ModifierId)
     SELECT 'DISTRICT_SPACEPORT', 'RUIVO_DISTRICT_SPACEPORT_SPACE_RACE_FROM_POLE' || '_' || ListB.Num    FROM Ruivo_BinaryList ListB;
 --============================================================================================================================
---自定义 ModifierType
+--Custom ModifierType
     INSERT INTO Types (Type, Kind)
     VALUES
     ('RUIVO_MODIFIER_OWNER_CITY_ADJUST_SPACE_RACE_PROJECTS_PRODUCTION', 'KIND_MODIFIER');
@@ -234,7 +233,7 @@
     VALUES
     ('RUIVO_MODIFIER_OWNER_CITY_ADJUST_SPACE_RACE_PROJECTS_PRODUCTION', 'EFFECT_ADJUST_SPACE_RACE_PROJECTS_PRODUCTION', 'COLLECTION_OWNER_CITY');
 --============================================================================================================================
---Modifier组装部分
+--Modifier assembly part
     INSERT INTO Modifiers (ModifierId,              ModifierType,                    OwnerRequirementSetId,                                             SubjectRequirementSetId)
     SELECT 'RUIVO_DISTRICT_SPACEPORT_SPACE_RACE_FROM_LATITUDE' || '_' || ListB.Num, 'RUIVO_MODIFIER_OWNER_CITY_ADJUST_SPACE_RACE_PROJECTS_PRODUCTION', 'REQUIREMENT_' || 'RUIVO_DISTRICT_SPACEPORT_YIELD_SCIENCE_FROM_LATITUDE' || '_' || ListB.Num, NULL     FROM Ruivo_BinaryList ListB;
     INSERT INTO ModifierArguments (ModifierId,                          Name,               Value)
@@ -247,7 +246,7 @@
 
 
 --============================================================================================================================
---市政广场
+--Government Plaza
     INSERT INTO Ruivo_New_Adjacency 
     (ID,                                                                     DistrictType,          YieldType,  YieldChange, AdjacencyType,   DistrictModifiers, TraitType,  ProvideType,          ModifierOwner, WhoIsTheOwner,  FreeCompose) VALUES 
     ('RUIVO_DISTRICT_GOVERNMENT_YIELD_TRADE_ROUTE_FROM_SLOT_ECONOMIC',      'DISTRICT_GOVERNMENT', 'YIELD_TRADE_ROUTE',1.0, 'FROM_SLOT_ECONOMIC', 1,                  NULL, 'SelfTradeRoute',     'DistrictModifiers', NULL,      0),
@@ -265,7 +264,7 @@
     ('RUIVO_DISTRICT_GOVERNMENT_YIELD_SCIENCE_FROM_SLOT_WILDCARD',          'DISTRICT_GOVERNMENT', 'YIELD_SCIENCE',    1.0, 'FROM_SLOT_WILDCARD', 1,                  NULL, 'SelfBonus',          'DistrictModifiers', NULL,      0),
     ('RUIVO_DISTRICT_GOVERNMENT_YIELD_CULTURE_FROM_SLOT_WILDCARD',          'DISTRICT_GOVERNMENT', 'YIELD_CULTURE',    1.0, 'FROM_SLOT_WILDCARD', 1,                  NULL, 'SelfBonus',          'DistrictModifiers', NULL,      0),
     ('RUIVO_DISTRICT_GOVERNMENT_YIELD_FAITH_FROM_SLOT_WILDCARD',            'DISTRICT_GOVERNMENT', 'YIELD_FAITH',      1.0, 'FROM_SLOT_WILDCARD', 1,                  NULL, 'SelfBonus',          'DistrictModifiers', NULL,      0);
---伟人点部分
+--Great Person Points part
     INSERT INTO Ruivo_New_Adjacency (ID, DistrictType, YieldType, YieldChange, AdjacencyType, DistrictModifiers, TraitType, ProvideType, ModifierOwner, WhoIsTheOwner, FreeCompose) 
     SELECT 'RUIVO_DISTRICT_GOVERNMENT_' || GreatPersonClassType || '_FROM_SLOT_GREAT_PERSON', 'DISTRICT_GOVERNMENT', GreatPersonClassType, 1, 'FROM_SLOT_GREAT_PERSON', 1, NULL, 'GreatPersonPoints', 'DistrictModifiers', NULL, 0 FROM GreatPersonClasses WHERE GreatPersonClassType != 'GREAT_PERSON_CLASS_COMANDANTE_GENERAL';
 --============================================================================================================================
@@ -273,25 +272,25 @@
 
 
 
---新增部分：环数统计
+--New part: Ring count statistics
     INSERT INTO Ruivo_New_Adjacency 
-    (ID, DistrictType,                              -->ID和区域（注意，一定要以区域为主体，ID是主键，不要重复）
-    ProvideType, YieldType, YieldChange,            -->提供的产出分类、产出类型、产出量（产出类型一定要严格对应产出分类，比如商路对应商路大类）
-    AdjacencyType, CustomAdjacentObject, Rings,     -->相邻类型、自定义指定相邻目标（指定相邻目标依赖于相邻类型）
+    (ID, DistrictType,                              -->ID and District (Note: Always use the district as the main subject, ID is the primary key, do not duplicate)
+    ProvideType, YieldType, YieldChange,            -->Type of yield provided, yield type, yield amount (Yield type must strictly correspond to the yield category, e.g., trade route corresponds to trade route category)
+    AdjacencyType, CustomAdjacentObject, Rings,     -->Adjacency type, custom specified adjacent object (specified adjacent object depends on adjacency type)
     DistrictModifiers)                                    
     VALUES 
 
---学院：二环内每座山脉为自身+0.5大科点
+--Campus: For each mountain within 2 rings, +0.5 Great Scientist points to itself
     ('RUIVO_DISTRICT_CAMPUS_GREAT_PERSON_CLASS_SCIENTIST_FROM_IsMountain', 'DISTRICT_CAMPUS', 
     'GreatPersonPoints', 'GREAT_PERSON_CLASS_SCIENTIST', 0.5, 
     'FROM_RINGS_CAO_TERRAIN_SETS', 'IsMountain', 2,
     1),
---剧院：四环内每个市中心为自己+1大作家点
+--Theater: For each city center within 4 rings, +1 Great Writer point to itself
     ('RUIVO_DISTRICT_THEATER_GREAT_PERSON_CLASS_WRITER_FROM_DISTRICT_CITY_CENTER', 'DISTRICT_THEATER', 
     'GreatPersonPoints', 'GREAT_PERSON_CLASS_WRITER', 1, 
     'FROM_RINGS_CAO_DISTRICT', 'DISTRICT_CITY_CENTER', 4,
     1),
---保护区：三环内每个树林为自己+0.3食物
+--Preserve: For each forest within 3 rings, +0.3 food to itself
     ('RUIVO_DISTRICT_PRESERVE_YIELD_FOOD_FROM_FEATURE_FOREST', 'DISTRICT_PRESERVE', 
     'SelfBonus', 'YIELD_FOOD', 0.3, 
     'FROM_RINGS_CAO_FEATURE', 'FEATURE_FOREST', 3,
@@ -299,40 +298,40 @@
 
 
 
---以下为兼容部分
+--The following is the compatibility part
 --============================================================================================================================
---示例：为某种区域的取代特色区域补充
---给特色工业区也补上全新相邻加成（应该会select到高卢和德国的特色工业区）
+--Example: Supplement for unique replacement districts
+--Also add the new adjacency bonus to unique industrial zones (should select Gaul and Germany's unique industrial zones)
     INSERT INTO Ruivo_New_Adjacency
     (ID,                                                                                                          DistrictType,       YieldType,       YieldChange,       AdjacencyType,     TraitType,       FreeCompose,       ProvideType,       CustomAdjacentObject,       Rings) SELECT 
     'RUIVO_' || DR.CivUniqueDistrictType || '_' || Ruivo.YieldType || '_' || Ruivo.AdjacencyType,     DR.CivUniqueDistrictType, Ruivo.YieldType, Ruivo.YieldChange, Ruivo.AdjacencyType, Dis.TraitType, Ruivo.FreeCompose, Ruivo.ProvideType, Ruivo.CustomAdjacentObject, Ruivo.Rings
-    FROM DistrictReplaces DR                                    -- 区域取代表
-    JOIN Ruivo_New_Adjacency Ruivo                              -- 全新系列加成表，里面是普通区域的插入
-    JOIN Districts Dis                                          -- 区域定义表
-    WHERE 'DISTRICT_INDUSTRIAL_ZONE' = DR.ReplacesDistrictType  -- 取代区域为对应区域
-    AND 'DISTRICT_INDUSTRIAL_ZONE' = Ruivo.DistrictType         -- 将全新系列加成表映射给取代的特色区域
-    AND DR.CivUniqueDistrictType = Dis.DistrictType             -- 特色区域一定是绑定给了某个特质trait，从区域定义表里取出来即可
-    AND Ruivo.TraitType IS NULL                                 -- 排除需要由特质发起的行
+    FROM DistrictReplaces DR                                    -- District replacement table
+    JOIN Ruivo_New_Adjacency Ruivo                              -- New series bonus table, contains normal district inserts
+    JOIN Districts Dis                                          -- District definition table
+    WHERE 'DISTRICT_INDUSTRIAL_ZONE' = DR.ReplacesDistrictType  -- Replacement district is the corresponding district
+    AND 'DISTRICT_INDUSTRIAL_ZONE' = Ruivo.DistrictType         -- Map the new series bonus table to the replaced unique district
+    AND DR.CivUniqueDistrictType = Dis.DistrictType             -- Unique district must be bound to a trait, get it from the district definition table
+    AND Ruivo.TraitType IS NULL                                 -- Exclude rows that need to be triggered by trait
     ;
---全部补充部分：
+--Full supplement part:
     INSERT OR IGNORE INTO Ruivo_New_Adjacency
     (ID,                                                                                                          DistrictType,       YieldType,       YieldChange,       AdjacencyType,     TraitType,       FreeCompose,       ProvideType,       CustomAdjacentObject,       Rings) SELECT 
     'RUIVO_' || DR.CivUniqueDistrictType || '_' || Ruivo.YieldType || '_' || Ruivo.AdjacencyType,     DR.CivUniqueDistrictType, Ruivo.YieldType, Ruivo.YieldChange, Ruivo.AdjacencyType, Dis.TraitType, Ruivo.FreeCompose, Ruivo.ProvideType, Ruivo.CustomAdjacentObject, Ruivo.Rings
-    FROM Districts AS d                                                     --遍历区域表   
-    JOIN DistrictReplaces DR ON d.DistrictType = DR.ReplacesDistrictType    --取代区域为对应区域
-    JOIN Ruivo_New_Adjacency Ruivo ON d.DistrictType = Ruivo.DistrictType   --将全新系列加成表映射给取代的特色区域
-    JOIN Districts Dis ON DR.CivUniqueDistrictType = Dis.DistrictType       --再次回到区域表，取出数值
-    WHERE Ruivo.TraitType IS NULL                                           --排除需要由特质发起的行
+    FROM Districts AS d                                                     --Traverse district table   
+    JOIN DistrictReplaces DR ON d.DistrictType = DR.ReplacesDistrictType    --Replacement district is the corresponding district
+    JOIN Ruivo_New_Adjacency Ruivo ON d.DistrictType = Ruivo.DistrictType   --Map the new series bonus table to the replaced unique district
+    JOIN Districts Dis ON DR.CivUniqueDistrictType = Dis.DistrictType       --Return to the district table again to get the value
+    WHERE Ruivo.TraitType IS NULL                                           --Exclude rows that need to be triggered by trait
     ;
 --============================================================================================================================
 
 --============================================================================================================================
---港口：远洋捕捞，特色区域兼容
-    -- 区域贴给玩家单元格
+--Harbor: Long-range fishing, unique district compatibility
+    -- District applies to player tiles
     INSERT INTO DistrictModifiers (DistrictType, ModifierId) 
     SELECT DR.CivUniqueDistrictType, 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR';
 
-        -- 区域满足本城区域总数，单元格满足相邻区域
+        -- District meets total number of city districts, tile meets adjacent district
             INSERT INTO Modifiers (ModifierId, ModifierType, OwnerRequirementSetId, SubjectRequirementSetId) 
             SELECT 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num, 
                 "MODIFIER_PLAYER_ADJUST_PLOT_YIELD", 
@@ -351,17 +350,17 @@
                 "YIELD_GOLD"
             FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR';
 
-        --REQ部分：本城区域总数--只能用十进制
+        --REQ part: total number of city districts -- can only use decimal
             INSERT INTO RequirementSets (RequirementSetId,                      RequirementSetType)
-            SELECT          'REQUIREMENT_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num,    'REQUIREMENTSET_TEST_ALL'                         	FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR';
+            SELECT          'REQUIREMENT_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num,    'REQUIREMENTSET_TEST_ALL'                          FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR';
 
             INSERT INTO RequirementSetRequirements (RequirementSetId,           RequirementId)
-            SELECT          'REQUIREMENT_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num,    'REQUIRES_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num     		FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR';
+            SELECT          'REQUIREMENT_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num,    'REQUIRES_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num           FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR';
 
             INSERT INTO Requirements (RequirementId,                            RequirementType)
             SELECT          'REQUIRES_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num,       'REQUIREMENT_PLOT_PROPERTY_MATCHES'                  FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR';
 
             INSERT INTO RequirementArguments (RequirementId,                    Name,                 Value)
             SELECT          'REQUIRES_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num,       'PropertyName',       'RUIVO_'||DR.CivUniqueDistrictType||'_YIELD_GOLD_FROM_CITY_DISTRICTS_NUM'||'_TOTAL'   FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR'
-            UNION SELECT    'REQUIRES_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num,       'PropertyMinimum',    ListB.Num                          	FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR';
+            UNION SELECT    'REQUIRES_' || 'LONG_RANGE_FISHING_' || DR.CivUniqueDistrictType || '_' || ListB.Num,       'PropertyMinimum',    ListB.Num                           FROM Ruivo_RingList ListB JOIN DistrictReplaces DR ON DR.ReplacesDistrictType = 'DISTRICT_HARBOR';
 --============================================================================================================================
