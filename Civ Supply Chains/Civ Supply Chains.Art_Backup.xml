@@ -500,6 +500,7 @@
 		<Element>
 			<libraryName text="Light"/>
 			<relativePackagePaths>
+				<Element text="CSC_Lights"/>
 			</relativePackagePaths>
 		</Element>
 		<Element>

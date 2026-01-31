@@ -18,10 +18,10 @@ VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              		'KIND_DI
 		(	'BUILDING_CSC_BAKERS_WIND_MILL',									'KIND_BUILDING'			),
 		(	'BUILDING_CSC_BAKERS_WATER_MILL',									'KIND_BUILDING'			),
 		(	'BUILDING_CSC_BAKERS_BAKERY',										'KIND_BUILDING'			),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',									'KIND_BUILDING'			),
+		(	'BUILDING_CSC_BAKERS_CAFE',											'KIND_BUILDING'			),
 
 		(	'BUILDING_CSC_BAKERS_STAGE_3_SPECIALIST',							'KIND_BUILDING'			),
-		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_LAND',						'KIND_BUILDING'			),
+		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER',						'KIND_BUILDING'			),
 		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER',						'KIND_BUILDING'			),
 
 		(	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',					'KIND_MODIFIER'			),
@@ -64,7 +64,8 @@ INSERT OR IGNORE INTO TypeTags
 		(	'RESOURCE_OLIVES',		'CLASS_CSC_BAKERS_SPEC'		),
 		(	'RESOURCE_SALT',		'CLASS_CSC_BAKERS_SPEC'		),
 		(	'RESOURCE_SPICES',		'CLASS_CSC_BAKERS_SPEC'		),
-		(	'RESOURCE_SUGAR',		'CLASS_CSC_BAKERS_SPEC'		);
+		(	'RESOURCE_SUGAR',		'CLASS_CSC_BAKERS_SPEC'		),
+		(	'RESOURCE_TEA',			'CLASS_CSC_BAKERS_SPEC'		);
 
 
 
@@ -92,9 +93,9 @@ INSERT INTO ImprovementModifiers
         (	'IMPROVEMENT_PLANTATION',		'MOD_CSC_BAKERS_BASE_IMPROVEMENT_ATTACH_QUARTER_WIND'	),
 		(	'IMPROVEMENT_PASTURE',			'MOD_CSC_BAKERS_BASE_IMPROVEMENT_ATTACH_QUARTER_WIND'	),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
---  +1 Production to the Patisserie from improved specialty materials
+--  +1 Production to the Café from improved specialty materials
         (	'IMPROVEMENT_CAMP',				'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER'		),
 		(	'IMPROVEMENT_MINE',				'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER'		),
         (	'IMPROVEMENT_PLANTATION',		'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER'		);
@@ -238,48 +239,91 @@ INSERT OR IGNORE INTO Ruivo_New_Adjacency (
     AdjacencyType,
     CustomAdjacentObject,
     Rings,
-    DistrictModifiers
-)
---  +1 Production from each adjacent base materials resource from this supply chain	
-SELECT
-    'CSC_BAKERS_PRODUCTION_FROM_BASE_' || Type,
-    'DISTRICT_CSC_BAKERS_QUARTER',
-    'SelfBonus',
-    'YIELD_PRODUCTION',
-    1,
-    'FROM_RINGS_CAO_RESOURCE',
-    Type,
-    1,
-    1
-FROM TypeTags
-WHERE Tag = 'CLASS_CSC_BAKERS_BASE'
-UNION ALL
---  +1 Production from each adjacent specialty materials resource from this supply chain	
-SELECT
-    'CSC_BAKERS_PRODUCTION_FROM_SPEC_' || Type,
-    'DISTRICT_CSC_BAKERS_QUARTER',
-    'SelfBonus',
-    'YIELD_PRODUCTION',
-    1,
-    'FROM_RINGS_CAO_RESOURCE',
-    Type,
-    1,
-    1
-FROM TypeTags
-WHERE Tag = 'CLASS_CSC_BAKERS_SPEC'
-UNION ALL
---  +1 Production from every 2 adjacent river segments
-SELECT
-    'CSC_BAKERS_PRODUCTION_FROM_RIVER',
-    'DISTRICT_CSC_BAKERS_QUARTER',
-    'SelfBonus',
-    'YIELD_PRODUCTION',
-    0.5,
-    'FROM_RIVER_CROSSING',
-    'NONE',
-    1,
-    1;
+    DistrictModifiers	) VALUES
 
+(	'CSC_BAKERS_PRODUCTION_FROM_BASE',
+	'DISTRICT_CSC_BAKERS_QUARTER',
+	'SelfBonus',
+	'YIELD_PRODUCTION',
+	1,
+	'FROM_RINGS_TYPETAG_RESOURCE',
+	'CLASS_CSC_BAKERS_BASE',
+	1,
+	1
+),
+(	'CSC_BAKERS_PRODUCTION_FROM_SPEC',
+	'DISTRICT_CSC_BAKERS_QUARTER',
+	'SelfBonus',
+	'YIELD_PRODUCTION',
+	1,
+	'FROM_RINGS_TYPETAG_RESOURCE',
+	'CLASS_CSC_BAKERS_SPEC',
+	1,
+	1
+),
+(	'CSC_BAKERS_GOLD_FROM_GREAT_BATH',
+	'DISTRICT_CSC_BAKERS_QUARTER',
+	'SelfBonus',
+	'YIELD_GOLD',
+	3,
+	'FROM_RINGS_SPECIFIC_WONDER',
+	'BUILDING_GREAT_BATH',
+	1,
+	1
+);
+
+INSERT OR IGNORE INTO Ruivo_New_Adjacency (
+	ID,
+	DistrictType,
+	ProvideType,
+	YieldType,
+	YieldChange,
+	AdjacencyType,
+	CustomAdjacentObject,
+	Rings,
+	MinRings,
+	DistrictModifiers,
+	ModifierOwner,
+	WhoIsTheOwner	) VALUES
+
+(	'CSC_BAKERS_WIND_MILL_PRODUCTION_FROM_HILLS',
+	'DISTRICT_CSC_BAKERS_QUARTER',
+	'SelfBonus',
+	'YIELD_PRODUCTION',
+	1,
+	'FROM_RINGS_CAO_TERRAIN_SETS',
+	'IsHills',
+	0,
+	0,
+	1,
+	'BuildingModifiers',
+	'BUILDING_CSC_BAKERS_WIND_MILL'
+);
+
+INSERT OR IGNORE INTO Ruivo_New_Adjacency (
+	ID,
+	DistrictType,
+	ProvideType,
+	YieldType,
+	YieldChange,
+	AdjacencyType,
+	Rings,
+	DistrictModifiers,
+	ModifierOwner,
+	WhoIsTheOwner	) VALUES
+
+(	'CSC_BAKERS_WATER_MILL_PRODUCTION_FROM_RIVER',
+	'DISTRICT_CSC_BAKERS_QUARTER',
+	'SelfBonus',
+	'YIELD_PRODUCTION',
+	0.5,
+	'FROM_RIVER_CROSSING',
+	1,
+	1,
+	'BuildingModifiers',
+	'BUILDING_CSC_BAKERS_WATER_MILL'
+);
+	
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	DistrictModifiers
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------												
@@ -360,7 +404,7 @@ VALUES	(
 		(
 		/*  BuildingType, */		'BUILDING_CSC_BAKERS_WIND_MILL',
 		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_WIND_MILL_NAME',
-		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_DESCRIPTION',
+		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_WIND_MILL_DESCRIPTION',
 		/*  PrereqTech, */			'TECH_THE_WHEEL',
 		/*  PrereqCivic, */			NULL,
 		/*  Cost, */				80,
@@ -374,7 +418,7 @@ VALUES	(
 		(
 		/*  BuildingType, */		'BUILDING_CSC_BAKERS_WATER_MILL',
 		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_WATER_MILL_NAME',
-		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_FLOUR_MILL_DESCRIPTION',
+		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_WATER_MILL_DESCRIPTION',
 		/*  PrereqTech, */			'TECH_THE_WHEEL',
 		/*  PrereqCivic, */			NULL,
 		/*  Cost, */				80,
@@ -400,9 +444,9 @@ VALUES	(
 		/*  AdvisorType */			'ADVISOR_GENERIC'
 									),
 		(
-		/*  BuildingType, */		'BUILDING_CSC_BAKERS_PATISSERIE',
-		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_PATISSERIE_NAME',
-		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_PATISSERIE_DESCRIPTION',
+		/*  BuildingType, */		'BUILDING_CSC_BAKERS_CAFE',
+		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_CAFE_NAME',
+		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_CAFE_DESCRIPTION',
 		/*  PrereqTech, */			NULL,
 		/*  PrereqCivic, */			'CIVIC_HUMANISM',
 		/*  Cost, */				250,
@@ -428,9 +472,9 @@ VALUES	(
 		/*  AdvisorType */			'ADVISOR_GENERIC'
 									),
 		(
-		/*  BuildingType, */		'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_LAND',
-		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_NAME',
-		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_DESCRIPTION',
+		/*  BuildingType, */		'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER',
+		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER_NAME',
+		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER_DESCRIPTION',
 		/*  PrereqTech, */			NULL,
 		/*  PrereqCivic, */			NULL,
 		/*  Cost, */				0,
@@ -443,8 +487,8 @@ VALUES	(
 									),
 		(
 		/*  BuildingType, */		'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER',
-		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_NAME',
-		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_DESCRIPTION',
+		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER_NAME',
+		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER_DESCRIPTION',
 		/*  PrereqTech, */			NULL,
 		/*  PrereqCivic, */			NULL,
 		/*  Cost, */				0,
@@ -456,20 +500,29 @@ VALUES	(
 		/*  AdvisorType */			'ADVISOR_GENERIC'
 									);
 
+UPDATE Buildings SET RegionalRange=6 WHERE BuildingType='BUILDING_CSC_BAKERS_CAFE';
+UPDATE Buildings SET InternalOnly='1' WHERE BuildingType='BUILDING_CSC_BAKERS_RIVER_ACCESS';
+
 UPDATE Buildings
 SET MustPurchase = 1
 WHERE BuildingType IN (
     'BUILDING_CSC_BAKERS_RIVER_ACCESS',
     'BUILDING_CSC_BAKERS_NO_RIVER_ACCESS',
     'BUILDING_CSC_BAKERS_STAGE_3_SPECIALIST',
-    'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_LAND',
+    'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER',
     'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER'
 );
 
-UPDATE Buildings SET RegionalRange=6 WHERE BuildingType='BUILDING_CSC_BAKERS_PATISSERIE';
+INSERT INTO CivilopediaPageExcludes
+		(	SectionId,			PageId	) VALUES	
+		(	'BUILDINGS',		'BUILDING_CSC_BAKERS_RIVER_ACCESS'				),
+		(	'BUILDINGS',		'BUILDING_CSC_BAKERS_NO_RIVER_ACCESS'			),
+		(	'BUILDINGS',		'BUILDING_CSC_BAKERS_STAGE_3_SPECIALIST'		),
+		(	'BUILDINGS',		'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER'	),
+		(	'BUILDINGS',		'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER'	);
 
-UPDATE Buildings SET Description = 'LOC_CSC_BAKERS_STAGE_2_EFFECT' WHERE BuildingType='BUILDING_GRANARY';
-UPDATE Buildings SET Description = '{LOC_BUILDING_MARKET_EXPANSION1_DESCRIPTION}' || '{LOC_CSC_BAKERS_STAGE_3_EFFECT}' WHERE BuildingType='BUILDING_MARKET';
+-- UPDATE Buildings SET Description = 'LOC_CSC_BAKERS_STAGE_2_EFFECT' WHERE BuildingType='BUILDING_GRANARY';
+-- UPDATE Buildings SET Description = '{LOC_BUILDING_MARKET_EXPANSION1_DESCRIPTION}' || '{LOC_CSC_BAKERS_STAGE_3_EFFECT}' WHERE BuildingType='BUILDING_MARKET';
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Buildings_XP2
@@ -481,7 +534,7 @@ INSERT OR IGNORE INTO Buildings_XP2
 VALUES	(	'BUILDING_CSC_BAKERS_RIVER_ACCESS',					0			),
 		(	'BUILDING_CSC_BAKERS_NO_RIVER_ACCESS',				0			),
 		(	'BUILDING_CSC_BAKERS_STAGE_3_SPECIALIST',			0			),
-		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_LAND',		0			),
+		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER',		0			),
 		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER',		0			);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -496,8 +549,8 @@ VALUES	(	'BUILDING_CSC_BAKERS_WATER_MILL',			'BUILDING_CSC_BAKERS_RIVER_ACCESS'	
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'BUILDING_CSC_BAKERS_WIND_MILL'						),
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'BUILDING_CSC_BAKERS_WATER_MILL'					),
 
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'BUILDING_CSC_BAKERS_WIND_MILL'						),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'BUILDING_CSC_BAKERS_WATER_MILL'					);
+		(	'BUILDING_CSC_BAKERS_CAFE',					'BUILDING_CSC_BAKERS_WIND_MILL'						),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'BUILDING_CSC_BAKERS_WATER_MILL'					);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	MutuallyExclusiveBuildings
@@ -518,7 +571,7 @@ INSERT INTO Building_GreatPersonPoints
 
         (	BuildingType,      		        			GreatPersonClassType,				PointsPerTurn	)
 VALUES  (	'BUILDING_CSC_BAKERS_BAKERY',       		'GREAT_PERSON_CLASS_MERCHANT',		1				),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',       	'GREAT_PERSON_CLASS_MERCHANT',		1				);
+		(	'BUILDING_CSC_BAKERS_CAFE',       			'GREAT_PERSON_CLASS_MERCHANT',		1				);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Building_CitizenYieldChanges
@@ -530,11 +583,11 @@ INSERT INTO Building_CitizenYieldChanges
 VALUES  (	'BUILDING_CSC_BAKERS_BAKERY',       				'YIELD_FOOD',	        				2		        	),
 		(	'BUILDING_CSC_BAKERS_BAKERY',       				'YIELD_GOLD',	        				1		        	),
 
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',       			'YIELD_FOOD',	        				1		        	),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',       			'YIELD_GOLD',	        				2		        	),
+		(	'BUILDING_CSC_BAKERS_CAFE',       					'YIELD_FOOD',	        				1		        	),
+		(	'BUILDING_CSC_BAKERS_CAFE',       					'YIELD_GOLD',	        				2		        	),
 
-		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_LAND',		'YIELD_CULTURE',	        			2		        	),
-		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_LAND',		'YIELD_GOLD',	        				2		        	),
+		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER',		'YIELD_CULTURE',	        			2		        	),
+		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER',		'YIELD_GOLD',	        				2		        	),
 
 		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER',		'YIELD_CULTURE',	        			2		        	),
 		(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER',		'YIELD_GOLD',	        				2		        	);
@@ -565,8 +618,8 @@ INSERT INTO BuildingModifiers
 
 --  At Feudalism, a Water Mill or Wind Mill adjacent to an improved base materials resource unlocks:
 --  An adjacent Granary provides +10% growth in the city
-		(	'BUILDING_CSC_BAKERS_WATER_MILL',			'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_CENTER'	),
-		(	'BUILDING_CSC_BAKERS_WIND_MILL',			'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_CENTER'	),
+		(	'BUILDING_CSC_BAKERS_WATER_MILL',			'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_WATER'	),
+		(	'BUILDING_CSC_BAKERS_WIND_MILL',			'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_WIND'	),
 
 --	BAKERY ------------------------------------------------------------------------------
 
@@ -593,32 +646,32 @@ INSERT INTO BuildingModifiers
 -- 	+1 Citizen slot (Merchant Guildhall) to a Commercial Hub with a Market
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_STAGE_3_SPECIALIST_ATTACH_COMHUB'	),
 
---	PATISSERIE --------------------------------------------------------------------------
+--	CAFE --------------------------------------------------------------------------
 
 --	+1 Gold to adjacent specialty materials improvements
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISSERIE_ATTACH_ADJ_IMP_SPEC'		),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_CAFE_ATTACH_ADJ_IMP_SPEC'		),
 
 --  +1 Production from the local Flour Mill
-		(	'BUILDING_CSC_BAKERS_WATER_MILL',			'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_PATISSERIE'		),
-		(	'BUILDING_CSC_BAKERS_WIND_MILL',			'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_PATISSERIE'		),
+		(	'BUILDING_CSC_BAKERS_WATER_MILL',			'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_CAFE'		),
+		(	'BUILDING_CSC_BAKERS_WIND_MILL',			'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_CAFE'		),
 
 -- 	+1 Gold to the Flour Mill in the Quarter
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_INTERNAL_GOLD_TO_WATER_MILL'		),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_INTERNAL_GOLD_TO_WIND_MILL'			),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_INTERNAL_GOLD_TO_WATER_MILL'		),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_INTERNAL_GOLD_TO_WIND_MILL'			),
 
 --  +3 Food (with a -3 Gold maintenance cost)
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISSERIE_SELF_FOOD'				),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_CAFE_SELF_FOOD'				),
 
 --  See end of file for: +1 Food and +1 Gold for every 5 Citizens in the city for each adjacent Zoo or Ferris Wheel
 
---  At Urbanization, a Patisserie adjacent to improved base and speciality materials resources unlocks:
+--  At Urbanization, a Café adjacent to improved base and speciality materials resources unlocks:
 --  +2 Tourism to an Entertainment Complex, Water Park
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_ENTERTAINMENT'),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_WATER_PARK'	),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_ENTERTAINMENT'),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_WATER_PARK'	),
 
 -- 	+1 Citizen slot (Groundskeeper) to an Entertainment Complex with a Zoo, Water Park with a Ferris Wheel
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_ENTER'	),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_WATER'	),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_ENTER'	),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_WATER'	),
 
 --	SHARED ------------------------------------------------------------------------------
 
@@ -629,8 +682,8 @@ INSERT INTO BuildingModifiers
 		(	'BUILDING_CSC_BAKERS_WIND_MILL',			'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD'					),
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_TRADE_ROUTES_FOOD'					),
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD'					),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_TRADE_ROUTES_FOOD'					),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD_EXTRA'			);
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_TRADE_ROUTES_FOOD'					),
+		(	'BUILDING_CSC_BAKERS_CAFE',					'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD_EXTRA'			);
 
 
 
@@ -707,8 +760,10 @@ INSERT OR IGNORE INTO Modifiers
 
 --  At Feudalism, a Water Mill or Wind Mill adjacent to an improved base materials resource unlocks:
 --  An adjacent Granary provides +10% growth in the city
-		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_CENTER',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_STAGE_2_EFFECT_PREREQ',			'REQSET_CSC_ADJ_CITY_CENTER_GRANARY'				),
-		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH',								'MODIFIER_SINGLE_CITY_ADJUST_CITY_GROWTH',						NULL,										NULL												),
+		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_WATER',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_STAGE_2_EFFECT_PREREQ',			'REQSET_CSC_ADJ_CITY_CENTER_GRANARY'				),
+		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH_WATER',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_GROWTH',						NULL,										NULL												),
+		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_WIND',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_STAGE_2_EFFECT_PREREQ',			'REQSET_CSC_ADJ_CITY_CENTER_GRANARY'				),
+		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH_WIND',						'MODIFIER_SINGLE_CITY_ADJUST_CITY_GROWTH',						NULL,										NULL												),
 
 --	BAKERY ------------------------------------------------------------------------------
 
@@ -734,31 +789,32 @@ INSERT OR IGNORE INTO Modifiers
 		(	'MOD_CSC_BAKERS_STAGE_3_SPECIALIST_ATTACH_COMHUB',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_STAGE_3_EFFECT_PREREQ',			'REQSET_CSC_ADJ_MARKET'								),
 		(	'MOD_CSC_BAKERS_STAGE_3_SPECIALIST_GRANT',							'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',			NULL,										NULL												),
 		
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
---  +1 Production to the Patisserie from improved specialty materials
+--  +1 Production to the Café from improved specialty materials
         (	'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_BAKERS_PLOT_HAS_SPEC',			'REQSET_CSC_ADJ_BAKERS_QUARTER'						),
-        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_PATISSERIE',    			'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,                           			NULL												),
+        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_CAFE',    					'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,                           			NULL												),
 
 --	+1 Gold to adjacent specialty materials improvements
-		(	'MOD_CSC_BAKERS_PATISSERIE_ATTACH_ADJ_IMP_SPEC',					'MODIFIER_CSC_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',				NULL,										'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_SPEC'				),
+		(	'MOD_CSC_BAKERS_CAFE_ATTACH_ADJ_IMP_SPEC',							'MODIFIER_CSC_PLAYER_IMPROVEMENTS_ATTACH_MODIFIER',				NULL,										'REQSET_CSC_BAKERS_ADJ_PLOT_HAS_SPEC'				),
 
 --  +1 Production from the local Flour Mill
-		(	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_PATISSERIE',						'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),
+		(	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_CAFE',							'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),
 
 --  +3 Food (with a -3 Gold maintenance cost)
-		(	'MOD_CSC_BAKERS_PATISSERIE_SELF_FOOD',								'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),
+		(	'MOD_CSC_BAKERS_CAFE_SELF_FOOD',									'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),
 
 --  +1 Food and +1 Gold for every 5 Citizens in the city for each adjacent Zoo or Ferris Wheel
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_ZOO',							'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_FERRIS',						'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),	
-		(	'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE',								'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),	
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_ZOO',								'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),	
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_FERRIS',							'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),	
+		(	'MOD_CSC_BAKERS_GOLD_TO_CAFE',										'MODIFIER_BUILDING_YIELD_CHANGE',								NULL,										NULL												),	
 
---  At Urbanization, a Patisserie adjacent to improved base and speciality materials resources unlocks:
+--  At Urbanization, a Café adjacent to improved base and speciality materials resources unlocks:
 --  +2  Tourism to an Entertainment Complex, Water Park
-		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_ENTERTAINMENT',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_STAGE_4_EFFECT_PREREQ',			'REQSET_CSC_ADJ_ENTERTAINMENT_COMPLEX'				),
-		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_WATER_PARK',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_STAGE_4_EFFECT_PREREQ',			'REQSET_CSC_ADJ_WATER_PARK'							),
-		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM',							'MODIFIER_PLAYER_DISTRICT_ADJUST_TOURISM_CHANGE',				NULL,										NULL												),
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_ENTERTAINMENT',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_STAGE_4_EFFECT_PREREQ',			'REQSET_CSC_ADJ_ENTERTAINMENT_COMPLEX_ZOO'			),
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_ENTER',						'MODIFIER_PLAYER_DISTRICT_ADJUST_TOURISM_CHANGE',				NULL,										NULL												),
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_WATER_PARK',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_STAGE_4_EFFECT_PREREQ',			'REQSET_CSC_ADJ_WATER_PARK_FERRIS'					),
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_WATER',						'MODIFIER_PLAYER_DISTRICT_ADJUST_TOURISM_CHANGE',				NULL,										NULL												),
 
 -- 	+1 Citizen slot (Groundskeeper) to an Entertainment Complex with a Zoo, Water Park with a Ferris Wheel
 		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_ENTER',					'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_STAGE_4_EFFECT_PREREQ',			'REQSET_CSC_ADJ_ENTERTAINMENT_COMPLEX_ZOO'			),
@@ -840,14 +896,16 @@ INSERT OR IGNORE INTO ModifierArguments
 
 --  At Feudalism, a Water Mill or Wind Mill adjacent to an improved base materials resource unlocks:
 --  An adjacent Granary provides +10% growth in the city
-		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_CENTER',					'ModifierId',				'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH'							),
-		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH',								'Amount',					10																),
+		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_WATER',					'ModifierId',				'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH_WATER'					),
+		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH_WATER',						'Amount',					10																),
+		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_ATTACH_CITY_WIND',					'ModifierId',				'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH_WIND'						),
+		(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH_WIND',						'Amount',					10																),
 
 --	BAKERY ------------------------------------------------------------------------------
 
 --  +1 Production from the local Flour Mill
         (  	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_BAKERY',							'BuildingType',           	'BUILDING_CSC_BAKERS_BAKERY'									),
-        (  	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_BAKERY',							'YieldType',           		'YIELD_PRODUCTION'                                             		),
+        (  	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_BAKERY',							'YieldType',           		'YIELD_PRODUCTION'                                             	),
         ( 	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_BAKERY',							'Amount',             		1                                                               ),
 
 --  +2 Food (with a -2 Gold maintenance cost)
@@ -872,49 +930,50 @@ INSERT OR IGNORE INTO ModifierArguments
 		(	'MOD_CSC_BAKERS_STAGE_3_SPECIALIST_ATTACH_COMHUB',					'ModifierId',				'MOD_CSC_BAKERS_STAGE_3_SPECIALIST_GRANT'						),
 		(	'MOD_CSC_BAKERS_STAGE_3_SPECIALIST_GRANT',							'BuildingType',				'BUILDING_CSC_BAKERS_STAGE_3_SPECIALIST'						),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
---  +1 Production to the Patisserie from improved specialty materials
-		(  	'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER',					'ModifierId',         		'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_PATISSERIE'     		),    
-        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_PATISSERIE',				'BuildingType',           	'BUILDING_CSC_BAKERS_PATISSERIE'								),
-        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_PATISSERIE',				'YieldType',           		'YIELD_PRODUCTION'                                              ),
-        ( 	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_PATISSERIE',				'Amount',             		1                                                               ),
+--  +1 Production to the Café from improved specialty materials
+		(  	'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER',					'ModifierId',         		'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_CAFE'     				),    
+        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_CAFE',						'BuildingType',           	'BUILDING_CSC_BAKERS_CAFE'										),
+        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_CAFE',						'YieldType',           		'YIELD_PRODUCTION'                                              ),
+        ( 	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_ADJ_CAFE',						'Amount',             		1                                                               ),
 
 --	+1 Gold to adjacent specialty materials improvements
-		(	'MOD_CSC_BAKERS_PATISSERIE_ATTACH_ADJ_IMP_SPEC',					'ModifierId',				'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_IMP_BASE'				),
+		(	'MOD_CSC_BAKERS_CAFE_ATTACH_ADJ_IMP_SPEC',							'ModifierId',				'MOD_CSC_BAKERS_FLOUR_MILL_GOLD_TO_ADJ_IMP_BASE'				),
 
 --  +1 Production from the local Flour Mill
-        (  	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_PATISSERIE',						'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-        (  	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_PATISSERIE',						'YieldType',           		'YIELD_PRODUCTION'                                             	),
-        ( 	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_PATISSERIE',						'Amount',             		1                                                               ),
+        (  	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_CAFE',							'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'										),
+        (  	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_CAFE',							'YieldType',           		'YIELD_PRODUCTION'                                             	),
+        ( 	'MOD_CSC_BAKERS_FLOUR_MILL_PROD_TO_CAFE',							'Amount',             		1                                                               ),
 
 --  +3 Food (with a -3 Gold maintenance cost)
-        (  	'MOD_CSC_BAKERS_PATISSERIE_SELF_FOOD',								'BuildingType',           	'BUILDING_CSC_BAKERS_PATISSERIE'								),
-        (  	'MOD_CSC_BAKERS_PATISSERIE_SELF_FOOD',								'YieldType',           		'YIELD_FOOD'                                             		),
-        ( 	'MOD_CSC_BAKERS_PATISSERIE_SELF_FOOD',								'Amount',             		3                                                               ),
+        (  	'MOD_CSC_BAKERS_CAFE_SELF_FOOD',									'BuildingType',           	'BUILDING_CSC_BAKERS_CAFE'										),
+        (  	'MOD_CSC_BAKERS_CAFE_SELF_FOOD',									'YieldType',           		'YIELD_FOOD'                                             		),
+        ( 	'MOD_CSC_BAKERS_CAFE_SELF_FOOD',									'Amount',             		3                                                               ),
 
 --  +1 Food and +1 Gold for every 5 Citizens in the city for each adjacent Zoo or Ferris Wheel
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_ZOO',							'BuildingType',				'BUILDING_ZOO'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_ZOO',							'YieldType',				'YIELD_CULTURE'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_ZOO',							'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_ZOO',								'BuildingType',				'BUILDING_ZOO'													),
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_ZOO',								'YieldType',				'YIELD_CULTURE'													),
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_ZOO',								'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_FERRIS',						'BuildingType',				'BUILDING_FERRIS_WHEEL'											),
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_FERRIS',						'YieldType',				'YIELD_CULTURE'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_FERRIS',						'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_FERRIS',							'BuildingType',				'BUILDING_FERRIS_WHEEL'											),
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_FERRIS',							'YieldType',				'YIELD_CULTURE'													),
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_FERRIS',							'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE',								'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE',								'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE',								'Amount',					1																),
+		(	'MOD_CSC_BAKERS_GOLD_TO_CAFE',										'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'										),
+		(	'MOD_CSC_BAKERS_GOLD_TO_CAFE',										'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_GOLD_TO_CAFE',										'Amount',					1																),
 
---  At Urbanization, a Patisserie adjacent to improved base and speciality materials resources unlocks:
+--  At Urbanization, a Café adjacent to improved base and speciality materials resources unlocks:
 --  +2  Tourism to an Entertainment Complex, Water Park
-		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_ENTERTAINMENT',				'ModifierId',				'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM'							),
-		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_WATER_PARK',					'ModifierId',				'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM'							),
-		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM',							'Amount',					2																),
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_ENTERTAINMENT',				'ModifierId',				'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_ENTER'					),
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_ENTER',						'Amount',					2																),
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_WATER_PARK',					'ModifierId',				'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_WATER'					),
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_WATER',						'Amount',					2																),
 
 -- 	+1 Citizen slot (Groundskeeper) to an Entertainment Complex with a Zoo, Water Park with a Ferris Wheel
 		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_ENTER',					'ModifierId',				'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_ENTER'					),
-		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_ENTER',					'BuildingType',				'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_LAND'					),
+		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_ENTER',					'BuildingType',				'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER'					),
 		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_WATER',					'ModifierId',				'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_WATER'					),
 		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_WATER',					'BuildingType',				'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER'					),
 
@@ -991,7 +1050,7 @@ INSERT OR IGNORE INTO RequirementSets
 --  An adjacent Market provides +2 Housing
 		(	'REQSET_CSC_STAGE_3_EFFECT_PREREQ', 					'REQUIREMENTSET_TEST_ALL'		),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 -- 	+1 Production from each adjacent speciality materials improvement
 		(	'REQSET_CSC_BAKERS_PLOT_HAS_SPEC',						'REQUIREMENTSET_TEST_ALL'       ),
@@ -1003,7 +1062,7 @@ INSERT OR IGNORE INTO RequirementSets
 		(	'REQSET_CSC_ADJ_ENTERTAINMENT_COMPLEX',					'REQUIREMENTSET_TEST_ALL'		),
 		(	'REQSET_CSC_ADJ_WATER_PARK',							'REQUIREMENTSET_TEST_ALL'		),
 
---  At Urbanization, a Patisserie adjacent to improved base and speciality materials resources unlocks:
+--  At Urbanization, a Café adjacent to improved base and speciality materials resources unlocks:
 --  +2  Tourism to an Entertainment Complex, Water Park
 		(	'REQSET_CSC_STAGE_4_EFFECT_PREREQ',						'REQUIREMENTSET_TEST_ALL'		),
 
@@ -1066,7 +1125,7 @@ INSERT OR IGNORE INTO RequirementSetRequirements
 		(	'REQSET_CSC_STAGE_3_EFFECT_PREREQ', 					'REQ_CSC_STAGE_3_EFFECT_TECH_OR_CIVIC'			),
 		(	'REQSET_CSC_STAGE_3_EFFECT_PREREQ',						'REQ_CSC_BAKERS_ADJ_PLOT_HAS_IMPROVED_BASE'		),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 -- 	+1 Production from each adjacent specialty materials improvement
 		(	'REQSET_CSC_BAKERS_PLOT_HAS_SPEC',						'REQ_CSC_BAKERS_PLOT_HAS_MATERIAL_SPEC'			),
@@ -1081,7 +1140,7 @@ INSERT OR IGNORE INTO RequirementSetRequirements
 		(	'REQSET_CSC_ADJ_WATER_PARK',							'REQ_CSC_PLOT_ADJ_TO_OWNER'						),
 		(	'REQSET_CSC_ADJ_WATER_PARK',							'REQ_CSC_DISTRICT_IS_WATER_PARK'				),
 
---  At Urbanization, a Patisserie adjacent to improved base and speciality materials resources unlocks:
+--  At Urbanization, a Café adjacent to improved base and speciality materials resources unlocks:
 --  +2  Tourism to an Entertainment Complex, Water Park
 		(	'REQSET_CSC_STAGE_4_EFFECT_PREREQ',						'REQ_CSC_STAGE_4_EFFECT_TECH_OR_CIVIC'			),
 		(	'REQSET_CSC_STAGE_4_EFFECT_PREREQ',						'REQ_CSC_BAKERS_ADJ_PLOT_HAS_IMPROVED_BASE'		),
@@ -1145,13 +1204,13 @@ INSERT OR IGNORE INTO Requirements
 -- 	+1 Citizen slot (Merchant Guildhall) to a Commercial Hub with a Market
 		(	'REQ_CSC_STAGE_3_EFFECT_TECH_OR_CIVIC',					'REQUIREMENT_PLAYER_HAS_CIVIC',						0				),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 --  +1 Food and +1 Gold for every 5 Citizens in the city for each adjacent Zoo or Ferris Wheel
 		(	'REQ_CSC_DISTRICT_IS_ENTERTAINMENT_COMPLEX',			'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',			0				),
 		(	'REQ_CSC_DISTRICT_IS_WATER_PARK',						'REQUIREMENT_PLOT_DISTRICT_TYPE_MATCHES',			0				),
 
---  At Urbanization, a Patisserie adjacent to improved base and speciality materials resources unlocks:
+--  At Urbanization, a Café adjacent to improved base and speciality materials resources unlocks:
 --  +2  Tourism to an Entertainment Complex, Water Park
 		(	'REQ_CSC_STAGE_4_EFFECT_TECH_OR_CIVIC',					'REQUIREMENT_PLAYER_HAS_CIVIC',						0				),
 
@@ -1203,13 +1262,13 @@ INSERT OR IGNORE INTO RequirementArguments
 -- 	+1 Citizen slot (Merchant Guildhall) to a Commercial Hub with a Market
 		(	'REQ_CSC_STAGE_3_EFFECT_TECH_OR_CIVIC',					'CivicType',					'CIVIC_MEDIEVAL_FAIRES'							),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 --  +1 Food and +1 Gold for every 5 Citizens in the city for each adjacent Zoo or Ferris Wheel
 		(	'REQ_CSC_DISTRICT_IS_ENTERTAINMENT_COMPLEX',			'DistrictType',					'DISTRICT_ENTERTAINMENT_COMPLEX'				),
 		(	'REQ_CSC_DISTRICT_IS_WATER_PARK',						'DistrictType',					'DISTRICT_WATER_ENTERTAINMENT_COMPLEX'			),
 
---  At Urbanization, a Patisserie adjacent to improved base and speciality materials resources unlocks:
+--  At Urbanization, a Café adjacent to improved base and speciality materials resources unlocks:
 --  +2  Tourism to an Entertainment Complex, Water Park
 		(	'REQ_CSC_STAGE_4_EFFECT_TECH_OR_CIVIC',					'CivicType',					'CIVIC_URBANIZATION'							),
 
@@ -1236,7 +1295,7 @@ INSERT OR IGNORE INTO RequirementArguments
 
 
 --===========================================================================================================================================================================--
-/*	PATISSERIE */
+/*	CAFE */
 --===========================================================================================================================================================================--
 
 --  +1 Food and +1 Gold for every 5 Citizens in the city for each adjacent Zoo or Ferris Wheel
@@ -1260,32 +1319,32 @@ VALUES	('5'), ('10'), ('15'), ('20'), ('25'), ('30'), ('35'), ('40'), ('45'), ('
 
 INSERT OR IGNORE INTO BuildingModifiers (BuildingType, ModifierId)
 SELECT
-    'BUILDING_CSC_BAKERS_PATISSERIE',
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_ZOO_AT_POP_' || Pop || '_ATTACH'
+    'BUILDING_CSC_BAKERS_CAFE',
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_ZOO_AT_POP_' || Pop || '_ATTACH'
 FROM CSC_PopulationLevels
 WHERE Pop > 0
 UNION ALL
 SELECT
-    'BUILDING_CSC_BAKERS_PATISSERIE',
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_FERRIS_AT_POP_' || Pop || '_ATTACH'
+    'BUILDING_CSC_BAKERS_CAFE',
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_FERRIS_AT_POP_' || Pop || '_ATTACH'
 FROM CSC_PopulationLevels
 WHERE Pop > 0
 UNION ALL
 SELECT
     'BUILDING_ZOO',
-    'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE_AT_POP_' || Pop || '_ATTACH'
+    'MOD_CSC_BAKERS_GOLD_TO_CAFE_AT_POP_' || Pop || '_ATTACH'
 FROM CSC_PopulationLevels
 WHERE Pop > 0
 UNION ALL
 SELECT
     'BUILDING_THERMAL_BATH',
-    'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE_AT_POP_' || Pop || '_ATTACH'
+    'MOD_CSC_BAKERS_GOLD_TO_CAFE_AT_POP_' || Pop || '_ATTACH'
 FROM CSC_PopulationLevels
 WHERE Pop > 0
 UNION ALL
 SELECT
     'BUILDING_FERRIS_WHEEL',
-    'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE_AT_POP_' || Pop || '_ATTACH'
+    'MOD_CSC_BAKERS_GOLD_TO_CAFE_AT_POP_' || Pop || '_ATTACH'
 FROM CSC_PopulationLevels
 WHERE Pop > 0;
 
@@ -1300,7 +1359,7 @@ INSERT OR IGNORE INTO Modifiers (
     SubjectRequirementSetId
 )
 SELECT
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_ZOO_AT_POP_' || Pop || '_ATTACH',
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_ZOO_AT_POP_' || Pop || '_ATTACH',
     'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',
     'REQSET_CSC_CITY_HAS_POPULATION_' || Pop,
     'REQSET_CSC_ADJ_ENTERTAINMENT_COMPLEX'
@@ -1308,7 +1367,7 @@ FROM CSC_PopulationLevels
 WHERE Pop > 0
 UNION ALL
 SELECT
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_FERRIS_AT_POP_' || Pop || '_ATTACH',
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_FERRIS_AT_POP_' || Pop || '_ATTACH',
     'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',
     'REQSET_CSC_CITY_HAS_POPULATION_' || Pop,
     'REQSET_CSC_ADJ_WATER_PARK'
@@ -1316,7 +1375,7 @@ FROM CSC_PopulationLevels
 WHERE Pop > 0
 UNION ALL
 SELECT
-    'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE_AT_POP_' || Pop || '_ATTACH',
+    'MOD_CSC_BAKERS_GOLD_TO_CAFE_AT_POP_' || Pop || '_ATTACH',
     'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',
     'REQSET_CSC_CITY_HAS_POPULATION_' || Pop,
     'REQSET_CSC_ADJ_BAKERS_QUARTER'
@@ -1333,23 +1392,23 @@ INSERT OR IGNORE INTO ModifierArguments (
     Value
 )
 SELECT
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_ZOO_AT_POP_' || Pop || '_ATTACH',
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_ZOO_AT_POP_' || Pop || '_ATTACH',
     'ModifierId',
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_ZOO'
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_ZOO'
 FROM CSC_PopulationLevels
 WHERE Pop > 0
 UNION ALL
 SELECT
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_FERRIS_AT_POP_' || Pop || '_ATTACH',
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_FERRIS_AT_POP_' || Pop || '_ATTACH',
     'ModifierId',
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_FERRIS'
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_FERRIS'
 FROM CSC_PopulationLevels
 WHERE Pop > 0
 UNION ALL
 SELECT
-    'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE_AT_POP_' || Pop || '_ATTACH',
+    'MOD_CSC_BAKERS_GOLD_TO_CAFE_AT_POP_' || Pop || '_ATTACH',
     'ModifierId',
-    'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE'
+    'MOD_CSC_BAKERS_GOLD_TO_CAFE'
 FROM CSC_PopulationLevels
 WHERE Pop > 0;
 
@@ -1418,3 +1477,16 @@ WHERE Pop > 0;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 DROP TABLE CSC_PopulationLevels;
+
+
+INSERT INTO ModifierStrings
+	(	ModifierId,                                			Context,			'Text'			)	VALUES
+	(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH_WATER',		'Preview',			'LOC_CSC_BAKERS_STAGE_2_EFFECT_DESCRIPTION_WATER'	),
+	(	'MOD_CSC_BAKERS_STAGE_2_EFFECT_GROWTH_WIND',		'Preview',			'LOC_CSC_BAKERS_STAGE_2_EFFECT_DESCRIPTION_WIND'	),
+	(	'MOD_CSC_BAKERS_STAGE_3_EFFECT_HOUSING',			'Preview',			'LOC_CSC_BAKERS_STAGE_3_EFFECT_DESCRIPTION'			),
+	(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_ENTER',		'Preview',			'LOC_CSC_BAKERS_STAGE_4_EFFECT_DESCRIPTION_ENTER'	),
+	(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_WATER',		'Preview',			'LOC_CSC_BAKERS_STAGE_4_EFFECT_DESCRIPTION_WATER'	),
+
+	(	'MOD_CSC_BAKERS_STAGE_3_SPECIALIST_GRANT',			'Preview',			'LOC_BUILDING_CSC_BAKERS_STAGE_3_SPECIALIST_NAME'		),
+	(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_ENTER',	'Preview',			'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_ENTER_NAME'	),
+	(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_WATER',	'Preview',			'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_WATER_NAME'	);

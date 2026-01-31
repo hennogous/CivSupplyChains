@@ -42,6 +42,8 @@
 				<Element text="CSC_Resources.artdef"/>
 				<Element text="CSC_Buildings.artdef"/>
 				<Element text="CSC_Clutter.artdef"/>
+				<Element text="CSC_StrategicView.artdef"/>
+				<Element text="CSC_Districts.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="CityBuildings"/>
@@ -74,7 +76,12 @@
 		</Element>
 		<Element>
 			<ConsumerName text="StrategicView_Properties"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_StrategicView.artdef"/>
+				<Element text="CSC_Buildings.artdef"/>
+				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
 			<LoadsLibraries>false</LoadsLibraries>
 		</Element>
@@ -83,6 +90,7 @@
 			<ArtDefDependencyPaths>
 				<Element text="CSC_Buildings.artdef"/>
 				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_StrategicView.artdef"/>
 				<Element text="CSC_Landmarks.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies>
@@ -93,7 +101,12 @@
 		</Element>
 		<Element>
 			<ConsumerName text="StrategicView_Route"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_StrategicView.artdef"/>
+				<Element text="CSC_Buildings.artdef"/>
+				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="StrategicView_Route"/>
 				<Element text="StrategicView_DirectedAsset"/>
@@ -102,7 +115,12 @@
 		</Element>
 		<Element>
 			<ConsumerName text="StrategicView_TerrainType"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_StrategicView.artdef"/>
+				<Element text="CSC_Buildings.artdef"/>
+				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="StrategicView_TerrainBlend"/>
 				<Element text="StrategicView_TerrainBlendCorners"/>
@@ -113,7 +131,12 @@
 		</Element>
 		<Element>
 			<ConsumerName text="StrategicView_TerrainBlendCorners"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_StrategicView.artdef"/>
+				<Element text="CSC_Buildings.artdef"/>
+				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="StrategicView_TerrainBlendCorners"/>
 				<Element text="StrategicView_DirectedAsset"/>
@@ -122,7 +145,12 @@
 		</Element>
 		<Element>
 			<ConsumerName text="StrategicView_TerrainBlend"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_StrategicView.artdef"/>
+				<Element text="CSC_Buildings.artdef"/>
+				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_Landmarks.artdef"/>
+			</ArtDefDependencyPaths>
 			<LibraryDependencies>
 				<Element text="StrategicView_TerrainBlend"/>
 				<Element text="StrategicView_DirectedAsset"/>
@@ -280,6 +308,7 @@
 				<Element text="CSC_Buildings.artdef"/>
 				<Element text="CSC_Districts.artdef"/>
 				<Element text="CSC_Resources.artdef"/>
+				<Element text="CSC_StrategicView.artdef"/>
 				<Element text="CSC_Landmarks.artdef"/>
 				<Element text="CSC_Clutter.artdef"/>
 			</ArtDefDependencyPaths>
@@ -291,6 +320,7 @@
 			<ArtDefDependencyPaths>
 				<Element text="CSC_Buildings.artdef"/>
 				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_StrategicView.artdef"/>
 				<Element text="CSC_Landmarks.artdef"/>
 			</ArtDefDependencyPaths>
 			<LibraryDependencies/>
@@ -302,6 +332,7 @@
 				<Element text="CSC_Districts.artdef"/>
 				<Element text="CSC_Resources.artdef"/>
 				<Element text="CSC_Landmarks.artdef"/>
+				<Element text="CSC_StrategicView.artdef"/>
 				<Element text="CSC_Clutter.artdef"/>
 				<Element text="CSC_Buildings.artdef"/>
 			</ArtDefDependencyPaths>
@@ -440,13 +471,25 @@
 			</ArtDefDependencyPaths>
 		</Element>
 		<Element>
+			<ArtDefPath text="CSC_StrategicView.artdef"/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_Buildings.artdef"/>
+				<Element text="CSC_StrategicView.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+		<Element>
 			<ArtDefPath text="CSC_Buildings.artdef"/>
-			<ArtDefDependencyPaths/>
+			<ArtDefDependencyPaths>
+				<Element text="CSC_StrategicView.artdef"/>
+				<Element text="CSC_Districts.artdef"/>
+				<Element text="CSC_Buildings.artdef"/>
+			</ArtDefDependencyPaths>
 		</Element>
 		<Element>
 			<ArtDefPath text="CSC_Districts.artdef"/>
 			<ArtDefDependencyPaths>
 				<Element text="CSC_Landmarks.artdef"/>
+				<Element text="CSC_StrategicView.artdef"/>
 			</ArtDefDependencyPaths>
 		</Element>
 		<Element>
@@ -529,7 +572,9 @@
 		</Element>
 		<Element>
 			<LibraryName text="StrategicView_Sprite"/>
-			<PackageDependencies/>
+			<PackageDependencies>
+				<Element text="StrategicView/CSC_StrategicView.blp"/>
+			</PackageDependencies>
 		</Element>
 		<Element>
 			<LibraryName text="StrategicView_TerrainBlend"/>

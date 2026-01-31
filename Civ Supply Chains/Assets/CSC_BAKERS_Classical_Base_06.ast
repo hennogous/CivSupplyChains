@@ -51,8 +51,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>0.000000</x>
-							<y>0.000000</y>
+							<x>0.003754</x>
+							<y>-0.020225</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -61,58 +61,6 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="newAttachmentPoint_1"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>1.000000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="CSC_QUARTERS_Ancient_Base_Storage"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="csc_tilebases.xlp"/>
-									<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="PERMANENT"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>-13.660600</x>
-							<y>14.444829</y>
-							<z>0.000000</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>-0.183497</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_2"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
 						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>
@@ -259,9 +207,9 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>5.264429</x>
-							<y>17.379522</y>
-							<z>0.000817</z>
+							<x>6.018686</x>
+							<y>18.503036</y>
+							<z>0.000870</z>
 						</m_position>
 						<m_orientation>
 							<x>0.000047</x>
@@ -779,14 +727,14 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>-9.927757</x>
-							<y>-2.951185</y>
+							<x>12.069759</x>
+							<y>-30.773582</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
 							<x>0.000000</x>
 							<y>0.000000</y>
-							<z>2.626662</z>
+							<z>0.356612</z>
 						</m_orientation>
 						<m_Name text="newAttachmentPoint_10"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
@@ -1052,58 +1000,6 @@
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
 						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.900000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="PROP_Ancient_Haycart"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="tilebases.xlp"/>
-									<m_BLPPackage text="landmarks/tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>-13.865639</x>
-							<y>13.475735</y>
-							<z>0.000000</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>-2.042008</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_3"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
 						<m_CookParams>
@@ -1520,58 +1416,6 @@
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
 						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.400000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="IMP_Farm_AN_Bld_Silo"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="tilebases.xlp"/>
-									<m_BLPPackage text="landmarks/tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>21.377047</x>
-							<y>-4.676976</y>
-							<z>0.000000</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>0.930386</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_7"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
 						<m_CookParams>
@@ -2409,58 +2253,6 @@
 						<m_CookParams>
 							<m_Values>
 								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="IMP_Farm_AN_Bld_Silo"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="tilebases.xlp"/>
-									<m_BLPPackage text="landmarks/tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>-13.372357</x>
-							<y>19.754562</y>
-							<z>0.000000</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>0.507568</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_75"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>1.000000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
 									<m_EntryName text="IMP_Farm_Wheat_Decal_Square_05"/>
 									<m_XLPClass text="TileBase"/>
 									<m_XLPPath text="tilebases.xlp"/>
@@ -2560,58 +2352,6 @@
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
 						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.800000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="PROP_Ancient_Haycart"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="tilebases.xlp"/>
-									<m_BLPPackage text="landmarks/tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>23.441992</x>
-							<y>-8.355614</y>
-							<z>0.000000</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>0.000000</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_9"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
 						<m_CookParams>
@@ -2768,58 +2508,6 @@
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
 						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>0.500000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="CSC_BAKERS_Storage_01"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="csc_tilebases.xlp"/>
-									<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="PERMANENT"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>-0.518869</x>
-							<y>16.737560</y>
-							<z>1.160434</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>2.978338</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_19"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>1.000000</m_scale>
 					</Element>
 					<Element>
 						<m_CookParams>
@@ -3137,110 +2825,6 @@
 						<m_CookParams>
 							<m_Values>
 								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="Shrub_Round_Single_Dirt"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="tilebases.xlp"/>
-									<m_BLPPackage text="landmarks/tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>3.924277</x>
-							<y>-21.918652</y>
-							<z>0.000000</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>0.000000</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_56"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>1.000000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="Tree_B_Lg_Dirt"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="tilebases.xlp"/>
-									<m_BLPPackage text="landmarks/tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>6.878018</x>
-							<y>-21.348682</y>
-							<z>0.000000</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>0.000000</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_54"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>1.000000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
 									<m_EntryName text="IMP_PLNT_ANC_Wall_Rock_Corner"/>
 									<m_XLPClass text="TileBase"/>
 									<m_XLPPath text="tilebases.xlp"/>
@@ -3293,58 +2877,6 @@
 						<m_CookParams>
 							<m_Values>
 								<Element class="AssetObjects..BLPEntryValue">
-									<m_EntryName text="IMP_Farm_Decal_Square_03"/>
-									<m_XLPClass text="TileBase"/>
-									<m_XLPPath text="tilebases.xlp"/>
-									<m_BLPPackage text="landmarks/tilebases"/>
-									<m_LibraryName text="TileBase"/>
-									<m_ParamName text="Asset"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="NONE"/>
-									<m_ParamName text="ConnectionType"/>
-								</Element>
-								<Element class="AssetObjects..ArtDefReferenceValue">
-									<m_ElementName text="DON'T CARE"/>
-									<m_RootCollectionName text="ResourceTags"/>
-									<m_ArtDefPath text="Landmarks.artdef"/>
-									<m_CollectionIsLocked>true</m_CollectionIsLocked>
-									<m_TemplateName text="Landmarks"/>
-									<m_ParamName text="ResourceType"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="Pivot Height"/>
-									<m_ParamName text="TerrainFollowMode"/>
-								</Element>
-								<Element class="AssetObjects..StringValue">
-									<m_Value text="OPTIONAL"/>
-									<m_ParamName text="Cull Mode"/>
-								</Element>
-								<Element class="AssetObjects..BoolValue">
-									<m_bValue>true</m_bValue>
-									<m_ParamName text="RandomizeAnims"/>
-								</Element>
-							</m_Values>
-						</m_CookParams>
-						<m_position>
-							<x>11.523263</x>
-							<y>-21.742687</y>
-							<z>0.000000</z>
-						</m_position>
-						<m_orientation>
-							<x>0.000000</x>
-							<y>0.000000</y>
-							<z>-0.609930</z>
-						</m_orientation>
-						<m_Name text="newAttachmentPoint_14"/>
-						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
-						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
-						<m_scale>0.700000</m_scale>
-					</Element>
-					<Element>
-						<m_CookParams>
-							<m_Values>
-								<Element class="AssetObjects..BLPEntryValue">
 									<m_EntryName text="Tree_B_Lg_Dirt"/>
 									<m_XLPClass text="TileBase"/>
 									<m_XLPPath text="tilebases.xlp"/>
@@ -3379,8 +2911,8 @@
 							</m_Values>
 						</m_CookParams>
 						<m_position>
-							<x>19.756435</x>
-							<y>-19.562731</y>
+							<x>25.019482</x>
+							<y>-5.718100</y>
 							<z>0.000000</z>
 						</m_position>
 						<m_orientation>
@@ -3493,6 +3025,630 @@
 							<z>0.000000</z>
 						</m_orientation>
 						<m_Name text="newAttachmentPoint_22"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="CSC_ROAD_ANC_Curve_M"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="csc_tilebases.xlp"/>
+									<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>-5.653986</x>
+							<y>0.620009</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>2.626662</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_18"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="IMP_Farm_AN_Bld_Silo"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="tilebases.xlp"/>
+									<m_BLPPackage text="landmarks/tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>18.235334</x>
+							<y>-9.222289</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>0.930386</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_26"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="IMP_Farm_Decal_Transition_04"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="tilebases.xlp"/>
+									<m_BLPPackage text="landmarks/tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>24.732470</x>
+							<y>-12.154771</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>-2.650281</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_23"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>0.500000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="PROP_Ancient_Haycart"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="tilebases.xlp"/>
+									<m_BLPPackage text="landmarks/tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>20.897781</x>
+							<y>-12.120972</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>0.000000</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_28"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="Tree_B_Lg_Dirt"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="tilebases.xlp"/>
+									<m_BLPPackage text="landmarks/tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>11.684994</x>
+							<y>-20.197090</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>0.000000</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_54"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="Shrub_Round_Single_Dirt"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="tilebases.xlp"/>
+									<m_BLPPackage text="landmarks/tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>5.531554</x>
+							<y>-21.918652</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>0.000000</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_56"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="CSC_BAKERS_Storage_Large"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="csc_tilebases.xlp"/>
+									<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="PERMANENT"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>-2.716078</x>
+							<y>16.387695</y>
+							<z>1.160434</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>2.978338</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_24"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="CSC_QUARTERS_Ancient_Base_Storage"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="csc_tilebases.xlp"/>
+									<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="PERMANENT"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>-15.498543</x>
+							<y>14.103674</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>-0.183497</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_7"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="CSC_BAKERS_Flour"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="csc_tilebases.xlp"/>
+									<m_BLPPackage text="Landmarks/CSC_Tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>-12.602365</x>
+							<y>13.608528</y>
+							<z>1.680053</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>0.443520</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_49"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>0.150000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="IMP_Farm_AN_Bld_Silo"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="tilebases.xlp"/>
+									<m_BLPPackage text="landmarks/tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>-14.908427</x>
+							<y>19.456316</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>0.507568</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_80"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="PROP_Ancient_Haycart"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="tilebases.xlp"/>
+									<m_BLPPackage text="landmarks/tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>-16.468494</x>
+							<y>7.162506</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>3.131693</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_8"/>
+						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
+						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
+						<m_scale>1.000000</m_scale>
+					</Element>
+					<Element>
+						<m_CookParams>
+							<m_Values>
+								<Element class="AssetObjects..BLPEntryValue">
+									<m_EntryName text="DIS_Roped_Flags"/>
+									<m_XLPClass text="TileBase"/>
+									<m_XLPPath text="tilebases.xlp"/>
+									<m_BLPPackage text="landmarks/tilebases"/>
+									<m_LibraryName text="TileBase"/>
+									<m_ParamName text="Asset"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="NONE"/>
+									<m_ParamName text="ConnectionType"/>
+								</Element>
+								<Element class="AssetObjects..ArtDefReferenceValue">
+									<m_ElementName text="DON'T CARE"/>
+									<m_RootCollectionName text="ResourceTags"/>
+									<m_ArtDefPath text="Landmarks.artdef"/>
+									<m_CollectionIsLocked>true</m_CollectionIsLocked>
+									<m_TemplateName text="Landmarks"/>
+									<m_ParamName text="ResourceType"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="Pivot Height"/>
+									<m_ParamName text="TerrainFollowMode"/>
+								</Element>
+								<Element class="AssetObjects..StringValue">
+									<m_Value text="OPTIONAL"/>
+									<m_ParamName text="Cull Mode"/>
+								</Element>
+								<Element class="AssetObjects..BoolValue">
+									<m_bValue>true</m_bValue>
+									<m_ParamName text="RandomizeAnims"/>
+								</Element>
+							</m_Values>
+						</m_CookParams>
+						<m_position>
+							<x>0.883486</x>
+							<y>-23.025160</y>
+							<z>0.000000</z>
+						</m_position>
+						<m_orientation>
+							<x>0.000000</x>
+							<y>0.000000</y>
+							<z>-1.076139</z>
+						</m_orientation>
+						<m_Name text="newAttachmentPoint_35"/>
 						<m_BoneName text="DIS_PRD_Classical_Base_01"/>
 						<m_ModelInstanceName text="DIS_PRD_Classical_Base_01"/>
 						<m_scale>1.000000</m_scale>

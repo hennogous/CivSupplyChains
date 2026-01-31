@@ -20,9 +20,9 @@ INSERT INTO ImprovementModifiers
 --  +1 Production to the Wind Mill from improved base materials
 		(	'IMP_CL_TRADING_POST',			'MOD_CSC_BAKERS_BASE_IMPROVEMENT_ATTACH_QUARTER_WIND'	),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
---  +1 Production to the Patisserie from improved specialty materials
+--  +1 Production to the Cafe from improved specialty materials
         (	'IMP_CL_TRADING_POST',          'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER'		);
 
 

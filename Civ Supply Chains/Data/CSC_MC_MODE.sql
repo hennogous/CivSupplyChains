@@ -10,7 +10,8 @@
 INSERT INTO Types
 
 		(	Type,																Kind					)
-VALUES	(	'BUILDING_CSC_ARISTOCRAT',											'KIND_BUILDING'			);
+VALUES	(	'BUILDING_CSC_ARISTOCRAT',											'KIND_BUILDING'			),
+		(	'NOTIFICATION_CSC_NEW_ARISTOCRAT',									'KIND_NOTIFICATION'		);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Buildings
@@ -24,7 +25,8 @@ INSERT INTO Buildings
 			PrereqDistrict,
 			CitizenSlots,
 			PurchaseYield,
-			MustPurchase			)
+			MustPurchase,
+			Description			)
 VALUES	(
 		/*  BuildingType, */		'BUILDING_CSC_ARISTOCRAT',
 		/*	Name  */				'Aristocrat',
@@ -32,7 +34,8 @@ VALUES	(
 		/*  PrereqDistrict, */		'DISTRICT_CITY_CENTER',
 		/*	CitizenSlots */			0,
 		/*  PurchaseYield */		NULL,
-		/*	MustPurchase */			1
+		/*	MustPurchase */			1,
+		/*  Description */			'LOC_BUILDING_CSC_ARISTOCRAT_DESCRIPTION'
 									);
 
 INSERT INTO Building_GreatWorks (
@@ -44,15 +47,19 @@ VALUES
     'GREATWORKSLOT_PRODUCT',
     3       );
 
+INSERT INTO CivilopediaPageExcludes
+		(	SectionId,			PageId	) VALUES	
+		(	'BUILDINGS',		'BUILDING_CSC_ARISTOCRAT'				);
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	TraitModifiers
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+/*
 INSERT INTO TraitModifiers
 
 		(	TraitType,								    ModifierId                              )	VALUES
-		(	'TRAIT_LEADER_MAJOR_CIV', 				    'MOD_CSC_GRANT_ARISTOCRAT_GRANT'		);
-
+		(	'TRAIT_LEADER_MAJOR_CIV', 				    'MOD_CSC_GRANT_ARISTOCRAT_ATTACH'		);
+*/
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Modifiers
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -60,8 +67,8 @@ INSERT INTO TraitModifiers
 INSERT OR IGNORE INTO Modifiers
 
 		(	ModifierId,									ModifierType,												SubjectRequirementSetId       	)
-VALUES	(	'MOD_CSC_GRANT_ARISTOCRAT_ATTACH',          'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',					'REQSET_PLAYER_HAS_HUMANISM'	),
-		(	'MOD_CSC_GRANT_ARISTOCRAT_GRANT',		    'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',		'REQSET_PLAYER_HAS_HUMANISM'	);
+VALUES	(	'MOD_CSC_GRANT_ARISTOCRAT_ATTACH',          'MODIFIER_SINGLE_CITY_ATTACH_MODIFIER',						NULL /*'REQSET_PLAYER_HAS_HUMANISM'*/	),
+		(	'MOD_CSC_GRANT_ARISTOCRAT_GRANT',		    'MODIFIER_SINGLE_CITY_GRANT_BUILDING_IN_CITY_IGNORE',		NULL /*'REQSET_PLAYER_HAS_HUMANISM'*/	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	ModifierArguments
@@ -106,4 +113,11 @@ VALUES
 (   'REQ_PLAYER_HAS_HUMANISM',
 	'CivicType',
     'CIVIC_HUMANISM'    );
-	
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--	Notifications
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO Notifications
+		(	NotificationType,											SeverityType,	ExpiresEndOfTurn,		AutoNotify	)
+VALUES	(	'NOTIFICATION_CSC_NEW_ARISTOCRAT',							'HIGH',			0,						0			);

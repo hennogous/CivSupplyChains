@@ -50,7 +50,8 @@ VALUES	('5'), ('10'), ('15'), ('20'), ('25'), ('30'), ('35'), ('40'), ('45'), ('
 INSERT OR IGNORE INTO Types
 
 		(	Type,																Kind					)
-VALUES	(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_GARDEN',                    'KIND_BUILDING'			);
+VALUES	(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_GARDEN',                    'KIND_BUILDING'			),
+		(	'NOTIFICATION_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_GARDEN',			'KIND_NOTIFICATION'		);
 
 INSERT OR IGNORE INTO Buildings
 
@@ -83,8 +84,12 @@ VALUES	(
         /*  MustPurchase */         1
 									);
 
-UPDATE Buildings SET Description='LOC_BUILDING_CSC_BAKERS_PATISSERIE_DESCRIPTION_GARDEN' WHERE BuildingType='BUILDING_CSC_BAKERS_PATISSERIE';
+UPDATE Buildings SET Description='LOC_BUILDING_CSC_BAKERS_CAFE_DESCRIPTION_GARDEN' WHERE BuildingType='BUILDING_CSC_BAKERS_CAFE';
 
+INSERT INTO CivilopediaPageExcludes
+		(	SectionId,			PageId	) VALUES	
+		(	'BUILDINGS',		'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_GARDEN'				);
+		
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Buildings_XP2
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
@@ -112,25 +117,25 @@ VALUES	(	'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_GARDEN',			'YIELD_CULTURE',				
 
 INSERT OR IGNORE INTO BuildingModifiers (BuildingType, ModifierId)
 SELECT
-    'BUILDING_CSC_BAKERS_PATISSERIE',
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_CONSERVATORY_AT_POP_' || Pop || '_ATTACH'
+    'BUILDING_CSC_BAKERS_CAFE',
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_CONSERVATORY_AT_POP_' || Pop || '_ATTACH'
 FROM CSC_PopulationLevels
 WHERE Pop > 0
 UNION ALL
 SELECT
     'BUILDING_LEU_CONSERVATORY',
-    'MOD_CSC_BAKERS_GOLD_TO_PATISSERIE_AT_POP_' || Pop || '_ATTACH'
+    'MOD_CSC_BAKERS_GOLD_TO_CAFE_AT_POP_' || Pop || '_ATTACH'
 FROM CSC_PopulationLevels
 WHERE Pop > 0;
 
 INSERT INTO BuildingModifiers
 
---  With Urbanization, +2 Tourism to a Garden for each adjacent Patisserie
-        (	BuildingType,		            			ModifierId										    )	VALUES
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_GARDEN'	    ),
+--  With Urbanization, +2 Tourism to a Garden for each adjacent Cafe
+        (	BuildingType,						ModifierId										    )	VALUES
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_GARDEN'	    ),
 
 -- 	+1 Citizen slot (Groundskeeper) to a Garden with a Conservatory
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_GARDEN'	);
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_GARDEN'	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Modifiers
@@ -145,7 +150,7 @@ INSERT OR IGNORE INTO Modifiers (
     SubjectRequirementSetId
 )
 SELECT
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_CONSERVATORY_AT_POP_' || Pop || '_ATTACH',
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_CONSERVATORY_AT_POP_' || Pop || '_ATTACH',
     'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',
     'REQSET_CSC_CITY_HAS_POPULATION_' || Pop,
     'REQSET_CSC_ADJ_GARDEN'
@@ -159,16 +164,21 @@ INSERT OR IGNORE INTO Modifiers	(
 	SubjectRequirementSetId
 )
 VALUES
-(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_CONSERVATORY',
+(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_CONSERVATORY',
 	'MODIFIER_BUILDING_YIELD_CHANGE',
 	NULL,
 	NULL	),
 
---  With Urbanization, +2 Tourism to a Garden for each adjacent Patisserie
+--  With Urbanization, +2 Tourism to a Garden for each adjacent Cafe
 (	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_GARDEN',
 	'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',
 	'REQSET_CSC_STAGE_4_EFFECT_PREREQ',
-	'REQSET_CSC_ADJ_GARDEN'		),
+	'REQSET_CSC_ADJ_CONSERVATORY'		),
+
+(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_GARDEN',
+	'MODIFIER_PLAYER_DISTRICT_ADJUST_TOURISM_CHANGE',
+	NULL,
+	NULL		),
 
 -- 	+1 Citizen slot (Groundskeeper) to a Garden with a Conservatory
 (	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_GARDEN',
@@ -193,24 +203,24 @@ INSERT OR IGNORE INTO ModifierArguments (
     Value
 )
 SELECT
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_CONSERVATORY_AT_POP_' || Pop || '_ATTACH',
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_CONSERVATORY_AT_POP_' || Pop || '_ATTACH',
     'ModifierId',
-    'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_CONSERVATORY'
+    'MOD_CSC_BAKERS_CAFE_CULTURE_TO_CONSERVATORY'
 FROM CSC_PopulationLevels
 WHERE Pop > 0;
 
 INSERT OR IGNORE INTO ModifierArguments
 
 		(	ModifierId,													Name,					Value										)	VALUES
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_CONSERVATORY',		'BuildingType',			'BUILDING_LEU_CONSERVATORY'					),
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_CONSERVATORY',		'YieldType',			'YIELD_CULTURE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_CULTURE_TO_CONSERVATORY',		'Amount',				1											),
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_CONSERVATORY',				'BuildingType',			'BUILDING_LEU_CONSERVATORY'					),
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_CONSERVATORY',				'YieldType',			'YIELD_CULTURE'								),
+		(	'MOD_CSC_BAKERS_CAFE_CULTURE_TO_CONSERVATORY',				'Amount',				1											),
 
---  With Urbanization, +2 Tourism to a Garden for each adjacent Patisserie
-		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_GARDEN',				'ModifierId',			'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM'		),
-
-		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_GARDEN',          'ModifierId',           'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_GARDEN'     ),
-		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_GARDEN',           'BuildingType',         'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_GARDEN'      );
+--  With Urbanization, +2 Tourism to a Garden for each adjacent Cafe
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_GARDEN',				'ModifierId',			'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_GARDEN'		),
+		(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_GARDEN',				'Amount',				2													),
+		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_GARDEN',          'ModifierId',           'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_GARDEN'	),
+		(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_GARDEN',           'BuildingType',         'BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_GARDEN'		);
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -271,3 +281,47 @@ INSERT OR IGNORE INTO RequirementArguments
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 DROP TABLE CSC_PopulationLevels;
+
+----------------------
+-- CSC_AbilityAttachModifiers
+----------------------
+
+CREATE TABLE IF NOT EXISTS CSC_AbilityAttachModifiers(
+		ModifierId TEXT PRIMARY KEY NOT NULL, 
+		AbilityEffectModifierId TEXT DEFAULT NULL,
+		AbilityArgumentAmount INTEGER DEFAULT 0,
+		AbilityDesc TEXT DEFAULT NULL,
+		AbilityNewDesc TEXT DEFAULT NULL,
+		AbilityIncreasedDesc TEXT DEFAULT NULL,
+		AbilityDecreasedDesc TEXT DEFAULT NULL,
+		AbilityRemovedDesc TEXT DEFAULT NULL,
+		AbilityIcon TEXT DEFAULT NULL,
+		AbilityIconTarget TEXT DEFAULT NULL
+);
+
+INSERT INTO CSC_AbilityAttachModifiers
+		(	ModifierId,													AbilityIcon,						AbilityIconTarget		)
+VALUES	(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_ATTACH_GARDEN',				'ICON_EFFECT_CSC_BAKERS_STAGE_4',	'BUILDING_LEU_CONSERVATORY'	);
+
+----------------------
+-- CSC_SpecialistAttachModifiers
+----------------------
+
+CREATE TABLE IF NOT EXISTS CSC_SpecialistAttachModifiers(
+		ModifierId TEXT PRIMARY KEY NOT NULL, 
+		SpecialistGrantModifierId TEXT DEFAULT NULL,
+		ModifierNewDesc TEXT DEFAULT NULL
+);
+
+INSERT INTO CSC_SpecialistAttachModifiers
+		(	ModifierId		)
+VALUES	(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_ATTACH_GARDEN'		);
+
+INSERT INTO ModifierStrings
+	(	ModifierId,                                			Context,			'Text'			)	VALUES
+	(	'MOD_CSC_BAKERS_STAGE_4_EFFECT_TOURISM_GARDEN',		'Preview',			'LOC_CSC_BAKERS_STAGE_4_EFFECT_DESCRIPTION_GARDEN'		),
+	(	'MOD_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_GARDEN',	'Preview',			'LOC_BUILDING_CSC_BAKERS_STAGE_4_SPECIALIST_GARDEN_NAME'	);
+
+INSERT INTO Notifications
+		(	NotificationType,											SeverityType,	ExpiresEndOfTurn,		AutoNotify	)
+VALUES	(	'NOTIFICATION_CSC_BAKERS_STAGE_4_SPECIALIST_GRANT_GARDEN',	'HIGH',			0,						0			);

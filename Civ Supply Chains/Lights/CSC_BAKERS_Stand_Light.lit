@@ -9,11 +9,11 @@
 				<m_ParamName text="Color"/>
 			</Element>
 			<Element class="AssetObjects..FloatValue">
-				<m_fValue>75.021233</m_fValue>
+				<m_fValue>105.019730</m_fValue>
 				<m_ParamName text="Radius"/>
 			</Element>
 			<Element class="AssetObjects..FloatValue">
-				<m_fValue>12.000000</m_fValue>
+				<m_fValue>52.000000</m_fValue>
 				<m_ParamName text="Intensity"/>
 			</Element>
 			<Element class="AssetObjects..FloatValue">

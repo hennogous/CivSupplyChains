@@ -14,7 +14,7 @@ VALUES	( 	'DISTRICT_CSC_BAKERS_QUARTER',                              		'KIND_DI
 
 		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',									'KIND_BUILDING'			),
 		(	'BUILDING_CSC_BAKERS_BAKERY',										'KIND_BUILDING'			),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',									'KIND_BUILDING'			),
+		(	'BUILDING_CSC_BAKERS_CAFE',									'KIND_BUILDING'			),
 
 		(	'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',					'KIND_MODIFIER'			),
 		(	'MODIFIER_CSC_OWNER_EFFECT_ADJUST_DISTRICT_HOUSING',				'KIND_MODIFIER'			);
@@ -172,7 +172,7 @@ INSERT INTO DistrictModifiers
 		(	'DISTRICT_CSC_BAKERS_QUARTER',     		'MOD_CSC_BAKERS_QUARTER_PLOT_TERRAIN_BONUS'	   					),
 
 -- +1 Housing to each adjacent Neighbourhood with minimum Charming appeal, and +1 Gold in return
-		(	'DISTRICT_NEIGHBORHOOD',				'MOD_CSC_BAKERS_PATISSERIE_NBH_SALES_ATTACH_BAKERS_QUARTER'		),
+		(	'DISTRICT_NEIGHBORHOOD',				'MOD_CSC_BAKERS_CAFE_NBH_SALES_ATTACH_BAKERS_QUARTER'		),
 
 -- 	TESTS -------------------------------------------------------------------------------
 
@@ -299,9 +299,9 @@ VALUES	(
 		/*  AdvisorType */			'ADVISOR_GENERIC'
 									),
 		(
-		/*  BuildingType, */		'BUILDING_CSC_BAKERS_PATISSERIE',
-		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_PATISSERIE_NAME',
-		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_PATISSERIE_DESCRIPTION',
+		/*  BuildingType, */		'BUILDING_CSC_BAKERS_CAFE',
+		/*  Name, */				'LOC_BUILDING_CSC_BAKERS_CAFE_NAME',
+		/*  Description, */			'LOC_BUILDING_CSC_BAKERS_CAFE_DESCRIPTION',
 		/*  PrereqTech, */			NULL,
 		/*  PrereqCivic, */			'CIVIC_HUMANISM',
 		/*  Cost, */				250,
@@ -319,7 +319,7 @@ INSERT INTO BuildingPrereqs
 
         (	Building,      		        				PrereqBuilding												)
 VALUES  (	'BUILDING_CSC_BAKERS_BAKERY',				'BUILDING_CSC_BAKERS_FLOUR_MILL'							),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'BUILDING_CSC_BAKERS_FLOUR_MILL'							);		
+		(	'BUILDING_CSC_BAKERS_CAFE',			'BUILDING_CSC_BAKERS_FLOUR_MILL'							);		
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Building_CitizenYieldChanges
@@ -331,8 +331,8 @@ INSERT INTO Building_CitizenYieldChanges
 VALUES  (	'BUILDING_CSC_BAKERS_BAKERY',       		'YIELD_FOOD',	        				3		        	),
 		(	'BUILDING_CSC_BAKERS_BAKERY',       		'YIELD_GOLD',	        				1		        	),
 
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',       	'YIELD_FOOD',	        				1		        	),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',       	'YIELD_GOLD',	        				3		        	);
+		(	'BUILDING_CSC_BAKERS_CAFE',       	'YIELD_FOOD',	        				1		        	),
+		(	'BUILDING_CSC_BAKERS_CAFE',       	'YIELD_GOLD',	        				3		        	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Building_GreatPersonPoints
@@ -342,7 +342,7 @@ INSERT INTO Building_GreatPersonPoints
 
         (	BuildingType,      		        			GreatPersonClassType,       			PointsPerTurn	    )
 VALUES  (	'BUILDING_CSC_BAKERS_BAKERY',       		'GREAT_PERSON_CLASS_MERCHANT',	        1		        	),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',       	'GREAT_PERSON_CLASS_MERCHANT',	        1		        	);
+		(	'BUILDING_CSC_BAKERS_CAFE',       	'GREAT_PERSON_CLASS_MERCHANT',	        1		        	);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Building_YieldChanges
@@ -356,7 +356,7 @@ VALUES	(	'BUILDING_CSC_BAKERS_FLOUR_MILL',			'YIELD_FOOD',							2					),
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'YIELD_PRODUCTION',						1					),
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'YIELD_FOOD',							1					),
 
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'YIELD_PRODUCTION',						1					);
+		(	'BUILDING_CSC_BAKERS_CAFE',			'YIELD_PRODUCTION',						1					);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	BuildingModifiers
@@ -397,26 +397,26 @@ INSERT INTO BuildingModifiers
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_ATTACH_NEIGHBORHOOD'					),
 		(	'BUILDING_FOOD_MARKET',						'MOD_CSC_BAKERS_BAKERY_SALES_ATTACH_BAKERS_QUARTER'			),
 
---	PATISSERIE --------------------------------------------------------------------------
+--	CAFE --------------------------------------------------------------------------
 
 --	+1 Gold to nearby specialty materials improvements
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',       	'MOD_CSC_BAKERS_PATISSERIE_GOLD_TO_NEARBY_SPEC_IMPROV'   	),
+		(	'BUILDING_CSC_BAKERS_CAFE',       	'MOD_CSC_BAKERS_CAFE_GOLD_TO_NEARBY_SPEC_IMPROV'   	),
 
 -- 	+1 Gold to the Flour Mill in the Quarter
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_BAKERY_GOLD_TO_FLOUR_MILL'					),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_BAKERY_GOLD_TO_FLOUR_MILL'					),
 
 -- 	+1 Food to each adjacent Market, and +1 Gold in return
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_ATTACH_COMMERCIAL_HUB'						),
-		(	'BUILDING_MARKET',							'MOD_CSC_BAKERS_PATISSERIE_MKT_SALES_ATTACH_BAKERS_QUARTER'	),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_ATTACH_COMMERCIAL_HUB'						),
+		(	'BUILDING_MARKET',							'MOD_CSC_BAKERS_CAFE_MKT_SALES_ATTACH_BAKERS_QUARTER'	),
 
 -- +1 Housing to each adjacent Neighbourhood with minimum Charming appeal, and +1 Gold in return
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISSERIE_ATTACH_NEIGHBORHOOD'				),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_CAFE_ATTACH_NEIGHBORHOOD'				),
 
 --	SHARED ------------------------------------------------------------------------------
 
 --	+1 Amenity
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_BAKERY_AMENITY'								),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_BAKERY_AMENITY'								),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_BAKERY_AMENITY'								),
 
 -- 	+1 Food bonus to trade routes to the city, and +1 Gold in return (not working for domestic)
 		(	'BUILDING_CSC_BAKERS_FLOUR_MILL',			'MOD_CSC_BAKERS_TRADE_ROUTES_FOOD'							),
@@ -425,8 +425,8 @@ INSERT INTO BuildingModifiers
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_TRADE_ROUTES_FOOD'							),
 		(	'BUILDING_CSC_BAKERS_BAKERY',				'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD'							),
 
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_TRADE_ROUTES_FOOD'							),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD_EXTRA'					);
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_TRADE_ROUTES_FOOD'							),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_TRADE_ROUTES_GOLD_EXTRA'					);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --	Building_YieldChangesBonusWithPower
@@ -462,29 +462,29 @@ INSERT INTO TraitModifiers
 
 		(	TraitType,								ModifierId												)	VALUES
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 --	+1 Food and +1 Gold for every 5 citizens in the city		
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_5'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_5'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_10'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_10'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_15'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_15'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_20'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_20'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_25'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_25'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_30'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_30'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_35'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_35'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_40'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_40'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_45'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_45'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_50'		),
-		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_50'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_5'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_5'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_10'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_10'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_15'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_15'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_20'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_20'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_25'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_25'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_30'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_30'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_35'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_35'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_40'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_40'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_45'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_45'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_50'		),
+		(	'TRAIT_LEADER_MAJOR_CIV', 				'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_50'		),
 
 -- 	TESTS -------------------------------------------------------------------------------
 
@@ -563,55 +563,55 @@ INSERT INTO Modifiers
 -- 	+1 Amenity
 		(	'MOD_CSC_BAKERS_BAKERY_AMENITY',									'MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_AMENITY',				NULL,								'REQSET_CSC_DISTRICT_IS_BAKERS',						NULL				),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 -- 	+1 Production from each nearby specialty materials improvement
 		(  	'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER',            		'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					'REQSET_CSC_BAKERS_PLOT_HAS_SPEC', 	'REQSET_CSC_NEARBY_BAKERS_QUARTER',						NULL			    ),
-        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_PATISSERIE',    			'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',				NULL,                           	NULL,							                        NULL	            ),
+        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_CAFE',    			'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',				NULL,                           	NULL,							                        NULL	            ),
 
 -- 	+1 Gold to nearby specialty materials improvements
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_TO_NEARBY_SPEC_IMPROV',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							NULL,								'REQSET_CSC_BAKERS_PLOT_HAS_SPEC_IMPROV_NEARBY',			NULL      			),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_TO_NEARBY_SPEC_IMPROV',				'MODIFIER_PLAYER_ADJUST_PLOT_YIELD',							NULL,								'REQSET_CSC_BAKERS_PLOT_HAS_SPEC_IMPROV_NEARBY',			NULL      			),
 
 --	+1 Food and +1 Gold for every 5 citizens in the city
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_5',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_5',						NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_5',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_5',						NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_5',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_5',						NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_5',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_5',						NULL				),	
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_10',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_10',					NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_10',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_10',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_10',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_10',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_10',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_10',					NULL				),	
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_15',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_15',					NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_15',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_15',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_15',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_15',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_15',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_15',					NULL				),	
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_20',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_20',					NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_20',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_20',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_20',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_20',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_20',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_20',					NULL				),	
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_25',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_25',					NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_25',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_25',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_25',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_25',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_25',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_25',					NULL				),	
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_30',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_30',					NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_30',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_30',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_30',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_30',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_30',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_30',					NULL				),	
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_35',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_35',					NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_35',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_35',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_35',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_35',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_35',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_35',					NULL				),	
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_40',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_40',					NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_40',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_40',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_40',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_40',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_40',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_40',					NULL				),	
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_45',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_45',					NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_45',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_45',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_45',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_45',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_45',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_45',					NULL				),	
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_50',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_50',					NULL				),	
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_50',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_50',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_50',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_50',					NULL				),	
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_50',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,								'REQSET_CSC_CITY_HAS_POPULATION_50',					NULL				),	
 
 -- 	+1 Food to each adjacent Market, and +1 Gold in return
-		(	'MOD_CSC_BAKERS_PATISSERIE_MKT_SALES_ATTACH_BAKERS_QUARTER',		'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',						NULL,								'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					NULL				),
+		(	'MOD_CSC_BAKERS_CAFE_MKT_SALES_ATTACH_BAKERS_QUARTER',		'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',						NULL,								'REQSET_CSC_ADJACENT_BAKERS_QUARTER',					NULL				),
 
 -- +1 Housing to each adjacent Neighbourhood with minimum Charming appeal, and +1 Gold in return
-		(	'MOD_CSC_BAKERS_PATISSERIE_ATTACH_NEIGHBORHOOD',					'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',						NULL,								'REQSET_CSC_ADJACENT_NEIGHBORHOOD_MIN_CHARMING',		NULL				),
-		(	'MOD_CSC_BAKERS_PATISSERIE_HOUSING_TO_NEIGHBORHOOD',				'MODIFIER_CSC_OWNER_EFFECT_ADJUST_DISTRICT_HOUSING',			NULL,								NULL,													NULL				),
+		(	'MOD_CSC_BAKERS_CAFE_ATTACH_NEIGHBORHOOD',					'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',						NULL,								'REQSET_CSC_ADJACENT_NEIGHBORHOOD_MIN_CHARMING',		NULL				),
+		(	'MOD_CSC_BAKERS_CAFE_HOUSING_TO_NEIGHBORHOOD',				'MODIFIER_CSC_OWNER_EFFECT_ADJUST_DISTRICT_HOUSING',			NULL,								NULL,													NULL				),
 
-       	(  	'MOD_CSC_BAKERS_PATISSERIE_NBH_SALES_ATTACH_BAKERS_QUARTER',		'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					'REQSET_CSC_NEIGHBORHOOD_MIN_CHARMING',		'REQSET_CSC_ADJACENT_BAKERS_QUARTER',    		NULL				),
-		(  	'MOD_CSC_BAKERS_PATISSERIE_SALES_GOLD_TO_ADJACENT_PATISSERIE',    	'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',  			NULL,                           	NULL,                                    				NULL				),
+       	(  	'MOD_CSC_BAKERS_CAFE_NBH_SALES_ATTACH_BAKERS_QUARTER',		'MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER',     					'REQSET_CSC_NEIGHBORHOOD_MIN_CHARMING',		'REQSET_CSC_ADJACENT_BAKERS_QUARTER',    		NULL				),
+		(  	'MOD_CSC_BAKERS_CAFE_SALES_GOLD_TO_ADJACENT_CAFE',    	'MODIFIER_CSC_OWNER_ADJUST_BUILDING_YIELD_CHANGE',  			NULL,                           	NULL,                                    				NULL				),
 
 -- 	SHARED ------------------------------------------------------------------------------
 
@@ -705,101 +705,101 @@ INSERT INTO ModifierArguments
 -- 	+1 Amenity
 		(	'MOD_CSC_BAKERS_BAKERY_AMENITY',									'Amount',					1																),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 -- 	+1 Production from each adjacent BASE materials improvement
-		(  	'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER',            		'ModifierId',         		'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_PATISSERIE'     		),    
-        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_PATISSERIE',       		'BuildingType',           	'BUILDING_CSC_BAKERS_PATISSERIE'								),
-        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_PATISSERIE',       		'YieldType',           		'YIELD_PRODUCTION'                                              ),
-        ( 	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_PATISSERIE',       		'Amount',             		1                                                               ),
+		(  	'MOD_CSC_BAKERS_SPEC_IMPROVEMENT_ATTACH_QUARTER',            		'ModifierId',         		'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_CAFE'     		),    
+        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_CAFE',       			'BuildingType',           	'BUILDING_CSC_BAKERS_CAFE'								),
+        (  	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_CAFE',       			'YieldType',           		'YIELD_PRODUCTION'                                              ),
+        ( 	'MOD_CSC_BAKERS_SPEC_IMPROV_PROD_TO_NEARBY_CAFE',       			'Amount',             		1                                                               ),
 
 -- 	+1 Gold to adjacent BASE materials improvements
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_TO_NEARBY_SPEC_IMPROV',    			'YieldType',	            'YIELD_GOLD'                									),
-        (	'MOD_CSC_BAKERS_PATISSERIE_GOLD_TO_NEARBY_SPEC_IMPROV',    			'Amount',		            1		                    									),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_TO_NEARBY_SPEC_IMPROV',    				'YieldType',	            'YIELD_GOLD'                									),
+        (	'MOD_CSC_BAKERS_CAFE_GOLD_TO_NEARBY_SPEC_IMPROV',    				'Amount',		            1		                    									),
 
 --	+1 Food and +1 Gold for every 5 citizens in the city
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_5',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_5',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_5',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_5',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_5',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_5',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_5',						'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_5',						'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_5',						'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_5',						'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_5',						'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_5',						'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_10',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_10',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_10',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_10',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_10',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_10',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_10',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_10',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_10',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_10',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_10',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_10',					'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_15',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_15',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_15',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_15',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_15',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_15',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_15',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_15',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_15',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_15',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_15',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_15',					'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_20',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_20',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_20',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_20',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_20',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_20',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_20',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_20',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_20',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_20',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_20',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_20',					'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_25',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_25',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_25',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_25',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_25',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_25',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_25',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_25',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_25',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_25',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_25',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_25',					'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_30',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_30',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_30',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_30',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_30',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_30',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_30',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_30',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_30',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_30',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_30',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_30',					'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_35',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_35',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_35',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_35',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_35',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_35',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_35',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_35',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_35',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_35',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_35',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_35',					'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_40',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_40',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_40',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_40',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_40',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_40',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_40',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_40',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_40',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_40',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_40',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_40',					'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_45',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_45',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_45',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_45',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_45',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_45',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_45',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_45',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_45',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_45',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_45',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_45',					'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_50',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_50',					'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_FOOD_AT_POPULATION_50',					'Amount',					1																),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_50',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_50',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_GOLD_AT_POPULATION_50',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_50',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_50',					'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_FOOD_AT_POPULATION_50',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_50',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_50',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_GOLD_AT_POPULATION_50',					'Amount',					1																),
 
 -- 	+1 Food to each adjacent Market, and +1 Gold in return
-		(	'MOD_CSC_BAKERS_PATISSERIE_MKT_SALES_ATTACH_BAKERS_QUARTER',		'ModifierId',				'MOD_CSC_BAKERS_PATISSERIE_SALES_GOLD_TO_ADJACENT_PATISSERIE'	),
-		(	'MOD_CSC_BAKERS_PATISSERIE_SALES_GOLD_TO_ADJACENT_PATISSERIE',		'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_PATISSERIE_SALES_GOLD_TO_ADJACENT_PATISSERIE',		'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_SALES_GOLD_TO_ADJACENT_PATISSERIE',		'Amount',					2																),
+		(	'MOD_CSC_BAKERS_CAFE_MKT_SALES_ATTACH_BAKERS_QUARTER',		'ModifierId',				'MOD_CSC_BAKERS_CAFE_SALES_GOLD_TO_ADJACENT_CAFE'	),
+		(	'MOD_CSC_BAKERS_CAFE_SALES_GOLD_TO_ADJACENT_CAFE',		'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_CAFE_SALES_GOLD_TO_ADJACENT_CAFE',		'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_CAFE_SALES_GOLD_TO_ADJACENT_CAFE',		'Amount',					2																),
 
 
 -- +1 Housing to each adjacent Neighbourhood with minimum Charming appeal, and +1 Gold in return
-		(	'MOD_CSC_BAKERS_PATISSERIE_ATTACH_NEIGHBORHOOD',					'ModifierId',				'MOD_CSC_BAKERS_PATISSERIE_HOUSING_TO_NEIGHBORHOOD'				),
-		(	'MOD_CSC_BAKERS_PATISSERIE_HOUSING_TO_NEIGHBORHOOD',				'Amount',					1																),
+		(	'MOD_CSC_BAKERS_CAFE_ATTACH_NEIGHBORHOOD',					'ModifierId',				'MOD_CSC_BAKERS_CAFE_HOUSING_TO_NEIGHBORHOOD'				),
+		(	'MOD_CSC_BAKERS_CAFE_HOUSING_TO_NEIGHBORHOOD',				'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISSERIE_NBH_SALES_ATTACH_BAKERS_QUARTER',		'ModifierId',				'MOD_CSC_BAKERS_PATISSERIE_SALES_GOLD_TO_ADJACENT_PATISSERIE'	),
+		(	'MOD_CSC_BAKERS_CAFE_NBH_SALES_ATTACH_BAKERS_QUARTER',		'ModifierId',				'MOD_CSC_BAKERS_CAFE_SALES_GOLD_TO_ADJACENT_CAFE'	),
 
 -- 	SHARED ------------------------------------------------------------------------------
 
@@ -865,7 +865,7 @@ INSERT INTO RequirementSets
 		(	'REQSET_CSC_ADJACENT_COMMERCIAL_HUB',					'REQUIREMENTSET_TEST_ALL'		),
 		(	'REQSET_CSC_ADJACENT_NEIGHBORHOOD',						'REQUIREMENTSET_TEST_ALL'		),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 -- 	+1 Production from each nearby specialty materials improvement
 		(	'REQSET_CSC_BAKERS_PLOT_HAS_SPEC',						'REQUIREMENTSET_TEST_ALL'       ),
@@ -943,7 +943,7 @@ INSERT INTO RequirementSetRequirements
 		( 	'REQSET_CSC_ADJACENT_NEIGHBORHOOD',						'REQ_CSC_PLOT_ADJACENT_TO_OWNER'              	),
         (  	'REQSET_CSC_ADJACENT_NEIGHBORHOOD',						'REQ_CSC_DISTRICT_IS_NEIGHBORHOOD'           	),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 -- 	+1 Production from each nearby specialty materials improvement
 		(	'REQSET_CSC_BAKERS_PLOT_HAS_SPEC',						'REQ_CSC_PLOT_HAS_BAKERS_QUARTER_SPEC'			),
@@ -1026,7 +1026,7 @@ INSERT INTO Requirements
 -- +1 Housing to each adjacent Neighbourhood with minimum Charming appeal, and +1 Gold in return
 		(	'REQ_CSC_TILE_HAS_MIN_CHARMING_APPEAL',					'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN',				0				),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 --	+1 Food and +1 Gold for every 5 citizens in the city
 		(	'REQ_CSC_CITY_HAS_POPULATION_5',						'REQUIREMENT_CITY_HAS_X_POPULATION',				0				),
@@ -1080,7 +1080,7 @@ INSERT INTO RequirementArguments
 		(	'REQ_CSC_DISTRICT_IS_COMMERCIAL_HUB',					'DistrictType',					'DISTRICT_COMMERCIAL_HUB'						),
 		(	'REQ_CSC_DISTRICT_IS_NEIGHBORHOOD',						'DistrictType',					'DISTRICT_NEIGHBORHOOD'							),
 
--- 	PATISSERIE --------------------------------------------------------------------------
+-- 	CAFE --------------------------------------------------------------------------
 
 --	+1 Food and +1 Gold for every 5 citizens in the city
 		(	'REQ_CSC_CITY_HAS_POPULATION_5',						'Amount',						5												),
@@ -1120,20 +1120,20 @@ INSERT INTO RequirementArguments
 
 BuildingModifiers
 
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_5_ATTACH'		),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_10_ATTACH'		),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_20_ATTACH'		),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_40_ATTACH'		),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_5_ATTACH'		),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_10_ATTACH'		),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_20_ATTACH'		),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_40_ATTACH'		),
 
 		(	'BUILDING_ZOO',								'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_5_ATTACH'		),
 		(	'BUILDING_ZOO',								'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_10_ATTACH'		),
 		(	'BUILDING_ZOO',								'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_20_ATTACH'		),
 		(	'BUILDING_ZOO',								'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_40_ATTACH'		),
 
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_FERRIS_POP_USES_5_ATTACH'	),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_FERRIS_POP_USES_10_ATTACH'	),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_FERRIS_POP_USES_20_ATTACH'	),
-		(	'BUILDING_CSC_BAKERS_PATISSERIE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_FERRIS_POP_USES_40_ATTACH'	),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_FERRIS_POP_USES_5_ATTACH'	),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_FERRIS_POP_USES_10_ATTACH'	),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_FERRIS_POP_USES_20_ATTACH'	),
+		(	'BUILDING_CSC_BAKERS_CAFE',			'MOD_CSC_BAKERS_PATISS_FOOD_TO_FERRIS_POP_USES_40_ATTACH'	),
 
 		(	'BUILDING_FERRIS_WHEEL',					'MOD_CSC_BAKERS_FERRIS_GOLD_TO_PATISS_POP_USES_5_ATTACH'	),
 		(	'BUILDING_FERRIS_WHEEL',					'MOD_CSC_BAKERS_FERRIS_GOLD_TO_PATISS_POP_USES_10_ATTACH'	),
@@ -1143,70 +1143,70 @@ BuildingModifiers
 Modifiers
 
 		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_5_ATTACH',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_CITY_POPULATION_USES_MOD_5',			'REQSET_CSC_ADJ_ENTERTAINMENT_COMPLEX'		),
-		(	'MOD_CSC_BAKERS_PATISSERIE_1_FOOD_TO_ZOO',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
+		(	'MOD_CSC_BAKERS_CAFE_1_FOOD_TO_ZOO',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
 
 		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_5_ATTACH',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_CITY_POPULATION_USES_MOD_5',			'REQSET_CSC_ADJ_BAKERS_QUARTER'				),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_PATISSERIE',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_CAFE',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
 
 		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_10_ATTACH',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_CITY_POPULATION_USES_MOD_10',			'REQSET_CSC_ADJ_ENTERTAINMENT_COMPLEX'		),
-		(	'MOD_CSC_BAKERS_PATISSERIE_2_FOOD_TO_ZOO',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
+		(	'MOD_CSC_BAKERS_CAFE_2_FOOD_TO_ZOO',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
 
 		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_10_ATTACH',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_CITY_POPULATION_USES_MOD_10',			'REQSET_CSC_ADJ_BAKERS_QUARTER'				),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_PATISSERIE',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_CAFE',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
 
 		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_20_ATTACH',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_CITY_POPULATION_USES_MOD_20',			'REQSET_CSC_ADJ_ENTERTAINMENT_COMPLEX'		),
-		(	'MOD_CSC_BAKERS_PATISSERIE_4_FOOD_TO_ZOO',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
+		(	'MOD_CSC_BAKERS_CAFE_4_FOOD_TO_ZOO',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
 
 		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_20_ATTACH',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_CITY_POPULATION_USES_MOD_20',			'REQSET_CSC_ADJ_BAKERS_QUARTER'				),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_PATISSERIE',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_CAFE',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
 
 		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_40_ATTACH',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_CITY_POPULATION_USES_MOD_40',			'REQSET_CSC_ADJ_ENTERTAINMENT_COMPLEX'		),
-		(	'MOD_CSC_BAKERS_PATISSERIE_8_FOOD_TO_ZOO',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
+		(	'MOD_CSC_BAKERS_CAFE_8_FOOD_TO_ZOO',							'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),	
 
 		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_40_ATTACH',				'MODIFIER_CSC_PLAYER_DISTRICTS_ATTACH_MODIFIER',				'REQSET_CSC_CITY_POPULATION_USES_MOD_40',			'REQSET_CSC_ADJ_BAKERS_QUARTER'				),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_PATISSERIE',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_CAFE',					'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE',			NULL,												NULL										),
 
 ModifierArguments
 
-		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_5_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_PATISSERIE_1_FOOD_TO_ZOO'						),
-		(	'MOD_CSC_BAKERS_PATISSERIE_1_FOOD_TO_ZOO',							'BuildingType',				'BUILDING_ZOO'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_1_FOOD_TO_ZOO',							'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_1_FOOD_TO_ZOO',							'Amount',					1																),
+		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_5_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_CAFE_1_FOOD_TO_ZOO'						),
+		(	'MOD_CSC_BAKERS_CAFE_1_FOOD_TO_ZOO',							'BuildingType',				'BUILDING_ZOO'													),
+		(	'MOD_CSC_BAKERS_CAFE_1_FOOD_TO_ZOO',							'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_1_FOOD_TO_ZOO',							'Amount',					1																),
 		
-		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_5_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_PATISSERIE'				),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_PATISSERIE',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_PATISSERIE',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_PATISSERIE',					'Amount',					1																),
+		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_5_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_CAFE'				),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_CAFE',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_CAFE',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_1_GOLD_TO_CAFE',					'Amount',					1																),
 
-		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_10_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_PATISSERIE_2_FOOD_TO_ZOO'						),
-		(	'MOD_CSC_BAKERS_PATISSERIE_2_FOOD_TO_ZOO',							'BuildingType',				'BUILDING_ZOO'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_2_FOOD_TO_ZOO',							'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_2_FOOD_TO_ZOO',							'Amount',					2																),
+		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_10_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_CAFE_2_FOOD_TO_ZOO'						),
+		(	'MOD_CSC_BAKERS_CAFE_2_FOOD_TO_ZOO',							'BuildingType',				'BUILDING_ZOO'													),
+		(	'MOD_CSC_BAKERS_CAFE_2_FOOD_TO_ZOO',							'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_2_FOOD_TO_ZOO',							'Amount',					2																),
 
-		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_10_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_PATISSERIE'				),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_PATISSERIE',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_PATISSERIE',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_PATISSERIE',					'Amount',					2																),
+		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_10_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_CAFE'				),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_CAFE',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_CAFE',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_2_GOLD_TO_CAFE',					'Amount',					2																),
 
-		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_20_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_PATISSERIE_4_FOOD_TO_ZOO'						),
-		(	'MOD_CSC_BAKERS_PATISSERIE_4_FOOD_TO_ZOO',							'BuildingType',				'BUILDING_ZOO'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_4_FOOD_TO_ZOO',							'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_4_FOOD_TO_ZOO',							'Amount',					4																),
+		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_20_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_CAFE_4_FOOD_TO_ZOO'						),
+		(	'MOD_CSC_BAKERS_CAFE_4_FOOD_TO_ZOO',							'BuildingType',				'BUILDING_ZOO'													),
+		(	'MOD_CSC_BAKERS_CAFE_4_FOOD_TO_ZOO',							'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_4_FOOD_TO_ZOO',							'Amount',					4																),
 
-		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_20_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_PATISSERIE'				),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_PATISSERIE',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_PATISSERIE',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_PATISSERIE',					'Amount',					4																),
+		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_20_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_CAFE'				),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_CAFE',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_CAFE',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_4_GOLD_TO_CAFE',					'Amount',					4																),
 
-		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_40_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_PATISSERIE_8_FOOD_TO_ZOO'						),
-		(	'MOD_CSC_BAKERS_PATISSERIE_8_FOOD_TO_ZOO',							'BuildingType',				'BUILDING_ZOO'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_8_FOOD_TO_ZOO',							'YieldType',				'YIELD_FOOD'													),
-		(	'MOD_CSC_BAKERS_PATISSERIE_8_FOOD_TO_ZOO',							'Amount',					8																),
+		(	'MOD_CSC_BAKERS_PATISS_FOOD_TO_ZOO_POP_USES_40_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_CAFE_8_FOOD_TO_ZOO'						),
+		(	'MOD_CSC_BAKERS_CAFE_8_FOOD_TO_ZOO',							'BuildingType',				'BUILDING_ZOO'													),
+		(	'MOD_CSC_BAKERS_CAFE_8_FOOD_TO_ZOO',							'YieldType',				'YIELD_FOOD'													),
+		(	'MOD_CSC_BAKERS_CAFE_8_FOOD_TO_ZOO',							'Amount',					8																),
 
-		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_40_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_PATISSERIE'				),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_PATISSERIE',					'BuildingType',				'BUILDING_CSC_BAKERS_PATISSERIE'								),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_PATISSERIE',					'YieldType',				'YIELD_GOLD'													),
-		(	'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_PATISSERIE',					'Amount',					8																),		
+		(	'MOD_CSC_BAKERS_ZOO_GOLD_TO_PATISS_POP_USES_40_ATTACH',				'ModifierId',				'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_CAFE'				),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_CAFE',					'BuildingType',				'BUILDING_CSC_BAKERS_CAFE'								),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_CAFE',					'YieldType',				'YIELD_GOLD'													),
+		(	'MOD_CSC_BAKERS_FOOD_MARKET_8_GOLD_TO_CAFE',					'Amount',					8																),		
 
 RequirementSets
 

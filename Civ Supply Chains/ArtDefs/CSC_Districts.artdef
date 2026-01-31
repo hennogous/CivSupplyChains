@@ -53,9 +53,9 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Industrial"/>
+										<m_ElementName text="CSC_BAKERS"/>
 										<m_RootCollectionName text="Districts"/>
-										<m_ArtDefPath text="StrategicView.artdef"/>
+										<m_ArtDefPath text="CSC_StrategicView.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
 										<m_TemplateName text="StrategicView"/>
 										<m_ParamName text="XrefName"/>
@@ -78,9 +78,9 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Industrial_Pillaged"/>
+										<m_ElementName text="CSC_BAKERS_Pillaged"/>
 										<m_RootCollectionName text="Districts"/>
-										<m_ArtDefPath text="StrategicView.artdef"/>
+										<m_ArtDefPath text="CSC_StrategicView.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
 										<m_TemplateName text="StrategicView"/>
 										<m_ParamName text="XrefName"/>
@@ -103,9 +103,9 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Industrial_UnderConstruction"/>
+										<m_ElementName text="CSC_BAKERS_UnderConstruction"/>
 										<m_RootCollectionName text="Districts"/>
-										<m_ArtDefPath text="StrategicView.artdef"/>
+										<m_ArtDefPath text="CSC_StrategicView.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
 										<m_TemplateName text="StrategicView"/>
 										<m_ParamName text="XrefName"/>
