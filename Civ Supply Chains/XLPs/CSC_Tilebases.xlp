@@ -337,6 +337,18 @@
 			<m_EntryID text="CSC_Storage_L"/>
 			<m_ObjectName text="CSC_Storage_L"/>
 		</Element>
+		<Element>
+			<m_EntryID text="CSC_Storage_LeanTo"/>
+			<m_ObjectName text="CSC_Storage_LeanTo"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Oven"/>
+			<m_ObjectName text="CSC_BAKERS_Oven"/>
+		</Element>
+		<Element>
+			<m_EntryID text="CSC_BAKERS_Bakery"/>
+			<m_ObjectName text="CSC_BAKERS_Bakery"/>
+		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
 		<Element>WINDOWS</Element>
