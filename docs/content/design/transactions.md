@@ -12,38 +12,13 @@ CSC introduces the concept of a **transaction** as an atomic pattern for the yie
 
 **Buyer** — A building that purchases goods or materials, either as an end-consumer or to process them further before acting as a Seller of its output.
 
-**Demand** is driven by the Buyer, and flows backward in the supply chain. Implemented as a +🔨 {{production}} Production yield bonus to the Seller, representing increased effort to meet demand.
+**Demand** is driven by the Buyer, and flows backward in the supply chain. Implemented as a {{production}} Production yield bonus to the Seller, representing increased effort to meet demand.
 
 **Supply** is the output of the Seller's response to demand, flowing forward in the supply chain. Implemented as a yield bonus to the Buyer — mostly the Quarter's main yield, but sometimes a more appropriate thematic yield.
 
-**Payment** for provided Supply is implemented as a +🪙 {{gold}} Gold yield bonus to the Seller.
+**Payment** for provided Supply is implemented as a {{gold}} Gold yield bonus to the Seller.
 
 > When playing with the **Taxes & Politics mod**, this automatic payment element is replaced by a player-driven Taxation concept.
-
----
-
-## Transaction Ratios
-
-The ratio between Demand, Supply and Payment represents economic principles — for example, the relative value of consumer goods vs. specialty goods.
-
-| Stage | Demand (to Seller) | Supply (to Buyer) | Payment (to Seller) |
-|-------|-------------------|-------------------|---------------------|
-| Stage 1 (Base materials) | +1 🔨 per adjacent improvement | +1 main yield | +1 🪙 |
-| Stage 1 (M&C Industry) | +2 🔨 | +1 main yield | +2 🪙 |
-| Stage 1 (M&C Corporation) | +3 🔨 | +1 main yield | +3 🪙 |
-| Stage 3 (Consumer goods) | +0.1 🔨 per Citizen | +0.1 main yield | +0.1 🪙 |
-| Stage 4 (Specialty goods) | +1 🔨 per 5 Citizens | +1 main yield | +1 🪙 |
-
----
-
-## Trade Route Transactions
-
-Trade routes to a city with a Quarter always provide a fallback sales channel, even if no adjacent Market or customer building is present:
-
-- +1 main yield to trade routes to the city (supply)
-- +1 🪙 {{gold}} Gold to the city in return from international routes (payment)
-
-This ensures there is always a way to sell the Quarter's goods.
 
 ---
 
