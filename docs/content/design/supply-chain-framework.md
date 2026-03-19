@@ -8,8 +8,8 @@ Each industry supply chain follows a structured progression with 5 distinct stag
 
 1. Materials extraction
 2. Intermediate goods processing
-3. Consumer goods production
-4. Specialty goods production
+3. Consumer goods <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production
+4. Specialty goods <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production
 5. Goods sales
 
 Don't panic.
@@ -32,9 +32,9 @@ The mod introduces the concept of a transaction as an atomic pattern for the yie
 
 * A Seller is a building or improvement that produces and sells goods or materials.
 * A Buyer is a building that purchases goods or materials, either as an end-consumer or to process the goods and materials further before in turn acting as a Seller of the output.
-* Demand is driven by the Buyer in the transaction, and flows backward in the supply chain. Demand is therefore always implemented as a Production yield bonus to the Seller in the transaction, representing increased effort to meet goods demand.
-* Supply is the output of the Seller's response to the demand, i.e. the goods produced through that increased production, and flows forward in the supply chain. Supply is always implemented as a yield bonus to the Buyer, representing the value created by the supplied goods. This yield is mostly the main yield of the Quarter (see below), but in some cases a more appropriate yield is used.
-* Payment for provided Supply is implemented as a Gold yield bonus to the Seller.
+* Demand is driven by the Buyer in the transaction, and flows backward in the supply chain. Demand is therefore always implemented as a <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production yield bonus to the Seller in the transaction, representing increased effort to meet goods demand.
+* Supply is the output of the Seller's response to the demand, i.e. the goods produced through that increased <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production, and flows forward in the supply chain. Supply is always implemented as a yield bonus to the Buyer, representing the value created by the supplied goods. This yield is mostly the main yield of the Quarter (see below), but in some cases a more appropriate yield is used.
+* Payment for provided Supply is implemented as a <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold yield bonus to the Seller.
    * When playing with the Taxes & Politics mod, this automatic payment element of the transactional model is replaced by a player-driven Taxation concept.
 * The ratio between Demand, Supply and Payment is used to represent some economic principles, e.g. the relative value of consumer goods vs specialty goods.
 
@@ -44,17 +44,17 @@ The mod introduces the concept of a transaction as an atomic pattern for the yie
 * Materials mapped to supply chains are classified as either Base materials or Specialty materials.
 * Standard game bonus resources in scope have mostly been classified as Base materials, while standard game luxury resources can be either a Base material or a Specialty material, depending on their role in the specific supply chain (see the Materials table for a mapping of resources to industries later on).
    * Some resources may be a Base material in one supply chain, and a Specialty material in another.
-   * Standard game luxuries retain their standard amenity effects, with Quarters offering supplementary local / regional amenities to provide further happiness management options.
+   * Standard game luxuries retain their standard <img src='https://static.wikia.nocookie.net/civilization/images/6/65/Amenities6.png/revision/latest/scale-to-width-down/18?cb=20200427170306' width='18' style='vertical-align:middle'/> Amenity effects, with Quarters offering supplementary local / regional amenities to provide further happiness management options.
 * Resources no longer provide city-wide bonuses from Industry and Corporations improvements, as these bonuses are replaced by the effects of the Quarters.
    * This means that only resources that are used by Quarters now result in city-wide effects.
-   * Tourism from resource Monopolies remains unchanged by this mod, regardless of whether the resource is used by a Quarter or not.
+   * <img src='https://static.wikia.nocookie.net/civilization/images/5/5b/Tourism6.png/revision/latest/scale-to-width-down/18?cb=20200501084529' width='18' style='vertical-align:middle'/> Tourism from resource Monopolies remains unchanged by this mod, regardless of whether the resource is used by a Quarter or not.
 * While Industries and Corporations improvements on resources no longer provide city-wide effects or unlock Product projects, they now serve as highly productive and profitable sources of base and specialty materials to Quarters instead.
 * Some effects of this mod have a requirement for an adjacent source of materials, which means an adjacent improved copy of a resource that has been mapped to the required type of materials.
 
-* Demand for Base materials result in a +1 Production and +1 Gold bonus from each adjacent stage 2 building to Base materials improvements
-   * M&C: +2 Production and +2 Gold to an Industry, and +3 Production and +3 Gold to a Corporation
-* Demand for Specialty materials result in a +1 Production and +1 Gold bonus from each adjacent stage 4 building to Specialty materials improvements
-   * M&C: +2 Production and +2 Gold to an Industry, and +3 Production and +3 Gold to a Corporation
+* Demand for Base materials result in a +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold bonus from each adjacent stage 2 building to Base materials improvements
+   * M&C: +2 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +2 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to an Industry, and +3 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +3 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to a Corporation
+* Demand for Specialty materials result in a +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold bonus from each adjacent stage 4 building to Specialty materials improvements
+   * M&C: +2 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +2 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to an Industry, and +3 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +3 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to a Corporation
 
 ![Stage 1](../images/Civ%20Modding%20Projects%20-%20Stage%201.jpg)
 
@@ -64,25 +64,25 @@ The mod introduces the concept of a transaction as an atomic pattern for the yie
 * All Quarters unlock at Craftsmanship.
 * Each Quarter can only be constructed once per city, and count toward district slots.
 
-* While all Quarters gain Production and Gold yields from their activities, each Quarter has a main yield focus, e.g. Food for the Bakers' Quarter.
+* While all Quarters gain <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold yields from their activities, each Quarter has a main yield focus, e.g. <img src='https://static.wikia.nocookie.net/civilization/images/6/65/Civ6Food.png/revision/latest/scale-to-width-down/18?cb=20200501084516' width='18' style='vertical-align:middle'/> Food for the Bakers' Quarter.
    * Buildings in the Quarter will provide this yield type as their main value proposition, although there is some thematic variance representing a part of the industry's evolution through the ages.
    * Specialists provide the base yield of the Quarter, as well as a thematic yield.
 
 * Quarters interact with upstream and downstream links in their supply chain in two steps:
 
 1. Adjacency bonuses are initially used to abstractly represent the interaction between the Quarter and other game elements that are adjacent to it.
-   * The flat yields from these adjacencies are particularly helpful to small cities, and represents the production and commercial potential of the Quarter.
+   * The flat yields from these adjacencies are particularly helpful to small cities, and represents the <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and commercial potential of the Quarter.
    * District adjacencies are bi-directional in order to guide the placement of both the Quarter and other districts, as adjacent districts are key to productive Quarters once the later stages of the supply chain are constructed.
 
-   * +1 Production to Quarters from each adjacent base materials and specialty materials resource (stage 1) in their supply chain.
+   * +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production to Quarters from each adjacent base materials and specialty materials resource (stage 1) in their supply chain.
       * This adjacency is from both unimproved and improved resources, mostly to help the AI evaluate placement decisions.
-   * +1 Gold from each adjacent Commercial Hub and any other districts (or their unique replacers) where the Quarter's products will later be sold (stage 5), in exchange for +1 of the main yield of the Quarter in return.
+   * +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold from each adjacent Commercial Hub and any other districts (or their unique replacers) where the Quarter's products will later be sold (stage 5), in exchange for +1 of the main yield of the Quarter in return.
       * An exception to this is the district where intermediary goods will later be sold, which receives a more thematic yield in return, as intermediary goods often have a different secondary use and narrative from how they are used by later stages in the Quarter supply chain.
       * For players using Albro's excellent City Lights mod, the supply chain system integrates with the urban vs. rural mechanics, as follows:
-      * Rural Communities provide a +1 Production adjacency bonus to Quarters instead of +1 Gold in exchange for +1 of the main yield of the Quarter, representing availability of a rural workforce.
-      * Urban Boroughs are treated as a point of sale (stage 5) for all Quarters, and hence provide an adjacency bonus of +1 Gold, in exchange for +1 of the main yield of the Quarter in return.
-   * +1 Production from an adjacent Quarter that produces goods that are required by the industry in the Quarter, in exchange for a +1 Gold adjacency bonus in return.
-   * +1 Production bonus from every 2 adjacent river segments, representing improved logistics.
+      * Rural Communities provide a +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production adjacency bonus to Quarters instead of +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold in exchange for +1 of the main yield of the Quarter, representing availability of a rural workforce.
+      * Urban Boroughs are treated as a point of sale (stage 5) for all Quarters, and hence provide an adjacency bonus of +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold, in exchange for +1 of the main yield of the Quarter in return.
+   * +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production from an adjacent Quarter that produces goods that are required by the industry in the Quarter, in exchange for a +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold adjacency bonus in return.
+   * +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production bonus from every 2 adjacent river segments, representing improved logistics.
 
 2. Transactions between actors (suppliers, processors and customers) in the supply chain are then used as the basis for more detailed relationships, and are generally implemented as yields on adjacent buildings that are part of the transaction.
 
@@ -99,14 +99,14 @@ Procures various Base materials from stage 1 suppliers and processes those into 
 
 ![Stage 2](../images/Civ%20Modding%20Projects%20-%20Stage%202.jpg)
 
-* Procures Base materials that belong to its supply chain as an input, by adding +1 Production (demand) and +1 Gold (payment) to each adjacent Base materials improvement.
-   * M&C: Increased to +2 Production and +2 Gold to an Industry improvement, and +3 Production and +3 Gold to a Corporation.
+* Procures Base materials that belong to its supply chain as an input, by adding +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production (demand) and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold (payment) to each adjacent Base materials improvement.
+   * M&C: Increased to +2 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +2 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to an Industry improvement, and +3 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +3 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to a Corporation.
 
-* Processes the procured Base materials into intermediary goods by generating +1 main yield of the Quarter (supply) for each adjacent Base materials improvement, with a fixed maintenance cost of -2 Gold.
+* Processes the procured Base materials into intermediary goods by generating +1 main yield of the Quarter (supply) for each adjacent Base materials improvement, with a fixed maintenance cost of -2 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold.
 
 * Sales transactions of intermediary goods are represented by:
-   * +1 Production (demand) and +1 Gold (payment) to the stage 2 building, in return for +1 main yield of the Quarter (supply) to the local stage 3 and stage 4 buildings in the Quarter.
-   * +1 Production (demand) and +1 Gold (payment) to the stage 2 building, in return for +1 of a thematic yield (supply) to an adjacent building (or its unique replacers) that has a relationship with the industry's intermediary goods during that era.
+   * +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production (demand) and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold (payment) to the stage 2 building, in return for +1 main yield of the Quarter (supply) to the local stage 3 and stage 4 buildings in the Quarter.
+   * +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production (demand) and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold (payment) to the stage 2 building, in return for +1 of a thematic yield (supply) to an adjacent building (or its unique replacers) that has a relationship with the industry's intermediary goods during that era.
       * With an appropriate Medieval Era (or later) technology / civic, this transaction enables the establishment of a Service building in the adjacent customer district, if the Quarter has an adjacent source of Base materials.
       * This Service has a city-wide effect representing the value created by the sold intermediary goods, and grants an additional Specialist slot and +1 Great Person point of an appropriate type.
 
@@ -121,22 +121,22 @@ Procures intermediary goods from a stage 2 supplier in the Quarter, and processe
 
 ![Stage 3](../images/Civ%20Modding%20Projects%20-%20Stage%203.jpg)
 
-* Purchases intermediary goods from its supply chain as an input, by adding +1 Production (demand) and +1 Gold (payment) to the local stage 2 building in the Quarter.
+* Purchases intermediary goods from its supply chain as an input, by adding +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production (demand) and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold (payment) to the local stage 2 building in the Quarter.
 
 * Processes intermediary goods into consumer goods in two ways:
-   * Generating +1 main yield of the Quarter (supply), at a maintenance cost of -2 Gold.
+   * Generating +1 main yield of the Quarter (supply), at a maintenance cost of -2 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold.
    * Adding +1 Citizen slot, and granting +2 of the main yield of the Quarter (supply) to Citizens in the Quarter.
 
 * Sales transactions of consumer goods to the city population is represented by:
-   * A scaling yield of +0.1 Production (demand) and +0.1 Gold (payment) per Citizen in the City to the stage 3 building, in return for +0.1 of the main yield of the Quarter (supply) to an adjacent Market.
+   * A scaling yield of +0.1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production (demand) and +0.1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold (payment) per Citizen in the City to the stage 3 building, in return for +0.1 of the main yield of the Quarter (supply) to an adjacent Market.
       * Whenever there is a scaling yield based on city population from a transaction between adjacent buildings from different cities, it is the customer's city population that is used as the multiplier, since that determines the market size and hence the value of the transaction.
-      * At the moment, both the main yield and the Gold yield will be given to the customer city, but in the future I want to change this to use the customer's city population to give gold back to the seller's city.
-   * A scaling yield of +0.1 Production (demand) and +0.1 Gold (payment) per Citizen in the City to the stage 3 building, in return for +0.1 of the main yield of the Quarter (supply) to an adjacent building (or its unique replacers) that has a relationship with the industry's consumer goods during that era.
+      * At the moment, both the main yield and the <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold yield will be given to the customer city, but in the future I want to change this to use the customer's city population to give <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold back to the seller's city.
+   * A scaling yield of +0.1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production (demand) and +0.1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold (payment) per Citizen in the City to the stage 3 building, in return for +0.1 of the main yield of the Quarter (supply) to an adjacent building (or its unique replacers) that has a relationship with the industry's consumer goods during that era.
       * With an appropriate Renaissance Era (or later) technology / civic, this transaction enables the establishment of a Service building in the adjacent district, if the Quarter has an adjacent source of Base materials.
       * This Service has an effect representing the value created by the sold consumer goods, and grants an additional Specialist slot and +1 Great Person point of an appropriate type.
-   * +1 bonus of the main yield of the Quarter to trade routes with the City as destination, and +1 Gold to the City in return, if the Quarter has an adjacent source of Base materials and the origin City does not have a similar Quarter.
+   * +1 bonus of the main yield of the Quarter to trade routes with the City as destination, and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to the City in return, if the Quarter has an adjacent source of Base materials and the origin City does not have a similar Quarter.
       * This ensures that there is always a way to sell the Quarter's consumer goods, even if it's not located adjacent to a Market or other customer building.
-      * Access to consumer goods provides +1 Amenity in the city.
+      * Access to consumer goods provides +1 <img src='https://static.wikia.nocookie.net/civilization/images/6/65/Amenities6.png/revision/latest/scale-to-width-down/18?cb=20200427170306' width='18' style='vertical-align:middle'/> Amenity in the city.
 
 ### Stage 4 - Specialty goods building
 
@@ -152,23 +152,23 @@ Procures intermediary goods from a stage 2 supplier in the Quarter and various S
 ![Stage 4](../images/Civ%20Modding%20Projects%20-%20Stage%204.jpg)
 
 * Purchases inputs from two sources:
-   * Purchases intermediary goods from its supply chain as an input, by adding +1 Production (demand) and +1 Gold (payment) to the local stage 2 building in the Quarter.
-   * Procures Specialty materials that belong to its supply chain as an input, by adding +1 Production (demand) and +1 Gold (payment) to each adjacent Specialty materials improvement.
-      * M&C: Increased to +2 Production and +2 Gold to an Industry improvement, and +3 Production and +3 Gold to a Corporation.
+   * Purchases intermediary goods from its supply chain as an input, by adding +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production (demand) and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold (payment) to the local stage 2 building in the Quarter.
+   * Procures Specialty materials that belong to its supply chain as an input, by adding +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production (demand) and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold (payment) to each adjacent Specialty materials improvement.
+      * M&C: Increased to +2 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +2 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to an Industry improvement, and +3 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and +3 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to a Corporation.
 
 * Processes intermediary goods and Specialty materials into Specialty goods by:
-   * Generating +1 main yield of the Quarter (supply), at a maintenance cost of -3 Gold.
+   * Generating +1 main yield of the Quarter (supply), at a maintenance cost of -3 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold.
    * Adding +1 Citizen slot, and granting +1 of the main yield of the Quarter and +1 of another thematic yield (supply) to Citizens in the Quarter.
 
 * Sales transactions of Specialty goods to select customers is represented by:
-   * A scaling yield of +1 Production (demand) and +1 Gold (payment) for every 5 Citizens in the City, in return for +1 of the main yield of the Quarter (supply) to an adjacent customer building (or its unique replacers) that has a relationship with the industry's Specialty goods during that era.
+   * A scaling yield of +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production (demand) and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold (payment) for every 5 Citizens in the City, in return for +1 of the main yield of the Quarter (supply) to an adjacent customer building (or its unique replacers) that has a relationship with the industry's Specialty goods during that era.
       * Whenever there is a scaling yield based on city population from a transaction between adjacent buildings from different cities, it is the customer's city population that is used as the multiplier, since that determines the market size and hence the value of the transaction.
-      * At the moment, both the main yield and the Gold yield will be given to the customer city, but in the future I want to change this to use the customer's city population to give gold back to the seller's city.
+      * At the moment, both the main yield and the <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold yield will be given to the customer city, but in the future I want to change this to use the customer's city population to give <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold back to the seller's city.
       * With an appropriate Industrial Era (or later) technology / civic, this transaction enables the establishment of a Service building in the adjacent customer district, if the Quarter has adjacent sources of both Base and Specialty materials.
       * This Service has an effect representing the value created by the sold specialty goods, and grants an additional Specialist slot and +1 Great Person point of an appropriate type.
-   * +1 bonus of the main yield of the Quarter to trade routes with the City as destination, and +1 Gold to the City in return, if the Quarter has adjacent sources of both Base and Specialty materials and the origin City does not have a similar Quarter.
+   * +1 bonus of the main yield of the Quarter to trade routes with the City as destination, and +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold to the City in return, if the Quarter has adjacent sources of both Base and Specialty materials and the origin City does not have a similar Quarter.
       * This ensures that there is always a way to sell the Quarter's specialty goods, even if it's not located adjacent to a Market or other customer building.
-      * Access to specialty goods for the upper class provides +1 Amenity in all cities within 6 tiles.
+      * Access to specialty goods for the upper class provides +1 <img src='https://static.wikia.nocookie.net/civilization/images/6/65/Amenities6.png/revision/latest/scale-to-width-down/18?cb=20200427170306' width='18' style='vertical-align:middle'/> Amenity in all cities within 6 tiles.
 
 ## Stage 5: Goods sales
 
@@ -178,7 +178,7 @@ For the most part, sales of different types of goods to buyers (stage 5) were de
 
    * Once a specialty goods building (stage 4) has been constructed in the Quarter, a suitable technology / civic enables a Commissioner governor (see below) with a Local Lords promotion to grant an Aristocrat in the city.
    * Aristocrats are implemented as buildings in the city center, but don't appear on the map(???).
-   * Provide loyalty equal to double the amenity surplus / deficit of the city, representing the role that local nobility played in the unity or fragmentation of empires.
+   * Provide loyalty equal to double the <img src='https://static.wikia.nocookie.net/civilization/images/6/65/Amenities6.png/revision/latest/scale-to-width-down/18?cb=20200427170306' width='18' style='vertical-align:middle'/> Amenity surplus / deficit of the city, representing the role that local nobility played in the unity or fragmentation of empires.
    * Increase the combat strength of the city, representing the military burden of Aristocrats and the resources they command.
 
    * Each local Aristocrat gives the city access to a Commission New Specialty Item project in the city, which can be completed twice.
@@ -193,13 +193,13 @@ For the most part, sales of different types of goods to buyers (stage 5) were de
 * Might add one or two titles along the civic tree to make it easier to appoint / promote a governor
 
 * Base ability:
-   * Master of Guilds (base ability): +20% production towards Quarters in the city
+   * Master of Guilds (base ability): +20% <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production towards Quarters in the city
 
 * Promotions:
    * Guardian of the Peasants: +10% growth in the city
    * Middle Class Hero: Grant specialist slots to districts adjacent to Quarters that don't already have them
    * Local Lords: Grant Aristocrats to Quarters with specialty goods buildings.
-   * Land Ownership: Culture bomb tiles around Quarters in cities with Aristocrats.
+   * Land Ownership: <img src='https://static.wikia.nocookie.net/civilization/images/2/2a/Civ6Culture.png/revision/latest/scale-to-width-down/18?cb=20200501084510' width='18' style='vertical-align:middle'/> Culture bomb tiles around Quarters in cities with Aristocrats.
    * Patronage: +100% Great Person Points from specialists in the city
 
 ---

@@ -25,17 +25,17 @@ Benefits to specialists or Patricians from government types and policies
 * +100% Jewelers' Quarter adjacency bonuses
 * Extra amenities
 * Great Person Points from specialists
-* +1 production and gold per specialist in supply chain districts
-* +1 Gold on tiles adjacent to Patricians
+* +1 <img src='https://static.wikia.nocookie.net/civilization/images/7/74/Civ6Production.png/revision/latest/scale-to-width-down/18?cb=20200501084523' width='18' style='vertical-align:middle'/> Production and <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold per specialist in supply chain districts
+* +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold on tiles adjacent to Patricians
 * Networks: +1 Influence points from each Patrician
-* +1 Gold from all foreign commissioned specialty goods
+* +1 <img src='https://static.wikia.nocookie.net/civilization/images/b/bc/Civ6Gold.png/revision/latest/scale-to-width-down/18?cb=20200501084519' width='18' style='vertical-align:middle'/> Gold from all foreign commissioned specialty goods
 * Recycled materials
    * Don't require adjacent materials for some rewards
    * Reduced climate impact
 
 ## Pantheons & Beliefs
 
-E.g. +1 Faith to Bakers' Quarter specialty materials
+E.g. +1 <img src='https://static.wikia.nocookie.net/civilization/images/8/82/Civ6Faith.png/revision/latest/scale-to-width-down/18?cb=20200501084513' width='18' style='vertical-align:middle'/> Faith to Bakers' Quarter specialty materials
 
 ## Great People
 
