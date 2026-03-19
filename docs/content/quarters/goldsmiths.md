@@ -1,5 +1,5 @@
 ---
-title: {{gold}} Goldsmiths' Quarter
+title: Goldsmiths' Quarter
 ---
 
 # 7. {{gold}} Goldsmiths' Quarter
