@@ -2,13 +2,13 @@
 title: Goldsmiths' Quarter
 ---
 
-# 7. {{gold}} Goldsmiths' Quarter
+# 7. Goldsmiths' Quarter
 
 ![Goldsmiths' Quarter](../images/Civ%20Modding%20Projects%20-%20Goldsmiths'%20Quarter.jpg)
 
 | | Standard game | Mods |
 |---|---|---|
-| Base materials | Amber, Silver | Alabaster (R2), Coral (R2), {{gold}} Gold (SR), Obsidian (SR), Quartz (R2), Seashells (R2) |
+| Base materials | Amber, Silver | Alabaster (R2), Coral (R2), Gold (SR), Obsidian (SR), Quartz (R2), Seashells (R2) |
 | Luxury materials | Diamonds, Jade | Lapislazuli (R2), Opal (CR), Ruby (RL) |
 
 * Main yield focus: {{gold}} Gold
@@ -41,10 +41,10 @@ title: Goldsmiths' Quarter
    * +2 {{production}} Production from an Industry, and +3 {{production}} Production from a Corporation
 * +1 {{faith}} Faith to each adjacent Shrine, and receive +1 {{gold}} Gold in return
    * With Mysticism, Shrines provide +10% {{faith}} Faith in the city for each adjacent Gem & Metalworks
-* +1 {{gold}} Gold from the local {{gold}} Goldsmith and Jeweler
+* +1 {{gold}} Gold from the local Goldsmith and Jeweler
 * +1 {{gold}} Gold bonus to trade routes to the city, and +1 {{gold}} Gold in return from international routes
 
-## 3. {{gold}} Goldsmith
+## 3. Goldsmith
 
 * Unlocks at Apprenticeship
 * Requires a Gem & Metalworks in the Quarter
@@ -52,7 +52,7 @@ title: Goldsmiths' Quarter
 
 * +1 {{production}} Production from the local Gem & Metalworks
 * +0.2 {{gold}} Gold per Citizen to the city for each adjacent Market and Armory
-   * With Mercenaries, purchasing military units is 20% cheaper in the city for each adjacent {{gold}} Goldsmith adjacent to the Armory
+   * With Mercenaries, purchasing military units is 20% cheaper in the city for each adjacent Goldsmith adjacent to the Armory
 * +1 Citizen slot, and +3 {{gold}} Gold to Citizens in the Quarter
 * +1 {{gold}} Gold bonus to all trade routes to the city, and +1 {{gold}} Gold in return from international routes
 * +1 {{amenity}} Amenity in the city

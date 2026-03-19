@@ -33,7 +33,7 @@ The mod introduces the concept of a transaction as an atomic pattern for the yie
 * A Seller is a building or improvement that produces and sells goods or materials.
 * A Buyer is a building that purchases goods or materials, either as an end-consumer or to process the goods and materials further before in turn acting as a Seller of the output.
 * Demand is driven by the Buyer in the transaction, and flows backward in the supply chain. Demand is therefore always implemented as a {{production}} Production yield bonus to the Seller in the transaction, representing increased effort to meet goods demand.
-* Supply is the output of the Seller's response to the demand, i.e. the goods produced through that increased {{production}} Production, and flows forward in the supply chain. Supply is always implemented as a yield bonus to the Buyer, representing the value created by the supplied goods. This yield is mostly the main yield of the Quarter (see below), but in some cases a more appropriate yield is used.
+* Supply is the output of the Seller's response to the demand, i.e. the goods produced through that increased production, and flows forward in the supply chain. Supply is always implemented as a yield bonus to the Buyer, representing the value created by the supplied goods. This yield is mostly the main yield of the Quarter (see below), but in some cases a more appropriate yield is used.
 * Payment for provided Supply is implemented as a {{gold}} Gold yield bonus to the Seller.
    * When playing with the Taxes & Politics mod, this automatic payment element of the transactional model is replaced by a player-driven Taxation concept.
 * The ratio between Demand, Supply and Payment is used to represent some economic principles, e.g. the relative value of consumer goods vs specialty goods.
@@ -71,7 +71,7 @@ The mod introduces the concept of a transaction as an atomic pattern for the yie
 * Quarters interact with upstream and downstream links in their supply chain in two steps:
 
 1. Adjacency bonuses are initially used to abstractly represent the interaction between the Quarter and other game elements that are adjacent to it.
-   * The flat yields from these adjacencies are particularly helpful to small cities, and represents the {{production}} Production and commercial potential of the Quarter.
+   * The flat yields from these adjacencies are particularly helpful to small cities, and represents the production and commercial potential of the Quarter.
    * District adjacencies are bi-directional in order to guide the placement of both the Quarter and other districts, as adjacent districts are key to productive Quarters once the later stages of the supply chain are constructed.
 
    * +1 {{production}} Production to Quarters from each adjacent base materials and specialty materials resource (stage 1) in their supply chain.
