@@ -1,46 +1,37 @@
 ---
-title: Design Goals
+title: Design Goals & Tenets
 ---
 
-# Design Goals & Tenets
-
-Civ VI has always excelled at plotting out the overall arc of an empire's history. But it sometimes falls short in telling the smaller stories that add immersive flavour along the way — improving a wheat resource gives benefits at once, but there are few tools to tell the story of what happens to those crops, how they affect the local economy, until growth eventually shows in the city. Games like the Anno series handle this more richly.
-
-CSC tries to create the version of Civ that its author always wanted to play: all of Civ's just-one-more-turn feeling, expanded with a toolbox for telling many more small stories. A local forest turning into ships for exploring the globe — and even string instruments in the Bolshoi Theater. A cotton plantation and some gold thread driving a thriving textiles industry leading to very well-dressed and influential diplomats.
-
-The mod is inspired by the Industry and Corporations concept from the Monopolies & Corporations (M&C) game mode. CSC reworks those concepts and goes deeper with structured supply chains in Quarter districts for 8 industries.
+# Design Goals and Tenets
 
 ## Core Concept & Immersion
 
-- **Economic Depth:** Structured supply chains with engaging mechanics for 8 distinct industries, optionally replacing passive city-wide resource bonuses and M&C Products.
-- **Thematic Resonance:** Quarter mechanics represent the high-level stepwise flow of each industry's supply chain, highlights of its historical evolution, and a sense of social mobility.
-- **Social Mobility:** Production of goods through supply chains enables population progression through distinct social classes.
-- **Resource Reimagining:** Resources are reclassified as base or specialty materials in their supply chain context.
+* Economic Depth: Introduce structured supply chains with engaging mechanics for various distinct industries, which optionally replace the passive city-wide resource bonuses and single-resource Products in the M&C game mode (when active).
+* Thematic Resonance: Design the Quarter mechanics in such a way that it represents the high-level stepwise flow of each industry's supply chain, some highlights of the industry's historical evolution and relevance, as well as a sense of social mobility driven by availability of goods.
+* Social Mobility: Use the production of goods through supply chains as an enabler for the progression of the population through a number of distinct social classes.
+* Resource Reimagining: Use the supply chain context to reclassify some standard game resources as either base materials or specialty materials. Resources directly linked to animal exploitation can optionally be included in supply chains.
 
 ## Strategic Depth & Player Agency
 
-- **Meaningful Investment:** Supply chain development is a valuable strategic choice with clear opportunity costs, useful for any victory type and any empire style (tall vs. wide).
-- **Engaging Decisions:** Enough depth for economic optimisers, without being required for success. Sufficient information for strategic placement decisions, with the rest of the narrative unfolding through build trees and tech/civic trees.
-- **Strategic Placement:** Thoughtful placement required — balancing proximity to input materials with proximity to sales opportunities.
-- **Intentional Choices:** Benefits linked primarily to active choices (policies, governor assignments, specialist management) rather than granted automatically.
+* Meaningful Investment: Ensure that developing supply chains is a valuable strategic choice with clear opportunity costs, offering significant benefits regardless of victory type or empire expansion style (tall vs. wide).
+* Engaging Decisions: Provide sufficient depth and detail to engage players who enjoy economic optimization, without being strictly necessary for success. Provide players with sufficient information when making strategic decisions that will significantly impact the performance of a Quarter, and allow the rest of the supply chain's narrative to unfold through the build tree and technology / civic trees.
+* Strategic Placement: Require thoughtful placement of Quarters, balancing proximity to input materials with proximity to sales opportunities.
+* Intentional Choices: Promote player agency by linking various benefits primarily to active choices (e.g., policies, governor assignments and promotions, specialist management) rather than granting them automatically upon construction.
 
 ## Clarity & Accessibility
 
-- **Consistent Framework:** A consistent structure across all 8 industries ensures predictability and ease of understanding, with thematic variations in implementation.
-- **Reduced Fiddliness:** Core supply chain buildings consolidated into Quarter districts to save map space.
-- **Intuitive Design:** Mechanics understandable for casual players (and the AI) while offering layers for experienced players.
-- **Yield Clarity:** Clear roles for Quarters and buildings by limiting yield complexity.
+* Consistent Framework: Utilize a consistent structure across all industries to ensure predictability and ease of understanding, while allowing thematic variations in implementation. Implement a consistent transactional model for interactions between links in supply chains.
+* Reduced Fiddliness: Consolidate core supply chain buildings into Quarter districts to save map space and simplify management compared to individual tile improvements.
+* Intuitive Design: Aim for mechanics that are understandable for casual players (and the AI) while still offering layers for experienced players.
+* Yield Clarity: Define clear roles for Quarters and buildings by limiting yield complexity to improve strategic readability.
 
 ## Balance & Pacing
 
-- **Opportunity Cost:** Quarters consume limited city district slots.
-- **Progression Pacing:** Quarter and building unlocks integrated smoothly within the tech/civic progression.
-- **Internal & External Balance:** Relative balance between the 8 Quarter types; investing in Quarters is viable but not dominant compared to standard game mechanics.
+* Opportunity Cost: Quarters consume limited city district slots, balancing their significant yields.
+* Cost Scaling: TBD
+* Progression Pacing: Integrate Quarter and building unlocks smoothly within the technology / civic progression and overall game flow.
+* Internal & External Balance: Strive for relative balance between the eight different Quarter types and ensure that investing in Quarters is a viable, but not dominant, strategy compared to focusing solely on standard game mechanics.
 
 ## Integration & Compatibility
 
-- **Modularity:** Optional integrations with M&C and compatibility with popular community mods (resource packs, City Lights, 6T).
-
----
-
-*Continue to: [[supply-chain-framework|Supply Chain Framework]]*
+* Modularity: Optional integrations with official game modes (like M&C) and compatibility with popular community mods (like resource packs, City Lights, 6T).

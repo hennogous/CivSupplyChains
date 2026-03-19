@@ -3,44 +3,29 @@ title: Civ Supply Chains
 ---
 
 # Civ Supply Chains
+## Mod Design Overview
 
-**CSC** is a Civilization VI overhaul mod that adds a supply chain system to the game. Cities can grow Quarters — district-like structures tied to specific trade goods and production chains — unlocking unique buildings, specialist slots, and trade bonuses as they develop over the ages.
+Sid Meier's Civilization VI has always been good at plotting out the overall arc of an empire's history, from Antiquity to the Information Age. But, to me, it's sometimes fallen in short in telling the smaller stories that add all the immersive flavour along the way. For instance: improving a wheat resource on a tile gives all of the benefits of that decision at once, with the effect only visible as growth in the city. There are very few tools for the player to tell the story of what happens to the crops produced on that wheat farm, the effect on the local economy, until it ultimately leads to growth in the city. This is where games like the Anno series have a more complex, and in my opinion stronger, economic gameplay.
 
-> *"All of the just-one-more-turn feeling of Civ, expanded with a toolbox for telling many more small stories."*
+In this mod, I'm trying to create the version of Civ that I've always wanted to play: all of the just-one-more-turn feeling of Civ, expanded with a toolbox for telling many more small stories. A local forest turning into ships for exploring the globe, and even string instruments in the Bolshoi Theater. Or a cotton plantation and some gold thread driving a thriving textiles industry leading to some very well-dressed and influential diplomats!
 
-## What's in the mod
+In a sense, the mod is inspired by the Industry and Corporations concept in the Monopolies & Corporations (M&C) game mode, which is optional but recommended when playing with this mod. The mod however reworks some concepts and goes to a deeper level of complexity by introducing structured supply chains in Quarter districts for 8 industries:
 
-- **8 industry Quarters**, each with a 4-building supply chain
-- **Structured progression** from raw materials through intermediary goods to consumer and specialty goods
-- **Social mobility** — Workers, Specialists, Service Providers, Aristocrats and Governors all play a role
-- **Compatible with M&C** — optionally replaces single-resource Products with richer specialty goods
-- **Compatible with popular community mods** including resource packs, City Lights and 6T
+* Baking
+* Textiles
+* Medicine
+* Masonry
+* Woodworking
+* Metalworking
+* Jewelry
+* Brewing
 
-## Design
+Note: If you want to jump over all the nerdy mod design considerations and just want to see the details for these 8 industries, you can [[quarters/index|click here]]. Otherwise, fix a cup of tea, and let's talk!
 
-- [[design/index|Design Goals]]
+---
+
+- [[design/index|Design Goals & Tenets]]
 - [[design/supply-chain-framework|Supply Chain Framework]]
-- [[design/transactions|Transactions]]
 - [[design/social-classes|Social Classes]]
-
-## Quarters
-
-- [[quarters/bakers|Bakers' Quarter]] — Food focus
-- [[quarters/tailors|Tailors' Quarter]] — Culture focus
-- [[quarters/apothecaries|Apothecaries' Quarter]] — Science focus
-- [[quarters/stonemasons|Stonemasons' Quarter]] — Production focus
-- [[quarters/carpenters|Carpenters' Quarter]] — Production focus
-- [[quarters/blacksmiths|Blacksmiths' Quarter]] — Production focus
-- [[quarters/goldsmiths|Goldsmiths' Quarter]] — Gold focus
-- [[quarters/brewers|Brewers' Quarter]] — Gold focus
-
-## Reference
-
-- [[reference/materials|Materials Table]] — All resources mapped to supply chains
-- [[reference/compatibility|Compatibility & Optional Integrations]]
-- [[reference/ideas|Ideas & Parking Lot]]
-
-## Links
-
-- [GitHub Repository](https://github.com/hennogous/CivSupplyChains)
-- Steam Workshop *(coming soon)*
+- [[quarters/index|Quarters]]
+- [[reference/materials|Materials Table]]

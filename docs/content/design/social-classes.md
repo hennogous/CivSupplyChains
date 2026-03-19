@@ -4,64 +4,33 @@ title: Social Classes
 
 # Social Classes
 
-The mod reuses some non-unit base game concepts and introduces new ones to imagine a society with 5 social classes with progressively increasing power, influence and wealth. Upward mobility along this social ladder is represented by how these classes are constructed and grow as the empire develops.
+The main value of the supply chains introduced by this mod lies in their direct yields and the bonuses they impart on adjacent game elements. Just a quick word, however, on their impact on social mobility in the empire as a way to establish some concepts and terms that are used later.
 
-**The development of Quarters and their supply chains is a key enabler of this social mobility.**
+The mod reuses some non-unit base game concepts and introduces some new ones to imagine a society with 5 social classes with progressively increasing power, influence and wealth. Upward mobility of citizens along this social ladder is represented by the way these social classes are constructed and increased in size as the empire grows.
 
-## The Five Classes
+The development of Quarters and their respective supply chains is a key enabler of this social mobility.
 
-### 6. Workers
-The lower class — farmers, plantation workers, miners, fishers, etc.
+**6. Workers**
+* The lower class, e.g. farmers, plantation workers, miners, fishers, etc.
+* Implemented as base game citizens on tiles, and increased through city growth.
 
-- Implemented as base game citizens on tiles
-- Increased through city growth
+**5. Specialists**
+* The middle class, e.g. artisans, merchants, scholars, artists, etc.
+* Implemented as base game citizens assigned to districts
+* Provide a yield in line with the focus of their district, and some Specialists go on to become Great Persons.
+* Increased capacity through buildings with Specialist slots, and then assigning Workers from tiles into districts.
 
-### 5. Specialists
-The middle class — artisans, merchants, scholars, artists, etc.
+**4. Service Providers**
+* Implemented as buildings (that don't appear on the map) in Districts adjacent to Quarters, and are granted once a supply chain is completed.
 
-- Implemented as base game citizens assigned to districts
-- Provide a yield in line with the focus of their district; some go on to become Great Persons
-- Capacity increased through buildings with Specialist slots, then assigning Workers from tiles
+**3. Aristocrats**
+* The local nobility and upper class, acting as patrons and investors in local industries.
+* Implemented as buildings (that don't appear on the map) in the City Center, and are granted through a Commissioner governor (more on them later) with a Local Lords promotion.
 
-### 4. Service Providers
-Buildings (not visible on the map) in Districts adjacent to Quarters, granted once a supply chain is completed.
+**2. Governors**
+* Emissaries of the king / emperor
+* Implemented as base game governors, increased through governor titles along the civic tree
+* The Commissioner is a new governor, with a promotion tree focused on Quarters, Specialists and Aristocrats
 
-### 3. Aristocrats
-The local nobility and upper class — patrons and investors in local industries.
-
-- Implemented as buildings (not on the map) in the City Center
-- Granted through a Commissioner governor with a Local Lords promotion
-- Provide loyalty equal to double the amenity surplus/deficit of the city
-- Increase city combat strength
-
-Each Aristocrat grants access to a **Commission New Specialty Item** project (completable twice), producing a Specialty Item fitting the Quarter. Aristocrats have 3 slots for commissioned specialty items in their private collections.
-
-### 2. Governors
-Emissaries of the king/emperor.
-
-- Implemented as base game governors
-- Increased through governor titles along the civic tree
-- The Commissioner is a new governor with a promotion tree focused on Quarters, Specialists and Aristocrats
-
-### 1. Kings / Emperors
-Leaders of civilizations in the game.
-
----
-
-## The Commissioner
-
-A new governor with a promotion tree focused on Quarters, Specialists and Aristocrats.
-
-**Base ability:**
-- *Master of Guilds:* +20% Production towards Quarters in the city
-
-**Promotions:**
-- *Guardian of the Peasants:* +10% growth in the city
-- *Middle Class Hero:* Grant Specialist slots to districts adjacent to Quarters that don't already have them
-- *Local Lords:* Grant Aristocrats to Quarters with specialty goods buildings
-- *Land Ownership:* Culture bomb tiles around Quarters in cities with Aristocrats
-- *Patronage:* +100% Great Person Points from Specialists in the city
-
----
-
-*Back to: [[index|Design Goals]] | Continue to: [[supply-chain-framework|Supply Chain Framework]]*
+**1. Kings / Emperors**
+* Leaders of civilizations in the game.
