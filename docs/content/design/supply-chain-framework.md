@@ -8,8 +8,8 @@ Each industry supply chain follows a structured progression with 5 distinct stag
 
 1. Materials extraction
 2. Intermediate goods processing
-3. Consumer goods {{production}} Production
-4. Specialty goods {{production}} Production
+3. Consumer goods production
+4. Specialty goods production
 5. Goods sales
 
 Don't panic.
