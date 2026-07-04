@@ -102,6 +102,8 @@ Your Blender model needs to follow specific conventions:
 - **Materials**: Single material per mesh. The material name becomes the mesh group name in the resulting .geo file.
 - **Pivot**: The top-level mesh pivot should be at 0,0,0. Any offset you want needs to be baked into the mesh geometry itself.
 
+For CSC's current small building-prop workflow, keep the final export `.blend` deliberately minimal: one armature named `{AssetName}`, one mesh named `{AssetName}_Bldg`, one material matching the mesh group, UV layers named `UV1`/`UV2`/`UV3`, and a simple `Bone` bone/vertex group when no animation hierarchy is needed. The source texture set should follow `{AssetName}_B`, `{AssetName}_AO`, `{AssetName}_N`, `{AssetName}_G`, `{AssetName}_M`; use 256x256 maps for small standalone props unless the asset belongs on a larger shared atlas. See [Export Pipeline Reference](export-pipeline.md#csc-blender-file-structure) for the exact checklist.
+
 **Poly counts**: Think chunky toy models, not realistic architecture. Official Firaxis guidelines say *"simple, exaggerated, chunky — imagine them as toy models"*. A building typically sits around 300-600 triangles. The ratio should be 3 Big Shapes : 2 Intermediate Shapes : 1 Fine Detail. Only the big and intermediate shapes should affect the silhouette. Roof detail matters a lot because of the camera angle.
 
 ### Step 2: Export to CivNexus6 Format (.cn6)
@@ -153,7 +155,7 @@ Materials use a PBR metalness workflow. For each building, you'll typically crea
 | `_B.dds` | `Generic_BaseColor` | Diffuse color (sRGB) |
 | `_N.dds` | `Generic_Normal` | Normal map |
 | `_AO.dds` | `Generic_AO` | Ambient occlusion (linear greyscale) |
-| `_G.dds` | `Generic_Gloss` | Roughness — white=shiny, black=dull (linear) |
+| `_G.dds` | `Generic_Gloss` | Gloss — white=shiny, black=dull (linear) |
 | `_M.dds` | `Generic_Metalness` | Metal mask (linear greyscale) |
 
 Optional but useful:
@@ -165,6 +167,8 @@ Optional but useful:
 Each `.dds` file gets a `.tex` wrapper, and the `.tex` files are referenced by a `.mat` (material) file. The material class for buildings is `Landmark`.
 
 **Tip**: Normal maps should be generated via a tool like Crazybump or Ndo from a simplified heightmap — never just desaturate your base color. Baked shadows in base color textures are viable and often look better than relying on real-time shadows at game camera distance.
+
+For AI-assisted prop textures, treat the base color atlas as the artistic source of truth and derive AO/normal/gloss/metalness from that exact map so the PBR set stays aligned. CSC's helper is `project/tools/blender/csc_generate_pbr_maps.mjs`. If a generated atlas has strong wood, wool, stone, or thread regions, fix the visible `UV1` material placement by mesh island before flattening the texture detail. See [Export Pipeline Reference](export-pipeline.md#ai-assisted-texture-workflow) for the full workflow.
 
 ## Asset Editor: The Necessary Evil
 
