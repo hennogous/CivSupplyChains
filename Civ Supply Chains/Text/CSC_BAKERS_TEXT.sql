@@ -149,8 +149,6 @@ VALUES
     ('en_US', 'LOC_PEDIA_BUILDINGS_PAGE_BUILDING_CSC_BAKERS_STAGE_4_SERVICE_WATER_CHAPTER_CSCHAIN_PARA_1', 'The Café draws on dependable flour from the local Water Mill or Wind Mill and improved Bakers'' [ICON_CSC_SPEC] Specialty Materials nearby, turns them into pastries and drinks, and offers that steady flow of refreshments to the growing numbers of visitors to the adjacent Ferris Wheel.[NEWLINE][NEWLINE]This gives a Citizen the opportunity to take up employment as a Ride Technician in the Water Park, keeping the machinery, queues, and waterfront crowds moving safely through a longer day out.'),
     ('en_US', 'LOC_PEDIA_BUILDINGS_PAGE_BUILDING_CSC_BAKERS_STAGE_4_SERVICE_WATER_CHAPTER_HISTORY_TITLE', 'Historical Context'),
     ('en_US', 'LOC_PEDIA_BUILDINGS_PAGE_BUILDING_CSC_BAKERS_STAGE_4_SERVICE_WATER_CHAPTER_HISTORY_PARA_1', 'Mechanical rides and waterfront amusements turned leisure into infrastructure. They needed operators, inspectors, repair crews, ticket sellers, and a nearby flow of food and drink to keep crowds lingering. Such services followed population growth in the most literal way: once enough people could be fed reliably, cities could sustain places where those same people gathered simply to enjoy themselves. The ride technician is what happens when bread, sugar, machinery, and free time all arrive in the same neighborhood.'),
-    ('en_US', 'LOC_DISTRICT_CSC_TAILORS_QUARTER_NAME', 'Tailors'' Quarter'),
-    ('en_US', 'LOC_DISTRICT_CSC_TAILORS_QUARTER_DESCRIPTION', 'A district in your city specializing in textiles.[NEWLINE][NEWLINE]+1 [ICON_Production] Production from each adjacent [ICON_CSC_BASE] Base or [ICON_CSC_SPEC] Specialty Materials resource from this supply chain.[NEWLINE]+1 [ICON_Gold] Gold from each adjacent Harbor, and +1 [ICON_Production] Production in return.[NEWLINE]+1 [ICON_Gold] Gold from each adjacent Commercial Hub, Holy Site, and Theater Square, and +1 [ICON_Culture] Culture in return.[NEWLINE]+1 [ICON_Production] Production from every 2 adjacent river segments.'),
     ('en_US', 'LOC_DISTRICT_CSC_APOTHECARIES_QUARTER_NAME', 'Apothecaries'' Quarter'),
     ('en_US', 'LOC_DISTRICT_CSC_APOTHECARIES_QUARTER_DESCRIPTION', 'A district in your city specializing in medicine.'),
     ('en_US', 'LOC_DISTRICT_CSC_STONEMASONS_QUARTER_NAME', 'Stonemasons'' Quarter'),
@@ -261,10 +259,6 @@ FROM BAKERS_RESOURCES;
 -- Raw SQL 6
 DROP TABLE BAKERS_RESOURCES;
 DROP TABLE BAKERS_SALES_DISTRICTS;
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---	Tailors' Quarter
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Raw SQL 7
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -118,6 +118,35 @@ INNER_EDGE_ALPHA = env_int("CSC_SV_INNER_EDGE_ALPHA", 200)
 CANVAS_SIZE = env_int("CSC_SV_CANVAS_SIZE", 256)
 # Final square PNG canvas size. 256 is the Civ VI SV target size.
 
+QUARTER_MODE = env_bool("CSC_SV_QUARTER", False)
+# Quarter SV sprites are district-style 128px outputs. Shadow plates and state
+# overlays keep their native 256px scale and are center-cropped into the output.
+
+# Quarter-only manual layer adjustments. Scale is applied before the native
+# 256px plate is center-cropped into the 128px Quarter output; offsets are in
+# final output pixels, with positive X/Y moving the layer right/down.
+
+QUARTER_VISIBLE_SHADOW_SCALE = env_float("CSC_SV_QUARTER_VISIBLE_SHADOW_SCALE", 0.7)
+QUARTER_VISIBLE_SHADOW_OFFSET_X = env_int("CSC_SV_QUARTER_VISIBLE_SHADOW_OFFSET_X", 0)
+QUARTER_VISIBLE_SHADOW_OFFSET_Y = env_int("CSC_SV_QUARTER_VISIBLE_SHADOW_OFFSET_Y", 8)
+QUARTER_REVEALED_SHADOW_SCALE = env_float("CSC_SV_QUARTER_REVEALED_SHADOW_SCALE", 0.7)
+QUARTER_REVEALED_SHADOW_OFFSET_X = env_int("CSC_SV_QUARTER_REVEALED_SHADOW_OFFSET_X", 0)
+QUARTER_REVEALED_SHADOW_OFFSET_Y = env_int("CSC_SV_QUARTER_REVEALED_SHADOW_OFFSET_Y", 8)
+
+QUARTER_VISIBLE_CONSTRUCTION_SCALE = env_float("CSC_SV_QUARTER_VISIBLE_CONSTRUCTION_SCALE", 0.73)
+QUARTER_VISIBLE_CONSTRUCTION_OFFSET_X = env_int("CSC_SV_QUARTER_VISIBLE_CONSTRUCTION_OFFSET_X", 3)
+QUARTER_VISIBLE_CONSTRUCTION_OFFSET_Y = env_int("CSC_SV_QUARTER_VISIBLE_CONSTRUCTION_OFFSET_Y", 6)
+QUARTER_REVEALED_CONSTRUCTION_SCALE = env_float("CSC_SV_QUARTER_REVEALED_CONSTRUCTION_SCALE", 0.73)
+QUARTER_REVEALED_CONSTRUCTION_OFFSET_X = env_int("CSC_SV_QUARTER_REVEALED_CONSTRUCTION_OFFSET_X", 8)
+QUARTER_REVEALED_CONSTRUCTION_OFFSET_Y = env_int("CSC_SV_QUARTER_REVEALED_CONSTRUCTION_OFFSET_Y", 0)
+
+QUARTER_VISIBLE_PILLAGED_SCALE = env_float("CSC_SV_QUARTER_VISIBLE_PILLAGED_SCALE", 1.0)
+QUARTER_VISIBLE_PILLAGED_OFFSET_X = env_int("CSC_SV_QUARTER_VISIBLE_PILLAGED_OFFSET_X", 0)
+QUARTER_VISIBLE_PILLAGED_OFFSET_Y = env_int("CSC_SV_QUARTER_VISIBLE_PILLAGED_OFFSET_Y", 8)
+QUARTER_REVEALED_PILLAGED_SCALE = env_float("CSC_SV_QUARTER_REVEALED_PILLAGED_SCALE", 1.0)
+QUARTER_REVEALED_PILLAGED_OFFSET_X = env_int("CSC_SV_QUARTER_REVEALED_PILLAGED_OFFSET_X", 0)
+QUARTER_REVEALED_PILLAGED_OFFSET_Y = env_int("CSC_SV_QUARTER_REVEALED_PILLAGED_OFFSET_Y", 3)
+
 SPRITE_SIZE = env_int("CSC_SV_SPRITE_SIZE", 160)
 # Building sprite size pasted onto the canvas. Higher = larger building; lower = more transparent margin. (90-140 useful, very visible)
 
@@ -207,6 +236,25 @@ class PostProcessConfig:
     enable_resize_canvas: bool = ENABLE_RESIZE_CANVAS
     canvas_size: int = CANVAS_SIZE
     sprite_size: int = SPRITE_SIZE
+    quarter_mode: bool = QUARTER_MODE
+    quarter_visible_shadow_scale: float = QUARTER_VISIBLE_SHADOW_SCALE
+    quarter_visible_shadow_offset_x: int = QUARTER_VISIBLE_SHADOW_OFFSET_X
+    quarter_visible_shadow_offset_y: int = QUARTER_VISIBLE_SHADOW_OFFSET_Y
+    quarter_revealed_shadow_scale: float = QUARTER_REVEALED_SHADOW_SCALE
+    quarter_revealed_shadow_offset_x: int = QUARTER_REVEALED_SHADOW_OFFSET_X
+    quarter_revealed_shadow_offset_y: int = QUARTER_REVEALED_SHADOW_OFFSET_Y
+    quarter_visible_construction_scale: float = QUARTER_VISIBLE_CONSTRUCTION_SCALE
+    quarter_visible_construction_offset_x: int = QUARTER_VISIBLE_CONSTRUCTION_OFFSET_X
+    quarter_visible_construction_offset_y: int = QUARTER_VISIBLE_CONSTRUCTION_OFFSET_Y
+    quarter_revealed_construction_scale: float = QUARTER_REVEALED_CONSTRUCTION_SCALE
+    quarter_revealed_construction_offset_x: int = QUARTER_REVEALED_CONSTRUCTION_OFFSET_X
+    quarter_revealed_construction_offset_y: int = QUARTER_REVEALED_CONSTRUCTION_OFFSET_Y
+    quarter_visible_pillaged_scale: float = QUARTER_VISIBLE_PILLAGED_SCALE
+    quarter_visible_pillaged_offset_x: int = QUARTER_VISIBLE_PILLAGED_OFFSET_X
+    quarter_visible_pillaged_offset_y: int = QUARTER_VISIBLE_PILLAGED_OFFSET_Y
+    quarter_revealed_pillaged_scale: float = QUARTER_REVEALED_PILLAGED_SCALE
+    quarter_revealed_pillaged_offset_x: int = QUARTER_REVEALED_PILLAGED_OFFSET_X
+    quarter_revealed_pillaged_offset_y: int = QUARTER_REVEALED_PILLAGED_OFFSET_Y
     shadow_path: str | None = SHADOW_PATH
     enable_base_shadow: bool = ENABLE_BASE_SHADOW
     offset_x: Optional[int] = OFFSET_X
@@ -231,8 +279,31 @@ class PostProcessConfig:
             rembg_pad=REMBG_PAD,
             rembg_mask_alpha=REMBG_MASK_ALPHA,
             enable_resize_canvas=ENABLE_RESIZE_CANVAS,
-            canvas_size=CANVAS_SIZE,
-            sprite_size=SPRITE_SIZE,
+            canvas_size=128 if QUARTER_MODE else CANVAS_SIZE,
+            sprite_size=(
+                int(round(SPRITE_SIZE * (128 / CANVAS_SIZE)))
+                if QUARTER_MODE and os.getenv("CSC_SV_SPRITE_SIZE") is None
+                else SPRITE_SIZE
+            ),
+            quarter_mode=QUARTER_MODE,
+            quarter_visible_shadow_scale=QUARTER_VISIBLE_SHADOW_SCALE,
+            quarter_visible_shadow_offset_x=QUARTER_VISIBLE_SHADOW_OFFSET_X,
+            quarter_visible_shadow_offset_y=QUARTER_VISIBLE_SHADOW_OFFSET_Y,
+            quarter_revealed_shadow_scale=QUARTER_REVEALED_SHADOW_SCALE,
+            quarter_revealed_shadow_offset_x=QUARTER_REVEALED_SHADOW_OFFSET_X,
+            quarter_revealed_shadow_offset_y=QUARTER_REVEALED_SHADOW_OFFSET_Y,
+            quarter_visible_construction_scale=QUARTER_VISIBLE_CONSTRUCTION_SCALE,
+            quarter_visible_construction_offset_x=QUARTER_VISIBLE_CONSTRUCTION_OFFSET_X,
+            quarter_visible_construction_offset_y=QUARTER_VISIBLE_CONSTRUCTION_OFFSET_Y,
+            quarter_revealed_construction_scale=QUARTER_REVEALED_CONSTRUCTION_SCALE,
+            quarter_revealed_construction_offset_x=QUARTER_REVEALED_CONSTRUCTION_OFFSET_X,
+            quarter_revealed_construction_offset_y=QUARTER_REVEALED_CONSTRUCTION_OFFSET_Y,
+            quarter_visible_pillaged_scale=QUARTER_VISIBLE_PILLAGED_SCALE,
+            quarter_visible_pillaged_offset_x=QUARTER_VISIBLE_PILLAGED_OFFSET_X,
+            quarter_visible_pillaged_offset_y=QUARTER_VISIBLE_PILLAGED_OFFSET_Y,
+            quarter_revealed_pillaged_scale=QUARTER_REVEALED_PILLAGED_SCALE,
+            quarter_revealed_pillaged_offset_x=QUARTER_REVEALED_PILLAGED_OFFSET_X,
+            quarter_revealed_pillaged_offset_y=QUARTER_REVEALED_PILLAGED_OFFSET_Y,
             shadow_path=SHADOW_PATH,
             enable_base_shadow=ENABLE_BASE_SHADOW,
             offset_x=OFFSET_X,
@@ -268,6 +339,7 @@ class RevealedPostProcessConfig:
     shadow_path: str | None = REVEALED_SHADOW_PATH
     canvas_size: int = CANVAS_SIZE
     sprite_size: int = SPRITE_SIZE
+    quarter_mode: bool = QUARTER_MODE
     offset_x: Optional[int] = OFFSET_X
     offset_y: Optional[int] = OFFSET_Y
 
@@ -289,8 +361,13 @@ class RevealedPostProcessConfig:
             sharpen_radius=REVEALED_SHARPEN_RADIUS,
             sharpen_threshold=REVEALED_SHARPEN_THRESHOLD,
             shadow_path=REVEALED_SHADOW_PATH,
-            canvas_size=CANVAS_SIZE,
-            sprite_size=SPRITE_SIZE,
+            canvas_size=128 if QUARTER_MODE else CANVAS_SIZE,
+            sprite_size=(
+                int(round(SPRITE_SIZE * (128 / CANVAS_SIZE)))
+                if QUARTER_MODE and os.getenv("CSC_SV_SPRITE_SIZE") is None
+                else SPRITE_SIZE
+            ),
+            quarter_mode=QUARTER_MODE,
             offset_x=OFFSET_X,
             offset_y=OFFSET_Y,
         )
@@ -594,14 +671,123 @@ def add_revealed_noise(img: Image.Image, strength: float = 12.0) -> Image.Image:
     return Image.fromarray(arr.astype(np.uint8), "RGBA")
 
 
-def composite_overlay(img: Image.Image, overlay_path: str | Path) -> Image.Image:
-    """Alpha-composite a 256×256 RGBA state overlay on top of the visible sprite."""
+def fit_layer_to_canvas(
+    layer: Image.Image,
+    canvas_size: int,
+    *,
+    preserve_native_scale: bool = False,
+    layer_scale: float = 1.0,
+    offset_x: int = 0,
+    offset_y: int = 0,
+) -> Image.Image:
+    """Fit an overlay/shadow plate to the target canvas."""
+    layer = layer.convert("RGBA")
+    target_size = (canvas_size, canvas_size)
+    if layer.size == target_size and (
+        not preserve_native_scale
+        or (layer_scale == 1.0 and offset_x == 0 and offset_y == 0)
+    ):
+        return layer
+    if not preserve_native_scale:
+        return layer.resize(target_size, Image.LANCZOS)
+
+    layer_scale = max(0.01, float(layer_scale))
+    if layer_scale != 1.0:
+        scaled_size = (
+            max(1, int(round(layer.size[0] * layer_scale))),
+            max(1, int(round(layer.size[1] * layer_scale))),
+        )
+        layer = layer.resize(scaled_size, Image.LANCZOS)
+
+    target = Image.new("RGBA", target_size, (0, 0, 0, 0))
+    src_w, src_h = layer.size
+    dest_x = (canvas_size - src_w) // 2 + offset_x
+    dest_y = (canvas_size - src_h) // 2 + offset_y
+    left = max(0, -dest_x)
+    top = max(0, -dest_y)
+    right = min(src_w, canvas_size - dest_x)
+    bottom = min(src_h, canvas_size - dest_y)
+    if right <= left or bottom <= top:
+        return target
+    cropped = layer.crop((left, top, right, bottom))
+    dest = (
+        max(0, dest_x),
+        max(0, dest_y),
+    )
+    target.alpha_composite(cropped, dest=dest)
+    return target
+
+
+def composite_overlay(
+    img: Image.Image,
+    overlay_path: str | Path,
+    *,
+    preserve_native_scale: bool = False,
+    layer_scale: float = 1.0,
+    offset_x: int = 0,
+    offset_y: int = 0,
+) -> Image.Image:
+    """Alpha-composite a state overlay on top of the visible sprite."""
     overlay = Image.open(overlay_path).convert("RGBA")
-    if overlay.size != img.size:
-        overlay = overlay.resize(img.size, Image.LANCZOS)
+    overlay = fit_layer_to_canvas(
+        overlay,
+        img.size[0],
+        preserve_native_scale=preserve_native_scale,
+        layer_scale=layer_scale,
+        offset_x=offset_x,
+        offset_y=offset_y,
+    )
     result = img.copy()
     result.alpha_composite(overlay)
     return result
+
+
+def quarter_shadow_adjustment(config: PostProcessConfig, state: str) -> tuple[float, int, int]:
+    """Return quarter-only layer scale and X/Y offset for a shadow underlay."""
+    if not config.quarter_mode:
+        return 1.0, 0, 0
+    if state == "revealed":
+        return (
+            config.quarter_revealed_shadow_scale,
+            config.quarter_revealed_shadow_offset_x,
+            config.quarter_revealed_shadow_offset_y,
+        )
+    return (
+        config.quarter_visible_shadow_scale,
+        config.quarter_visible_shadow_offset_x,
+        config.quarter_visible_shadow_offset_y,
+    )
+
+
+def quarter_layer_adjustment(config: PostProcessConfig, state: str, tag: str) -> tuple[float, int, int]:
+    """Return quarter-only layer scale and X/Y offset for a state overlay."""
+    if not config.quarter_mode:
+        return 1.0, 0, 0
+    if tag == "UnderConstruction":
+        if state == "revealed":
+            return (
+                config.quarter_revealed_construction_scale,
+                config.quarter_revealed_construction_offset_x,
+                config.quarter_revealed_construction_offset_y,
+            )
+        return (
+            config.quarter_visible_construction_scale,
+            config.quarter_visible_construction_offset_x,
+            config.quarter_visible_construction_offset_y,
+        )
+    if tag == "Pillaged":
+        if state == "revealed":
+            return (
+                config.quarter_revealed_pillaged_scale,
+                config.quarter_revealed_pillaged_offset_x,
+                config.quarter_revealed_pillaged_offset_y,
+            )
+        return (
+            config.quarter_visible_pillaged_scale,
+            config.quarter_visible_pillaged_offset_x,
+            config.quarter_visible_pillaged_offset_y,
+        )
+    return 1.0, 0, 0
 
 
 def underlay_shadow_canvas(img: Image.Image, config: PostProcessConfig) -> Image.Image:
@@ -614,7 +800,15 @@ def underlay_shadow_canvas(img: Image.Image, config: PostProcessConfig) -> Image
     shadow_abs = resolve_pipeline_asset(config.shadow_path)
     if config.enable_base_shadow and shadow_abs and shadow_abs.exists():
         canvas = Image.open(shadow_abs).convert("RGBA")
-        canvas = canvas.resize((config.canvas_size, config.canvas_size), Image.LANCZOS)
+        layer_scale, offset_x, offset_y = quarter_shadow_adjustment(config, "visible")
+        canvas = fit_layer_to_canvas(
+            canvas,
+            config.canvas_size,
+            preserve_native_scale=config.quarter_mode,
+            layer_scale=layer_scale,
+            offset_x=offset_x,
+            offset_y=offset_y,
+        )
         canvas.alpha_composite(img)
         return canvas
     return img.copy()
@@ -630,7 +824,15 @@ def underlay_revealed_shadow_canvas(img: Image.Image, config: PostProcessConfig,
     shadow_abs = resolve_pipeline_asset(revealed_config.shadow_path)
     if shadow_abs and shadow_abs.exists():
         canvas = Image.open(shadow_abs).convert("RGBA")
-        canvas = canvas.resize((config.canvas_size, config.canvas_size), Image.LANCZOS)
+        layer_scale, offset_x, offset_y = quarter_shadow_adjustment(config, "revealed")
+        canvas = fit_layer_to_canvas(
+            canvas,
+            config.canvas_size,
+            preserve_native_scale=config.quarter_mode,
+            layer_scale=layer_scale,
+            offset_x=offset_x,
+            offset_y=offset_y,
+        )
         canvas.alpha_composite(img)
         return canvas
     return img.copy()
@@ -643,7 +845,15 @@ def resize_to_canvas(img: Image.Image, config: PostProcessConfig) -> Image.Image
     shadow_abs = resolve_pipeline_asset(config.shadow_path)
     if config.enable_base_shadow and shadow_abs and shadow_abs.exists():
         canvas = Image.open(shadow_abs).convert("RGBA")
-        canvas = canvas.resize((config.canvas_size, config.canvas_size), Image.LANCZOS)
+        layer_scale, offset_x, offset_y = quarter_shadow_adjustment(config, "visible")
+        canvas = fit_layer_to_canvas(
+            canvas,
+            config.canvas_size,
+            preserve_native_scale=config.quarter_mode,
+            layer_scale=layer_scale,
+            offset_x=offset_x,
+            offset_y=offset_y,
+        )
         # Shadow is already the right canvas size. Overlay the sprite centred.
         offset = config.resolved_offset()
         canvas.alpha_composite(img, dest=offset)
@@ -721,7 +931,15 @@ def process_revealed(
         shadow_abs = resolve_pipeline_asset(revealed_config.shadow_path)
         if shadow_abs and shadow_abs.exists():
             canvas = Image.open(shadow_abs).convert("RGBA")
-            canvas = canvas.resize((config.canvas_size, config.canvas_size), Image.LANCZOS)
+            layer_scale, offset_x, offset_y = quarter_shadow_adjustment(config, "revealed")
+            canvas = fit_layer_to_canvas(
+                canvas,
+                config.canvas_size,
+                preserve_native_scale=config.quarter_mode,
+                layer_scale=layer_scale,
+                offset_x=offset_x,
+                offset_y=offset_y,
+            )
             canvas.alpha_composite(img)
             img = canvas
 
@@ -737,7 +955,15 @@ def process_revealed(
         shadow_abs = resolve_pipeline_asset(revealed_config.shadow_path)
         if shadow_abs and shadow_abs.exists():
             canvas = Image.open(shadow_abs).convert("RGBA")
-            canvas = canvas.resize((config.canvas_size, config.canvas_size), Image.LANCZOS)
+            layer_scale, offset_x, offset_y = quarter_shadow_adjustment(config, "revealed")
+            canvas = fit_layer_to_canvas(
+                canvas,
+                config.canvas_size,
+                preserve_native_scale=config.quarter_mode,
+                layer_scale=layer_scale,
+                offset_x=offset_x,
+                offset_y=offset_y,
+            )
             offset = config.resolved_offset()
             canvas.alpha_composite(img, dest=offset)
             img = canvas
@@ -757,7 +983,15 @@ def process_revealed(
             print(f"  Revealed overlay {tag}: not found ({rel_path}); skipping.")
             continue
         state_path = base_path.parent / f"{base_path.stem}_{tag}{base_path.suffix}"
-        composite = composite_overlay(img, str(overlay_abs))
+        layer_scale, offset_x, offset_y = quarter_layer_adjustment(config, "revealed", tag)
+        composite = composite_overlay(
+            img,
+            str(overlay_abs),
+            preserve_native_scale=config.quarter_mode,
+            layer_scale=layer_scale,
+            offset_x=offset_x,
+            offset_y=offset_y,
+        )
         composite.save(state_path)
         results.append(str(state_path))
 
@@ -828,6 +1062,13 @@ def process_from_preshadow(
     edited_pre_shadow = Image.open(input_path).convert("RGBA")
     if edited_pre_shadow.size == (config.canvas_size, config.canvas_size):
         pre_shadow_canvas = edited_pre_shadow
+    elif config.quarter_mode:
+        # _Visible_PreShadow is already a full pre-shadow canvas, just at the
+        # editing/export size. Scale that canvas directly for Quarter sprites.
+        pre_shadow_canvas = edited_pre_shadow.resize(
+            (config.canvas_size, config.canvas_size),
+            Image.LANCZOS,
+        )
     else:
         # First finalization step: scale/place the larger edited sprite onto the
         # target transparent canvas, but do not add the Visible shadow yet.
@@ -850,7 +1091,15 @@ def process_from_preshadow(
             print(f"  Visible overlay {tag}: not found ({rel_path}); skipping.")
             continue
         state_path = visible_path.parent / f"{visible_path.stem}_{tag}{visible_path.suffix}"
-        composited = composite_overlay(visible, str(overlay_abs))
+        layer_scale, offset_x, offset_y = quarter_layer_adjustment(config, "visible", tag)
+        composited = composite_overlay(
+            visible,
+            str(overlay_abs),
+            preserve_native_scale=config.quarter_mode,
+            layer_scale=layer_scale,
+            offset_x=offset_x,
+            offset_y=offset_y,
+        )
         composited.save(state_path)
         results.append(str(state_path))
 
@@ -872,7 +1121,15 @@ def process_from_preshadow(
             print(f"  Revealed overlay {tag}: not found ({rel_path}); skipping.")
             continue
         state_path = revealed_path.parent / f"{revealed_path.stem}_{tag}{revealed_path.suffix}"
-        composited = composite_overlay(revealed, str(overlay_abs))
+        layer_scale, offset_x, offset_y = quarter_layer_adjustment(config, "revealed", tag)
+        composited = composite_overlay(
+            revealed,
+            str(overlay_abs),
+            preserve_native_scale=config.quarter_mode,
+            layer_scale=layer_scale,
+            offset_x=offset_x,
+            offset_y=offset_y,
+        )
         composited.save(state_path)
         results.append(str(state_path))
 
@@ -964,6 +1221,44 @@ def add_processing_options(parser: argparse.ArgumentParser) -> None:
 
     parser.add_argument("--resize-canvas", dest="enable_resize_canvas", action=argparse.BooleanOptionalAction, default=None)
     parser.add_argument("--canvas-size", type=int, default=None, help="Final square canvas size. Default/env: 256.")
+    parser.add_argument("--quarter", dest="quarter_mode", action="store_true",
+                        help="Build a 128x128 buildingless Quarter/district SV sprite; 256px shadow and state plates keep native scale.")
+    parser.add_argument("--quarter-visible-shadow-scale", type=float, default=None,
+                        help="Quarter mode only: scale the Visible shadow plate before center-cropping. Default/env: 1.0.")
+    parser.add_argument("--quarter-visible-shadow-offset-x", type=int, default=None,
+                        help="Quarter mode only: Visible shadow plate X offset in final pixels. Positive moves right. Default/env: 0.")
+    parser.add_argument("--quarter-visible-shadow-offset-y", type=int, default=None,
+                        help="Quarter mode only: Visible shadow plate Y offset in final pixels. Positive moves down. Default/env: 0.")
+    parser.add_argument("--quarter-revealed-shadow-scale", type=float, default=None,
+                        help="Quarter mode only: scale the Revealed shadow plate before center-cropping. Default/env: 1.0.")
+    parser.add_argument("--quarter-revealed-shadow-offset-x", type=int, default=None,
+                        help="Quarter mode only: Revealed shadow plate X offset in final pixels. Positive moves right. Default/env: 0.")
+    parser.add_argument("--quarter-revealed-shadow-offset-y", type=int, default=None,
+                        help="Quarter mode only: Revealed shadow plate Y offset in final pixels. Positive moves down. Default/env: 0.")
+    parser.add_argument("--quarter-visible-construction-scale", type=float, default=None,
+                        help="Quarter mode only: scale the Visible construction overlay before center-cropping. Default/env: 1.0.")
+    parser.add_argument("--quarter-visible-construction-offset-x", type=int, default=None,
+                        help="Quarter mode only: Visible construction overlay X offset in final pixels. Positive moves right. Default/env: 0.")
+    parser.add_argument("--quarter-visible-construction-offset-y", type=int, default=None,
+                        help="Quarter mode only: Visible construction overlay Y offset in final pixels. Positive moves down. Default/env: 0.")
+    parser.add_argument("--quarter-revealed-construction-scale", type=float, default=None,
+                        help="Quarter mode only: scale the Revealed construction overlay before center-cropping. Default/env: 1.0.")
+    parser.add_argument("--quarter-revealed-construction-offset-x", type=int, default=None,
+                        help="Quarter mode only: Revealed construction overlay X offset in final pixels. Positive moves right. Default/env: 0.")
+    parser.add_argument("--quarter-revealed-construction-offset-y", type=int, default=None,
+                        help="Quarter mode only: Revealed construction overlay Y offset in final pixels. Positive moves down. Default/env: 0.")
+    parser.add_argument("--quarter-visible-pillaged-scale", type=float, default=None,
+                        help="Quarter mode only: scale the Visible pillaged overlay before center-cropping. Default/env: 1.0.")
+    parser.add_argument("--quarter-visible-pillaged-offset-x", type=int, default=None,
+                        help="Quarter mode only: Visible pillaged overlay X offset in final pixels. Positive moves right. Default/env: 0.")
+    parser.add_argument("--quarter-visible-pillaged-offset-y", type=int, default=None,
+                        help="Quarter mode only: Visible pillaged overlay Y offset in final pixels. Positive moves down. Default/env: 0.")
+    parser.add_argument("--quarter-revealed-pillaged-scale", type=float, default=None,
+                        help="Quarter mode only: scale the Revealed pillaged overlay before center-cropping. Default/env: 1.0.")
+    parser.add_argument("--quarter-revealed-pillaged-offset-x", type=int, default=None,
+                        help="Quarter mode only: Revealed pillaged overlay X offset in final pixels. Positive moves right. Default/env: 0.")
+    parser.add_argument("--quarter-revealed-pillaged-offset-y", type=int, default=None,
+                        help="Quarter mode only: Revealed pillaged overlay Y offset in final pixels. Positive moves down. Default/env: 0.")
     parser.add_argument("--sprite-size", type=int, default=None, help="Sprite size pasted onto canvas. Default/env: 160.")
     parser.add_argument("--base-shadow", dest="enable_base_shadow", action=argparse.BooleanOptionalAction, default=None,
                         help="Composite sv_visible_shadow.png behind sprite. Default/env: on.")
@@ -1017,6 +1312,12 @@ def config_from_args(args: argparse.Namespace) -> PostProcessConfig:
             value = getattr(args, field)
             if value is not None:
                 setattr(config, field, value)
+    if getattr(args, "quarter_mode", False):
+        scale = 128 / config.canvas_size
+        config.canvas_size = 128
+        config.quarter_mode = True
+        if getattr(args, "sprite_size", None) is None:
+            config.sprite_size = int(round(config.sprite_size * scale))
     return config
 
 
@@ -1027,6 +1328,12 @@ def revealed_config_from_args(args: argparse.Namespace) -> RevealedPostProcessCo
             value = getattr(args, field)
             if value is not None:
                 setattr(config, field, value)
+    if getattr(args, "quarter_mode", False):
+        scale = 128 / config.canvas_size
+        config.canvas_size = 128
+        config.quarter_mode = True
+        if getattr(args, "sprite_size", None) is None:
+            config.sprite_size = int(round(config.sprite_size * scale))
     if getattr(args, "revealed_shadow_path", None) is not None:
         config.shadow_path = args.revealed_shadow_path
     return config

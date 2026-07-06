@@ -37,7 +37,7 @@ Horticulturist
 ## LOC_BUILDING_CSC_BAKERS_STAGE_4_SERVICE_GARDEN_DESCRIPTION
 A Service established in the Garden at Urbanization when a supplied Café serves an adjacent Conservatory, adding tourism and staffing the Garden.
 
-+2 [ICON_Tourism] Tourism and +1 [ICON_GreatArtist] Great Artist point.
++2 [ICON_Tourism] Tourism and +1 [ICON_GreatArtist] Great Artist point from each adjacent supplied Café.
 
 ## LOC_CSC_BAKERS_STAGE_4_SERVICE_GARDEN
 text-prefix: [NEWLINE]

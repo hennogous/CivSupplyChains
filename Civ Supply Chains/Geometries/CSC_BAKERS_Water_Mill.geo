@@ -151,7 +151,7 @@
 </m_Groups>
 <m_nBoundBoneCount>2</m_nBoundBoneCount>
 <m_nPrimitiveCount>652</m_nPrimitiveCount>
-<m_nVertexCount>879</m_nVertexCount>
+<m_nVertexCount>901</m_nVertexCount>
 </Element>
 <Element>
 <m_Name text="DIS_CTY_Watermill_AN_Base"/>

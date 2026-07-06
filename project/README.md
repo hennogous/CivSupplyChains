@@ -22,6 +22,7 @@ Working docs, reference material, and tools that don't belong in the mod source 
 | `building-geometry-catalogue.md` | Vertex/tri/island counts for all vanilla Civ 6 district buildings (deep mesh analysis) |
 | `building-geometry-patterns.md` | Observed patterns and modelling guidelines derived from the catalogue |
 | `ART-KIT-3D-PASS.md` | Active TODO for the Bakers' art kit (GIMP/Blender/AE tasks) |
+| `asset-editor-ironpython-automation.md` | Investigation note for Asset Editor IronPython preview/capture automation and how it can feed Quarter art/SV workflows |
 | `COMFYUI-SETUP.md` | ComfyUI setup, LoRA models + trigger words, prompt templates, training status |
 | `COMFYUI-MANUAL.md` | Step-by-step manual for generating icons and SV sprites — start here if you haven't used ComfyUI before |
 | `icon-pipeline-implementation-notes.md` | Operational notes for the ComfyUI icon scripts: output paths, rembg/SAM behavior, cache handling, transparency semantics, postprocess knobs |
@@ -73,6 +74,7 @@ Scripts accumulated during development. Paths may need updating if the source da
 
 | Folder | Contents |
 |--------|---------|
+| `asset_editor/` | Asset Editor IronPython helpers and diagnostics |
 | `blender/` | Blender scripts — SV sprite rendering pipeline, mesh inspection |
 | `comfyui/` | ComfyUI scripts — icon post-processing, img2img, bakery/SV generation |
 | `modbuddy/` | ModBuddy project helpers, including `.civ6proj` action CDATA export/check/patch |

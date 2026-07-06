@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<AssetObjects:GeometryInstance>
+<AssetObjects..GeometryInstance>
 <m_CookParams>
 <m_Values/>
 </m_CookParams>
@@ -19,9 +19,9 @@
 <m_nPrims>863</m_nPrims>
 </Element>
 </m_Groups>
-<m_nBoundBoneCount>2</m_nBoundBoneCount>
+<m_nBoundBoneCount>1</m_nBoundBoneCount>
 <m_nPrimitiveCount>863</m_nPrimitiveCount>
-<m_nVertexCount>1013</m_nVertexCount>
+<m_nVertexCount>1019</m_nVertexCount>
 </Element>
 </m_Meshes>
 <m_Bones>
@@ -46,4 +46,4 @@
 <Element text="LandmarkModel"/>
 </m_Tags>
 <m_Groups/>
-</AssetObjects:GeometryInstance>
+</AssetObjects..GeometryInstance>

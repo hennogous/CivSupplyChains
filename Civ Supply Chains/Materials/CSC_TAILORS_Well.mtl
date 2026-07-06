@@ -3,7 +3,7 @@
 	<m_CookParams>
 		<m_Values>
 			<Element class="AssetObjects..ObjectValue">
-				<m_ObjectName text="CSC_BAKERS_Well"/>
+				<m_ObjectName text="CSC_TAILORS_Well"/>
 				<m_eObjectType>TEXTURE</m_eObjectType>
 				<m_ParamName text="BaseColor"/>
 			</Element>

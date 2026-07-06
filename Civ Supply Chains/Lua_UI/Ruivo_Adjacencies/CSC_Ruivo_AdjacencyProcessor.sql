@@ -332,5 +332,4 @@ INSERT OR IGNORE INTO Ruivo_CAO
     ('CLASS_CSC_TAILORS_SPEC',                  'LOC_CLASS_CSC_SPEC_NAME',                  'CSC_Spec_Materials'    ),
     ('CLASS_CSC_TAILORS_SALES',                 'LOC_CLASS_CSC_SALES_NAME',                 'CSC_Sales'             ),
     ('DISTRICT_CSC_TAILORS_QUARTER',            'LOC_DISTRICT_CSC_TAILORS_QUARTER_NAME',    'CSC_Goods'             ),
-    ('CLASS_CSC_TAILORS_HARBOR_TO_QUARTER_GOLD','LOC_CLASS_CSC_SALES_NAME',                 'CSC_Sales'             ),
-    ('CLASS_CSC_TAILORS_RURAL_TO_QUARTER_PRODUCTION','LOC_CLASS_CSC_GOODS_PROVIDER_NAME',   'CSC_Goods_Provider'    );
+    ('CLASS_CSC_TAILORS_GOODS_PROVIDER',        'LOC_CLASS_CSC_GOODS_PROVIDER_NAME',        'CSC_Goods_Provider'    );

@@ -120,7 +120,7 @@ Innkeeper
 ## LOC_BUILDING_CSC_BAKERS_STAGE_3_SERVICE_DESCRIPTION
 A Service established in the Commercial Hub at Medieval Faires when a supplied Bakery serves an adjacent Market.
 
-+2 [ICON_Housing] Housing and +1 [ICON_GreatMerchant] Great Merchant point.
++2 [ICON_Housing] Housing and +1 [ICON_GreatMerchant] Great Merchant point from each adjacent supplied Bakery.
 
 ## LOC_BUILDING_CSC_BAKERS_STAGE_4_SERVICE_ENTER_NAME
 Groundskeeper
@@ -128,7 +128,7 @@ Groundskeeper
 ## LOC_BUILDING_CSC_BAKERS_STAGE_4_SERVICE_ENTER_DESCRIPTION
 A Service established in the Entertainment Complex at Urbanization when a supplied Café serves an adjacent Zoo.
 
-+2 [ICON_Tourism] Tourism and +1 [ICON_GreatEngineer] Great Engineer point.
++2 [ICON_Tourism] Tourism and +1 [ICON_GreatEngineer] Great Engineer point from each adjacent supplied Café..
 
 ## LOC_BUILDING_CSC_BAKERS_STAGE_4_SERVICE_WATER_NAME
 Ride Technician
@@ -136,7 +136,7 @@ Ride Technician
 ## LOC_BUILDING_CSC_BAKERS_STAGE_4_SERVICE_WATER_DESCRIPTION
 A Service established in the Water Park at Urbanization when a supplied Café serves an adjacent Ferris Wheel.
 
-+2 [ICON_Tourism] Tourism and +1 [ICON_GreatEngineer] Great Engineer point.
++2 [ICON_Tourism] Tourism and +1 [ICON_GreatEngineer] Great Engineer point from each adjacent supplied Café.
 
 ## LOC_CSC_BAKERS_STAGE_2_EFFECT_DESCRIPTION_WATER
 - {LOC_BUILDING_CSC_BAKERS_STAGE_2_SERVICE_NAME}: {1_TotalAmount}% growth and {2_TotalStack} [ICON_GreatEngineer] Great Engineer {3_TotalStackCount : plural 1?point; other?points;}.
@@ -655,17 +655,7 @@ mode: raw
 ```sql
 DROP TABLE BAKERS_RESOURCES;
 DROP TABLE BAKERS_SALES_DISTRICTS;
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---	Tailors' Quarter
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
-
-## LOC_DISTRICT_CSC_TAILORS_QUARTER_NAME
-Tailors' Quarter
-
-## LOC_DISTRICT_CSC_TAILORS_QUARTER_DESCRIPTION
-A district in your city specializing in textiles.[NEWLINE][NEWLINE]+1 [ICON_Production] Production from each adjacent [ICON_CSC_BASE] Base or [ICON_CSC_SPEC] Specialty Materials resource from this supply chain.[NEWLINE]+1 [ICON_Gold] Gold from each adjacent Harbor, and +1 [ICON_Production] Production in return.[NEWLINE]+1 [ICON_Gold] Gold from each adjacent Commercial Hub, Holy Site, and Theater Square, and +1 [ICON_Culture] Culture in return.[NEWLINE]+1 [ICON_Production] Production from every 2 adjacent river segments.
 
 ## Raw SQL 7
 mode: raw

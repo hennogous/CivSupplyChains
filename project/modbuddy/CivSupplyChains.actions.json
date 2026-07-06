@@ -367,6 +367,16 @@
       },
       {
         "type": "UpdateText",
+        "id": "CSC_TAILORS_TEXT",
+        "properties": {
+          "LoadOrder": "102"
+        },
+        "files": [
+          "Text/CSC_TAILORS_TEXT.sql"
+        ]
+      },
+      {
+        "type": "UpdateText",
         "id": "CSC_UI_CITY_PANEL_TEXT",
         "properties": {
           "LoadOrder": "9999999"

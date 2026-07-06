@@ -13,7 +13,7 @@
 				<m_ParamName text="Normal"/>
 			</Element>
 			<Element class="AssetObjects..ObjectValue">
-				<m_ObjectName text="CSC_Atlas_AO"/>
+				<m_ObjectName text="CSC_Atlas_AO2"/>
 				<m_eObjectType>TEXTURE</m_eObjectType>
 				<m_ParamName text="AO"/>
 			</Element>
