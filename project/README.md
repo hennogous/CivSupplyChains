@@ -75,7 +75,7 @@ Scripts accumulated during development. Paths may need updating if the source da
 | Folder | Contents |
 |--------|---------|
 | `asset_editor/` | Asset Editor IronPython helpers and diagnostics |
-| `blender/` | Blender scripts — SV sprite rendering pipeline, mesh inspection |
+| `blender/` | Blender/art scripts — SV sprite rendering pipeline, mesh inspection, and PBR companion-map generation |
 | `comfyui/` | ComfyUI scripts — icon post-processing, img2img, bakery/SV generation |
 | `modbuddy/` | ModBuddy project helpers, including `.civ6proj` action CDATA export/check/patch |
 | `scripts/` | Pipeline scripts — CN6 I/O, bone fixing, export pipeline, geo parsing |

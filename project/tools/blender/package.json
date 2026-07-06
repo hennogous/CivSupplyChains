@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate-pbr-maps": "node csc_generate_pbr_maps.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

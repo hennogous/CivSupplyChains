@@ -39,12 +39,97 @@ Run through this before every export. The pipeline script auto-fixes some of the
 - [ ] **Every vertex weighted** to at least one bone (unweighted verts break burn material)
 - [ ] **Single armature** with root bone + child bones as needed
 - [ ] **Single mesh object** parented to armature via Armature modifier
+- [ ] **Export scene contains only the export mesh and armature**; remove cameras, lights, starter cubes, reference planes, and helper objects
+- [ ] **UV layers named `UV1`, `UV2`, `UV3`** in that order
+- [ ] **Mesh vertex group matches the bound bone name**; for simple CSC props/buildings this is usually one vertex group named `Bone`
+- [ ] **All texture source maps exist at 256x256** for small standalone props unless the asset deliberately uses a larger atlas
 
 ### Recommended
 - [ ] Vertex count within budget for target tier
 - [ ] Custom normals set (hard edges at wall/roof boundaries)
 - [ ] Material name matches intended mesh group name in .geo
 - [ ] File saved (the addon exports the saved version)
+
+### CSC Blender File Structure
+
+Use the same minimal structure for small CSC building props and Asset Editor tests:
+
+| Item | Convention | Example |
+|------|------------|---------|
+| Armature object | `{AssetName}` | `CSC_TAILORS_SpinningWheel` |
+| Mesh object | `{AssetName}_Bldg` | `CSC_TAILORS_SpinningWheel_Bldg` |
+| Mesh data | Same as mesh object | `CSC_TAILORS_SpinningWheel_Bldg` |
+| Material slot/material | Same as mesh group | `CSC_TAILORS_SpinningWheel_Bldg` |
+| Armature data | `Armature` is acceptable | `Armature` |
+| Simple prop bone | `Bone` | `Bone` |
+| Simple prop vertex group | Same as bone | `Bone` |
+| UV layers | Exactly `UV1`, `UV2`, `UV3` | `UV1`, `UV2`, `UV3` |
+
+The mesh should be parented to the armature and have an `Armature` modifier targeting that armature. For simple, non-animated CSC props, assign every mesh vertex to the single `Bone` vertex group at weight 1.0. Geometry may contain disconnected low-poly islands, but keep them joined into the one export mesh object.
+
+Keep the saved export file clean: no default cube, no cameras/lights, no reference images, and no old iteration meshes. If you need source/reference objects, keep them in a separate working `.blend` or collection that is not part of the final export file.
+
+### CSC Texture Naming
+
+For standalone CSC prop/building texture sets, use the asset name plus Civ's texture suffixes:
+
+| Suffix | Civ slot | Notes |
+|--------|----------|-------|
+| `_B` | Base color | sRGB color map |
+| `_AO` | Ambient occlusion | Linear greyscale |
+| `_N` | Normal | Tangent-space normal map |
+| `_G` | Gloss | Linear greyscale; white is shinier, black is duller |
+| `_M` | Metalness | Linear greyscale; usually black for wood, wool, clay, and stone props |
+
+Example source files for `CSC_TAILORS_SpinningWheel`:
+
+```text
+CSC_TAILORS_SpinningWheel_B.png
+CSC_TAILORS_SpinningWheel_AO.png
+CSC_TAILORS_SpinningWheel_N.png
+CSC_TAILORS_SpinningWheel_G.png
+CSC_TAILORS_SpinningWheel_M.png
+```
+
+Use **256x256** for small standalone prop source maps and Asset Editor tests. Move to a larger texture or a shared atlas only when the asset's screen importance justifies it.
+
+For Blender preview shading, wire `_B` into Base Color, `_N` through a Normal Map node, `_M` into Metallic, and invert `_G` before feeding Principled Roughness. `_AO` can be multiplied into Base Color for preview, but Asset Editor should receive it in the AO texture slot.
+
+### AI-Assisted Texture Workflow
+
+For small CSC props, use image generation for the artistic base color map, but keep the rest of the PBR set deterministic:
+
+1. Generate or paint a single `_B` atlas in the Civ VI style.
+2. Derive `_AO`, `_N`, `_G`, and `_M` from the final `_B` map with `project/tools/blender/csc_generate_pbr_maps.mjs` so all seams and material regions stay pixel-aligned.
+3. Use Blender only to reload images, rebuild material nodes, validate the mesh, and render previews.
+4. Preserve the previous texture set before replacement, then verify each output image is 256x256 and has non-empty RGB data.
+
+Set up the helper once:
+
+```bash
+cd project/tools/blender
+npm install
+```
+
+Generate the companion maps from an existing base map:
+
+```bash
+node project/tools/blender/csc_generate_pbr_maps.mjs \
+  --base "C:/path/to/CSC_TAILORS_SpinningWheel_B.png" \
+  --preset csc-textile-prop \
+  --overwrite \
+  --backup
+```
+
+The script infers `CSC_TAILORS_SpinningWheel` from `_B.png` and writes matching `_AO.png`, `_N.png`, `_G.png`, and `_M.png` beside the base map. Add `--copy-base` if the base map also needs to be resized/copied to the output folder. Use `--out-dir` to write to a temporary folder for review before replacing live textures.
+
+Do **not** generate `_B`, `_AO`, `_N`, `_G`, and `_M` independently with image generation unless the tool can guarantee exact pixel alignment. Even small shifts between maps will make seams, normals, or gloss disagree once the atlas is wrapped onto the mesh.
+
+Avoid using Blender as the primary pixel-writing tool for generated maps. It is reliable for material wiring and scene validation, but generated image datablocks can fail quietly when saving over existing texture paths. Prefer the Node/Sharp helper for map generation, write to a temporary path first, validate pixel stats or preview, then copy the verified files into the asset folder and reload them in Blender.
+
+When a generated atlas has strong material regions, check the UVs against the model before flattening the texture. If wood grain, wool, or thread swatches appear on the wrong parts, remap `UV1` by connected mesh island so each physical part samples the intended atlas region. Keep `UV2` and `UV3` intact unless you are deliberately rebuilding lightmap/tint/emissive channels.
+
+For quick Blender previews, temporary camera and light objects are fine, but remove them before saving the export `.blend`. The final export scene should return to the clean mesh+armature structure above.
 
 ---
 
