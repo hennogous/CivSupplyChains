@@ -4,11 +4,16 @@
  *
  * Intended CSC workflow:
  *   1. Create or generate the artistic *_B.png atlas.
- *   2. Run this script to derive *_AO.png, *_N.png, *_G.png, *_M.png.
+ *   2. Run this script to derive *_N.png, *_G.png, *_M.png.
  *   3. Reload the maps in Blender/Asset Editor.
  *
  * This intentionally does not use Blender for pixel writing. Blender is better
  * used for material wiring, UV inspection, and render validation.
+ *
+ * Does NOT generate an AO map. AO must be baked from geometry in Blender (Cycles,
+ * via UV2) rather than derived from the base color -- see
+ * project/docs/shared-atlas-ao.md for why and how. UV2 for baking must be a fresh
+ * non-overlapping unwrap/pack, not a copy of UV1.
  */
 
 import fs from "node:fs/promises";
@@ -27,7 +32,6 @@ Options:
   --size <px>               Square output size. Default: 256.
   --preset <name>           Region rules: auto, csc-textile-prop. Default: auto.
   --normal-strength <num>   Multiplier for normal map relief. Default: 1.
-  --ao-strength <num>       Multiplier for AO seam/recess contrast. Default: 1.
   --gloss-bias <num>        Additive gloss adjustment in -1..1. Default: 0.
   --copy-base               Also write a resized <Asset>_B.png beside derived maps.
   --overwrite               Replace existing output files.
@@ -43,6 +47,7 @@ Examples:
 Notes:
   Civ VI uses _G as gloss: white is shinier, black is duller.
   _M is black by default because most CSC wood/wool/stone props are non-metal.
+  No _AO is generated here -- bake it from geometry in Blender instead.
 `;
 
 function parseArgs(argv) {
@@ -50,7 +55,6 @@ function parseArgs(argv) {
     size: 256,
     preset: "auto",
     normalStrength: 1,
-    aoStrength: 1,
     glossBias: 0,
     copyBase: false,
     overwrite: false,
@@ -85,9 +89,6 @@ function parseArgs(argv) {
       case "--normal-strength":
         args.normalStrength = Number(readValue());
         break;
-      case "--ao-strength":
-        args.aoStrength = Number(readValue());
-        break;
       case "--gloss-bias":
         args.glossBias = Number(readValue());
         break;
@@ -120,7 +121,7 @@ function parseArgs(argv) {
   if (!["auto", "csc-textile-prop"].includes(args.preset)) {
     throw new Error("--preset must be one of: auto, csc-textile-prop");
   }
-  for (const key of ["normalStrength", "aoStrength", "glossBias"]) {
+  for (const key of ["normalStrength", "glossBias"]) {
     if (!Number.isFinite(args[key])) throw new Error(`Invalid numeric value for ${key}`);
   }
   return args;
@@ -190,18 +191,18 @@ function makeRegionClassifier(preset, width, height, data) {
 function materialSettings(region) {
   switch (region) {
     case "wood":
-      return { normal: 0.75, aoFloor: 0.60, aoCeil: 0.96, gloss: 0.24 };
+      return { normal: 0.75, gloss: 0.24 };
     case "wool":
-      return { normal: 1.05, aoFloor: 0.74, aoCeil: 0.99, gloss: 0.08 };
+      return { normal: 1.05, gloss: 0.08 };
     case "thread":
-      return { normal: 0.85, aoFloor: 0.66, aoCeil: 0.96, gloss: 0.13 };
+      return { normal: 0.85, gloss: 0.13 };
     case "endgrain":
-      return { normal: 0.70, aoFloor: 0.60, aoCeil: 0.94, gloss: 0.20 };
+      return { normal: 0.70, gloss: 0.20 };
     case "dark":
-      return { normal: 0.45, aoFloor: 0.50, aoCeil: 0.90, gloss: 0.15 };
+      return { normal: 0.45, gloss: 0.15 };
     case "neutral":
     default:
-      return { normal: 0.55, aoFloor: 0.62, aoCeil: 0.95, gloss: 0.18 };
+      return { normal: 0.55, gloss: 0.18 };
   }
 }
 
@@ -274,7 +275,6 @@ async function main() {
   const assetName = args.assetName || stripBaseSuffix(basePath);
   const outputs = {
     B: path.join(outDir, `${assetName}_B.png`),
-    AO: path.join(outDir, `${assetName}_AO.png`),
     N: path.join(outDir, `${assetName}_N.png`),
     G: path.join(outDir, `${assetName}_G.png`),
     M: path.join(outDir, `${assetName}_M.png`),
@@ -300,7 +300,6 @@ async function main() {
   const classifyRegion = makeRegionClassifier(args.preset, width, height, data);
 
   const base = Buffer.from(data);
-  const ao = Buffer.alloc(width * height * 4);
   const normal = Buffer.alloc(width * height * 4);
   const gloss = Buffer.alloc(width * height * 4);
   const metal = Buffer.alloc(width * height * 4);
@@ -328,20 +327,6 @@ async function main() {
       const region = classifyRegion(x, y);
       const settings = materialSettings(region);
       const lum = getLum(x, y);
-      const localContrast =
-        Math.abs(heightAt(x + 1, y) - heightAt(x - 1, y)) +
-        Math.abs(heightAt(x, y + 1) - heightAt(x, y - 1));
-
-      const aoValue = clamp01(
-        settings.aoCeil -
-          localContrast * 0.82 * args.aoStrength -
-          (1 - lum) * 0.12 * args.aoStrength,
-      );
-      const aoByte = clampByte(Math.max(settings.aoFloor, aoValue) * 255);
-      ao[i] = aoByte;
-      ao[i + 1] = aoByte;
-      ao[i + 2] = aoByte;
-      ao[i + 3] = 255;
 
       const dx = (heightAt(x + 1, y) - heightAt(x - 1, y)) * args.normalStrength;
       const dy = (heightAt(x, y + 1) - heightAt(x, y - 1)) * args.normalStrength;
@@ -373,7 +358,6 @@ async function main() {
 
   const writes = [
     ...(args.copyBase ? [["B", base]] : []),
-    ["AO", ao],
     ["N", normal],
     ["G", gloss],
     ["M", metal],
